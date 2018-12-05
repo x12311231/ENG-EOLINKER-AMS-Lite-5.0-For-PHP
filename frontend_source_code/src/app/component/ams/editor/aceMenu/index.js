@@ -32,54 +32,54 @@
         var vm = this;
         vm.data = {
                 funMenu: [{
-                        name: $filter('translate')('359'),
+                        name: $filter('translate')('358'),
                         spreedKey: 'request',
                         funList: [{
-                                name: $filter('translate')('360'),
+                                name: $filter('translate')('359'),
                                 value: 'url',
                             }, {
-                                name: $filter('translate')('361'),
+                                name: $filter('translate')('360'),
                                 value: 'headers[""]',
                                 offset: 2
                             }, {
-                                name: $filter('translate')('362'),
+                                name: $filter('translate')('361'),
                                 value: 'params[""]',
                                 offset: 2
                             },
                             {
-                                name: $filter('translate')('363'),
+                                name: $filter('translate')('362'),
                                 value: 'raw',
                             }, {
-                                name: $filter('translate')('364'),
+                                name: $filter('translate')('363'),
                                 value: 'query[""]',
                                 offset: 2
                             },
                         ]
                     },
                     {
-                        name: $filter('translate')('365'),
+                        name: $filter('translate')('364'),
                         spreedKey: 'env',
                         funList: [{
-                                name: $filter('translate')('366'),
+                                name: $filter('translate')('365'),
                                 value: 'env.url',
                             }, {
-                                name: $filter('translate')('367'),
+                                name: $filter('translate')('366'),
                                 value: 'env.headers[""]',
                                 offset: 2
                             }, {
-                                name: $filter('translate')('368'),
+                                name: $filter('translate')('367'),
                                 value: 'env.extraParams[""]',
                                 offset: 2
                             },
                             {
-                                name: $filter('translate')('369'),
+                                name: $filter('translate')('368'),
                                 value: 'env.globalParams[""]',
                                 offset: 2
                             },
                         ]
                     },
                     {
-                        name: $filter('translate')('370'),
+                        name: $filter('translate')('369'),
                         spreedKey: 'lock',
                         funList: [{
                                 name: 'MD5()',
@@ -128,54 +128,54 @@
                 case 'beforeInject':
                     {
                         vm.data.funMenu = [{
-                                name: $filter('translate')('359'),
+                                name: $filter('translate')('358'),
                                 spreedKey: 'request',
                                 funList: [{
-                                        name: $filter('translate')('360'),
+                                        name: $filter('translate')('359'),
                                         value: 'url',
                                     }, {
-                                        name: $filter('translate')('361'),
+                                        name: $filter('translate')('360'),
                                         value: 'headers[""]',
                                         offset: 2
                                     }, {
-                                        name: $filter('translate')('362'),
+                                        name: $filter('translate')('361'),
                                         value: 'params[""]',
                                         offset: 2
                                     },
                                     {
-                                        name: $filter('translate')('363'),
+                                        name: $filter('translate')('362'),
                                         value: 'raw',
                                     }, {
-                                        name: $filter('translate')('364'),
+                                        name: $filter('translate')('363'),
                                         value: 'query[""]',
                                         offset: 2
                                     },
                                 ]
                             },
                             {
-                                name: $filter('translate')('365'),
+                                name: $filter('translate')('364'),
                                 spreedKey: 'env',
                                 funList: [{
-                                        name: $filter('translate')('366'),
+                                        name: $filter('translate')('365'),
                                         value: 'env.url',
                                     }, {
-                                        name: $filter('translate')('367'),
+                                        name: $filter('translate')('366'),
                                         value: 'env.headers[""]',
                                         offset: 2
                                     }, {
-                                        name: $filter('translate')('368'),
+                                        name: $filter('translate')('367'),
                                         value: 'env.extraParams[""]',
                                         offset: 2
                                     },
                                     {
-                                        name: $filter('translate')('369'),
+                                        name: $filter('translate')('368'),
                                         value: 'env.globalParams[""]',
                                         offset: 2
                                     },
                                 ]
                             },
                             {
-                                name: $filter('translate')('370'),
+                                name: $filter('translate')('369'),
                                 spreedKey: 'lock',
                                 funList: [{
                                         name: 'MD5()',
@@ -201,10 +201,10 @@
                 default:
                     {
                         vm.data.funMenu = [{
-                            name: $filter('translate')('359'),
+                            name: $filter('translate')('358'),
                             spreedKey: 'request',
                             funList: [{
-                                name: $filter('translate')('371'),
+                                name: $filter('translate')('370'),
                                 value: 'response',
                             }]
                         }];

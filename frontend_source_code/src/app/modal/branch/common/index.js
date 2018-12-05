@@ -231,7 +231,7 @@
                 status: input.status,
                 maxNumber: input.maxNumber || 10000,
                 request: input.request,
-                secondTitle: input.secondTitle || $filter('translate')('350')
+                secondTitle: input.secondTitle || $filter('translate')('349')
             },
             info: {
                 checkbox: false,
@@ -273,7 +273,7 @@
                 }
             }
             if (template.output.length > 0) $uibModalInstance.close(template.output);
-            else $rootScope.InfoModal($filter('translate')('351'), 'error');
+            else $rootScope.InfoModal($filter('translate')('350'), 'error');
         };
 
         $scope.data.fun.cancel = function () {
@@ -356,7 +356,7 @@
                                         }
                                     default:
                                         {
-                                            $rootScope.InfoModal($filter('translate')('300'), 'error');
+                                            $rootScope.InfoModal($filter('translate')('299'), 'error');
                                             break;
                                         }
                                 }
@@ -378,7 +378,7 @@
                                 }
                             default:
                                 {
-                                    $rootScope.InfoModal($filter('translate')('300'), 'error');
+                                    $rootScope.InfoModal($filter('translate')('299'), 'error');
                                     break;
                                 }
                         }
@@ -413,9 +413,9 @@
         $scope.title = title;
         $scope.necessity = necessity;
         $scope.info = {
-            message: info || $filter('translate')('301'),
+            message: info || $filter('translate')('300'),
             btnType: input.btnType || 0, //0：warning 1：info,2:success,
-            btnMessage: input.btnMessage || $filter('translate')('260'),
+            btnMessage: input.btnMessage || $filter('translate')('259'),
             btnGroup: input.btnGroup || [],
             timer: {
                 limit: input.timeLimit,
@@ -518,7 +518,7 @@
 
     function SelectVisualGroupModalCtrl($scope, $uibModalInstance, $state, input,$filter) {
         $scope.title = input.title;
-        $scope.secondTitle = input.secondTitle || $filter('translate')('329');
+        $scope.secondTitle = input.secondTitle || $filter('translate')('328');
         $scope.list = input.list;
         $scope.modalType = input.modalType;
         $scope.data = {
@@ -570,7 +570,7 @@
                 }
                 $scope.data.apiGroup = [{
                     groupID: 0,
-                    groupName: $filter('translate')('352'),
+                    groupName: $filter('translate')('351'),
                     childGroupList: template.groupList || []
                 }];
                 $scope.data.initialGroupData = [0]
@@ -718,7 +718,7 @@
         }
         $scope.params = {
             query: [{
-                groupName: $filter('translate')('353'),
+                groupName: $filter('translate')('352'),
                 groupID: '0'
             }].concat(input.group),
             status: input.status || 'first-level'
@@ -773,8 +773,8 @@
             desc: desc,
             message: info,
             btnType: input.btnType || 0, //0：warning 1：info,
-            btnMessage: input.btnMessage || $filter('translate')('354'),
-            placeholder: $filter('translate')('355'),
+            btnMessage: input.btnMessage || $filter('translate')('353'),
+            placeholder: $filter('translate')('354'),
         }
         $scope.data = {
             input: input
@@ -863,7 +863,7 @@
                 if (val.groupID == $scope.data.output[template.point]) {
                     $scope.data.input.group[template.output] = [{
                         groupID: -1,
-                        groupName: status == 'second-level' ? $filter('translate')('356') : $filter('translate')('357'),
+                        groupName: status == 'second-level' ? $filter('translate')('355') : $filter('translate')('356'),
                         childGroupList: []
                     }].concat(val.childGroupList);
                     break;
@@ -892,13 +892,13 @@
                 $scope.data.output.groupID = $scope.data.input.group.parent[0].groupID;
                 $scope.data.input.group.child = [{
                     groupID: -1,
-                    groupName: $filter('translate')('357'),
+                    groupName: $filter('translate')('356'),
                     childGroupList: []
                 }].concat($scope.data.input.group.parent[0].childGroupList);
                 $scope.data.output.childGroupID = -1;
                 $scope.data.input.group.grandson = [{
                     groupID: -1,
-                    groupName: $filter('translate')('356')
+                    groupName: $filter('translate')('355')
                 }];
                 $scope.data.output.grandSonGroupID = -1;
             } else {

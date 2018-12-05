@@ -66,9 +66,9 @@
                 } catch (e) {}
                 vm.interaction.request.envID = [];
                 vm.data.batch.address = [];
-                $rootScope.InfoModal($filter('translate')('491'), 'success');
+                $rootScope.InfoModal($filter('translate')('489'), 'success');
             } else {
-                $rootScope.InfoModal($filter('translate')('492'), 'error');
+                $rootScope.InfoModal($filter('translate')('490'), 'error');
             }
         }
         vm.fun.init = function (arg) {
@@ -127,7 +127,7 @@
                     num: 0
                 }
             }
-            $rootScope.EnsureModal($filter('translate')('555'), false, ENSURE_WARNIMG.DELETE, {}, function (callback) {
+            $rootScope.EnsureModal($filter('translate')('553'), false, ENSURE_WARNIMG.DELETE, {}, function (callback) {
                 if (callback) {
                     ApiManagementResource.Env.BatchDelete(template.request).$promise
                         .then(function (response) {
@@ -153,12 +153,12 @@
                                                     break;
                                                 }
                                         }
-                                        $rootScope.InfoModal($filter('translate')('386'), 'success');
+                                        $rootScope.InfoModal($filter('translate')('384'), 'success');
                                         break;
                                     }
                                 default:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('387') + RESPONSE_TEXT.FAILURE, 'error');
+                                        $rootScope.InfoModal($filter('translate')('385') + RESPONSE_TEXT.FAILURE, 'error');
                                         break;
                                     }
                             }
@@ -168,7 +168,7 @@
         }
         vm.$onInit = function () {
             $scope.$emit('$WindowTitleSet', {
-                list: [$filter('translate')('556'), $state.params.projectName, $filter('translate')('407')]
+                list: [$filter('translate')('554'), $state.params.projectName, $filter('translate')('405')]
             });
             vm.component.menuObject.list = [{
                 type: 'btn',
@@ -176,7 +176,7 @@
                 showVariable: 'disable',
                 showPoint: 'batch',
                 btnList: [{
-                    name: $filter('translate')('557'),
+                    name: $filter('translate')('555'),
                     icon: 'tianjia',
                     class: 'eo-button-success',
                     show: false,
@@ -193,7 +193,7 @@
                 disabledPoint: 'query',
                 disabledVariable: 'length',
                 btnList: [{
-                    name: $filter('translate')('504'),
+                    name: $filter('translate')('502'),
                     show: false,
                     fun: {
                         default: fun.batchDefault
@@ -217,7 +217,7 @@
                 disabledPoint: 'query',
                 disabledVariable: 'length',
                 btnList: [{
-                    name: $filter('translate')('260'),
+                    name: $filter('translate')('259'),
                     icon: 'shanchu',
                     show: true,
                     disabled: 0,
@@ -258,7 +258,7 @@
                                     }
                                 },
                             }, {
-                                key: $filter('translate')('240'),
+                                key: $filter('translate')('239'),
                                 html: '{{item.envName}}'
                             },
                             {
@@ -266,17 +266,17 @@
                                 html: '{{item.envDesc}}'
                             },
                             {
-                                key: $filter('translate')('558'),
+                                key: $filter('translate')('556'),
                                 html: '{{item.frontURI}}'
                             }
                         ],
                         fun: {
                             array: [ {
-                                key: $filter('translate')('325'),
+                                key: $filter('translate')('324'),
                                 show: -1,
                                 fun: fun.edit
                             }, {
-                                key: $filter('translate')('260'),
+                                key: $filter('translate')('259'),
                                 show: -1,
                                 fun: fun.delete,
                                 params: {
@@ -298,7 +298,7 @@
                             'line-height': '40px'
                         },
                         warningType: 'customized-html',
-                        warning: '<span ng-init="$ctrl.authorityObject.operate?$ctrl.mainObject.baseInfo.colspan=4:$ctrl.mainObject.baseInfo.colspan=3">{{\'559\'|translate}}</span>',
+                        warning: '<span ng-init="$ctrl.authorityObject.operate?$ctrl.mainObject.baseInfo.colspan=4:$ctrl.mainObject.baseInfo.colspan=3">{{\'557\'|translate}}</span>',
                         operate: 1
                     },
                     baseFun: {

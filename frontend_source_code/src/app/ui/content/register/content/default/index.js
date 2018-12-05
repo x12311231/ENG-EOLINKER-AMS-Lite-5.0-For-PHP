@@ -47,7 +47,7 @@
             info: {
                 submited: false,
                 eye: false,
-                alert: $filter('translate')('394')
+                alert: $filter('translate')('392')
             },
             interaction: {
                 request: {
@@ -81,19 +81,19 @@
                             case CODE.COMMON.SUCCESS:
                                 {
                                     vm.data.info.unavailable = false;
-                                    vm.data.info.alert = $filter('translate')('395');
+                                    vm.data.info.alert = $filter('translate')('393');
                                     break;
                                 }
                             case CODE.USER.EXIST:
                                 {
                                     vm.data.info.unavailable = true;
-                                    vm.data.info.alert = $filter('translate')('396');
+                                    vm.data.info.alert = $filter('translate')('394');
                                     break;
                                 }
                             default:
                                 {
                                     vm.data.info.unavailable = true;
-                                    vm.data.info.alert = $filter('translate')('394');
+                                    vm.data.info.alert = $filter('translate')('392');
                                     break;
                                 }
                         }
@@ -126,7 +126,7 @@
                         switch (response.statusCode) {
                             case CODE.COMMON.SUCCESS:
                                 {
-                                    $rootScope.InfoModal($filter('translate')('397'), 'success', function(data) {
+                                    $rootScope.InfoModal($filter('translate')('395'), 'success', function(data) {
                                         $state.go('index');
                                     });
                                     break;
@@ -134,13 +134,13 @@
                             case CODE.USER.ILLIGLE_PASSWORD:
                                 {
                                     $scope.registerPhoneForm.phonePassword.$invalid = true;
-                                    $rootScope.InfoModal($filter('translate')('398'), 'error');
+                                    $rootScope.InfoModal($filter('translate')('396'), 'error');
                                     break;
                                 }
                             default:
                                 {
                                     vm.data.info.submited = true;
-                                    $rootScope.InfoModal($filter('translate')('399'), 'error');
+                                    $rootScope.InfoModal($filter('translate')('397'), 'error');
                                     break;
                                 }
                         }
@@ -155,7 +155,7 @@
          * @function [初始化功能函数] [initialization]
          */
         vm.data.fun.init = (function() {
-            $scope.$emit('$WindowTitleSet', { list: [$filter('translate')('400')] });
+            $scope.$emit('$WindowTitleSet', { list: [$filter('translate')('398')] });
             $scope.$on('$stateChangeStart', vm.data.fun.$destory);
         })();
     }

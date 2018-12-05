@@ -1,6 +1,6 @@
 (function () {
     /**
-     * @name 进行中{{\'388\'|translate}}
+     * @name 进行中{{\'386\'|translate}}
      * @author 广州银云信息科技有限公司 
      */
     'use strict';
@@ -69,7 +69,7 @@
             var template = {
                 modal: {
                     groupID: vm.interaction.request.groupID,
-                    title: $filter('translate')('383'),
+                    title: $filter('translate')('381'),
                     version: 1
                 }
             }
@@ -137,7 +137,7 @@
                     num: 0
                 }
             }
-            $rootScope.EnsureModal($filter('translate')('384'), true, $filter('translate')('385'), {}, function (callback) {
+            $rootScope.EnsureModal($filter('translate')('382'), true, $filter('translate')('383'), {}, function (callback) {
                 if (callback) {
                     ApiManagementResource.Project.Delete(template.request).$promise
                         .then(function (response) {
@@ -146,12 +146,12 @@
                                     {
 
                                         vm.interaction.response[template.queryName].splice(arg.$index, 1);
-                                        $rootScope.InfoModal($filter('translate')('386'), 'success');
+                                        $rootScope.InfoModal($filter('translate')('384'), 'success');
                                         break;
                                     }
                                 default:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('387') + RESPONSE_TEXT.FAILURE, 'error');
+                                        $rootScope.InfoModal($filter('translate')('385') + RESPONSE_TEXT.FAILURE, 'error');
                                         break;
                                     }
                             }
@@ -165,18 +165,18 @@
          */
         vm.$onInit = function () {
             $scope.$emit('$WindowTitleSet', {
-                list: [$filter('translate')('388')]
+                list: [$filter('translate')('386')]
             });
             vm.component.listGroupCommonObject = {
                 mainObject: {
                     item: {
                         default: [{
-                                key: $filter('translate')('240'),
+                                key: $filter('translate')('239'),
                                 html: '{{item.projectName}}',
                                 contentClass: 'item-title-li'
                             },
                             {
-                                key: $filter('translate')('336'),
+                                key: $filter('translate')('335'),
                                 html: 'V&nbsp;{{item.projectVersion}}',
                                 contentClass: 'eo-width-120',
                                 keyClass: 'eo-width-120'
@@ -184,12 +184,12 @@
                             {
                                 key: $filter('translate')('44'),
                                 contentClass: 'eo-width-120',
-                                html: '<span ng-switch-when=0>Web</span><span ng-switch-when=1>App</span><span ng-switch-when=2>PC</span><span ng-switch-when=3>{{\'176\'|translate}}</span><span ng-switch-when=4>{{\'177\'|translate}}</span>',
+                                html: '<span ng-switch-when=0>Web</span><span ng-switch-when=1>App</span><span ng-switch-when=2>PC</span><span ng-switch-when=3>{{\'175\'|translate}}</span><span ng-switch-when=4>{{\'176\'|translate}}</span>',
                                 switch: 'projectType',
                                 keyClass: 'eo-width-120'
                             },
                             {
-                                key: $filter('translate')('389'),
+                                key: $filter('translate')('387'),
                                 html: '{{item.projectUpdateTime}}',
                                 contentClass: 'unnecessary-td eo-width-170',
                                 keyClass: 'eo-width-170'
@@ -197,7 +197,7 @@
                         ],
                         fun: {
                             array: [{
-                                    key: $filter('translate')('325'),
+                                    key: $filter('translate')('324'),
                                     show: -1,
                                     fun: fun.edit,
                                     params: {
@@ -205,7 +205,7 @@
                                     }
                                 },
                                 {
-                                    key: $filter('translate')('260'),
+                                    key: $filter('translate')('259'),
                                     show: -1,
                                     fun: fun.delete,
                                 }
@@ -222,7 +222,7 @@
                         colspan: 4,
                         operate: 1,
                         warningType: 'customized-html',
-                        warning: '<span >{{\'390\'|translate}}</span>'
+                        warning: '<span >{{\'388\'|translate}}</span>'
                     },
                     baseFun: {
                         click: fun.enter
@@ -233,7 +233,7 @@
                 type: 'btn',
                 class: 'btn-group-li pull-left',
                 btnList: [{
-                    name: $filter('translate')('334'),
+                    name: $filter('translate')('333'),
                     icon: 'tianjia',
                     class: 'eo-button-success',
                     fun: {
@@ -243,7 +243,7 @@
                         }
                     }
                 }, {
-                    name: $filter('translate')('383'),
+                    name: $filter('translate')('381'),
                     icon: 'shangchuan',
                     fun: {
                         default: fun.import

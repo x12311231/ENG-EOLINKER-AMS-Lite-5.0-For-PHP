@@ -20,7 +20,7 @@
             static: {
                 query: [{
                     groupID: -1,
-                    groupName: $filter('translate')('445'),
+                    groupName: $filter('translate')('443'),
                     icon: 'sort'
                 }]
             },
@@ -78,7 +78,7 @@
         }
         fun.init();
         fun.sortCopy = function () {
-            $rootScope.InfoModal($filter('translate')('435'), 'success');
+            $rootScope.InfoModal($filter('translate')('433'), 'success');
             vm.data.sort.originQuery = [];
             angular.copy(vm.interaction.response.query, vm.data.sort.originQuery);
             if (vm.data.sort.originQuery.length > 0) {
@@ -174,8 +174,8 @@
             arg = arg || {};
             var template = {
                 modal: {
-                    title: $filter('translate')('436'),
-                    message: $filter('translate')('446')
+                    title: $filter('translate')('434'),
+                    message: $filter('translate')('444')
                 }
             }
             $rootScope.EnsureModal(template.modal.title, false, template.modal.message, {}, function (callback) {
@@ -193,7 +193,7 @@
                                     } else {
                                         vm.interaction.response.query.splice(arg.$index, 1);
                                     }
-                                    $rootScope.InfoModal($filter('translate')('438'), 'success');
+                                    $rootScope.InfoModal($filter('translate')('436'), 'success');
                                     switch ((vm.interaction.request.groupID || 0).toString()) {
                                         case '-1':
                                             {
@@ -232,7 +232,7 @@
             var template = {
                 modal: {
                     mark: 'common',
-                    title: $filter('translate')('439'),
+                    title: $filter('translate')('437'),
                     spaceKey: vm.interaction.request.spaceKey,
                     request: {
                         groupID: arg.item.groupID
@@ -245,7 +245,7 @@
         fun.import = function () {
             var template = {
                 modal: {
-                    title: $filter('translate')('440'),
+                    title: $filter('translate')('438'),
                     version: 1,
                     status: 1,
                     request: {
@@ -311,7 +311,7 @@
                     showVar: 'isDisable',
                     btnGroupList: {
                         edit: {
-                            key: $filter('translate')('441'),
+                            key: $filter('translate')('439'),
                             class: 'eo-button-success',
                             icon: 'tianjia',
                             showable: false,
@@ -319,13 +319,13 @@
                             params: '"add"'
                         },
                         export: {
-                            key: $filter('translate')('442'),
+                            key: $filter('translate')('440'),
                             class: 'default-btn tab-first-btn',
                             showable: false,
                             fun: fun.import
                         },
                         sortDefault: {
-                            key: $filter('translate')('443'),
+                            key: $filter('translate')('441'),
                             class: 'default-btn tab-last-btn',
                             showable: false,
                             fun: fun.sortCopy
@@ -360,39 +360,39 @@
                     parentFun: {
                         addChild: {
                             fun: fun.edit,
-                            key: $filter('translate')('444'),
+                            key: $filter('translate')('442'),
                             params: '"add-child",arg',
                             class: 'add-child-btn'
                         },
                         export: {
                             fun: fun.export,
-                            key: $filter('translate')('439'),
+                            key: $filter('translate')('437'),
                             authority: 'export'
                         },
                         edit: {
                             fun: fun.edit,
-                            key: $filter('translate')('325'),
+                            key: $filter('translate')('324'),
                             params: '"edit",arg'
                         },
                         delete: {
                             fun: fun.delete,
-                            key: $filter('translate')('260')
+                            key: $filter('translate')('259')
                         }
                     },
                     childFun: {
                         export: {
                             fun: fun.export,
-                            key: $filter('translate')('439'),
+                            key: $filter('translate')('437'),
                             authority: 'export'
                         },
                         edit: {
                             fun: fun.edit,
-                            key: $filter('translate')('325'),
+                            key: $filter('translate')('324'),
                             params: '"edit",arg',
                         },
                         delete: {
                             fun: fun.delete,
-                            key: $filter('translate')('260')
+                            key: $filter('translate')('259')
                         }
                     },
                     baseFun: {

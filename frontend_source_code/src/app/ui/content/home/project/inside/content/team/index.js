@@ -40,7 +40,7 @@
                     leave: true,
                     isDisable: false
                 },
-                power: 2, //0：管理员，1：{{\'405\'|translate}}员，2：普通成员 0: admin, 1: collaboration manager, 2: regular member
+                power: 2, //0：管理员，1：{{\'403\'|translate}}员，2：普通成员 0: admin, 1: collaboration manager, 2: regular member
                 timer: {
                     fun: null
                 },
@@ -78,7 +78,7 @@
                 }
             }
             $scope.$emit('$WindowTitleSet', {
-                list: [$filter('translate')('405'), $state.params.projectName]
+                list: [$filter('translate')('403'), $state.params.projectName]
             });
 
             template.promise=ApiManagementResource.Partner.Query(template.request).$promise;
@@ -128,8 +128,8 @@
             arg.item.groupName = arg.item.partnerNickName;
             arg.item.required = true;
             template.modal = {
-                title: $filter('translate')('198'),
-                secondTitle: $filter('translate')('425'),
+                title: $filter('translate')('197'),
+                secondTitle: $filter('translate')('423'),
                 data: arg.item
             }
             $rootScope.GroupModal(template.modal, function (callback) {
@@ -143,7 +143,7 @@
                             switch (response.statusCode) {
                                 case CODE.COMMON.SUCCESS:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('426'), 'success');
+                                        $rootScope.InfoModal($filter('translate')('424'), 'success');
                                         arg.item.partnerNickName = callback.groupName;
                                         break;
                                     }
@@ -170,7 +170,7 @@
                     switch (response.statusCode) {
                         case CODE.COMMON.SUCCESS:
                             {
-                                $rootScope.InfoModal($filter('translate')('427'), 'success');
+                                $rootScope.InfoModal($filter('translate')('425'), 'success');
                                 arg.item.listIsClick = false;
                                 switch (arg.userType - 0) {
                                     case 1:
@@ -209,7 +209,7 @@
                 }
             }
             if (bol) {
-                $rootScope.EnsureModal($filter('translate')('428'), false, $filter('translate')('429'), {}, function (callback) {
+                $rootScope.EnsureModal($filter('translate')('426'), false, $filter('translate')('427'), {}, function (callback) {
                     if (callback) {
                         ApiManagementResource.Partner.Quit(template.request).$promise
                             .then(function (response) {
@@ -225,7 +225,7 @@
                 });
 
             } else {
-                $rootScope.EnsureModal($filter('translate')('430'), false, $filter('translate')('431'), {}, function (callback) {
+                $rootScope.EnsureModal($filter('translate')('428'), false, $filter('translate')('429'), {}, function (callback) {
                     if (callback) {
                         ApiManagementResource.Partner.Delete({
                                 projectID: vm.data.interaction.request.projectID,
@@ -240,7 +240,7 @@
                                             } else {
                                                 vm.data.interaction.response.query.splice(arg.$index, 1);
                                             }
-                                            $rootScope.InfoModal($filter('translate')('432'), 'success');
+                                            $rootScope.InfoModal($filter('translate')('430'), 'success');
                                             break;
                                         }
                                 }
@@ -257,7 +257,7 @@
             var template = {
                 request: {},
                 modal: {
-                    title: $filter('translate')('194'),
+                    title: $filter('translate')('193'),
                     request: {
                         params: {
                             projectID: vm.data.interaction.request.projectID,

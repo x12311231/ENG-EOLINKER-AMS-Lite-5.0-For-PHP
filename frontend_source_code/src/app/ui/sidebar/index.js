@@ -42,25 +42,25 @@
                 mainObject: {
                     baseInfo: {
                         menu: [{
-                            name: $filter('translate')('337'),
+                            name: $filter('translate')('336'),
                             sref: 'home.project',
                             icon: 'icon-api',
                             childSref: 'home.project.default',
                             isShow: -1
                         }, {
-                            name: $filter('translate')('338'),
+                            name: $filter('translate')('337'),
                             sref: 'home.user',
                             icon: 'icon-yonghu',
                             childSref: 'home.user.basic',
                             isShow: -1
                         }, {
-                            name: $filter('translate')('339'),
+                            name: $filter('translate')('338'),
                             href: 'https://global.eolinker.com',
                             icon: 'icon-ONLINEkaifa',
                             isShow: -1,
                             divide: 1
                         }, {
-                            name: $filter('translate')('340'),
+                            name: $filter('translate')('339'),
                             href: 'http://help.eolinker.com',
                             icon: 'icon-bangzhu',
                             isShow: -1,

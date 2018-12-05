@@ -69,7 +69,7 @@
          * @function [初始化功能函数，检测是否已安装，若已安装则跳转首页] [Initialize, check whether it is installed, if it is installed, jump home page]
          */
         vm.data.fun.init = function() {
-            $scope.$emit('$WindowTitleSet', { list: [$filter('translate')('382'),$filter('translate')('377')] });
+            $scope.$emit('$WindowTitleSet', { list: [$filter('translate')('380'),$filter('translate')('376')] });
             CommonResource.Install.Config().$promise.then(function(data) {
                 if (data.statusCode == CODE.COMMON.SUCCESS) {
                     $state.go('index');

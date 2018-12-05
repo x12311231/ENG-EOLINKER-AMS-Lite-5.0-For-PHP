@@ -282,7 +282,7 @@
                     },
                     body: {
                         select: 'apiRequestParam',
-                        name: $filter('translate')('457'),
+                        name: $filter('translate')('455'),
                         key: 'paramKey',
                     },
                     restful: {
@@ -299,12 +299,12 @@
                     },
                     response: {
                         select: 'apiResultParam',
-                        name: '{{\'224\'|translate}} ',
+                        name: '{{\'223\'|translate}} ',
                         key: 'paramKey',
                     },
                     responseHeader: {
                         select: 'responseHeader',
-                        name: '{{\'223\'|translate}} ',
+                        name: '{{\'222\'|translate}} ',
                         key: 'headerName',
                     }
                 },
@@ -983,7 +983,7 @@
         vm.fun.load = function (arg) {
             return arg.promise;
         }
-        vm.fun.requestProcessing = function (arg) { //arg status:（0：{{\'70\'|translate}} 1：{{\'465\'|translate}}，2：编辑（编辑/新建））
+        vm.fun.requestProcessing = function (arg) { //arg status:（0：{{\'70\'|translate}} 1：{{\'463\'|translate}}，2：编辑（编辑/新建））
             var template = {
                 request: fun.checkForm(),
                 promise: null
@@ -1013,7 +1013,7 @@
                         }
                 }
             } else {
-                $rootScope.InfoModal($filter('translate')('458'), 'error');
+                $rootScope.InfoModal($filter('translate')('456'), 'error');
                 vm.data.input.submited = true;
             }
             $scope.$emit('$TransferStation', {
@@ -1034,7 +1034,7 @@
                     case CODE.COMMON.SUCCESS:
                         {
 
-                            $rootScope.InfoModal($filter('translate')('459'), 'success');
+                            $rootScope.InfoModal($filter('translate')('457'), 'success');
                             vm.interaction.response.apiInfo = {
                                 projectID: vm.data.reset.projectID,
                                 groupID: vm.interaction.response.apiInfo.groupID,
@@ -1084,7 +1084,7 @@
                     case CODE.PROJECT_API.EXIST:
                         {
                             vm.data.input.submited = true;
-                            $rootScope.InfoModal($filter('translate')('460'), 'error');
+                            $rootScope.InfoModal($filter('translate')('458'), 'error');
                             break;
                         }
                 }
@@ -1107,13 +1107,13 @@
                                 'grandSonGroupID': vm.data.reset.grandSonGroupID,
                                 'apiID': vm.data.reset.apiID
                             });
-                            $rootScope.InfoModal($filter('translate')('461'), 'success');
+                            $rootScope.InfoModal($filter('translate')('459'), 'success');
                             break;
                         }
                     case CODE.PROJECT_API.EXIST:
                         {
                             vm.data.input.submited = true;
-                            $rootScope.InfoModal($filter('translate')('460'), 'error');
+                            $rootScope.InfoModal($filter('translate')('458'), 'error');
                         }
                 }
             })
@@ -1124,7 +1124,7 @@
                 promise: null
             }
             if (vm.data.reset.status == 'edit') {
-                $rootScope.CommonSingleInputModal($filter('translate')('257'), arg.request.updateDesc, '', {}, function (callback) {
+                $rootScope.CommonSingleInputModal($filter('translate')('256'), arg.request.updateDesc, '', {}, function (callback) {
                     if (callback.check) {
                         data.updateDesc = arg.request.updateDesc = callback.desc;
                         ApiManagementResource.Api.Edit(arg.request).$promise.then(function (response) {
@@ -1138,13 +1138,13 @@
                                             'grandSonGroupID': vm.data.reset.grandSonGroupID,
                                             'apiID': vm.data.reset.apiID
                                         });
-                                        $rootScope.InfoModal($filter('translate')('461'), 'success');
+                                        $rootScope.InfoModal($filter('translate')('459'), 'success');
                                         break;
                                     }
                                 case CODE.PROJECT_API.EXIST:
                                     {
                                         vm.data.input.submited = true;
-                                        $rootScope.InfoModal($filter('translate')('460'), 'error');
+                                        $rootScope.InfoModal($filter('translate')('458'), 'error');
                                     }
                             }
                         })
@@ -1163,13 +1163,13 @@
                                     'grandSonGroupID': vm.data.reset.grandSonGroupID,
                                     'apiID': response.apiID
                                 });
-                                $rootScope.InfoModal($filter('translate')('459'), 'success');
+                                $rootScope.InfoModal($filter('translate')('457'), 'success');
                                 break;
                             }
                         case CODE.PROJECT_API.EXIST:
                             {
                                 vm.data.input.submited = true;
-                                $rootScope.InfoModal($filter('translate')('460'), 'error');
+                                $rootScope.InfoModal($filter('translate')('458'), 'error');
                             }
                     }
                 })
@@ -1281,7 +1281,7 @@
                                 } catch (e) {}
                                 vm.interaction.response.apiInfo.apiAuth = response.apiInfo.authInfo;
                                 $scope.$emit('$WindowTitleSet', {
-                                    list: [((vm.data.reset.status == 'copy' ? $filter('translate')('462') : $filter('translate')('463')) + vm.interaction.response.apiInfo.apiName), $filter('translate')('450'), $state.params.projectName, $filter('translate')('407')]
+                                    list: [((vm.data.reset.status == 'copy' ? $filter('translate')('460') : $filter('translate')('461')) + vm.interaction.response.apiInfo.apiName), $filter('translate')('448'), $state.params.projectName, $filter('translate')('405')]
                                 });
                                 if (!vm.interaction.response.apiInfo.topParentGroupID) {
                                     if (vm.interaction.response.apiInfo.parentGroupID) {
@@ -1322,7 +1322,7 @@
                 });
             } else if (template.cache.detail) {
                 $scope.$emit('$windowTitle', {
-                    apiName: $filter('translate')('464')
+                    apiName: $filter('translate')('462')
                 });
                 vm.interaction.response.apiInfo = template.cache.detail;
                 $scope.$broadcast('$Maunal_AceEditorAms_Raw_Ace_Editor_Js', vm.interaction.response.apiInfo.apiRequestRaw);
@@ -1360,7 +1360,7 @@
                 })
             } else {
                 $scope.$emit('$windowTitle', {
-                    apiName: $filter('translate')('464')
+                    apiName: $filter('translate')('462')
                 });
                 vm.interaction.response.apiInfo.apiStatus = '0';
                 vm.interaction.response.apiInfo.apiProtocol = '0';
@@ -1391,7 +1391,7 @@
                 case 'edit':
                     {
                         template.array = [{
-                            name: $filter('translate')('465'),
+                            name: $filter('translate')('463'),
                             class: 'eo-button-info',
                             fun: {
                                 disabled: 1,
@@ -1408,7 +1408,7 @@
                             fun: function () {
                                 vm.data.isIgnoreNotice = !vm.data.isIgnoreNotice;
                             },
-                            html: '<button class="ignore-notice-checkbox-btn common-btn" ng-click="item.fun({item:item})" ><span class="eo-checkbox pull-left iconfont" ng-class="{\'icon-check\':$ctrl.activeObject.isIgnoreNotice}"></span>{{\'466\'|translate}}</button>'
+                            html: '<button class="ignore-notice-checkbox-btn common-btn" ng-click="item.fun({item:item})" ><span class="eo-checkbox pull-left iconfont" ng-class="{\'icon-check\':$ctrl.activeObject.isIgnoreNotice}"></span>{{\'464\'|translate}}</button>'
                         }];
                         break;
                     }
@@ -1432,7 +1432,7 @@
                 type: 'btn',
                 class: 'btn-group-li margin-left-li-20 pull-left',
                 btnList: [{
-                    name: vm.data.reset.status == 'add' ? $filter('translate')('467') : $filter('translate')('468'),
+                    name: vm.data.reset.status == 'add' ? $filter('translate')('465') : $filter('translate')('466'),
                     icon: 'xiangzuo',
                     fun: {
                         default: vm.fun.back
@@ -1445,7 +1445,7 @@
                 type: 'btn',
                 class: 'btn-group-li pull-left',
                 btnList: template.array.concat([{
-                    name: $filter('translate')('469'),
+                    name: $filter('translate')('467'),
                     class: 'eo-button-info',
                     fun: {
                         disabled: 1,
@@ -1457,14 +1457,14 @@
                 }])
             }].concat(template.funArray);
             window.onbeforeunload = function (event) {
-                return $filter('translate')('470')
+                return $filter('translate')('468')
             };
         }
         $scope.$on('$stateChangeStart', function ($event, targetUrl, targetParam) {
             window.onbeforeunload=null;
             if (!data.munalSave && fun.checkForm('checkIsUpdate').updateDesc) {
                 $event.preventDefault();
-                var windowConfirm=window.confirm($filter('translate')('471'));
+                var windowConfirm=window.confirm($filter('translate')('469'));
                 if(windowConfirm){
                     data.munalSave = true;
                     $state.go(targetUrl, targetParam);

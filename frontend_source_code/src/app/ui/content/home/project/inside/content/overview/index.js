@@ -1,6 +1,6 @@
 (function () {
     /**
-     * @name {{\'401\'|translate}}
+     * @name {{\'399\'|translate}}
      * @author 广州银云信息科技有限公司 
      */
     'use strict';
@@ -100,7 +100,7 @@
                 }
             }
             $scope.$emit('$WindowTitleSet', {
-                list: [$filter('translate')('401'), $state.params.projectName, $filter('translate')('407')]
+                list: [$filter('translate')('399'), $state.params.projectName, $filter('translate')('405')]
             });
             template.promise = ApiManagementResource.Project.Detail(template.request).$promise
                 .then(function (response) {
@@ -146,7 +146,7 @@
         vm.fun.dump = function () {
             var template = {
                 modal: {
-                    title: $filter('translate')('190'),
+                    title: $filter('translate')('189'),
                     spaceKey: vm.interaction.request.spaceKey,
                     resource: ApiManagementResource.Project,
                     envList: vm.interaction.response.projectInfo.envList,

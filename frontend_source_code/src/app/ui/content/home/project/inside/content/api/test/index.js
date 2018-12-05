@@ -107,18 +107,18 @@
             uriBlur: null, //测试地址input失焦触发功能函数
             delete: null, //移入回收站功能函数
             recover: null, //恢复功能函数
-            deleteCompletely: null, //彻底{{\'260\'|translate}}功能函数
+            deleteCompletely: null, //彻底{{\'259\'|translate}}功能函数
             headerList: {
                 add: null, //新建头部功能函数
-                delete: null //{{\'260\'|translate}}头部功能函数
+                delete: null //{{\'259\'|translate}}头部功能函数
             },
             requestList: {
                 add: null, //新建请求参数功能函数
-                delete: null //{{\'260\'|translate}}请求参数功能函数
+                delete: null //{{\'259\'|translate}}请求参数功能函数
             },
             testList: {
                 enter: null, //进入测试记录功能函数
-                delete: null, //{{\'260\'|translate}}测试记录功能函数
+                delete: null, //{{\'259\'|translate}}测试记录功能函数
                 clear: null //清空功能函数
             },
             window: null, //新开窗口
@@ -183,24 +183,24 @@
                         switch (response.statusCode) {
                             case '000000':
                                 {
-                                    $rootScope.InfoModal($filter('translate')('530'), 'success');
+                                    $rootScope.InfoModal($filter('translate')('528'), 'success');
                                     break;
                                 }
                             default:
                                 {
-                                    $rootScope.InfoModal($filter('translate')('495'), 'error');
+                                    $rootScope.InfoModal($filter('translate')('493'), 'error');
                                     break;
                                 }
                         }
                     })
                 }
             }
-            $rootScope.EnsureModal($filter('translate')('531'), false, $filter('translate')('532'), {
+            $rootScope.EnsureModal($filter('translate')('529'), false, $filter('translate')('530'), {
                 btnType: 1,
-                btnMessage: $filter('translate')('533'),
+                btnMessage: $filter('translate')('531'),
                 btnGroup: [{
                     btnType: 1,
-                    btnMessage: $filter('translate')('534'),
+                    btnMessage: $filter('translate')('532'),
                     confirm: function () {
                         template.request.mockType = 1;
                         template.fun();
@@ -515,7 +515,7 @@
                     apiID: vm.interaction.request.apiID
                 }
             };
-            $rootScope.EnsureModal($filter('translate')('285'), false, $filter('translate')('535'), {}, function (
+            $rootScope.EnsureModal($filter('translate')('284'), false, $filter('translate')('533'), {}, function (
                 callback
             ) {
                 if (callback) {
@@ -525,7 +525,7 @@
                         switch (response.statusCode) {
                             case CODE.COMMON.SUCCESS:
                                 {
-                                    $rootScope.InfoModal($filter('translate')('536'), "success");
+                                    $rootScope.InfoModal($filter('translate')('534'), "success");
                                     vm.interaction.response.apiInfo.testHistory = [];
                                     break;
                                 }
@@ -546,7 +546,7 @@
                     testID: arg.item.testID
                 }
             };
-            $rootScope.EnsureModal($filter('translate')('537'), false, ENSURE_WARNIMG.DELETE, {},
+            $rootScope.EnsureModal($filter('translate')('535'), false, ENSURE_WARNIMG.DELETE, {},
                 function (callback) {
                     if (callback) {
                         if (arg.item.testID) {
@@ -556,7 +556,7 @@
                                 switch (response.statusCode) {
                                     case CODE.COMMON.SUCCESS:
                                         {
-                                            $rootScope.InfoModal($filter('translate')('538'), "success");
+                                            $rootScope.InfoModal($filter('translate')('536'), "success");
                                             vm.interaction.response.apiInfo.testHistory.splice(arg.$index, 1);
                                             break;
                                         }
@@ -709,7 +709,7 @@
                 var val = arg.file[i];
                 if (val.size > 2 * 1024 * 1024) {
                     vm.service.home.envObject.object.model.params[template.$index].paramInfo = "";
-                    $rootScope.InfoModal($filter('translate')('539'), "error");
+                    $rootScope.InfoModal($filter('translate')('537'), "error");
                     break;
                 } else {
                     vm.service.home.envObject.object.model.params[template.$index].paramInfo = val.name + "," + vm.service.home.envObject.object.model.params[template.$index].paramInfo;
@@ -738,10 +738,10 @@
             }
             if (!template.cache || template.cache.length <= 0) {
                 $rootScope.GroupModal({
-                    title: $filter('translate')('540'),
-                    secondTitle: $filter('translate')('329'),
+                    title: $filter('translate')('538'),
+                    secondTitle: $filter('translate')('328'),
                     btn: {
-                        message: $filter('translate')('541'),
+                        message: $filter('translate')('539'),
                         type: 'info'
                     }
                 }, function (callback) {
@@ -759,7 +759,7 @@
                                     }
                                 default:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('495'), 'error');
+                                        $rootScope.InfoModal($filter('translate')('493'), 'error');
                                         break;
                                     }
                             }
@@ -777,10 +777,10 @@
             };
             $scope.$emit("$WindowTitleSet", {
                 list: [
-                    $filter('translate')('542') + vm.interaction.response.apiInfo.baseInfo.apiName,
-                    $filter('translate')('450'),
+                    $filter('translate')('540') + vm.interaction.response.apiInfo.baseInfo.apiName,
+                    $filter('translate')('448'),
                     $state.params.projectName,
-                    $filter('translate')('407')
+                    $filter('translate')('405')
                 ]
             });
             if (status == 'reset') {
@@ -898,7 +898,7 @@
                             val.requestInfo = {
                                 apiProtocol: '0',
                                 method: 'error',
-                                URL: $filter('translate')('543'),
+                                URL: $filter('translate')('541'),
                                 requestType: '0'
                             };
                         }
@@ -914,7 +914,7 @@
                         val.httpCodeType = val.resultInfo.httpCode >= 100 && val.resultInfo.httpCode < 200 ? 1 : val.resultInfo.httpCode >= 200 && val.resultInfo.httpCode < 300 ? 2 : val.resultInfo.httpCode >= 300 && val.resultInfo.httpCode < 400 ? 3 : 4;
                         val.requestInfo.URL = (val.requestInfo.URL || '').replace('http://', '');
                     } catch (e) {
-                        console.log($filter('translate')('544'));
+                        console.log($filter('translate')('542'));
                     }
                 })
             })
@@ -998,7 +998,7 @@
                     class: "btn-group-li pull-left",
                     authority: "edit",
                     btnList: [{
-                        name: $filter('translate')('325'),
+                        name: $filter('translate')('324'),
                         icon: "bianji",
                         fun: {
                             default: service.default.navbar.menu,
@@ -1010,11 +1010,11 @@
                     type: "fun-list",
                     class: "btn-li sort-btn-li pull-left",
                     authority: "edit",
-                    name: $filter('translate')('451'),
+                    name: $filter('translate')('449'),
                     icon: "caidan",
                     click: true,
                     funList: [{
-                            name: $filter('translate')('454'),
+                            name: $filter('translate')('452'),
                             icon: "renwuguanli",
                             fun: {
                                 default: service.default.navbar.menu,
@@ -1022,7 +1022,7 @@
                             }
                         },
                         {
-                            name: $filter('translate')('260'),
+                            name: $filter('translate')('259'),
                             icon: "shanchu",
                             fun: {
                                 default: service.default.navbar.delete,
@@ -1036,7 +1036,7 @@
                     type: "btn",
                     class: "margin-left-li-20 btn-group-li pull-left",
                     btnList: [{
-                        name: $filter('translate')('456'),
+                        name: $filter('translate')('454'),
                         icon: "xiangzuo",
                         fun: {
                             default: service.default.navbar.menu,
@@ -1048,18 +1048,18 @@
                     type: "tabs",
                     class: "menu-li pull-left first-menu-li",
                     tabList: [{
-                            name: $filter('translate')('423'),
+                            name: $filter('translate')('421'),
                             fun: {
                                 default: service.default.navbar.menu,
                                 params: "'detail'," + JSON.stringify(vm.interaction.request)
                             }
                         },
                         {
-                            name: $filter('translate')('375'),
+                            name: $filter('translate')('374'),
                             class: "elem-active"
                         },
                         {
-                            name: $filter('translate')('455'),
+                            name: $filter('translate')('453'),
                             authority: "versionManagement",
                             fun: {
                                 default: service.default.navbar.menu,

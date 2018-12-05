@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     /**
-     * @name {{\'418\'|translate}}日志
+     * @name {{\'416\'|translate}}日志
      * @author 广州银云信息科技有限公司
      */
     angular.module('eolinker')
@@ -67,7 +67,7 @@
                 }
             }
             $scope.$emit('$WindowTitleSet', {
-                list: [$filter('translate')('406'), $state.params.projectName, $filter('translate')('407')]
+                list: [$filter('translate')('404'), $state.params.projectName, $filter('translate')('405')]
             });
             $rootScope.global.ajax.GetProjectLogList_Project = ApiManagementResource.Project.GetProjectLogList(template.request);
             $rootScope.global.ajax.GetProjectLogList_Project.$promise.then(function (response) {
@@ -87,7 +87,7 @@
                 mainObject: {
                     item: {
                         default: [{
-                                key: $filter('translate')('255'),
+                                key: $filter('translate')('254'),
                                 html: '{{item.opTime}}',
                                 keyStyle: {
                                     'width': '200px'
@@ -95,22 +95,22 @@
                             },
                             {
                                 key: $filter('translate')('44'),
-                                html: '<span ng-switch-when=0>{{\'326\'|translate}}</span><span ng-switch-when=1>{{\'325\'|translate}}</span><span ng-switch-when=2>{{\'260\'|translate}}</span><span ng-switch-when=3>{{\'177\'|translate}}</span>',
+                                html: '<span ng-switch-when=0>{{\'325\'|translate}}</span><span ng-switch-when=1>{{\'324\'|translate}}</span><span ng-switch-when=2>{{\'259\'|translate}}</span><span ng-switch-when=3>{{\'176\'|translate}}</span>',
                                 keyStyle: {
                                     'width': '60px'
                                 },
                                 switch: 'opType'
                             },
                             {
-                                key: $filter('translate')('417'),
+                                key: $filter('translate')('415'),
                                 keyStyle: {
                                     'width': '150px'
                                 },
-                                html: '<span ng-switch-when=0>{{\'418\'|translate}}</span><span ng-switch-when=1>{{\'419\'|translate}}</span><span ng-switch-when=2>{{\'420\'|translate}}</span><span ng-switch-when=3>{{\'68\'|translate}}</span><span ng-switch-when=4>{{\'66\'|translate}}</span><span ng-switch-when=5>{{\'404\'|translate}}</span><span ng-switch-when=6>{{\'421\'|translate}}</span><span ng-switch-when=7>{{\'422\'|translate}}</span><span ng-switch-when=8>{{\'423\'|translate}}</span>',
+                                html: '<span ng-switch-when=0>{{\'416\'|translate}}</span><span ng-switch-when=1>{{\'417\'|translate}}</span><span ng-switch-when=2>{{\'418\'|translate}}</span><span ng-switch-when=3>{{\'68\'|translate}}</span><span ng-switch-when=4>{{\'66\'|translate}}</span><span ng-switch-when=5>{{\'402\'|translate}}</span><span ng-switch-when=6>{{\'419\'|translate}}</span><span ng-switch-when=7>{{\'420\'|translate}}</span><span ng-switch-when=8>{{\'421\'|translate}}</span>',
                                 switch: 'opTarget'
                             },
                             {
-                                key: $filter('translate')('256'),
+                                key: $filter('translate')('255'),
                                 keyStyle: {
                                     'width': '150px'
                                 },
@@ -127,7 +127,7 @@
                     },
                     baseInfo: {
                         colspan: 5,
-                        warning: $filter('translate')('424'),
+                        warning: $filter('translate')('422'),
                         style: {
                             cursor: 'default'
                         }

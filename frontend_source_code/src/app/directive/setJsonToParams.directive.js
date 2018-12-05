@@ -207,7 +207,7 @@
                                                 template.input = JSON.parse(fun.formatGetParamDefault(callback.desc));
                                             } catch (e) {
                                                 template.parseStatus = 'error';
-                                                $rootScope.InfoModal($filter('translate')('304'), 'error');
+                                                $rootScope.InfoModal($filter('translate')('303'), 'error');
                                             }
 
                                             break;
@@ -218,7 +218,7 @@
                                                 template.input = JSON.parse(fun.formatGetHeaderDefault(callback.desc));
                                             } catch (e) {
                                                 template.parseStatus = 'error';
-                                                $rootScope.InfoModal($filter('translate')('314'), 'error');
+                                                $rootScope.InfoModal($filter('translate')('313'), 'error');
                                             }
                                             break;
                                         }
@@ -228,7 +228,7 @@
                                                 template.input = JSON.parse($filter('XmlToJsonFilter')(callback.desc));
                                             } catch (e) {
                                                 template.parseStatus = 'error';
-                                                $rootScope.InfoModal($filter('translate')('315'), 'error');
+                                                $rootScope.InfoModal($filter('translate')('314'), 'error');
                                             }
                                             break;
                                         }
@@ -254,7 +254,7 @@
                                                 template.input = eval('(' + template.jsonToParamObject.result + ')');
                                             } catch (e) {
                                                 template.parseStatus = 'error';
-                                                $rootScope.InfoModal($filter('translate')('316'), 'error');
+                                                $rootScope.InfoModal($filter('translate')('315'), 'error');
                                             }
                                             break;
                                         }

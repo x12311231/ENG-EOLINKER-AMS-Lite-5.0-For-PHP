@@ -6,28 +6,28 @@
                 data-ng-mouseleave="$ctrl.data.info.search.leave=true;" ng-hide="!$ctrl.service.authority.permission.project.authorityManagement.edit">
                 <div class="form-div">
                     <button type="button" class="eo-button-success search-btn pl15" for="search-user-js" data-ng-click="$ctrl.data.fun.add()">
-                      {{'194'|translate}}
+                      {{'193'|translate}}
                     </button>
                 </div>
             </li>
             <li class="item-li admin-li">
-                <p class="title-p">{{'195'|translate}}</p>
+                <p class="title-p">{{'194'|translate}}</p>
                 <ul class="list-ul">
                     <li class="item-child-li pull-left" ng-repeat="item in $ctrl.data.interaction.response.adminQuery">
                         <ul class="people-ul">
                             <li class="pull-left name-summary-li">
                                 {{!!item.userNickName?item.userNickName.substr(0, 2).toUpperCase():
-                                '196'|translate}}
+                                '195'|translate}}
                             </li>
                             <li class="pull-left people-li">
                                 <p>
                                     <span>{{!!item.userNickName?item.userNickName:
-                                        '197'|translate}}</span>
+                                        '196'|translate}}</span>
                                     <span class="iconfont " ng-class="{'icon-huangguan':item.userType==0}"></span>
                                 </p>
                                 <p class="userName-p" title="{{item.partnerNickName}}">
                                     {{(!!item.partnerNickName)?item.partnerNickName:(item.inviteCall?item.inviteCall:
-                                    '195'|translate)}}
+                                    '194'|translate)}}
                                 </p>
                             </li>
                             <li class="pull-right list-li" ng-show="$ctrl.service.authority.permission.project.authorityManagement.editManager||item.isNow"
@@ -37,12 +37,12 @@
                                     <ul class="list-function-ul">
                                         <li class="list-function-detail">
                                             <ul>
-                                                <li data-ng-click="$ctrl.data.fun.setNickName({item:item})">{{'198'|translate}} </li>
+                                                <li data-ng-click="$ctrl.data.fun.setNickName({item:item})">{{'197'|translate}} </li>
                                                 <li data-ng-click="$ctrl.data.fun.setType({item:item,userType:2,$index:$index})"
-                                                    ng-hide="item.isNow">{{'199'|translate}}</li>
+                                                    ng-hide="item.isNow">{{'198'|translate}}</li>
                                                 <li data-ng-click="$ctrl.data.fun.setType({item:item,userType:3,$index:$index})"
-                                                    ng-hide="item.isNow">{{'200'|translate}}</li>
-                                                <li ng-hide="item.isNow&&item.userType==0" data-ng-click="$ctrl.data.fun.delete({item:item,$index:$index,isAdmin:true})">{{!item.isNow?('201'|translate):('202'|translate)}}</li>
+                                                    ng-hide="item.isNow">{{'199'|translate}}</li>
+                                                <li ng-hide="item.isNow&&item.userType==0" data-ng-click="$ctrl.data.fun.delete({item:item,$index:$index,isAdmin:true})">{{!item.isNow?('200'|translate):('201'|translate)}}</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -53,23 +53,23 @@
                 </ul>
             </li>
             <li class="item-li partner-li" data-ng-hide="$ctrl.data.interaction.response.query.length==0">
-                <p class="title-p">{{'203'|translate}}</p>
+                <p class="title-p">{{'202'|translate}}</p>
                 <ul class="list-ul">
                     <li class="item-child-li pull-left" ng-repeat="item in $ctrl.data.interaction.response.query">
                         <ul class="people-ul">
                             <li class="pull-left name-summary-li">
                                 {{!!item.userNickName?item.userNickName.substr(0, 2).toUpperCase():
-                                '196'|translate}}
+                                '195'|translate}}
                             </li>
                             <li class="pull-left people-li">
                                 <p>
                                     <span>{{!!item.userNickName?item.userNickName:
-                                        '197'|translate}}</span>
+                                        '196'|translate}}</span>
                                     <span class="iconfont " ng-class="{'icon-huangguan':item.userType==0}"></span>
                                 </p>
                                 <p class="userName-p" title="{{item.partnerNickName}}">
-                                    [{{item.userType=='2'?('204'|translate):('205'|translate)}}]{{(!!item.partnerNickName)?item.partnerNickName:(item.userName?item.userName:
-                                    '196'|translate)}}
+                                    [{{item.userType=='2'?('203'|translate):('204'|translate)}}]{{(!!item.partnerNickName)?item.partnerNickName:(item.userName?item.userName:
+                                    '195'|translate)}}
                                 </p>
                             </li>
                             <li class="pull-right list-li" ng-show="$ctrl.service.authority.permission.project.authorityManagement.edit||item.isNow"
@@ -79,18 +79,18 @@
                                     <ul class="list-function-ul">
                                         <li class="list-function-detail">
                                             <ul ng-show="item.isNow">
-                                                <li data-ng-click="$ctrl.data.fun.setNickName({item:item})">{{'198'|translate}} </li>
-                                                <li data-ng-click="$ctrl.data.fun.delete({item:item,$index:$index,isAdmin:false})">{{'202'|translate}}</li>
+                                                <li data-ng-click="$ctrl.data.fun.setNickName({item:item})">{{'197'|translate}} </li>
+                                                <li data-ng-click="$ctrl.data.fun.delete({item:item,$index:$index,isAdmin:false})">{{'201'|translate}}</li>
                                             </ul>
                                             <ul ng-show="!item.isNow">
-                                                <li data-ng-click="$ctrl.data.fun.setNickName({item:item})">{{'198'|translate}} </li>
+                                                <li data-ng-click="$ctrl.data.fun.setNickName({item:item})">{{'197'|translate}} </li>
                                                 <li data-ng-click="$ctrl.data.fun.setType({item:item,userType:1,$index:$index})"
-                                                    ng-hide="!$ctrl.service.authority.permission.project.authorityManagement.editManager">{{'206'|translate}} </li>
+                                                    ng-hide="!$ctrl.service.authority.permission.project.authorityManagement.editManager">{{'205'|translate}} </li>
                                                 <li data-ng-click="$ctrl.data.fun.setType({item:item,userType:2,$index:$index})"
-                                                    ng-hide="item.userType==2">{{'199'|translate}}</li>
+                                                    ng-hide="item.userType==2">{{'198'|translate}}</li>
                                                 <li data-ng-click="$ctrl.data.fun.setType({item:item,userType:3,$index:$index})"
-                                                    ng-hide="item.userType==3">{{'200'|translate}}</li>
-                                                <li data-ng-click="$ctrl.data.fun.delete({item:item,$index:$index,isAdmin:false})">{{'201'|translate}}</li>
+                                                    ng-hide="item.userType==3">{{'199'|translate}}</li>
+                                                <li data-ng-click="$ctrl.data.fun.delete({item:item,$index:$index,isAdmin:false})">{{'200'|translate}}</li>
                                             </ul>
                                         </li>
                                     </ul>

@@ -50,17 +50,17 @@
          * @function [初始化功能函数，设置网页title] [Initialize,  set the page title]
          */
         vm.data.fun.init = function() {
-            $scope.$emit('$WindowTitleSet', { list: [$filter('translate')('378'),$filter('translate')('377')] });
+            $scope.$emit('$WindowTitleSet', { list: [$filter('translate')('377'),$filter('translate')('376')] });
             if (window.localStorage['INSTALLINFO']) {
                 try {
                     vm.data.info.pageTitle = JSON.parse(window.localStorage['INSTALLINFO']).pageTitle;
                 } catch (e) {
-                    vm.data.info.pageTitle = $filter('translate')('379');
+                    vm.data.info.pageTitle = 'EOLINKER AMS OS';
                 }
                 window.localStorage.removeItem('INSTALLINFO');// 移除缓存中的安装信息 Remove the installation information in the cache
                 window.localStorage.removeItem('lang');// 移除缓存中的安装信息 Remove the installation information in the cache
             } else {
-                vm.data.info.pageTitle = $filter('translate')('379');
+                vm.data.info.pageTitle = 'EOLINKER AMS OS';
             } 
             window.localStorage.setItem('TITLE', vm.data.info.pageTitle);
         }

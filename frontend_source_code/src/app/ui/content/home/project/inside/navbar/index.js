@@ -25,14 +25,14 @@
         vm.$onInit = function () {
             data.menu = [{
                     base: '/overview',
-                    name: $filter('translate')('401'),
+                    name: $filter('translate')('399'),
                     sref: 'home.project.inside.overview',
                     icon: 'icon-tongjibaobiao',
                     power: -1
                 },
                 {
                     base: '/api/',
-                    name: $filter('translate')('402'),
+                    name: $filter('translate')('400'),
                     sref: 'home.project.inside.api',
                     icon: 'icon-api',
                     childSref: 'home.project.inside.api.list',
@@ -45,7 +45,7 @@
                 },
                 {
                     base: '/code',
-                    name: $filter('translate')('403'),
+                    name: $filter('translate')('401'),
                     sref: 'home.project.inside.code',
                     childSref: 'home.project.inside.code.list',
                     icon: 'icon-icocode',
@@ -58,7 +58,7 @@
                 },
                 {
                     base: '/env',
-                    name: $filter('translate')('404'),
+                    name: $filter('translate')('402'),
                     sref: 'home.project.inside.env',
                     childSref: 'home.project.inside.env.default',
                     icon: 'icon-waibuhuanjing',
@@ -67,7 +67,7 @@
                     divide: 3
                 }, {
                     base: '/team',
-                    name: $filter('translate')('405'),
+                    name: $filter('translate')('403'),
                     sref: 'home.project.inside.team',
                     icon: 'icon-zuzhijigou',
                     childSref: 'home.project.inside.team',
@@ -75,7 +75,7 @@
                 },
                 {
                     base: '/log',
-                    name: $filter('translate')('406'),
+                    name: $filter('translate')('404'),
                     sref: 'home.project.inside.log',
                     icon: 'icon-gongzuojihua',
                     power: -1,
@@ -88,13 +88,13 @@
                         menu: data.menu,
                         class: 'inside-sidebar',
                         navigation: [{
-                            name: $filter('translate')('407'),
+                            name: $filter('translate')('405'),
                             sref: 'home.project.default'
                         }, {
                             name: $state.params.projectName
                         }],
                         staticQuery: [{
-                            name: $filter('translate')('408'),
+                            name: $filter('translate')('406'),
                             sref: 'home.project.default',
                             icon: 'icon-huidaodingbu-copy',
                         }]

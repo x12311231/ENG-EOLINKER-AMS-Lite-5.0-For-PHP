@@ -11,7 +11,7 @@
         <p class="search-p bbd f_row">
             <span class="iconfont icon-sousuo"></span>
             <input type="text" autocomplete="off" ng-model="$ctrl.data.q" placeholder="{{'80'|translate}}" ng-blur="$ctrl.fun.searchBlur($event)">
-            <input class="select-person-btn-clear-text eo-button-default pull-right " type="button" value="{{'104'|translate}}" ng-show="$ctrl.data.q" />
+            <input class="select-person-btn-clear-text eo-button-default pull-right " type="button" value="{{'102'|translate}}" ng-show="$ctrl.data.q" />
         </p>
         <div class="query-container-child-div">
             <p class="select-person-btn-item common-class-item " ng-repeat="item in $ctrl.data.query | filter:$ctrl.fun.filter"
@@ -19,12 +19,12 @@
                 <span class="select-person-btn-item-span logo-img pull-left" style="background-image:url({{item.userImage?('https://data.eolinker.com/'+item.userImage):''}});">&nbsp;</span><span
                     class="select-person-btn-item-span">{{item[$ctrl.input.noteName]||item[$ctrl.input.nickName]}}</span><span
                     class="select-person-btn-item-span eo-status-tips">（{{item[$ctrl.input.loginCall]}}）</span>
-                <p class="un-search-response-p eo-status-tips" ng-if="($ctrl.data.query | filter:$ctrl.fun.filter).length==0&&$ctrl.data.q">{{'106'|translate}}</p>
+                <p class="un-search-response-p eo-status-tips" ng-if="($ctrl.data.query | filter:$ctrl.fun.filter).length==0&&$ctrl.data.q">{{'104'|translate}}</p>
             </p>
         </div>
     </div>
     <div class="list-container-div" ng-if="$ctrl.data.isFocus&&($ctrl.data.query | filter:$ctrl.fun.filter).length==0&&!$ctrl.data.q">
-        <p class="un-search-response-p eo-status-tips">{{'107'|translate}}</p>
+        <p class="un-search-response-p eo-status-tips">{{'105'|translate}}</p>
     </div>
 
 </div>

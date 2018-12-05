@@ -23,7 +23,7 @@
                         <li>
                             <ul class="api-message-send">
                                 <li class="pull-left first-select-li">
-                                    <span class="fwb">{{'239'|translate}}</span>
+                                    <span class="fwb">{{'238'|translate}}</span>
                                 </li>
                                 <li class="pull-left">
                                     <select class="eo-select" ng-model="$ctrl.interaction.response.apiInfo.apiStatus">
@@ -72,7 +72,7 @@
                         <li>
                             <ul class="api-message-name">
                                 <li class="pull-left first-select-li">
-                                    <span class="fwb">{{'240'|translate}}</span>
+                                    <span class="fwb">{{'239'|translate}}</span>
                                 </li>
                                 <li class="common-li">
                                     <input autocomplete="off" class="eo-input" type="text" name="name" ng-model="$ctrl.interaction.response.apiInfo.apiName"
@@ -92,17 +92,17 @@
                     <span class="iconfont icon-circle" ng-show="($ctrl.interaction.response.apiInfo.apiRequestParamType!='1'&&$ctrl.interaction.response.apiInfo.apiRequestParam.length>1)||($ctrl.interaction.response.apiInfo.apiRequestParamType=='1'&&$ctrl.interaction.response.apiInfo.apiRequestRaw)"></span>
                 </div>
                 <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.menuType=='restful'}" ng-click="$ctrl.data.menuType='restful'">{{'38'|translate}}
-                    <tip-directive input="<p>{{'241'|translate}}{param_name}{{'242'|translate}}</p>"></tip-directive>
+                    <tip-directive input="<p>{{'240'|translate}}{param_name}{{'241'|translate}}</p>"></tip-directive>
                     <span class="iconfont icon-circle" ng-show="$ctrl.interaction.response.apiInfo.apiRestfulParam.length>1"></span>
                 </div>
                 <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.menuType=='urlParam'}" ng-click="$ctrl.data.menuType='urlParam'">{{'39'|translate}}
                     <span class="iconfont icon-circle" ng-show="$ctrl.interaction.response.apiInfo.apiUrlParam.length>1"></span>
                 </div>
-                <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.menuType=='auth'}" ng-click="$ctrl.data.menuType='auth'">{{'243'|translate}}
+                <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.menuType=='auth'}" ng-click="$ctrl.data.menuType='auth'">{{'242'|translate}}
                     <span class="iconfont icon-circle" ng-show="$ctrl.interaction.response.apiInfo.apiAuth.status!='0'"></span>
                 </div>
-                <!-- <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.menuType=='inject'}" ng-click="$ctrl.data.menuType='inject'">{{'244'|translate}}
-                    <tip-directive input="<p>{{'245'|translate}}</p>"></tip-directive>
+                <!-- <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.menuType=='inject'}" ng-click="$ctrl.data.menuType='inject'">{{'243'|translate}}
+                    <tip-directive input="<p>{{'244'|translate}}</p>"></tip-directive>
                     <span class="iconfont icon-circle" ng-show="$ctrl.interaction.response.apiInfo.beforeInject||$ctrl.interaction.response.apiInfo.afterInject"></span>
                 </div> -->
             </div>
@@ -119,8 +119,8 @@
                 <table class="common-table">
                     <thead>
                         <tr>
-                            <td class="request-header-label">{{'213'|translate}}</td>
-                            <td>{{'214'|translate}}</td>
+                            <td class="request-header-label">{{'212'|translate}}</td>
+                            <td>{{'213'|translate}}</td>
                             <td class="operate-td">{{'7'|translate}}</td>
                         </tr>
                     </thead>
@@ -176,7 +176,7 @@
                                 <a class="content-type-select-a" ng-click="$ctrl.fun.quickSelectContentType('show',{$event:$event})">
                                     <p class="desc-p">{{$ctrl.data.contentType.current.key}}
                                         <span class="iconfont icon-xiangxia">
-                                            <tip-directive input="<p>{{'246'|translate}}</p>"></tip-directive>
+                                            <tip-directive input="<p>{{'245'|translate}}</p>"></tip-directive>
                                         </span>
                                     </p>
                                 </a>
@@ -236,7 +236,7 @@
                                         <span sv-handle></span>
                                     </td>
                                     <td class="operate-td" ng-switch-when=false>
-                                        <button class="get-more-btn eo-button-default" ng-click="$ctrl.fun.moreRequest('body',{$index:$index,item:item})" ng-disabled="!item.paramKey">{{'247'|translate}}</button>
+                                        <button class="get-more-btn eo-button-default" ng-click="$ctrl.fun.moreRequest('body',{$index:$index,item:item})" ng-disabled="!item.paramKey">{{'246'|translate}}</button>
                                         <button class="get-more-btn eo-button-default" ng-click="$ctrl.fun.add('insertBody',{item:item,$index:$index})" ng-disabled="!item.paramKey">{{'35'|translate}}</button>
                                         <label class="eo-sv-handle iconfont icon-111zhuanhuan number-label" sv-handle></label>
                                         <label>
@@ -311,7 +311,7 @@
                                 </td>
                                 <td class="operate-td" ng-switch-when=false>
                                     <button class="get-more-btn eo-button-default" ng-click="$ctrl.fun.moreRequest('restful',{item:item,$index:$index})"
-                                        ng-disabled="!item.paramKey">{{'247'|translate}}</button>
+                                        ng-disabled="!item.paramKey">{{'246'|translate}}</button>
                                     <button class="get-more-btn eo-button-default" ng-click="$ctrl.fun.add('insertRestful',{item:item,$index:$index})" ng-disabled="!item.paramKey">{{'35'|translate}}</button>
                                     <label class="eo-sv-handle iconfont icon-111zhuanhuan number-label" sv-handle></label>
                                     <label>
@@ -373,7 +373,7 @@
                                     <span sv-handle></span>
                                 </td>
                                 <td class="operate-td" ng-switch-when=false>
-                                    <button class="get-more-btn eo-button-default" ng-click="$ctrl.fun.moreRequest('url',{item:item,$index:$index})" ng-disabled="!item.paramKey">{{'247'|translate}}</button>
+                                    <button class="get-more-btn eo-button-default" ng-click="$ctrl.fun.moreRequest('url',{item:item,$index:$index})" ng-disabled="!item.paramKey">{{'246'|translate}}</button>
                                     <button class="get-more-btn eo-button-default" ng-click="$ctrl.fun.add('insertUrl',{item:item,$index:$index})" ng-disabled="!item.paramKey">{{'35'|translate}}</button>
                                     <label class="eo-sv-handle iconfont icon-111zhuanhuan number-label" sv-handle></label>
                                     <label>
@@ -391,19 +391,19 @@
             <!-- <div class="item-part eo-tab-container request-param-part" ng-class="{'eo-static-hidden':$ctrl.data.menuType!='inject'}">
                 <header>
                     <ul class="menu-ul">
-                        <li class="pull-left test-nav-li success-li" ng-class="{'active':$ctrl.data.script.type=='0'}" ng-click="$ctrl.data.script.type='0'">{{'248'|translate}}</li>
+                        <li class="pull-left test-nav-li success-li" ng-class="{'active':$ctrl.data.script.type=='0'}" ng-click="$ctrl.data.script.type='0'">{{'247'|translate}}</li>
                         <li style="border-left:none;" class="pull-left test-nav-li failure-li" ng-class="{'active':$ctrl.data.script.type=='1'}"
-                            ng-click="$ctrl.data.script.type='1'">{{'249'|translate}}</li>
+                            ng-click="$ctrl.data.script.type='1'">{{'248'|translate}}</li>
                     </ul>
                 </header>
                 <ace-menu-editor-ams-component mark="project" set-model="$ctrl.interaction.response.apiInfo" set-variable="$ctrl.data.script.type=='0'?'beforeInject':'afterInject'"
                     watch-model="$ctrl.data.script.type" input-object="$ctrl.component.aceEditorMenu"></ace-menu-editor-ams-component>
             </div> -->
             <div class="eo-tab-menu mt20">
-                    <div class="pull-left  item-tab" ng-class="{'active-item':$ctrl.data.responseMenuType=='responseHeader'}"  ng-click="$ctrl.data.responseMenuType='responseHeader'">{{'223'|translate}}<span class="iconfont icon-circle" ng-show="$ctrl.interaction.response.apiInfo.responseHeader.length>1"></span></div>
-                    <div class="pull-left  item-tab" ng-class="{'active-item':$ctrl.data.responseMenuType=='response'}"  ng-click="$ctrl.data.responseMenuType='response'">{{'224'|translate}}<span class="iconfont icon-circle" ng-show="$ctrl.interaction.response.apiInfo.apiResultParam.length>1"></span></div>
+                    <div class="pull-left  item-tab" ng-class="{'active-item':$ctrl.data.responseMenuType=='responseHeader'}"  ng-click="$ctrl.data.responseMenuType='responseHeader'">{{'222'|translate}}<span class="iconfont icon-circle" ng-show="$ctrl.interaction.response.apiInfo.responseHeader.length>1"></span></div>
+                    <div class="pull-left  item-tab" ng-class="{'active-item':$ctrl.data.responseMenuType=='response'}"  ng-click="$ctrl.data.responseMenuType='response'">{{'223'|translate}}<span class="iconfont icon-circle" ng-show="$ctrl.interaction.response.apiInfo.apiResultParam.length>1"></span></div>
             </div>
-            <!--{{'223'|translate}}-->
+            <!--{{'222'|translate}}-->
             
             <div class="item-part eo-tab-container request-header-part" ng-show="$ctrl.data.responseMenuType=='responseHeader'">
                     <header>
@@ -418,7 +418,7 @@
                         <table class="common-table">
                             <thead>
                                 <tr>
-                                    <td class="request-header-label">{{'213'|translate}}</td>
+                                    <td class="request-header-label">{{'212'|translate}}</td>
                                     <td>{{'43'|translate}}</td>
                                     <td class="operate-td">{{'7'|translate}}</td>
                                 </tr>
@@ -472,7 +472,7 @@
                     <thead>
                         <tr>
 
-                            <td class="name-td">{{'250'|translate}}</td>
+                            <td class="name-td">{{'249'|translate}}</td>
                             <td class="type-td">{{'44'|translate}}</td>
                             <td class="required-td">
                                 <input autocomplete="off" class="hidden" type="checkbox" id="response_checkbox_all" ng-model="$ctrl.data.allObject.response"
@@ -511,7 +511,7 @@
                                     <span sv-handle></span>
                                 </td>
                                 <td class="operate-td" ng-switch-when=false>
-                                    <button class="get-more-btn eo-button-default" ng-click="$ctrl.fun.moreResponse({item:item,$index:$index})" ng-disabled="!item.paramKey">{{'247'|translate}}</button>
+                                    <button class="get-more-btn eo-button-default" ng-click="$ctrl.fun.moreResponse({item:item,$index:$index})" ng-disabled="!item.paramKey">{{'246'|translate}}</button>
                                     <button class="get-more-btn eo-button-default" ng-click="$ctrl.fun.add('insertResponse',{item:item,$index:$index})"
                                         ng-disabled="!item.paramKey">{{'35'|translate}}</button>
                                     <label class="eo-sv-handle iconfont icon-111zhuanhuan number-label" sv-handle></label>
@@ -525,8 +525,8 @@
                 </ul>
             </div>
             <div class="eo-tab-menu mt20">
-                <div class="pull-left  item-tab" ng-class="{'active-item':!$ctrl.data.mock.isFailure}" ng-click="$ctrl.data.mock.isFailure = false;" id="Success_Example">{{'225'|translate}}</div>
-                <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.mock.isFailure}" ng-click="$ctrl.data.mock.isFailure = true;" id="Failure_Example">{{'226'|translate}}</div>
+                <div class="pull-left  item-tab" ng-class="{'active-item':!$ctrl.data.mock.isFailure}" ng-click="$ctrl.data.mock.isFailure = false;" id="Success_Example">{{'224'|translate}}</div>
+                <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.mock.isFailure}" ng-click="$ctrl.data.mock.isFailure = true;" id="Failure_Example">{{'225'|translate}}</div>
             </div>
             <div class="item-part eo-tab-container response-example-part">
                 <header>
@@ -538,10 +538,10 @@
                             <option value="404">404</option>
                             <option value="500">500</option>
                             <option value="502">502</option>
-                            <option value="">{{'251'|translate}}</option>
+                            <option value="">{{'250'|translate}}</option>
                         </select>
                         <input autocomplete="off" type="text" class="eo-input" ng-show="!$ctrl.interaction.response.apiInfo.successCode||$ctrl.data.reset.status!='add'"
-                            placeholder="{{'252'|translate}}" ng-model="$ctrl.interaction.response.apiInfo.apiSuccessStatusCode"
+                            placeholder="{{'251'|translate}}" ng-model="$ctrl.interaction.response.apiInfo.apiSuccessStatusCode"
                             maxlength="11">
                     </p>
                     <p class="regex-p f_row" ng-show="$ctrl.data.mock.isFailure">
@@ -551,10 +551,10 @@
                             <option value="404">404</option>
                             <option value="500">500</option>
                             <option value="502">502</option>
-                            <option value="">{{'251'|translate}}</option>
+                            <option value="">{{'250'|translate}}</option>
                         </select>
                         <input autocomplete="off" type="text" class="eo-input" ng-show="!$ctrl.interaction.response.apiInfo.failureCode||$ctrl.data.reset.status!='add'"
-                            placeholder="{{'252'|translate}}" ng-model="$ctrl.interaction.response.apiInfo.apiFailureStatusCode"
+                            placeholder="{{'251'|translate}}" ng-model="$ctrl.interaction.response.apiInfo.apiFailureStatusCode"
                             maxlength="11">
                     </p>
                     <p class="match-title-p ptb10">Content-Type</p>
@@ -564,7 +564,7 @@
                     <p class="regex-p" ng-show="$ctrl.data.mock.isFailure">
                             <input autocomplete="off" type="text" class="eo-input" ng-model="$ctrl.interaction.response.apiInfo.apiFailureContentType">
                         </p>
-                    <p class="match-title-p pt10">{{'253'|translate}}</p>
+                    <p class="match-title-p pt10">{{'252'|translate}}</p>
                 </header>
                 
                 <article>

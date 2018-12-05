@@ -85,7 +85,7 @@
                 }
             }
             $scope.$emit('$WindowTitleSet', {
-                list: [$filter('translate')('545'), $state.params.projectName, $filter('translate')('407')]
+                list: [$filter('translate')('543'), $state.params.projectName, $filter('translate')('405')]
             });
             if (vm.interaction.request.tips) {
                 template.request.tips = vm.interaction.request.tips;
@@ -130,13 +130,13 @@
         }
 
         /**
-         * {{\'442\'|translate}}{{\'68\'|translate}}excel
+         * {{\'440\'|translate}}{{\'68\'|translate}}excel
          */
         vm.fun.import = function () {
             var template = {
                 request: new FormData(),
                 modal: {
-                    title: $filter('translate')('546'),
+                    title: $filter('translate')('544'),
                     fileType: 'application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
                     group: {
                         parent: GroupService.get(),
@@ -147,11 +147,11 @@
                     inputObject: {
                         type: 'file'
                     },
-                    secondTitle: $filter('translate')('272')
+                    secondTitle: $filter('translate')('271')
                 }
             }
             if ((!template.modal.group.parent) || (template.modal.group.parent == 0)) {
-                $rootScope.InfoModal($filter('translate')('480'), 'error');
+                $rootScope.InfoModal($filter('translate')('478'), 'error');
                 return;
             }
             template.request.append('spaceKey', vm.interaction.request.spaceKey);
@@ -178,12 +178,12 @@
                     case '510000':
                         {
                             fun.getQuery();
-                            $rootScope.InfoModal($filter('translate')('481'), 'success');
+                            $rootScope.InfoModal($filter('translate')('479'), 'success');
                             break;
                         }
                     default:
                         {
-                            $rootScope.InfoModal($filter('translate')('482') + RESPONSE_TEXT.FAILURE, 'error');
+                            $rootScope.InfoModal($filter('translate')('480') + RESPONSE_TEXT.FAILURE, 'error');
                             break;
                         }
                 }
@@ -195,11 +195,11 @@
             var template = {
                 cache: GroupService.get(),
                 modal: {
-                    title: arg.item ? $filter('translate')('547') : $filter('translate')('548')
+                    title: arg.item ? $filter('translate')('545') : $filter('translate')('546')
                 }
             }
             if ((!template.cache) || (template.cache.length == 0)) {
-                $rootScope.InfoModal($filter('translate')('480'), 'error');
+                $rootScope.InfoModal($filter('translate')('478'), 'error');
             } else {
                 if (arg.item) {
                     arg.item.version = 1;
@@ -209,7 +209,7 @@
                     arg.item.grandSonGroupID = vm.interaction.request.grandSonGroupID || -1;
                     $rootScope.AMS_CodeModal(template.modal.title, arg.item, function (callback) {
                         if (callback) {
-                            $rootScope.InfoModal(template.modal.title + $filter('translate')('330'), 'success');
+                            $rootScope.InfoModal(template.modal.title + $filter('translate')('329'), 'success');
                             $scope.$broadcast('$Init_LoadingCommonComponent');
                         }
                     });
@@ -224,7 +224,7 @@
                     }
                     $rootScope.AMS_CodeModal(template.modal.title, arg.item, function (callback) {
                         if (callback) {
-                            $rootScope.InfoModal(template.modal.title + $filter('translate')('330'), 'success');
+                            $rootScope.InfoModal(template.modal.title + $filter('translate')('329'), 'success');
                         }
                         $scope.$broadcast('$Init_LoadingCommonComponent');
                     });
@@ -240,7 +240,7 @@
                     codeID: '[' + arg.item.codeID + ']'
                 }
             }
-            $rootScope.EnsureModal($filter('translate')('549'), false, ENSURE_WARNIMG.DELETE, {}, function (callback) {
+            $rootScope.EnsureModal($filter('translate')('547'), false, ENSURE_WARNIMG.DELETE, {}, function (callback) {
                 if (callback) {
                     ApiManagementResource.Code.Delete(template.request).$promise
                         .then(function (response) {
@@ -248,7 +248,7 @@
                                 case CODE.COMMON.SUCCESS:
                                     {
                                         vm.interaction.response.query.splice(arg.$index, 1);
-                                        $rootScope.InfoModal($filter('translate')('550'), 'success');
+                                        $rootScope.InfoModal($filter('translate')('548'), 'success');
                                         break;
                                     }
                             }
@@ -286,9 +286,9 @@
                 } catch (e) {}
                 vm.interaction.request.codeID = [];
                 vm.data.batch.address = [];
-                $rootScope.InfoModal($filter('translate')('491'), 'success');
+                $rootScope.InfoModal($filter('translate')('489'), 'success');
             } else {
-                $rootScope.InfoModal($filter('translate')('492'), 'error');
+                $rootScope.InfoModal($filter('translate')('490'), 'error');
             }
         }
         vm.fun.batchDelete = function () {
@@ -302,7 +302,7 @@
                     num: 0
                 }
             }
-            $rootScope.EnsureModal($filter('translate')('549'), false, ENSURE_WARNIMG.DELETE, {}, function (callback) {
+            $rootScope.EnsureModal($filter('translate')('547'), false, ENSURE_WARNIMG.DELETE, {}, function (callback) {
                 if (callback) {
                     ApiManagementResource.Code.Delete(template.request).$promise
                         .then(function (response) {
@@ -316,12 +316,12 @@
                                         vm.component.menuObject.show.batch.disable = false;
                                         vm.interaction.request.codeID = [];
                                         vm.data.batch.address = [];
-                                        $rootScope.InfoModal($filter('translate')('550'), 'success');
+                                        $rootScope.InfoModal($filter('translate')('548'), 'success');
                                         break;
                                     }
                                 default:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('387') + RESPONSE_TEXT.FAILURE, 'error');
+                                        $rootScope.InfoModal($filter('translate')('385') + RESPONSE_TEXT.FAILURE, 'error');
                                         break;
                                     }
                             }
@@ -357,7 +357,7 @@
                 class: 'btn-group-li pull-left',
                 authority: 'edit',
                 btnList: [{
-                    name: $filter('translate')('548'),
+                    name: $filter('translate')('546'),
                     icon: 'tianjia',
                     class: 'eo-button-success',
                     show: false,
@@ -373,7 +373,7 @@
                 class: 'first-tab-li btn-group-li pull-left',
                 authority: 'edit',
                 btnList: [{
-                    name: $filter('translate')('442'),
+                    name: $filter('translate')('440'),
                     icon: 'shangchuan',
                     show: false,
                     fun: {
@@ -382,11 +382,11 @@
                 }]
             }, {
                 type: 'download',
-                name: $filter('translate')('551'),
+                name: $filter('translate')('549'),
                 icon: 'xiazai',
                 class: 'last-tab-li btn-group-li pull-left',
                 href: 'app/assets/office/statusCode_Import.xls',
-                download: $filter('translate')('552'),
+                download: $filter('translate')('550'),
                 showVariable: 'disable',
                 showPoint: 'batch',
                 show: false,
@@ -400,7 +400,7 @@
                 disabledPoint: 'query',
                 disabledVariable: 'length',
                 btnList: [{
-                    name: $filter('translate')('504'),
+                    name: $filter('translate')('502'),
                     show: false,
                     fun: {
                         default: vm.fun.batchDefault
@@ -425,7 +425,7 @@
                 disabledPoint: 'query',
                 disabledVariable: 'length',
                 btnList: [{
-                    name: $filter('translate')('260'),
+                    name: $filter('translate')('259'),
                     icon: 'shanchu',
                     show: true,
                     disabled: 0,
@@ -483,7 +483,7 @@
                     }
                 },
             }, {
-                name: $filter('translate')('553'),
+                name: $filter('translate')('551'),
                 key: 'code',
                 style: {
                     'width': '18%'
@@ -496,7 +496,7 @@
                     'min-width': '220px'
                 }
             }, {
-                name: $filter('translate')('554'),
+                name: $filter('translate')('552'),
                 key: 'groupName',
 
                 style: {
@@ -514,7 +514,7 @@
                 showVariable: 'disable',
                 show: false,
                 btnList: [{
-                    name: $filter('translate')('325'),
+                    name: $filter('translate')('324'),
                     fun: {
                         default: vm.fun.edit,
                         params: {
@@ -522,7 +522,7 @@
                         }
                     }
                 }, {
-                    name: $filter('translate')('260'),
+                    name: $filter('translate')('259'),
                     fun: {
                         default: vm.fun.delete
                     }

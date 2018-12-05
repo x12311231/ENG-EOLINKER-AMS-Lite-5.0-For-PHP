@@ -19,27 +19,27 @@
                         <span ng-switch-when=0>Web</span>
                         <span ng-switch-when=1>App</span>
                         <span ng-switch-when=2>PC</span>
-                        <span ng-switch-when=3>{{'176'|translate}}</span>
-                        <span ng-switch-when=4>{{'177'|translate}}</span>
+                        <span ng-switch-when=3>{{'175'|translate}}</span>
+                        <span ng-switch-when=4>{{'176'|translate}}</span>
                     </p>
-                    <p class="desc-p">{{'178'|translate}}</p>
+                    <p class="desc-p">{{'177'|translate}}</p>
                 </li>
                 <li class="pull-left center-li">
                     <p class="title-p">V{{$ctrl.interaction.response.projectInfo.projectVersion}}</p>
-                    <p class="desc-p">{{'179'|translate}}</p>
+                    <p class="desc-p">{{'178'|translate}}</p>
                 </li>
                 <a>
                     <li class="pull-left center-li" ng-click="$ctrl.fun.menu({switch:2})">
                         <p class="title-p">
                             <!-- <label class="iconfont icon-gongzuojihua"></label> -->
-                            {{$ctrl.interaction.response.projectInfo.logCount}} {{'180'|translate}}
+                            {{$ctrl.interaction.response.projectInfo.logCount}} {{'179'|translate}}
                         </p>
-                        <p class="desc-p">{{'181'|translate}}</p>
+                        <p class="desc-p">{{'180'|translate}}</p>
                     </li>
                 </a>
                 <li class="last-li">
                     <p class="title-p">{{$ctrl.interaction.response.projectInfo.projectUpdateTime}}</p>
-                    <p class="desc-p">{{'182'|translate}}</p>
+                    <p class="desc-p">{{'181'|translate}}</p>
                 </li>
             </ul>
         </div>
@@ -48,35 +48,35 @@
                 <li class="pull-left first-li" ng-click="$ctrl.fun.menu({switch:0})">
                     <p class="title-p">
                         <label class="iconfont icon-api"></label>
-                        {{$ctrl.interaction.response.projectInfo.apiCount}} {{'183'|translate}}
+                        {{$ctrl.interaction.response.projectInfo.apiCount}} {{'182'|translate}}
                     </p>
-                    <p class="desc-p">{{'184'|translate}}</p>
+                    <p class="desc-p">{{'183'|translate}}</p>
                 </li>
                 <li class="pull-left center-li" ng-click="$ctrl.fun.menu({switch:1})">
                     <p class="title-p">
                         <label class="iconfont icon-icocode"></label>
-                        {{$ctrl.interaction.response.projectInfo.statusCodeCount}} {{'185'|translate}}
+                        {{$ctrl.interaction.response.projectInfo.statusCodeCount}} {{'184'|translate}}
                     </p>
-                    <p class="desc-p">{{'186'|translate}}</p>
+                    <p class="desc-p">{{'185'|translate}}</p>
                 </li>
                 <li class="last-li" ng-click="$ctrl.fun.menu({switch:3})">
                     <p class="title-p">
                         <label class="iconfont icon-renyuanguanli"></label>
-                        {{$ctrl.interaction.response.projectInfo.partnerCount}} {{'187'|translate}}
+                        {{$ctrl.interaction.response.projectInfo.partnerCount}} {{'186'|translate}}
                     </p>
-                    <p class="desc-p">{{'188'|translate}}</p>
+                    <p class="desc-p">{{'187'|translate}}</p>
                 </li>
             </ul>
         </div>
-        <p class="item-p" ng-if="$ctrl.service.authority.permission.project.exportAndShare.export">{{'189'|translate}}</p>
+        <p class="item-p" ng-if="$ctrl.service.authority.permission.project.exportAndShare.export">{{'188'|translate}}</p>
         <div class="item-div forth-div" ng-if="$ctrl.service.authority.permission.project.exportAndShare.export">
             <ul>
                 <li class=" pull-left  only-li" ng-click="$ctrl.fun.dump()">
                     <p class="title-p">
                         <label class="iconfont icon-xiazai"></label>
-                        {{'190'|translate}}
+                        {{'189'|translate}}
                     </p>
-                    <p class="desc-p">{{'191'|translate}}</p>
+                    <p class="desc-p">{{'190'|translate}}</p>
                 </li>
             </ul>
         </div>
@@ -85,7 +85,7 @@
         <ul>
             <li class="title-li">
                 <label class="iconfont icon-gongzuojihua"></label>
-                {{'192'|translate}}
+                {{'191'|translate}}
             </li>
             <li class="item-li" ng-repeat="item in $ctrl.interaction.response.projectInfo.logList">
                 <p class="title-p">
@@ -96,7 +96,7 @@
             <li class="item-li more-li">
                 <p class="title-p">
                     <span class="icon-span pull-left">·</span>
-                    <span class="more-span" ui-sref="home.project.inside.log">{{'193'|translate}}</span>
+                    <span class="more-span" ui-sref="home.project.inside.log">{{'192'|translate}}</span>
                 </p>
             </li>
         </ul>

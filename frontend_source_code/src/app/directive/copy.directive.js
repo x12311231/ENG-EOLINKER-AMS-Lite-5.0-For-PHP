@@ -51,7 +51,7 @@
                             isClick: false,
                             success: false,
                             fun: '',
-                            text:attrs.buttonHtml || $filter('translate')('311')//显示button文本（默认文本$filter('translate')('311')）Display button text (default text 'click Copy')
+                            text:attrs.buttonHtml || $filter('translate')('310')//显示button文本（默认文本$filter('translate')('310')）Display button text (default text 'click Copy')
                         }
                     },
                     fun: {
@@ -70,9 +70,9 @@
                         $scope.data.info.clipboard.isClick = true;
                         console.info('Text:', _default.text);
                         if (attrs.isPopup) {//成功或者失败是否以弹窗形式提醒 Does the success or failure remind in popups
-                            $rootScope.InfoModal($filter('translate')('312'), 'success');
+                            $rootScope.InfoModal($filter('translate')('311'), 'success');
                         } else {
-                            $scope.data.info.clipboard.text = $filter('translate')('313');
+                            $scope.data.info.clipboard.text = $filter('translate')('312');
                         }
                         $scope.$digest();
                         _default.clearSelection();
@@ -83,9 +83,9 @@
                         $scope.data.info.clipboard.isClick = true;
                         console.info('Text:', _default.text);
                         if (attrs.isPopup) {
-                            $rootScope.InfoModal($filter('translate')('302'), 'error');
+                            $rootScope.InfoModal($filter('translate')('301'), 'error');
                         } else {
-                            $scope.data.info.clipboard.text = $filter('translate')('303');
+                            $scope.data.info.clipboard.text = $filter('translate')('302');
                         }
                         $scope.$digest();
                     });

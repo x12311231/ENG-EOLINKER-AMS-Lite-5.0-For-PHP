@@ -22,7 +22,7 @@
     function indexController(RESPONSE_TEXT, Operate_CommonService, ENSURE_WARNIMG, $scope, ApiManagementResource, $state, CODE, $rootScope, GroupService, Authority_CommonService, Cache_CommonService,$filter) {
         var vm = this;
         vm.data = {
-            text:$filter('translate')('207'),
+            text:$filter('translate')('206'),
             apiNum: 0,
             batch: {
                 address: []
@@ -250,14 +250,14 @@
         }
         vm.fun.onResize();
         /**
-         * {{\'477\'|translate}}
+         * {{\'475\'|translate}}
          */
         fun.export = function() {
             var template = {
                 cache: service.cache.get('ENV_QUERY_AMS_COMPONENT'),
                 modal: {
                     mark: 'exceptHtml',
-                    title: $filter('translate')('477'),
+                    title: $filter('translate')('475'),
                     spaceKey: interaction.request.spaceKey,
                     request: {
                         projectID: interaction.request.projectID,
@@ -279,7 +279,7 @@
         }
 
         /**
-         * {{\'511\'|translate}}
+         * {{\'509\'|translate}}
          */
         fun.import = function() {
             var template = {
@@ -289,7 +289,7 @@
                 },
                 reader: null,
                 modal: {
-                    title: $filter('translate')('478'),
+                    title: $filter('translate')('476'),
                     group: {
                         parent: GroupService.get(),
                         groupID: parseInt(interaction.request.groupID),
@@ -299,11 +299,11 @@
                     inputObject: {
                         type: 'file'
                     },
-                    secondTitle: $filter('translate')('479')
+                    secondTitle: $filter('translate')('477')
                 }
             }
             if ((!template.modal.group.parent) || (template.modal.group.parent == 0)) {
-                $rootScope.InfoModal($filter('translate')('480'), 'error');
+                $rootScope.InfoModal($filter('translate')('478'), 'error');
                 return;
             }
             $rootScope.Common_UploadFile(template.modal, function(callback) {
@@ -341,12 +341,12 @@
                         }
                     case '510000':
                         {
-                            $rootScope.InfoModal($filter('translate')('481'), 'success');
+                            $rootScope.InfoModal($filter('translate')('479'), 'success');
                             break;
                         }
                     default:
                         {
-                            $rootScope.InfoModal($filter('translate')('482') + RESPONSE_TEXT.FAILURE, 'error');
+                            $rootScope.InfoModal($filter('translate')('480') + RESPONSE_TEXT.FAILURE, 'error');
                             break;
                         }
                 }
@@ -364,7 +364,7 @@
                 }
             }
             if ((!template.cache) || (template.cache.length == 0)) {
-                $rootScope.InfoModal($filter('translate')('480'), 'error');
+                $rootScope.InfoModal($filter('translate')('478'), 'error');
             } else {
                 if (arg.status == 'add') {
                     template.uri.status = 'add';
@@ -429,7 +429,7 @@
         }
 
         /**
-         * {{\'453\'|translate}}/{{\'483\'|translate}}操作
+         * {{\'451\'|translate}}/{{\'481\'|translate}}操作
          * @param {object} arg 
          * @param {object} options 操作对象{mark:目标,status:操作对象}
          */
@@ -448,17 +448,17 @@
                     {
                         if (options.mark == 'single') {
                             template.ensureModal = {
-                                title: $filter('translate')('483'),
-                                secondTitle: $filter('translate')('484')
+                                title: $filter('translate')('481'),
+                                secondTitle: $filter('translate')('482')
                             }
                         } else {
                             template.ensureModal = {
-                                title: $filter('translate')('409'),
-                                secondTitle: $filter('translate')('410')
+                                title: $filter('translate')('407'),
+                                secondTitle: $filter('translate')('408')
                             }
                         }
                         template.infoModal = {
-                            tip: $filter('translate')('411')
+                            tip: $filter('translate')('409')
                         }
                         template.resource = ApiManagementResource.Api.Delete;
                         break;
@@ -466,13 +466,13 @@
                 case 'delete':
                     {
                         template.ensureModal = {
-                            title: $filter('translate')('415'),
+                            title: $filter('translate')('413'),
                             secondTitle: ENSURE_WARNIMG.DELETE
                         }
                         template.infoModal = {
-                            tip: $filter('translate')('416')
+                            tip: $filter('translate')('414')
                         }
-                        if (options.mark == 'batch') template.ensureModal.title = $filter('translate')('485') + template.ensureModal.title;
+                        if (options.mark == 'batch') template.ensureModal.title = $filter('translate')('483') + template.ensureModal.title;
                         template.resource = ApiManagementResource.Trash.Delete;
                         break;
                     }
@@ -514,7 +514,7 @@
                                     }
                                 default:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('486') + RESPONSE_TEXT.FAILURE, 'error');
+                                        $rootScope.InfoModal($filter('translate')('484') + RESPONSE_TEXT.FAILURE, 'error');
                                         break;
                                     }
                             }
@@ -527,7 +527,7 @@
             var template = {
                 modal: {
                     list: angular.copy(GroupService.get()),
-                    title: $filter('translate')('412')
+                    title: $filter('translate')('410')
                 },
                 request: {
                     spaceKey: interaction.request.spaceKey,
@@ -537,7 +537,7 @@
                 }
             }
             if ((!template.modal.list) || (template.modal.list.length == 0)) {
-                $rootScope.InfoModal($filter('translate')('487'), 'error');
+                $rootScope.InfoModal($filter('translate')('485'), 'error');
                 return;
             }
             $rootScope.SelectVisualGroupModal(template.modal, function(callback) {
@@ -548,7 +548,7 @@
                             switch (response.statusCode) {
                                 case CODE.COMMON.SUCCESS:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('414'), 'success');
+                                        $rootScope.InfoModal($filter('translate')('412'), 'success');
                                         vm.service.home.envObject.object.model.splice(arg.$index, 1);
                                         break;
                                     }
@@ -564,14 +564,14 @@
                     projectID: interaction.request.projectID
                 }
             }
-            $rootScope.EnsureModal($filter('translate')('488'), false, $filter('translate')('489'), {}, function(callback) {
+            $rootScope.EnsureModal($filter('translate')('486'), false, $filter('translate')('487'), {}, function(callback) {
                 if (callback) {
                     ApiManagementResource.Trash.Clean(template.request).$promise
                         .then(function(response) {
                             switch (response.statusCode) {
                                 case CODE.COMMON.SUCCESS:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('490'), 'success');
+                                        $rootScope.InfoModal($filter('translate')('488'), 'success');
                                         vm.service.home.envObject.object.model = [];
                                         break;
                                     }
@@ -688,16 +688,16 @@
                 } catch (e) {}
                 vm.data.batch.address = [];
                 interaction.request.apiID = [];
-                $rootScope.InfoModal($filter('translate')('491'), 'success');
+                $rootScope.InfoModal($filter('translate')('489'), 'success');
             } else {
-                $rootScope.InfoModal($filter('translate')('492'), 'error');
+                $rootScope.InfoModal($filter('translate')('490'), 'error');
             }
         }
         fun.batchMoveGroup = function() {
             var template = {
                 modal: {
                     list: angular.copy(GroupService.get()),
-                    title: $filter('translate')('493'),
+                    title: $filter('translate')('491'),
                 },
                 request: {
                     spaceKey: interaction.request.spaceKey,
@@ -710,7 +710,7 @@
                 }
             }
             if ((!template.modal.list) || (template.modal.list.length == 0)) {
-                $rootScope.InfoModal($filter('translate')('487'), 'error');
+                $rootScope.InfoModal($filter('translate')('485'), 'error');
                 return;
             }
             $rootScope.SelectVisualGroupModal(template.modal, function(callback) {
@@ -728,12 +728,12 @@
                                             })
                                         }
                                         vm.component.menuObject.show.batch.disable = false;
-                                        $rootScope.InfoModal($filter('translate')('494'), 'success');
+                                        $rootScope.InfoModal($filter('translate')('492'), 'success');
                                         break;
                                     }
                                 default:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('495') + RESPONSE_TEXT.FAILURE, 'error');
+                                        $rootScope.InfoModal($filter('translate')('493') + RESPONSE_TEXT.FAILURE, 'error');
                                         break;
                                     }
                             }
@@ -759,12 +759,12 @@
                                     vm.service.home.envObject.object.model[val].starred = arg.item.value;
                                 })
                                 vm.component.menuObject.show.batch.disable = false;
-                                $rootScope.InfoModal($filter('translate')('496'), 'success');
+                                $rootScope.InfoModal($filter('translate')('494'), 'success');
                                 break;
                             }
                         default:
                             {
-                                $rootScope.InfoModal($filter('translate')('497') + RESPONSE_TEXT.FAILURE, 'error');
+                                $rootScope.InfoModal($filter('translate')('495') + RESPONSE_TEXT.FAILURE, 'error');
                                 break;
                             }
                     }
@@ -793,7 +793,7 @@
                                             {
                                                 vm.service.home.envObject.object.model[$index].apiStatusClass = template.apiStatusObject.apiStatusClass;
                                                 vm.service.home.envObject.object.model[$index].apiStatusString = template.apiStatusObject.apiStatusString;
-                                                $rootScope.InfoModal($filter('translate')('447'), 'success');
+                                                $rootScope.InfoModal($filter('translate')('445'), 'success');
                                                 break;
                                             }
                                         case 'batch':
@@ -803,7 +803,7 @@
                                                     vm.service.home.envObject.object.model[val].apiStatusString = template.apiStatusObject.apiStatusString;
                                                 })
                                                 vm.component.menuObject.show.batch.disable = false;
-                                                $rootScope.InfoModal($filter('translate')('498'), 'success');
+                                                $rootScope.InfoModal($filter('translate')('496'), 'success');
                                                 break;
                                             }
                                     }
@@ -811,7 +811,7 @@
                                 }
                             default:
                                 {
-                                    $rootScope.InfoModal($filter('translate')('448') + RESPONSE_TEXT.FAILURE, 'error');
+                                    $rootScope.InfoModal($filter('translate')('446') + RESPONSE_TEXT.FAILURE, 'error');
                                     break;
                                 }
                         }
@@ -839,7 +839,7 @@
             var template = {
                 modal: {
                     list: angular.copy(GroupService.get()),
-                    title: $filter('translate')('412')
+                    title: $filter('translate')('410')
                 },
                 request: {
                     spaceKey: interaction.request.spaceKey,
@@ -852,7 +852,7 @@
                 }
             }
             if ((!template.modal.list) || (template.modal.list.length == 0)) {
-                $rootScope.InfoModal($filter('translate')('487'), 'error');
+                $rootScope.InfoModal($filter('translate')('485'), 'error');
                 return;
             }
             $rootScope.SelectVisualGroupModal(template.modal, function(callback) {
@@ -868,7 +868,7 @@
                                             vm.service.home.envObject.object.model.splice(val, 1);
                                         })
                                         vm.component.menuObject.show.batch.disable = false;
-                                        $rootScope.InfoModal($filter('translate')('499'), 'success');
+                                        $rootScope.InfoModal($filter('translate')('497'), 'success');
                                         break;
                                     }
                             }
@@ -939,7 +939,7 @@
         fun.selectPerson = function(status, arg) {
             var template = {
                 modal: {
-                    title: status == 'create' ? $filter('translate')('500') : $filter('translate')('501'),
+                    title: status == 'create' ? $filter('translate')('498') : $filter('translate')('499'),
                     request: {
                         params: {
                             spaceKey: interaction.request.spaceKey,
@@ -1022,7 +1022,7 @@
                 }
             }
             $scope.$emit('$WindowTitleSet', {
-                list: [$filter('translate')('502'), $state.params.projectName, $filter('translate')('407')]
+                list: [$filter('translate')('500'), $state.params.projectName, $filter('translate')('405')]
             });
             vm.component.listRequireObject.mainObject.fun = {
                 click: fun.click,
@@ -1052,8 +1052,8 @@
                 html: '<span>APIs&nbsp;</span><span class="count-span">{{\'[\'+($ctrl.otherObject.apiNum||0)+\']\'}}</span>',
                 type: 'customized-html',
                 keyType: 'customized-html',
-                keyHtml: interaction.request.groupID == '-2' ? '<span class="api-status-label {{item.apiStatusClass}}"  title="'+vm.data.text+'">{{item.apiStatusString}}</span><div class="name-box"><span class="api-name">{{item.apiName}}</span><span class="btn-hover" copy-common-directive copy-model="item.apiName">{{\'216\'|translate}}</span></div>' : ('<span class="btn-change-status api-status-label {{item.apiStatusClass}}" title="'+vm.data.text+'" ng-if="$ctrl.authorityObject.edit">{{item.apiStatusString}}</span><span class="api-status-label {{item.apiStatusClass}}" title="'+vm.data.text+'" ng-if="!$ctrl.authorityObject.edit">{{item.apiStatusString}}</span>' +
-                    '<div class="name-box"><span class="api-name">{{item.apiName}}</span><span class="btn-hover" copy-common-directive copy-model="item.apiName" >{{\'216\'|translate}}</span></div>'),
+                keyHtml: interaction.request.groupID == '-2' ? '<span class="api-status-label {{item.apiStatusClass}}"  title="'+vm.data.text+'">{{item.apiStatusString}}</span><div class="name-box"><span class="api-name">{{item.apiName}}</span><span class="btn-hover" copy-common-directive copy-model="item.apiName">{{\'215\'|translate}}</span></div>' : ('<span class="btn-change-status api-status-label {{item.apiStatusClass}}" title="'+vm.data.text+'" ng-if="$ctrl.authorityObject.edit">{{item.apiStatusString}}</span><span class="api-status-label {{item.apiStatusClass}}" title="'+vm.data.text+'" ng-if="!$ctrl.authorityObject.edit">{{item.apiStatusString}}</span>' +
+                    '<div class="name-box"><span class="api-name">{{item.apiName}}</span><span class="btn-hover" copy-common-directive copy-model="item.apiName" >{{\'215\'|translate}}</span></div>'),
                 style: {
                     'width': '25%'
                 }
@@ -1062,7 +1062,7 @@
                 keyType: 'customized-html',
                 title: 'apiURI',
                 keyHtml: '<span class="eo-method-label {{item.apiRequestMethodClass}}" >{{item.apiRequestMethod}}</span>' +
-                    '<div class="url-box" ><span class="api-url">{{item.apiURI}}</span><span class="btn-hover"  copy-common-directive copy-model="item.apiURI">{{\'216\'|translate}}</span></div>',
+                    '<div class="url-box" ><span class="api-url">{{item.apiURI}}</span><span class="btn-hover"  copy-common-directive copy-model="item.apiURI">{{\'215\'|translate}}</span></div>',
                 style: {
                     'width': '40%'
                 }
@@ -1080,7 +1080,7 @@
                             disabledPoint: 'query',
                             disabledVariable: 'length',
                             btnList: [{
-                                name: $filter('translate')('503'),
+                                name: $filter('translate')('501'),
                                 icon: 'shanchu',
                                 class: 'eo-button-danger',
                                 show: false,
@@ -1088,7 +1088,7 @@
                                     default: fun.clean
                                 }
                             }, {
-                                name: $filter('translate')('504'),
+                                name: $filter('translate')('502'),
                                 show: false,
                                 fun: {
                                     default: fun.batchDefault
@@ -1113,7 +1113,7 @@
                             disabledPoint: 'query',
                             disabledVariable: 'length',
                             btnList: [{
-                                name: $filter('translate')('505'),
+                                name: $filter('translate')('503'),
                                 icon: 'shuaxin',
                                 show: true,
                                 disabled: 0,
@@ -1121,7 +1121,7 @@
                                     default: fun.batchRecover
                                 }
                             }, {
-                                name: $filter('translate')('506'),
+                                name: $filter('translate')('504'),
                                 icon: 'shanchu',
                                 show: true,
                                 disabled: 0,
@@ -1132,7 +1132,7 @@
                             }]
                         }];
                         vm.component.listRequireObject.mainObject.tdList = vm.component.listRequireObject.mainObject.tdList.concat([{
-                            name: $filter('translate')('507'),
+                            name: $filter('translate')('505'),
                             key: 'groupName',
                             style: {
                                 'width': '100px'
@@ -1140,7 +1140,7 @@
                             showVariable: 'more',
                             show: 1
                         }, {
-                            name: $filter('translate')('508'),
+                            name: $filter('translate')('506'),
                             style: {
                                 'width': '180px'
                             },
@@ -1148,7 +1148,7 @@
                             showVariable: 'more',
                             show: 1
                         }, {
-                            name: $filter('translate')('509'),
+                            name: $filter('translate')('507'),
                             keyType: 'btn',
                             style: {
                                 'width': '130px'
@@ -1158,10 +1158,10 @@
                             showVariable: 'disable',
                             show: false,
                             btnList: [{
-                                name: $filter('translate')('452'),
+                                name: $filter('translate')('450'),
                                 class: 'btn-recover'
                             }, {
-                                name: $filter('translate')('453'),
+                                name: $filter('translate')('451'),
                                 class: 'btn-delete'
                             }]
                         }]);
@@ -1182,7 +1182,7 @@
                             disabledPoint: 'query',
                             disabledVariable: 'length',
                             btnList: [{
-                                name: $filter('translate')('510'),
+                                name: $filter('translate')('508'),
                                 icon: 'tianjia',
                                 class: 'eo-button-success',
                                 show: false,
@@ -1193,13 +1193,13 @@
                                     }
                                 }
                             }, {
-                                name: $filter('translate')('511'),
+                                name: $filter('translate')('509'),
                                 show: false,
                                 fun: {
                                     default: fun.import
                                 }
                             }, {
-                                name: $filter('translate')('504'),
+                                name: $filter('translate')('502'),
                                 show: false,
                                 fun: {
                                     default: fun.batchDefault
@@ -1218,7 +1218,7 @@
                         }, {
                             type: 'fun-list',
                             class: 'first-btn btn-li sort-btn-li pull-left',
-                            name: $filter('translate')('512'),
+                            name: $filter('translate')('510'),
                             showVariable: 'disable',
                             showPoint: 'batch',
                             show: false,
@@ -1243,7 +1243,7 @@
                         }, {
                             type: 'fun-list',
                             class: 'margin-right-li-5px btn-li sort-btn-li pull-left',
-                            name: $filter('translate')('513'),
+                            name: $filter('translate')('511'),
                             showVariable: 'disable',
                             showPoint: 'batch',
                             show: false,
@@ -1335,7 +1335,7 @@
                             disabledPoint: 'query',
                             disabledVariable: 'length',
                             btnList: [{
-                                name: $filter('translate')('477'),
+                                name: $filter('translate')('475'),
                                 show: true,
                                 disabled: 0,
                                 fun: {
@@ -1351,14 +1351,14 @@
                             disabledPoint: 'query',
                             disabledVariable: 'length',
                             btnList: [{
-                                name: $filter('translate')('514'),
+                                name: $filter('translate')('512'),
                                 show: true,
                                 disabled: 0,
                                 fun: {
                                     default: fun.batchMoveGroup
                                 }
                             }, {
-                                name: $filter('translate')('409'),
+                                name: $filter('translate')('407'),
                                 show: true,
                                 disabled: 0,
                                 fun: {
@@ -1368,7 +1368,7 @@
                             }]
                         }];
                         vm.component.listRequireObject.mainObject.tdList = vm.component.listRequireObject.mainObject.tdList.concat([{
-                            name: $filter('translate')('515'),
+                            name: $filter('translate')('513'),
                             keyType: 'customized-html',
                             keyHtml: '<span>{{item.creator}}</span>',
                             style: {
@@ -1377,7 +1377,7 @@
                             showVariable: 'more',
                             show: 1
                         }, {
-                            name: $filter('translate')('516'),
+                            name: $filter('translate')('514'),
                             keyType: 'customized-html',
                             keyHtml: '<span>{{item.updater}}</span>',
                             style: {
@@ -1386,7 +1386,7 @@
                             showVariable: 'more',
                             show: 1
                         }, {
-                            name: $filter('translate')('517'),
+                            name: $filter('translate')('515'),
                             key: 'apiUpdateTime',
                             style: {
                                 'width': '180px'
@@ -1394,7 +1394,7 @@
                             showVariable: 'more',
                             show: 1
                         }, {
-                            name: $filter('translate')('509'),
+                            name: $filter('translate')('507'),
                             keyType: 'btn',
                             style: {
                                 'width': '200px'
@@ -1405,13 +1405,13 @@
                             unNeedToBindClick: true,
                             show: false,
                             btnList: [{
-                                name: $filter('translate')('518'),
+                                name: $filter('translate')('516'),
                                 class: 'btn-newtag'
                             }, {
-                                name: $filter('translate')('325'),
+                                name: $filter('translate')('324'),
                                 class: 'btn-edit'
                             }, {
-                                name: $filter('translate')('260'),
+                                name: $filter('translate')('259'),
                                 class: 'btn-remove'
                             }]
                         }])
@@ -1419,7 +1419,7 @@
                             template.conditionArray = [{
                                 type: 'fun-list',
                                 class: 'btn-li first-tab-li sort-btn-li pull-right',
-                                name: $filter('translate')('519'),
+                                name: $filter('translate')('517'),
                                 icon: 'chouyang',
                                 activePoint: 'condition',
                                 showVariable: 'disable',
@@ -1440,14 +1440,14 @@
                                         default: fun.screen
                                     }
                                 }, {
-                                    name: $filter('translate')('520'),
+                                    name: $filter('translate')('518'),
                                     value: 4,
                                     active: 4,
                                     fun: {
                                         default: fun.apiStatusFilter
                                     }
                                 }, {
-                                    name: $filter('translate')('521'),
+                                    name: $filter('translate')('519'),
                                     value: 2,
                                     active: 2,
                                     fun: {
@@ -1455,7 +1455,7 @@
                                         params: '\'update\',arg'
                                     }
                                 }, {
-                                    name: $filter('translate')('522'),
+                                    name: $filter('translate')('520'),
                                     value: 3,
                                     active: 3,
                                     fun: {
@@ -1483,7 +1483,7 @@
                 showPoint: 'batch',
                 show: true,
                 tabList: [{
-                    name: $filter('translate')('523'),
+                    name: $filter('translate')('521'),
                     icon: 'sort',
                     active: 1,
                     fun: {
@@ -1493,7 +1493,7 @@
                         }
                     }
                 }, {
-                    name: $filter('translate')('524'),
+                    name: $filter('translate')('522'),
                     icon: 'more',
                     active: 2,
                     fun: {
@@ -1506,7 +1506,7 @@
             }, {
                 type: 'fun-list',
                 class: (interaction.request.groupID > -2 && !interaction.request.tips ? 'last-tab-li ' : '') + 'btn-li sort-btn-li pull-right',
-                name: $filter('translate')('443'),
+                name: $filter('translate')('441'),
                 icon: 'sort',
                 activePoint: 'sort',
                 activeVariable: 'orderBy',
@@ -1517,9 +1517,9 @@
                     if (arg.item.orderBy != vm.component.menuObject.active.sort.orderBy) return;
                     arg.item.asc = vm.component.menuObject.active.sort.asc;
                 },
-                funHtml: '<span>{{funItem.name}}[{{funItem.asc==0?(\'525\'|translate):(\'526\'|translate)}}]</span>',
+                funHtml: '<span>{{funItem.name}}[{{funItem.asc==0?(\'523\'|translate):(\'524\'|translate)}}]</span>',
                 funList: [{
-                    name: $filter('translate')('527'),
+                    name: $filter('translate')('525'),
                     asc: 0,
                     orderBy: 3,
                     active: 3,
@@ -1527,7 +1527,7 @@
                         default: fun.sort
                     }
                 }, {
-                    name: $filter('translate')('528'),
+                    name: $filter('translate')('526'),
                     asc: 0,
                     orderBy: 1,
                     active: 1,
@@ -1535,7 +1535,7 @@
                         default: fun.sort
                     }
                 }, {
-                    name: $filter('translate')('529'),
+                    name: $filter('translate')('527'),
                     asc: 0,
                     orderBy: 0,
                     active: 0,

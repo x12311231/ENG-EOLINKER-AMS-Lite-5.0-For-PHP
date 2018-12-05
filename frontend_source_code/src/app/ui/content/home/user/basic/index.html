@@ -2,23 +2,23 @@
     <article>
         <div class="part first-part">
             <header>
-                <span>{{'156'|translate}}</span>
-                <span class="fs12">{{'157'|translate}}</span>
+                <span>{{'155'|translate}}</span>
+                <span class="fs12">{{'156'|translate}}</span>
             </header>
             <div class="content">
                 <ul>
                     <li >
                         <ng-form name="basicForm">
                             <p>
-                                {{'158'|translate}}
+                                {{'157'|translate}}
                             </p>
                             <p>
-                                <input class="eo-input" type="text" name="" placeholder="{{'158'|translate}}" maxlength="20"
+                                <input class="eo-input" type="text" name="" placeholder="{{'157'|translate}}" maxlength="20"
                                     data-ng-model="$ctrl.data.interaction.response.userInfo.userNickName" required>
                             </p>
                             <p>
                                 <button class="mt20" ng-class="{'eo-button-success':basicForm.$valid,'eo-button-default':basicForm.$invalid}"
-                                    data-ng-click="$ctrl.data.fun.confirm()">{{'159'|translate}}</button>
+                                    data-ng-click="$ctrl.data.fun.confirm()">{{'158'|translate}}</button>
                             </p>
                         </ng-form>
                     </li>
@@ -27,42 +27,42 @@
         </div>
         <div class="part third-part">
             <header>
-                <span>{{'160'|translate}}</span>
-                <span class="fs12">{{'161'|translate}}</span>
+                <span>{{'159'|translate}}</span>
+                <span class="fs12">{{'160'|translate}}</span>
             </header>
             <div class="content">
                 <ng-form name="passwordForm">
                     <ul>
                         <li>
                             <p>
-                                {{'162'|translate}}
+                                {{'161'|translate}}
                             </p>
                             <p>
                                 <input class="eo-input" ng-class="{'eo-input-error':$ctrl.data.info.password.oldError}"
-                                    type="password" name="oldPassword" placeholder="{{'162'|translate}}" data-ng-model="$ctrl.data.interaction.request.oldPassword"
+                                    type="password" name="oldPassword" placeholder="{{'161'|translate}}" data-ng-model="$ctrl.data.interaction.request.oldPassword"
                                     data-ng-change="$ctrl.data.info.password.oldError = false;" maxlength="32" required />
                             </p>
                             <p>
-                                {{'163'|translate}}
+                                {{'162'|translate}}
                             </p>
                             <p>
                                 <input class="eo-input" ng-class="{'eo-input-error':passwordForm.password.$invalid&&(passwordForm.password.$dirty)}"
-                                    type="password" name="password" placeholder="{{'163'|translate}}" ng-pattern="/^[\x21-\x7E]{6,32}$/"
-                                    uib-popover="{{'164'|translate}}" popover-placement="right" popover-trigger="focus"
+                                    type="password" name="password" placeholder="{{'162'|translate}}" ng-pattern="/^[\x21-\x7E]{6,32}$/"
+                                    uib-popover="{{'163'|translate}}" popover-placement="right" popover-trigger="focus"
                                     data-ng-model="$ctrl.data.interaction.request.newPassword" maxlength="32" required />
                             </p>
                             <p>
-                                {{'165'|translate}}
+                                {{'164'|translate}}
                             </p>
                             <p>
                                 <input class="eo-input" ng-class="{'eo-input-error':passwordForm.confirmPassword.$invalid&&(passwordForm.confirmPassword.$dirty)}"
-                                    type="password" name="confirmPassword" placeholder="{{'166'|translate}}"
+                                    type="password" name="confirmPassword" placeholder="{{'165'|translate}}"
                                     password-confirm-directive="password" data-ng-model="$ctrl.data.info.password.confirm"
                                     maxlength="32" required />
                             </p>
                             <p>
                                 <button class="mt20" ng-class="{'eo-button-success':passwordForm.$valid,'eo-button-default':passwordForm.$invalid}"
-                                    data-ng-click="$ctrl.data.fun.changePassword()">{{'159'|translate}}</button>
+                                    data-ng-click="$ctrl.data.fun.changePassword()">{{'158'|translate}}</button>
                             </p>
                         </li>
                     </ul>

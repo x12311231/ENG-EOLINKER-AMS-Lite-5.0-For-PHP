@@ -97,7 +97,7 @@
                             }
                         default:
                             {
-                                $rootScope.InfoModal($filter('translate')('358'), 'error');
+                                $rootScope.InfoModal($filter('translate')('357'), 'error');
                                 break;
                             }
                     }

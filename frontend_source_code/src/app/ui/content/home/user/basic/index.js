@@ -72,7 +72,7 @@
             var template = {
                 promise: null
             }
-            $scope.$emit('$WindowTitleSet', { list: [$filter('translate')('391'), $filter('translate')('338')] });
+            $scope.$emit('$WindowTitleSet', { list: [$filter('translate')('389'), $filter('translate')('337')] });
             template.promise = CommonResource.User.Info().$promise;
             template.promise.then(function(response) {
                 switch (response.statusCode) {
@@ -100,7 +100,7 @@
                     }
                     case '130009':
                     {
-                        $rootScope.InfoModal($filter('translate')('392'), 'success');
+                        $rootScope.InfoModal($filter('translate')('390'), 'success');
                         break;
                     }
                 }
@@ -124,14 +124,14 @@
                         case CODE.COMMON.SUCCESS:
                         case CODE.USER.UNCHANGE:
                         {
-                            $rootScope.InfoModal($filter('translate')('392'), 'success');
+                            $rootScope.InfoModal($filter('translate')('390'), 'success');
                             $state.reload();
                             break;
                         }
                         case CODE.USER.PASSWORD_ERROR:
                         {
                             vm.data.info.password.oldError = true;
-                            $rootScope.InfoModal($filter('translate')('393'), 'error');
+                            $rootScope.InfoModal($filter('translate')('391'), 'error');
                             break;
                         }
                     }

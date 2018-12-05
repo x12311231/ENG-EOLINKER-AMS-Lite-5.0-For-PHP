@@ -44,7 +44,7 @@
         searchObject.fun.search = function (status, option) {
             var template = {
                 modal: {
-                    title: $filter('translate')('332') + status,
+                    title: $filter('translate')('331') + status,
                     textArray: [{
                         type: 'input',
                         title: $filter('translate')('73'),
@@ -139,11 +139,11 @@
                         switch(option.mark){
                             case 'project':{
                                 template.modal = {
-                                    title: status == 'edit' ? $filter('translate')('333') :  $filter('translate')('334'),
+                                    title: status == 'edit' ? $filter('translate')('332') :  $filter('translate')('333'),
                                     resource: option.resource,
                                     textArray: [{
                                         type: 'input',
-                                        title: $filter('translate')('335'),
+                                        title: $filter('translate')('334'),
                                         key: 'projectName',
                                         value: template.item['projectName'],
                                         maxlength: '32',
@@ -151,7 +151,7 @@
                                         required: true
                                     }, {
                                         type: 'input',
-                                        title: $filter('translate')('336'),
+                                        title: $filter('translate')('335'),
                                         key: 'projectVersion',
                                         value: template.item['projectVersion'] || '1.0',
                                         maxlength: '20',
@@ -159,7 +159,7 @@
                                         required: true
                                     }, {
                                         type: 'select',
-                                        title: $filter('translate')('178'),
+                                        title: $filter('translate')('177'),
                                         key: 'projectType',
                                         value: (template.item['projectType'] || 0).toString(),
                                         selectOptions: [{
@@ -172,10 +172,10 @@
                                             key: 'PC',
                                             value: '2'
                                         }, {
-                                            key: $filter('translate')('176'),
+                                            key: $filter('translate')('175'),
                                             value: '3'
                                         }, {
-                                            key: $filter('translate')('177'),
+                                            key: $filter('translate')('176'),
                                             value: '4'
                                         }]
                                     }],
@@ -203,7 +203,7 @@
                                         break;
                                     }
                                 }
-                                $rootScope.InfoModal(template.modal.title + $filter('translate')('330'), 'success');
+                                $rootScope.InfoModal(template.modal.title + $filter('translate')('329'), 'success');
                                 option.callback(template.output);
                             }
                         });

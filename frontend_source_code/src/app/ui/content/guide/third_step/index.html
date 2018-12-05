@@ -1,36 +1,36 @@
 <div class="guide-third-step">
     <div class="pro-install" ng-class="{'hidden':$ctrl.data.info.installing}">
         <div class="install-head">
-            <p>{{'141'|translate}}<span ng-class="{'error':!$ctrl.data.interaction.response.query.fileWrite,'ok':!!$ctrl.data.interaction.response.query.fileWrite}">{{$ctrl.data.info.check.fileWrite}}</span></p>
-            <p ng-class="{'hidden':!!$ctrl.data.interaction.response.query.fileWrite}" class="errorTips">{{'142'|translate}}</p>
-            <p ng-class="{'hidden':!!$ctrl.data.interaction.response.query.fileWrite}" class="errorTips">{{'143'|translate}}{{$ctrl.data.interaction.response.query.fileWriteError}}</p>
+            <p>{{'138'|translate}}<span ng-class="{'error':!$ctrl.data.interaction.response.query.fileWrite,'ok':!!$ctrl.data.interaction.response.query.fileWrite}">{{$ctrl.data.info.check.fileWrite}}</span></p>
+            <p ng-class="{'hidden':!!$ctrl.data.interaction.response.query.fileWrite}" class="errorTips">{{'139'|translate}}</p>
+            <p ng-class="{'hidden':!!$ctrl.data.interaction.response.query.fileWrite}" class="errorTips">{{'140'|translate}}{{$ctrl.data.interaction.response.query.fileWriteError}}</p>
 
-            <p>{{'144'|translate}}<span ng-class="{'error':!$ctrl.data.interaction.response.query.db,'ok':!!$ctrl.data.interaction.response.query.db}">{{$ctrl.data.info.check.db}}</span></p>
-            <p ng-class="{'hidden':!!$ctrl.data.interaction.response.query.db}" class="errorTips">{{'145'|translate}}</p>
-            <p ng-class="{'hidden':!!$ctrl.data.interaction.response.query.db}" class="errorTips">{{'143'|translate}}{{$ctrl.data.interaction.response.query.dbError}}</p>
+            <p>{{'141'|translate}}<span ng-class="{'error':!$ctrl.data.interaction.response.query.db,'ok':!!$ctrl.data.interaction.response.query.db}">{{$ctrl.data.info.check.db}}</span></p>
+            <p ng-class="{'hidden':!!$ctrl.data.interaction.response.query.db}" class="errorTips">{{'142'|translate}}</p>
+            <p ng-class="{'hidden':!!$ctrl.data.interaction.response.query.db}" class="errorTips">{{'140'|translate}}{{$ctrl.data.interaction.response.query.dbError}}</p>
 
-            <p>{{'146'|translate}}<span ng-class="{'error':!$ctrl.data.interaction.response.query.curl,'ok':!!$ctrl.data.interaction.response.query.curl}">{{$ctrl.data.info.check.curl}}</span></p>
-            <p ng-class="{'hidden':!!$ctrl.data.interaction.response.query.curl}" class="errorTips">{{'147'|translate}}</p>
-            <p ng-class="{'hidden':!!$ctrl.data.interaction.response.query.curl}" class="errorTips">{{'143'|translate}}{{$ctrl.data.interaction.response.query.curlError}}</p>
+            <p>{{'143'|translate}}<span ng-class="{'error':!$ctrl.data.interaction.response.query.curl,'ok':!!$ctrl.data.interaction.response.query.curl}">{{$ctrl.data.info.check.curl}}</span></p>
+            <p ng-class="{'hidden':!!$ctrl.data.interaction.response.query.curl}" class="errorTips">{{'144'|translate}}</p>
+            <p ng-class="{'hidden':!!$ctrl.data.interaction.response.query.curl}" class="errorTips">{{'140'|translate}}{{$ctrl.data.interaction.response.query.curlError}}</p>
 
-            <p>{{'148'|translate}}<span ng-class="{'error':!$ctrl.data.interaction.response.query.mbString,'ok':!!$ctrl.data.interaction.response.query.mbString}">{{$ctrl.data.info.check.mbString}}</span></p>
-            <p ng-class="{'hidden':!!$ctrl.data.interaction.response.query.mbString}" class="errorTips">{{'149'|translate}}</p>
-            <p ng-class="{'hidden':!!$ctrl.data.interaction.response.query.mbString}" class="errorTips">{{'143'|translate}}{{$ctrl.data.interaction.response.query.mbStringError}}</p>
+            <p>{{'145'|translate}}<span ng-class="{'error':!$ctrl.data.interaction.response.query.mbString,'ok':!!$ctrl.data.interaction.response.query.mbString}">{{$ctrl.data.info.check.mbString}}</span></p>
+            <p ng-class="{'hidden':!!$ctrl.data.interaction.response.query.mbString}" class="errorTips">{{'146'|translate}}</p>
+            <p ng-class="{'hidden':!!$ctrl.data.interaction.response.query.mbString}" class="errorTips">{{'140'|translate}}{{$ctrl.data.interaction.response.query.mbStringError}}</p>
 
-            <p>{{'150'|translate}}<span ng-class="{'error':!$ctrl.data.interaction.response.query.sessionPath,'ok':!!$ctrl.data.interaction.response.query.sessionPath}">{{$ctrl.data.info.check.sessionPath}}</span></p>
-            <p ng-class="{'hidden':!!$ctrl.data.interaction.response.query.sessionPath}" class="errorTips">{{'151'|translate}}</p>
-            <p ng-class="{'hidden':!!$ctrl.data.interaction.response.query.sessionPath}" class="errorTips">{{'143'|translate}}{{$ctrl.data.interaction.response.query.sessionPathError}}</p>
+            <p>{{'147'|translate}}<span ng-class="{'error':!$ctrl.data.interaction.response.query.sessionPath,'ok':!!$ctrl.data.interaction.response.query.sessionPath}">{{$ctrl.data.info.check.sessionPath}}</span></p>
+            <p ng-class="{'hidden':!!$ctrl.data.interaction.response.query.sessionPath}" class="errorTips">{{'148'|translate}}</p>
+            <p ng-class="{'hidden':!!$ctrl.data.interaction.response.query.sessionPath}" class="errorTips">{{'140'|translate}}{{$ctrl.data.interaction.response.query.sessionPathError}}</p>
         </div>
         <div ng-class="{'hidden':!$ctrl.data.interaction.response.query.curl||!$ctrl.data.interaction.response.query.db||!$ctrl.data.interaction.response.query.fileWrite||!$ctrl.data.interaction.response.query.mbString||!$ctrl.data.interaction.response.query.sessionPath}">
-            <button class="eo-button-success guide-button" data-ng-click='$ctrl.data.fun.install()'>{{'152'|translate}}
+            <button class="eo-button-success guide-button" data-ng-click='$ctrl.data.fun.install()'>{{'149'|translate}}
                 <span class="iconfont icon-xiangyou pull-right"></span>
             </button>
         </div>
         <div class="failCheck" ng-class="{'hidden':$ctrl.data.interaction.response.query.curl&&$ctrl.data.interaction.response.query.db&&$ctrl.data.interaction.response.query.fileWrite}">
-            <button class="eo-button-success" data-ng-click='$ctrl.data.fun.checkConfig()'>{{'153'|translate}}
+            <button class="eo-button-success" data-ng-click='$ctrl.data.fun.checkConfig()'>{{'150'|translate}}
                 <span class="iconfont icon-shuaxin pull-right"></span>
             </button>
-            <a ui-sref="guide.second_step"><button class="eo-button-success">{{'154'|translate}}
+            <a ui-sref="guide.second_step"><button class="eo-button-success">{{'151'|translate}}
                 <span class="iconfont icon-xiangzuo pull-right"></span>
             </button></a>
         </div>
@@ -40,7 +40,7 @@
             <div class="icon-wrap">
                 <span class="iconfont icon-loading1"></span>
             </div>
-            <p>{{'155'|translate}}</p>
+            <p>{{'152'|translate}}</p>
         </div>
     </div>
 </div>

@@ -358,7 +358,7 @@
                                                     A = [];
                                                     for (x in g[s]) this.terminals_[x] && x > 2 && A.push("'" + this.terminals_[x] + "'");
                                                     var B = "";
-                                                    this.lexer.showPosition ? B = $filter('translate')('308') + (i + 1) + '{{\'309\'|translate}} ' + ":<br/>" + this.lexer.showPosition() + "<br/>"+$filter('translate')('317') + A.join(", ") + '{{\'318\'|translate}} \'' + this.terminals_[q] + "'" : B = $filter('translate')('308') + (i + 1) + '{{\'309\'|translate}} ' + ':'+' {{\'319\'|translate}} ' + (q == 1 ? $filter('translate')('320') : "'" + (this.terminals_[q] || q) + "'"), this.parseError(B, {
+                                                    this.lexer.showPosition ? B = $filter('translate')('307') + (i + 1) + '{{\'308\'|translate}} ' + ":<br/>" + this.lexer.showPosition() + "<br/>"+$filter('translate')('316') + A.join(", ") + '{{\'317\'|translate}} \'' + this.terminals_[q] + "'" : B = $filter('translate')('307') + (i + 1) + '{{\'308\'|translate}} ' + ':'+' {{\'318\'|translate}} ' + (q == 1 ? $filter('translate')('319') : "'" + (this.terminals_[q] || q) + "'"), this.parseError(B, {
                                                         text: this.lexer.match,
                                                         token: this.terminals_[q] || q,
                                                         line: this.lexer.yylineno,
@@ -367,17 +367,17 @@
                                                     })
                                                 }
                                                 if (k == 3) {
-                                                    if (q == m) throw new Error(B || $filter('translate')('321'));
+                                                    if (q == m) throw new Error(B || $filter('translate')('320'));
                                                     j = this.lexer.yyleng, h = this.lexer.yytext, i = this.lexer.yylineno, n = this.lexer.yylloc, q = p()
                                                 }
                                                 for (;;) {
                                                     if (l.toString() in g[s]) break;
-                                                    if (s == 0) throw new Error(B || $filter('translate')('321'));
+                                                    if (s == 0) throw new Error(B || $filter('translate')('320'));
                                                     o(1), s = d[d.length - 1]
                                                 }
                                                 r = q, q = l, s = d[d.length - 1], t = g[s] && g[s][l], k = 3
                                             }
-                                            if (t[0] instanceof Array && t.length > 1) throw new Error('{{\'322\'|translate}} ' + s + ", token: " + q);
+                                            if (t[0] instanceof Array && t.length > 1) throw new Error('{{\'321\'|translate}} ' + s + ", token: " + q);
                                             switch (t[0]) {
                                                 case 1:
                                                     d.push(q), e.push(this.lexer.yytext), f.push(this.lexer.yylloc), d.push(t[1]), q = null, r ? (q = r, r = null) : (j = this.lexer.yyleng, h = this.lexer.yytext, i = this.lexer.yylineno, n = this.lexer.yylloc, k > 0 && k--);
@@ -466,7 +466,7 @@
                                                 return
                                             }
                                             if (this._input === "") return this.EOF;
-                                            this.parseError($filter('translate')('323') + (this.yylineno + 1) + '{{\'324\'|translate}}<br/>' + this.showPosition(), {
+                                            this.parseError($filter('translate')('322') + (this.yylineno + 1) + '{{\'323\'|translate}}<br/>' + this.showPosition(), {
                                                 text: "",
                                                 token: null,
                                                 line: this.yylineno

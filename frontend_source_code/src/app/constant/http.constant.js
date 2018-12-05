@@ -41,14 +41,14 @@
                 'Warning'
             ],
             REQUEST_PARAM: [ //常用请求参数 Common request parameters
+                $filter('translate')('301'),
                 $filter('translate')('302'),
                 $filter('translate')('303'),
                 $filter('translate')('304'),
                 $filter('translate')('305'),
                 $filter('translate')('306'),
                 $filter('translate')('307'),
-                $filter('translate')('308'),
-                $filter('translate')('309')
+                $filter('translate')('308')
             ]
         }
     }

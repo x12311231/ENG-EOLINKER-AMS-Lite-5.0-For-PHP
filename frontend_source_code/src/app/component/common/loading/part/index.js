@@ -8,7 +8,7 @@
      */
     angular.module('eolinker')
         .component('loadingPartCommonComponent', {
-            template: '<div class="loading-content" ng-hide="$ctrl.data.isEnd"><div class="loading"><ul><li><div><span class="iconfont  icon-loading"></span></div>{{\'375\'|translate}}</li></ul></div></div>',
+            template: '<div class="loading-content" ng-hide="$ctrl.data.isEnd"><div class="loading"><ul><li><div><span class="iconfont  icon-loading"></span></div>{{\'374\'|translate}}</li></ul></div></div>',
             controller: indexController,
             bindings: {
                 fun: '&',

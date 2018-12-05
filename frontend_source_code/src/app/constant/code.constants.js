@@ -129,13 +129,13 @@
 
     function RESPONSE_TEXT($filter) {
         return {
-            FAILURE: $filter('translate')('300')
+            FAILURE: $filter('translate')('299')
         }
     }
 
     function ENSURE_WARNIMG($filter) {
         return {
-            DELETE: $filter('translate')('301')
+            DELETE: $filter('translate')('300')
         }
     }
 })();

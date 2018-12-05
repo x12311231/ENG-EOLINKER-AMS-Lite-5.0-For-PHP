@@ -41,8 +41,8 @@
             },
             fun: {
                 init: null, //初始化功能函数
-                deleteHistory: null, //{{\'473\'|translate}}
-                toggleHistory: null, //切换{{\'455\'|translate}}记录
+                deleteHistory: null, //{{\'471\'|translate}}
+                toggleHistory: null, //切换{{\'453\'|translate}}记录
             }
         }
         vm.service= {
@@ -84,7 +84,7 @@
                 }
                 vm.data.info.apiName = response.apiName;
                 $scope.$emit('$WindowTitleSet', {
-                    list: [$filter('translate')('472') + response.apiName, $filter('translate')('450'), $state.params.projectName, $filter('translate')('407')]
+                    list: [$filter('translate')('470') + response.apiName, $filter('translate')('448'), $state.params.projectName, $filter('translate')('405')]
                 });
             })
             return $rootScope.global.ajax.HistoryList_Api.$promise;
@@ -98,7 +98,7 @@
                     apiID: arg.item.apiID
                 }
             }
-            $rootScope.EnsureModal($filter('translate')('473'), false, ENSURE_WARNIMG.DELETE, {}, function (callback) {
+            $rootScope.EnsureModal($filter('translate')('471'), false, ENSURE_WARNIMG.DELETE, {}, function (callback) {
                 if (callback) {
                     ApiManagementResource.Api.DeleteHistory(template.request).$promise
                         .then(function (response) {
@@ -106,12 +106,12 @@
                                 case CODE.COMMON.SUCCESS:
                                     {
                                         vm.data.interaction.response.query.splice(arg.$index, 1);
-                                        $rootScope.InfoModal($filter('translate')('474'), 'success');
+                                        $rootScope.InfoModal($filter('translate')('472'), 'success');
                                         break;
                                     }
                                 default:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('475'), 'error');
+                                        $rootScope.InfoModal($filter('translate')('473'), 'error');
                                         break;
                                     }
                             }
@@ -120,7 +120,7 @@
             });
         }
         vm.data.fun.showUpdateDesc = function (arg) {
-            $rootScope.MessageModal($filter('translate')('257'), '<pre style="overflow:auto">' + arg.item.updateDesc + '</pre>');
+            $rootScope.MessageModal($filter('translate')('256'), '<pre style="overflow:auto">' + arg.item.updateDesc + '</pre>');
 
         }
         vm.data.fun.toggleHistory = function (arg) {
@@ -152,7 +152,7 @@
                                 }
                             }
                             arg.item.isNow = 1;
-                            $rootScope.InfoModal($filter('translate')('476'), 'success');
+                            $rootScope.InfoModal($filter('translate')('474'), 'success');
                             break;
                         }
                 }
@@ -169,7 +169,7 @@
                 class: 'btn-group-li pull-left',
                 authority: 'edit',
                 btnList: [{
-                    name: $filter('translate')('325'),
+                    name: $filter('translate')('324'),
                     icon: 'bianji',
                     fun: {
                         default: vm.service.default.navbar.menu,
@@ -180,18 +180,18 @@
                 type: 'fun-list',
                 class: 'btn-li sort-btn-li pull-left',
                 authority: 'edit',
-                name: $filter('translate')('451'),
+                name: $filter('translate')('449'),
                 icon: 'caidan',
                 click: true,
                 funList: [{
-                    name: $filter('translate')('454'),
+                    name: $filter('translate')('452'),
                     icon: 'renwuguanli',
                     fun: {
                         default: vm.service.default.navbar.menu,
                         params: '\'copy\',' + JSON.stringify(vm.data.interaction.request)
                     }
                 }, {
-                    name: $filter('translate')('260'),
+                    name: $filter('translate')('259'),
                     icon: 'shanchu',
                     fun: {
                         default: vm.service.default.navbar.delete,
@@ -203,7 +203,7 @@
                 type: 'btn',
                 class: 'margin-left-li-20 btn-group-li pull-left',
                 btnList: [{
-                    name: $filter('translate')('456'),
+                    name: $filter('translate')('454'),
                     icon: 'xiangzuo',
                     fun: {
                         default: vm.service.default.navbar.menu,
@@ -214,21 +214,21 @@
                 type: 'tabs',
                 class: 'menu-li pull-left first-menu-li',
                 tabList: [{
-                    name: $filter('translate')('423'),
+                    name: $filter('translate')('421'),
                     fun: {
                         default: vm.service.default.navbar.menu,
                         params: '\'detail\',' + JSON.stringify(vm.data.interaction.request)
                     }
 
                 }, {
-                    name: $filter('translate')('375'),
+                    name: $filter('translate')('374'),
                     authority: 'test',
                     fun: {
                         default: vm.service.default.navbar.menu,
                         params: '\'test\',' + JSON.stringify(vm.data.interaction.request)
                     }
                 },  {
-                    name: $filter('translate')('455'),
+                    name: $filter('translate')('453'),
                     class: 'elem-active'
                 }]
             }, {

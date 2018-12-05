@@ -7,13 +7,13 @@
             <thead>
                 <tr>
                     <th class="first-th">
-                        {{'254'|translate}}
+                        {{'253'|translate}}
                     </th>
                     <th class="api-name second-th">
-                        {{'255'|translate}}
+                        {{'254'|translate}}
                     </th>
-                    <th class="third-th">{{'256'|translate}}</th>
-                    <th class="forth-th">{{'257'|translate}}</th>
+                    <th class="third-th">{{'255'|translate}}</th>
+                    <th class="forth-th">{{'256'|translate}}</th>
                     <th class="fifth-th" ng-if="$ctrl.service.authority.permission.project.apiManagement.edit">{{'7'|translate}}</th>
                 </tr>
             </thead>
@@ -32,14 +32,14 @@
                         {{item.updateDesc}}
                     </td>
                     <td class="fifth-th" ng-if="$ctrl.service.authority.permission.project.apiManagement.edit">
-                        <a class="eo-operate-btn" ng-click="$ctrl.data.fun.showUpdateDesc({item:item})">{{'258'|translate}}</a>
-                        <a class="eo-operate-btn" ng-click="$ctrl.data.fun.toggleHistory({item:item})" ng-class="{'hidden':item.isNow==1}">{{'259'|translate}}</a>
+                        <a class="eo-operate-btn" ng-click="$ctrl.data.fun.showUpdateDesc({item:item})">{{'257'|translate}}</a>
+                        <a class="eo-operate-btn" ng-click="$ctrl.data.fun.toggleHistory({item:item})" ng-class="{'hidden':item.isNow==1}">{{'258'|translate}}</a>
                         <a class="eo-operate-btn" ng-click="$ctrl.data.fun.deleteHistory({item:item,$index:$index})"
-                            ng-class="{'hidden':item.isNow==1}">{{'260'|translate}}</a>
+                            ng-class="{'hidden':item.isNow==1}">{{'259'|translate}}</a>
                     </td>
                 </tr>
                 <tr ng-if="$ctrl.data.interaction.response.query.length==0" class="eo-none-tr">
-                    <td colspan="{{$ctrl.service.authority.permission.project.apiManagement.edit?5:4}}">{{'261'|translate}}</td>
+                    <td colspan="{{$ctrl.service.authority.permission.project.apiManagement.edit?5:4}}">{{'260'|translate}}</td>
                 </tr>
             </tbody>
         </table>

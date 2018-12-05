@@ -51,8 +51,8 @@
                 case 'edit':
                     {
                         template.modal = {
-                            title: (options.status == 'edit' ? $filter('translate')('325') : $filter('translate')('326')) + (arg.parentItem ? $filter('translate')('327') : $filter('translate')('328')),
-                            secondTitle: $filter('translate')('329'),
+                            title: (options.status == 'edit' ? $filter('translate')('324') : $filter('translate')('325')) + (arg.parentItem ? $filter('translate')('326') : $filter('translate')('327')),
+                            secondTitle: $filter('translate')('328'),
                             group: !arg.item && options.status == 'edit' ? null : options.originGroupQuery,
                             data: options.status == 'edit' ? arg.item : null,
                             status: arg.grandParentItem || (options.status == 'add-child' && arg.parentItem) || !arg.item ? 'third-level' : arg.parentItem || options.status == 'add-child' ? 'second-level' : 'first-level',
@@ -113,7 +113,7 @@
                                         switch (response.statusCode) {
                                             case CODE.COMMON.SUCCESS:
                                                 {
-                                                    $rootScope.InfoModal(template.modal.title + $filter('translate')('330'), 'success');
+                                                    $rootScope.InfoModal(template.modal.title + $filter('translate')('329'), 'success');
                                                     options.callback('reset');
                                                     break;
                                                 }
@@ -125,7 +125,7 @@
                                         switch (response.statusCode) {
                                             case CODE.COMMON.SUCCESS:
                                                 {
-                                                    $rootScope.InfoModal(template.modal.title + $filter('translate')('330'), 'success');
+                                                    $rootScope.InfoModal(template.modal.title + $filter('translate')('329'), 'success');
                                                     options.callback('reset');
                                                     break;
                                                 }
@@ -186,13 +186,13 @@
                             switch (response.statusCode) {
                                 case CODE.COMMON.SUCCESS:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('331'), 'success');
+                                        $rootScope.InfoModal($filter('translate')('330'), 'success');
                                         GroupService.set(arg.originQuery);
                                         break;
                                     }
                                 default:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('300'), 'error');
+                                        $rootScope.InfoModal($filter('translate')('299'), 'error');
                                         break;
                                     }
                             }

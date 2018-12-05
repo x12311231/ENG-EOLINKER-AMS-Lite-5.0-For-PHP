@@ -300,7 +300,7 @@
             projectID: $state.params.projectID
         }
         $scope.data = {
-           text:$filter('translate')('189'),
+           text:$filter('translate')('188'),
             input: input,
             info: {
                 exportType: 0,
@@ -327,7 +327,7 @@
                     }
                 default:
                     {
-                        $rootScope.InfoModal($filter('translate')('341'), 'error');
+                        $rootScope.InfoModal($filter('translate')('340'), 'error');
                         break;
                     }
             }
@@ -394,11 +394,11 @@
         $scope.output = angular.copy(input.request);
         $scope.const = {
             apiStatusQuery: [{
-                key: $filter('translate')('342'),
+                key: $filter('translate')('341'),
                 value: -1
             }].concat(API_AMS_CONSTANT.STATUS_QUERY),
             requestMethodQuery: [{
-                key: $filter('translate')('342'),
+                key: $filter('translate')('341'),
                 value: -1
             }].concat(API_AMS_CONSTANT.REQUEST_METHOD_QUERY),
             apiStarStatusQuery: [{
@@ -408,7 +408,7 @@
                 key: $filter('translate')('76'),
                 value: 1
             }, {
-                key: $filter('translate')('342'),
+                key: $filter('translate')('341'),
                 value: -1
             }]
         }
@@ -509,7 +509,7 @@
                     switch (response.statusCode) {
                         case CODE.COMMON.SUCCESS:
                             {
-                                $rootScope.InfoModal($filter('translate')('343'), 'success');
+                                $rootScope.InfoModal($filter('translate')('342'), 'success');
                                 $scope.submited = false;
                                 $scope.data.interaction.request.statusCode = [{
                                     codeDesc: '',
@@ -520,7 +520,7 @@
                             }
                         case '190000':
                             {
-                                $rootScope.InfoModal($filter('translate')('344'), 'error');
+                                $rootScope.InfoModal($filter('translate')('343'), 'error');
                                 break;
                             }
                         default:
@@ -589,7 +589,7 @@
                                 }
                             case '190000':
                                 {
-                                    $rootScope.InfoModal($filter('translate')('344'), 'error');
+                                    $rootScope.InfoModal($filter('translate')('343'), 'error');
                                     break;
                                 }
                             default:
@@ -611,7 +611,7 @@
                                 }
                             case '190007':
                                 {
-                                    $rootScope.InfoModal($filter('translate')('345'), 'error');
+                                    $rootScope.InfoModal($filter('translate')('344'), 'error');
                                     break;
                                 }
                             default:
@@ -705,12 +705,12 @@
                                     }
                                 case CODE.IMPORT_EXPORT.ILLEGAL_IMPORT:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('346'), 'error');
+                                        $rootScope.InfoModal($filter('translate')('345'), 'error');
                                         break;
                                     }
                                 default:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('347'), 'error');
+                                        $rootScope.InfoModal($filter('translate')('346'), 'error');
                                         break;
                                     }
                             }
@@ -736,17 +736,17 @@
                                     }
                                 case CODE.IMPORT_EXPORT.ILLEGAL_VERSION:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('348'), 'error');
+                                        $rootScope.InfoModal($filter('translate')('347'), 'error');
                                         break;
                                     }
                                 case CODE.IMPORT_EXPORT.ILLEGAL_IMPORT:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('346'), 'error');
+                                        $rootScope.InfoModal($filter('translate')('345'), 'error');
                                         break;
                                     }
                                 default:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('347'), 'error');
+                                        $rootScope.InfoModal($filter('translate')('346'), 'error');
                                         break;
                                     }
                             }
@@ -769,12 +769,12 @@
                                     }
                                 case CODE.IMPORT_EXPORT.ILLEGAL_IMPORT:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('349'), 'error');
+                                        $rootScope.InfoModal($filter('translate')('348'), 'error');
                                         break;
                                     }
                                 default:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('347'), 'error');
+                                        $rootScope.InfoModal($filter('translate')('346'), 'error');
                                         break;
                                     }
                             }
@@ -795,12 +795,12 @@
                                     }
                                 case CODE.IMPORT_EXPORT.ILLEGAL_IMPORT:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('346'), 'error');
+                                        $rootScope.InfoModal($filter('translate')('345'), 'error');
                                         break;
                                     }
                                 default:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('347'), 'error');
+                                        $rootScope.InfoModal($filter('translate')('346'), 'error');
                                         break;
                                     }
                             }

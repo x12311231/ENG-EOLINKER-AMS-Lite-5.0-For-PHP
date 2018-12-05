@@ -35,7 +35,7 @@
             clipboard: {
                 isClick: false,
                 success: false,
-                text: vm.buttonHtml || $filter('translate')('311') //显示button文本（默认文本\'311\'|translate）
+                text: vm.buttonHtml || $filter('translate')('310') //显示button文本（默认文本\'310\'|translate）
             }
         }
         vm.fun = {};
@@ -45,9 +45,9 @@
                 vm.data.clipboard.success = true;
                 vm.data.clipboard.isClick = true;
                 if (vm.isPopup) { //成功或者失败是否以弹窗形式提醒
-                    $rootScope.InfoModal($filter('translate')('313'), 'success');
+                    $rootScope.InfoModal($filter('translate')('312'), 'success');
                 } else {
-                    vm.data.clipboard.text = $filter('translate')('313');
+                    vm.data.clipboard.text = $filter('translate')('312');
                 }
                 $scope.$root && $scope.$root.$$phase || $scope.$apply();
                 _default.clearSelection();
@@ -57,9 +57,9 @@
                 vm.data.clipboard.success = false;
                 vm.data.clipboard.isClick = true;
                 if (vm.isPopup) {
-                    $rootScope.InfoModal($filter('translate')('303'), 'error');
+                    $rootScope.InfoModal($filter('translate')('302'), 'error');
                 } else {
-                    vm.data.clipboard.text = $filter('translate')('303');
+                    vm.data.clipboard.text = $filter('translate')('302');
                 }
                 $scope.$root && $scope.$root.$$phase || $scope.$apply();
             });

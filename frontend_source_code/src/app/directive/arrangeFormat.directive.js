@@ -158,7 +158,7 @@
                         switch (data.status) {
                             case 0:
                                 {
-                                    $rootScope.InfoModal($filter('translate')('310'), 'error');
+                                    $rootScope.InfoModal($filter('translate')('309'), 'error');
                                     break;
                                 }
                             case 2:

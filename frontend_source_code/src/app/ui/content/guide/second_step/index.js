@@ -54,7 +54,7 @@
          * @function [初始化功能函数，检测是否已安装，若已安装则跳转首页] [Initialize, check whether it is installed, if it is installed, jump home page]
          */
         vm.data.fun.init = function() {
-            $scope.$emit('$WindowTitleSet', { list: [$filter('translate')('381'),$filter('translate')('377')] });
+            $scope.$emit('$WindowTitleSet', { list: [$filter('translate')('379'),$filter('translate')('376')] });
             vm.info = {};
             CommonResource.Install.Config().$promise.then(function(data) {
                 if (data.statusCode == CODE.COMMON.SUCCESS) {
@@ -75,14 +75,14 @@
                     vm.info.dbName = 'eolinker_os';
                     vm.info.dbUser = '';
                     vm.info.dbPassword = '';
-                    vm.info.pageTitle = $filter('translate')('379');
+                    vm.info.pageTitle = 'EOLINKER AMS OS';
                 }
             } else {
                 vm.info.dbURL = 'localhost';
                 vm.info.dbName = 'eolinker_os';
                 vm.info.dbUser = '';
                 vm.info.dbPassword = '';
-                vm.info.pageTitle = $filter('translate')('379');
+                vm.info.pageTitle = 'EOLINKER AMS OS';
             }
         }
         vm.data.fun.init();

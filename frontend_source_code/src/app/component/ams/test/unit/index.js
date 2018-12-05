@@ -16,7 +16,7 @@
     angular.module('eolinker')
         .component('unitTestAmsComponent', {
             template: '<div ng-class={\'send-btn-plug\':$ctrl.interaction.useStatus}>' +
-                '<button type="button" class="iconfont preview-btn" ng-class="{\'icon-attentionfill\':$ctrl.output.isPreview,\'icon-attention\':!$ctrl.output.isPreview}"  ng-click="$ctrl.data.preview()"><span class="triangle-bottom"></span><span class="preview-tips-span">{{\'372\'|translate}}</span></button><button class="send-btn" ng-click="$ctrl.fun.test()">{{$ctrl.data.timer.disable?(\'281\'|translate)+"&nbsp;"+($ctrl.data.timer.num>0?$ctrl.data.timer.num:""):(\'373\'|translate)}}</button>' +
+                '<button type="button" class="iconfont preview-btn" ng-class="{\'icon-attentionfill\':$ctrl.output.isPreview,\'icon-attention\':!$ctrl.output.isPreview}"  ng-click="$ctrl.data.preview()"><span class="triangle-bottom"></span><span class="preview-tips-span">{{\'371\'|translate}}</span></button><button class="send-btn" ng-click="$ctrl.fun.test()">{{$ctrl.data.timer.disable?(\'280\'|translate)+"&nbsp;"+($ctrl.data.timer.num>0?$ctrl.data.timer.num:""):(\'372\'|translate)}}</button>' +
                 '<div class="hidden" id="plug-in-result-js" watch-dom-common-directive="$ctrl.fun.watch(input)" bind-id="plug-in-result-js"></div>' +
                 '</div>',
             bindings: {

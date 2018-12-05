@@ -232,12 +232,12 @@
                             switch (response.statusCode) {
                                 case CODE.COMMON.SUCCESS:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('560'), 'success');
+                                        $rootScope.InfoModal($filter('translate')('558'), 'success');
                                         break;
                                     }
                                 default:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('561') + RESPONSE_TEXT.FAILURE, 'error');
+                                        $rootScope.InfoModal($filter('translate')('559') + RESPONSE_TEXT.FAILURE, 'error');
                                         break;
                                     }
                             }
@@ -252,7 +252,7 @@
                                 case CODE.COMMON.SUCCESS:
                                     {
                                         vm.data.interaction.response.itemNum++;
-                                        $rootScope.InfoModal( $filter('translate')('562'), 'success');
+                                        $rootScope.InfoModal( $filter('translate')('560'), 'success');
                                         vm.data.info.current.envID = response.envID;
                                         switch (arg.switch) {
                                             case 1:
@@ -271,7 +271,7 @@
                                     }
                                 default:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('563') + RESPONSE_TEXT.FAILURE, 'error');
+                                        $rootScope.InfoModal($filter('translate')('561') + RESPONSE_TEXT.FAILURE, 'error');
                                         break;
                                     }
                             }
@@ -306,13 +306,13 @@
         })()
         vm.$onInit = function () {
             $scope.$emit('$WindowTitleSet', {
-                list: [$filter('translate')('564'), $state.params.projectName, $filter('translate')('407')]
+                list: [$filter('translate')('562'), $state.params.projectName, $filter('translate')('405')]
             });
             vm.component.menuObject.list = [{
                 type: 'btn',
                 class: 'btn-group-li margin-left-li-20 pull-left',
                 btnList: [{
-                    name: $filter('translate')('467'),
+                    name: $filter('translate')('465'),
                     icon: 'xiangzuo',
                     fun: {
                         default: function () {
@@ -340,7 +340,7 @@
                         }
                     }
                 }]).concat([{
-                    name: $filter('translate')('469'),
+                    name: $filter('translate')('467'),
                     class: 'eo-button-info',
                     fun: {
                         disabled: 1,

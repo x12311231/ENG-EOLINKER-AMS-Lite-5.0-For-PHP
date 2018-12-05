@@ -23,7 +23,7 @@
                 '    <tbody inner-html-common-directive html="$ctrl.data.html">'+
                 '<tr style="background-color: #fff;" class="eo-none-tr" ng-if="$ctrl.list.length==0&&$ctrl.mainObject.baseInfo.warning">' +
                 '<td colspan="{{$ctrl.mainObject.baseInfo.colspan}}" ng-switch="$ctrl.mainObject.baseInfo.warningType">' +
-                '    <span ng-switch-default>{{$ctrl.mainObject.baseInfo.warning||\'374\'|translate}}</span>' +
+                '    <span ng-switch-default>{{$ctrl.mainObject.baseInfo.warning||\'373\'|translate}}</span>' +
                 '    <inner-html-common-directive html="$ctrl.mainObject.baseInfo.warning" ng-switch-when="customized-html"></inner-html-common-directive>' +
                 '</td>' +
                 '</tr>' +

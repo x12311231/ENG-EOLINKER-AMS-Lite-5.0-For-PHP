@@ -28,7 +28,7 @@
                             <span class="preview-tips-span">{{$ctrl.service.home.envObject.object.total.frontURI}}</span>
                         </td>
                         <td class="uri-td">
-                            <input autocomplete="off" class="eo-input pull-left" type="text" placeholder="{{'262'|translate}}"
+                            <input autocomplete="off" class="eo-input pull-left" type="text" placeholder="{{'261'|translate}}"
                                 ng-model="$ctrl.service.home.envObject.object.model.URL" name="uri" ng-class="{'quick-input':$ctrl.interaction.request.groupID=='-3'}"
                                 ng-change="$ctrl.fun.changeUri()" ng-disabled="$ctrl.component.unitTestObjectOutput.isPreview"
                                 required>
@@ -45,24 +45,24 @@
             </form>
         </div>
         <div class="eo-tab-menu mt20">
-            <div class="pull-left  item-tab" ng-class="{'active-item':$ctrl.data.menuType=='headers'}" ng-click="$ctrl.data.menuType='headers'">{{'263'|translate}}
+            <div class="pull-left  item-tab" ng-class="{'active-item':$ctrl.data.menuType=='headers'}" ng-click="$ctrl.data.menuType='headers'">{{'262'|translate}}
                 <span class="iconfont icon-circle" ng-show="$ctrl.service.home.envObject.object.model.headers.length>1||($ctrl.component.unitTestObjectOutput.isPreview&&$ctrl.service.home.envObject.object.model.headers.length>0)"></span>
             </div>
-            <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.menuType=='body'}" ng-click="$ctrl.data.menuType='body'">{{'264'|translate}}
+            <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.menuType=='body'}" ng-click="$ctrl.data.menuType='body'">{{'263'|translate}}
                 <span class="iconfont icon-circle" ng-show="($ctrl.service.home.envObject.object.model.requestType!='1'&&($ctrl.service.home.envObject.object.model.params.length>1||($ctrl.component.unitTestObjectOutput.isPreview&&$ctrl.service.home.envObject.object.model.params.length>0)))||($ctrl.service.home.envObject.object.model.requestType=='1'&&$ctrl.service.home.envObject.object.model.raw)"></span>
             </div>
             <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.menuType=='restful'}" ng-click="$ctrl.data.menuType='restful'">{{'38'|translate}}
-                <tip-directive input="<p>{{'241'|translate}}{param_name}{{'242'|translate}}</p>"></tip-directive>
+                <tip-directive input="<p>{{'240'|translate}}{param_name}{{'241'|translate}}</p>"></tip-directive>
                 <span class="iconfont icon-circle" ng-show="$ctrl.interaction.response.apiInfo.restfulParam.length>1"></span>
             </div>
             <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.menuType=='url'}" ng-click="$ctrl.data.menuType='url'">{{'39'|translate}}
                 <span class="iconfont icon-circle" ng-show="$ctrl.interaction.response.apiInfo.urlParam.length>1||($ctrl.component.unitTestObjectOutput.isPreview&&$ctrl.interaction.response.apiInfo.urlParam.length>0)"></span>
             </div>
-            <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.menuType=='auth'}" ng-click="$ctrl.data.menuType='auth'">{{'243'|translate}}
+            <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.menuType=='auth'}" ng-click="$ctrl.data.menuType='auth'">{{'242'|translate}}
                 <span class="iconfont icon-circle" ng-show="$ctrl.service.home.envObject.object.model.auth.status!='0'"></span>
             </div>
-            <!-- <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.menuType=='inject'}" ng-click="$ctrl.data.menuType='inject'">{{'244'|translate}}
-                <tip-directive input="<p>{{'245'|translate}}</p>"></tip-directive>
+            <!-- <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.menuType=='inject'}" ng-click="$ctrl.data.menuType='inject'">{{'243'|translate}}
+                <tip-directive input="<p>{{'244'|translate}}</p>"></tip-directive>
                 <span class="iconfont icon-circle" ng-show="$ctrl.component.unitTestObject.injectScript.before||$ctrl.component.unitTestObject.injectScript.after"></span>
             </div> -->
         </div>
@@ -87,8 +87,8 @@
                                         ng-change="$ctrl.fun.all('header')">
                                     <label for="header_checkbox_all" class="eo-checkbox iconfont" ng-class="{'icon-check':$ctrl.data.allObject.header}">{{$ctrl.data.allObject.header?'':'&nbsp;'}}</label>
                                 </td>
-                                <td class="request-header-label">{{'213'|translate}}</td>
-                                <td>{{'214'|translate}}</td>
+                                <td class="request-header-label">{{'212'|translate}}</td>
+                                <td>{{'213'|translate}}</td>
                                 <td class="operate-td" ng-hide="$ctrl.component.unitTestObjectOutput.isPreview">{{'7'|translate}}</td>
                             </tr>
                         </thead>
@@ -105,18 +105,18 @@
                                     </td>
                                     <td class="label-td request-header-label">
                                         <auto-complete-ams-component model="item" key-name='headerName' read-only="$ctrl.component.unitTestObjectOutput.isPreview"
-                                            array="$ctrl.const.requestHeader" placeholder="{{'265'|translate}}"
+                                            array="$ctrl.const.requestHeader" placeholder="{{'264'|translate}}"
                                             input-change-fun="$ctrl.fun.last('header',{$last:$last})"></auto-complete-ams-component>
                                     </td>
                                     <td>
                                         <input autocomplete="off" class="eo-input " type="text" name="" ng-model="item.headerValue"
-                                            maxlength="65530" placeholder="{{'266'|translate}}" ng-change="$ctrl.fun.last('header',{$last:$last})"
+                                            maxlength="65530" placeholder="{{'265'|translate}}" ng-change="$ctrl.fun.last('header',{$last:$last})"
                                             ng-disabled="$ctrl.component.unitTestObjectOutput.isPreview">
 
                                     </td>
                                     <td class="operate-td" ng-hide="$ctrl.component.unitTestObjectOutput.isPreview">
                                         <label ng-switch-when=false>
-                                            <a class="iconfont icon-index-magicwand number-label" ng-click="$ctrl.fun.expressionBuilder({'item':item,'$index':1})">&nbsp;{{'267'|translate}}</a>
+                                            <a class="iconfont icon-index-magicwand number-label" ng-click="$ctrl.fun.expressionBuilder({'item':item,'$index':1})">&nbsp;{{'266'|translate}}</a>
                                             <a class="iconfont icon-shanchu number-label" ng-click="$ctrl.fun.delete('header',{$index:$index})"></a>
                                         </label>
                                     </td>
@@ -140,8 +140,8 @@
                             ng-click="$ctrl.fun.changeRequestType('1')">Raw</li>
                         <li ng-hide="$ctrl.component.unitTestObjectOutput.isPreview||$ctrl.service.home.envObject.object.model.requestType=='1'">
                             <button class="checkbox-btn" ng-click="$ctrl.fun.json()">
-                                <span class="eo-checkbox pull-left iconfont" ng-class="{'icon-check':$ctrl.component.unitTestObject.formToJson.checkbox}"></span>{{'268'|translate}}
-                                <tip-directive input="<p>{{'269'|translate}}</p>"></tip-directive>
+                                <span class="eo-checkbox pull-left iconfont" ng-class="{'icon-check':$ctrl.component.unitTestObject.formToJson.checkbox}"></span>{{'267'|translate}}
+                                <tip-directive input="<p>{{'268'|translate}}</p>"></tip-directive>
                             </button>
                             <button class="eo-button-info change-type-btn send-format" set-to-params="paramKey" item="{{$ctrl.data.jsonToParamObject.requestItem}}"
                                 reset-result="$ctrl.service.home.envObject.object.model.params" set-value="paramInfo"></button>
@@ -151,7 +151,7 @@
                                 <a class="content-type-select-a" ng-click="$ctrl.fun.quickSelectContentType('show',{$event:$event})">
                                     <p class="desc-p">{{$ctrl.data.contentType.current.key}}
                                         <span class="iconfont icon-xiangxia">
-                                            <tip-directive input="<p>{{'246'|translate}}</p>"></tip-directive>
+                                            <tip-directive input="<p>{{'245'|translate}}</p>"></tip-directive>
                                         </span>
                                     </p>
                                 </a>
@@ -176,7 +176,7 @@
                                 </td>
                                 <td class="name-td">{{'41'|translate}}</td>
                                 <td class="type-td">{{'44'|translate}}</td>
-                                <td>{{'270'|translate}}</td>
+                                <td>{{'269'|translate}}</td>
                                 <td class="operate-td" ng-hide="$ctrl.component.unitTestObjectOutput.isPreview">{{'7'|translate}}</td>
                             </tr>
                         </thead>
@@ -214,18 +214,18 @@
                                     </td>
                                     <td ng-if="item.paramType=='1'&&!$ctrl.component.unitTestObject.formToJson.checkbox&&$ctrl.service.home.envObject.object.model.requestType=='0'">
                                         <input autocomplete="off" class="eo-input pull-left" ng-model="item.paramInfo"
-                                            disabled="true" placeholder="{{'271'|translate}}" title="{{item.paramInfo}}">
+                                            disabled="true" placeholder="{{'270'|translate}}" title="{{item.paramInfo}}">
                                         <input autocomplete="off" type="file" id="request-param-file-{{$index}}" name="{{item.paramKey}}"
                                             class="eo-button-info file-btn eo-absolute" onchange="angular.element(this).scope().importFile({file:this.files})"
                                             ng-init="item.$index=$index" placeholder="{{item.paramName}}" ng-disabled="$ctrl.component.unitTestObjectOutput.isPreview"
                                             multiple="multiple">
                                         <label for="request-param-file-{{$index}}" class="eo-button-info  eo-absolute file-btn-label"
-                                            ng-hide="$ctrl.component.unitTestObjectOutput.isPreview">{{'272'|translate}}</label>
+                                            ng-hide="$ctrl.component.unitTestObjectOutput.isPreview">{{'271'|translate}}</label>
                                     </td>
                                     <td class="operate-td" ng-hide="$ctrl.component.unitTestObjectOutput.isPreview">
                                         <label ng-switch-when=false>
                                             <a class="iconfont icon-index-magicwand number-label" ng-hide="item.paramType=='1'&&!$ctrl.component.unitTestObject.formToJson.checkbox&&$ctrl.service.home.envObject.object.model.requestType=='0'"
-                                                ng-click="$ctrl.fun.expressionBuilder({'item':item,'$index':2})">&nbsp;{{'267'|translate}}</a>
+                                                ng-click="$ctrl.fun.expressionBuilder({'item':item,'$index':2})">&nbsp;{{'266'|translate}}</a>
                                             <a class="iconfont icon-shanchu number-label" ng-click="$ctrl.fun.delete('body',{$index:$index})"></a>
                                         </label>
                                     </td>
@@ -253,7 +253,7 @@
                                     <label for="restful_checkbox_all" class="eo-checkbox iconfont" ng-class="{'icon-check':$ctrl.data.allObject.restful}">{{$ctrl.data.allObject.restful?'':'&nbsp;'}}</label>
                                 </td>
                                 <td class="name-td">{{'41'|translate}}</td>
-                                <td>{{'270'|translate}}</td>
+                                <td>{{'269'|translate}}</td>
                                 <td class="operate-td" ng-hide="$ctrl.component.unitTestObjectOutput.isPreview">{{'7'|translate}}</td>
                             </tr>
                         </thead>
@@ -286,7 +286,7 @@
                                     <td class="operate-td" ng-hide="$ctrl.component.unitTestObjectOutput.isPreview">
                                         <label ng-switch-when=false>
                                             <a class="iconfont icon-index-magicwand number-label" ng-hide="item.paramType=='1'&&!$ctrl.component.unitTestObject.formToJson.checkbox&&$ctrl.service.home.envObject.object.model.requestType=='0'"
-                                                ng-click="$ctrl.fun.expressionBuilder({'item':item,'$index':2})">&nbsp;{{'267'|translate}}</a>
+                                                ng-click="$ctrl.fun.expressionBuilder({'item':item,'$index':2})">&nbsp;{{'266'|translate}}</a>
                                             <a class="iconfont icon-shanchu number-label" ng-click="$ctrl.fun.delete('restful',{$index:$index})"></a>
                                         </label>
                                     </td>
@@ -317,7 +317,7 @@
                                 <label for="url_checkbox_all" class="eo-checkbox iconfont" ng-class="{'icon-check':$ctrl.data.allObject.url}">{{$ctrl.data.allObject.url?'':'&nbsp;'}}</label>
                             </td>
                             <td class="name-td">{{'41'|translate}}</td>
-                            <td>{{'270'|translate}}</td>
+                            <td>{{'269'|translate}}</td>
                             <td class="operate-td" ng-hide="$ctrl.component.unitTestObjectOutput.isPreview">{{'7'|translate}}</td>
                         </tr>
                     </thead>
@@ -347,7 +347,7 @@
                                 </td>
                                 <td class="operate-td" ng-hide="$ctrl.component.unitTestObjectOutput.isPreview">
                                     <label ng-switch-when=false>
-                                        <a class="iconfont icon-index-magicwand number-label" ng-click="$ctrl.fun.expressionBuilder({'item':item,'$index':2})">&nbsp;{{'267'|translate}}</a>
+                                        <a class="iconfont icon-index-magicwand number-label" ng-click="$ctrl.fun.expressionBuilder({'item':item,'$index':2})">&nbsp;{{'266'|translate}}</a>
                                         <a class="iconfont icon-shanchu number-label" ng-click="$ctrl.fun.delete('url',{$index:$index})"></a>
                                     </label>
                                 </td>
@@ -362,9 +362,9 @@
                 <header>
                     <ul>
                         <li class="pull-left test-nav-li success-li" ng-class="{'active':$ctrl.component.unitTestObject.injectScript.type=='0'}"
-                            ng-click="$ctrl.component.unitTestObject.injectScript.type='0'">{{'248'|translate}}</li>
+                            ng-click="$ctrl.component.unitTestObject.injectScript.type='0'">{{'247'|translate}}</li>
                         <li style="border-left:none;" class="pull-left test-nav-li failure-li" ng-class="{'active':$ctrl.component.unitTestObject.injectScript.type=='1'}"
-                            ng-click="$ctrl.component.unitTestObject.injectScript.type='1'">{{'249'|translate}}</li>
+                            ng-click="$ctrl.component.unitTestObject.injectScript.type='1'">{{'248'|translate}}</li>
                     </ul>
                 </header>
                 <ace-menu-editor-ams-component mark="project" set-model='$ctrl.component.unitTestObject.injectScript'
@@ -373,28 +373,28 @@
             </div>
         </div> -->
         <div class="eo-tab-menu mt20">
-            <div class="pull-left  item-tab" ng-class="{'active-item':$ctrl.data.response.status=='1'}" ng-click="$ctrl.data.response.status='1'">{{'223'|translate}}</div>
-            <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.response.status=='0'}" ng-click="$ctrl.data.response.status='0'">{{'273'|translate}}</div>
+            <div class="pull-left  item-tab" ng-class="{'active-item':$ctrl.data.response.status=='1'}" ng-click="$ctrl.data.response.status='1'">{{'222'|translate}}</div>
+            <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.response.status=='0'}" ng-click="$ctrl.data.response.status='0'">{{'272'|translate}}</div>
             <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.response.status=='3'}" ng-click="$ctrl.data.response.status='3'">{{'27'|translate}}</div>
-            <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.response.status=='2'}" ng-click="$ctrl.data.response.status='2'">{{'274'|translate}}</div>
-            <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.response.status=='4'}" ng-click="$ctrl.data.response.status='4';$ctrl.fun.selectHistoryTab()">{{'275'|translate}}</div>
+            <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.response.status=='2'}" ng-click="$ctrl.data.response.status='2'">{{'273'|translate}}</div>
+            <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.response.status=='4'}" ng-click="$ctrl.data.response.status='4';$ctrl.fun.selectHistoryTab()">{{'274'|translate}}</div>
         </div>
         <div class="item-part eo-tab-container response-example-part" ng-show="$ctrl.data.response.status=='0'">
             <header class="f_row">
                 <button class="eo-button-info change-type-btn send-format" arrange-format="apiResult_js" ng-model="$ctrl.data.format.message"
                     cache-variable="UNIT_TEST_RESULT">
-                    <span class="iconfont icon-magic"></span>{{'227'|translate}}</button>
+                    <span class="iconfont icon-magic"></span>{{'226'|translate}}</button>
                 <button class="change-type-btn send-format eo-button-info" ng-disabled="!$ctrl.data.response.testHttpCode"
                     ng-click="$ctrl.fun.window()">
-                    <span class="iconfont icon-daochu"></span>{{'276'|translate}}
+                    <span class="iconfont icon-daochu"></span>{{'275'|translate}}
                 </button>
                 <button class="change-type-btn send-format eo-button-info" ng-disabled="!$ctrl.data.response.testHttpCode"
                     ng-click="$ctrl.fun.saveDemo()">
-                    <span class="iconfont icon-daochu"></span>{{'277'|translate}}
+                    <span class="iconfont icon-daochu"></span>{{'276'|translate}}
                 </button>
                 <button class="change-type-btn send-format eo-button-info" ng-disabled="!$ctrl.data.response.testHttpCode"
                     copy-common-directive cache-variable="UNIT_TEST_RESULT">
-                    <span class="iconfont icon-renwuguanli"></span>{{'278'|translate}}
+                    <span class="iconfont icon-renwuguanli"></span>{{'277'|translate}}
                 </button>
             </header>
             <article>
@@ -404,15 +404,15 @@
                         {{!($ctrl.data.response.httpCodeType===5)?'time：'+$ctrl.data.response.testDeny+'ms':''}}
                     </span>
                 </div>
-                <pre class="back-result-content" id="apiResult_js"><span class="null-tip-span">{{'279'|translate}}</span></pre>
+                <pre class="back-result-content" id="apiResult_js"><span class="null-tip-span">{{'278'|translate}}</span></pre>
             </article>
         </div>
         <div class="null-tip-box" ng-show="!$ctrl.data.response.hadTest&&$ctrl.data.response.status=='0'">
             <div class="back-result-content">
-                <span class="null-tip-span">{{'279'|translate}}
-                    <span ng-show="!$ctrl.data.response.hadTest">,&nbsp;{{'280'|translate}}</span>
+                <span class="null-tip-span">{{'278'|translate}}
+                    <span ng-show="!$ctrl.data.response.hadTest">,&nbsp;{{'279'|translate}}</span>
                     <button class="send-btn" ng-class="{'send-btn-plug':$ctrl.data.plugObject.useStatus}"
-                        ng-disabled="!$ctrl.service.home.envObject.object.model.URL" ng-click="$ctrl.fun.test()">{{$ctrl.data.plugObject.timer.disable?('281'|translate)+'&nbsp;'+($ctrl.data.plugObject.timer.num>0?$ctrl.data.plugObject.timer.num:""):('61'|translate)}}</button>
+                        ng-disabled="!$ctrl.service.home.envObject.object.model.URL" ng-click="$ctrl.fun.test()">{{$ctrl.data.plugObject.timer.disable?('280'|translate)+'&nbsp;'+($ctrl.data.plugObject.timer.num>0?$ctrl.data.plugObject.timer.num:""):('61'|translate)}}</button>
                 </span>
             </div>
         </div>
@@ -425,10 +425,10 @@
                         <span class="common-value-span">{{item.value}}</span>
                     </li>
                     <li ng-switch-when=false>
-                        <span class="null-tip-span">{{'282'|translate}}
-                            <span ng-show="!$ctrl.data.response.hadTest">,&nbsp;{{'280'|translate}}
+                        <span class="null-tip-span">{{'281'|translate}}
+                            <span ng-show="!$ctrl.data.response.hadTest">,&nbsp;{{'279'|translate}}
                                 <button class="send-btn" ng-class="{'send-btn-plug':$ctrl.data.plugObject.useStatus}"
-                                    ng-disabled="!$ctrl.service.home.envObject.object.model.URL" ng-click="$ctrl.fun.test()">{{$ctrl.data.plugObject.timer.disable?('281'|translate)+'&nbsp;'+($ctrl.data.plugObject.timer.num>0?$ctrl.data.plugObject.timer.num:""):('61'|translate)}}</button>
+                                    ng-disabled="!$ctrl.service.home.envObject.object.model.URL" ng-click="$ctrl.fun.test()">{{$ctrl.data.plugObject.timer.disable?('280'|translate)+'&nbsp;'+($ctrl.data.plugObject.timer.num>0?$ctrl.data.plugObject.timer.num:""):('61'|translate)}}</button>
                             </span>
                         </span>
                         </span>
@@ -448,10 +448,10 @@
                         <span class="common-value-span">{{value}}</span>
                     </li>
                     <div ng-hide="$ctrl.data.response.requestBody.params.requestType">
-                        <span class="null-tip-span">{{'283'|translate}}
-                            <span ng-show="!$ctrl.data.response.hadTest">,&nbsp;{{'280'|translate}}
+                        <span class="null-tip-span">{{'282'|translate}}
+                            <span ng-show="!$ctrl.data.response.hadTest">,&nbsp;{{'279'|translate}}
                                 <button class="send-btn" ng-class="{'send-btn-plug':$ctrl.data.plugObject.useStatus}"
-                                    ng-disabled="!$ctrl.service.home.envObject.object.model.URL" ng-click="$ctrl.fun.test()">{{$ctrl.data.plugObject.timer.disable?('281'|translate)+'&nbsp;'+($ctrl.data.plugObject.timer.num>0?$ctrl.data.plugObject.timer.num:""):('61'|translate)}}</button>
+                                    ng-disabled="!$ctrl.service.home.envObject.object.model.URL" ng-click="$ctrl.fun.test()">{{$ctrl.data.plugObject.timer.disable?('280'|translate)+'&nbsp;'+($ctrl.data.plugObject.timer.num>0?$ctrl.data.plugObject.timer.num:""):('61'|translate)}}</button>
                             </span>
                         </span>
                         </span>
@@ -469,10 +469,10 @@
                         <span class="common-value-span">{{item.value}}</span>
                     </li>
                     <li ng-switch-when=false>
-                        <span class="null-tip-span">{{'284'|translate}}
-                            <span ng-show="!$ctrl.data.response.hadTest">,&nbsp;{{'280'|translate}}
+                        <span class="null-tip-span">{{'283'|translate}}
+                            <span ng-show="!$ctrl.data.response.hadTest">,&nbsp;{{'279'|translate}}
                                 <button class="send-btn" ng-class="{'send-btn-plug':$ctrl.data.plugObject.useStatus}"
-                                    ng-disabled="!$ctrl.service.home.envObject.object.model.URL" ng-click="$ctrl.fun.test()">{{$ctrl.data.plugObject.timer.disable?('281'|translate)+'&nbsp;'+($ctrl.data.plugObject.timer.num>0?$ctrl.data.plugObject.timer.num:""):('61'|translate)}}</button>
+                                    ng-disabled="!$ctrl.service.home.envObject.object.model.URL" ng-click="$ctrl.fun.test()">{{$ctrl.data.plugObject.timer.disable?('280'|translate)+'&nbsp;'+($ctrl.data.plugObject.timer.num>0?$ctrl.data.plugObject.timer.num:""):('61'|translate)}}</button>
                             </span>
                         </span>
                         </span>
@@ -487,7 +487,7 @@
                     <ul>
                         <li class="pull-left">
                             <button class="clear-btn eo-button-info" ng-click="$ctrl.fun.testList.clear()">
-                                {{'285'|translate}}
+                                {{'284'|translate}}
                             </button>
                         </li>
                     </ul>
@@ -526,7 +526,7 @@
                 </article>
             </div>
             <div class="null-tip-span ptb15" ng-hide="$ctrl.interaction.response.apiInfo.testHistory.length>0||!$ctrl.data.queryHistory">
-                {{'286'|translate}}
+                {{'285'|translate}}
             </div>
         </div>
 

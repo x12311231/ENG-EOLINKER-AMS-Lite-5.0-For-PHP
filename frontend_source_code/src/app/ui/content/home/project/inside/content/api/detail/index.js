@@ -19,8 +19,8 @@
     function indexController(RESPONSE_TEXT, $scope, $location, $anchorScroll, Authority_CommonService, ApiManagementResource, $state, CODE, $rootScope,  Cache_CommonService, Operate_CommonService, HomeProjectApi_Service, GroupService,$filter) {
         var vm = this;
         vm.data = {
-            text1:'<p>{{\'229\'|translate}}</p>',
-            text:'<p>{{\'230\'|translate}}</p>',
+            text1:'<p>{{\'228\'|translate}}</p>',
+            text:'<p>{{\'229\'|translate}}</p>',
             info: {
                 statusList: [{
                         name: $filter('translate')('58'),
@@ -196,12 +196,12 @@
                             {
                                 vm.data.interaction.response.apiInfo.baseInfo.apiStatus = arg.item.value;
                                 vm.data.interaction.response.apiInfo.baseInfo.status = arg.item.name;
-                                $rootScope.InfoModal($filter('translate')('447'), 'success');
+                                $rootScope.InfoModal($filter('translate')('445'), 'success');
                                 break;
                             }
                         default:
                             {
-                                $rootScope.InfoModal($filter('translate')('448') + RESPONSE_TEXT.FAILURE, 'error');
+                                $rootScope.InfoModal($filter('translate')('446') + RESPONSE_TEXT.FAILURE, 'error');
                                 break;
                             }
                     }
@@ -245,7 +245,7 @@
                                 apiName: vm.data.interaction.response.apiInfo.baseInfo.apiName
                             });
                             $scope.$emit('$WindowTitleSet', {
-                                list: [$filter('translate')('449') + response.apiInfo.baseInfo.apiName, $filter('translate')('450'), $state.params.projectName, $filter('translate')('407')]
+                                list: [$filter('translate')('447') + response.apiInfo.baseInfo.apiName, $filter('translate')('448'), $state.params.projectName, $filter('translate')('405')]
                             });
                             vm.data.info.menuType = (response.apiInfo.requestInfo.length > 0 && response.apiInfo.baseInfo.apiRequestParamType != 1) || (response.apiInfo.baseInfo.apiRequestParamType == 1 && response.apiInfo.baseInfo.apiRequestRaw) ? 'body' : response.apiInfo.restfulParam.length > 0 ? 'restful' : response.apiInfo.urlParam.length > 0 ? 'urlParam' : 'body';
                             switch (response.apiInfo.baseInfo.apiProtocol) {
@@ -375,18 +375,18 @@
                             type: 'fun-list',
                             class: 'btn-li sort-btn-li pull-left',
                             authority: 'edit',
-                            name: $filter('translate')('451'),
+                            name: $filter('translate')('449'),
                             icon: 'caidan',
                             click: true,
                             funList: [{
-                                name: $filter('translate')('452'),
+                                name: $filter('translate')('450'),
                                 icon: 'shuaxin',
                                 fun: {
                                     default: vm.service.default.navbar.recover,
                                     params: JSON.stringify(vm.data.interaction.request)
                                 }
                             }, {
-                                name: $filter('translate')('453'),
+                                name: $filter('translate')('451'),
                                 icon: 'shanchu',
                                 fun: {
                                     default: vm.service.default.navbar.deleteCompletely,
@@ -403,7 +403,7 @@
                             class: 'btn-group-li pull-left',
                             authority: 'edit',
                             btnList: [{
-                                name: $filter('translate')('325'),
+                                name: $filter('translate')('324'),
                                 icon: 'bianji',
                                 fun: {
                                     default: vm.service.default.navbar.menu,
@@ -414,18 +414,18 @@
                             type: 'fun-list',
                             class: 'btn-li sort-btn-li pull-left',
                             authority: 'edit',
-                            name: $filter('translate')('451'),
+                            name: $filter('translate')('449'),
                             icon: 'caidan',
                             click: true,
                             funList: [{
-                                name: $filter('translate')('454'),
+                                name: $filter('translate')('452'),
                                 icon: 'renwuguanli',
                                 fun: {
                                     default: vm.service.default.navbar.menu,
                                     params: '\'copy\',' + JSON.stringify(vm.data.interaction.request)
                                 }
                             }, {
-                                name: $filter('translate')('260'),
+                                name: $filter('translate')('259'),
                                 icon: 'shanchu',
                                 fun: {
                                     default: vm.service.default.navbar.delete,
@@ -434,13 +434,13 @@
                             }]
                         }];
                         template.menu = [{
-                            name: $filter('translate')('375'),
+                            name: $filter('translate')('374'),
                             fun: {
                                 default: vm.service.default.navbar.menu,
                                 params: '\'test\',' + JSON.stringify(vm.data.interaction.request) + ',vm.otherObject'
                             }
                         },  {
-                            name: $filter('translate')('455'),
+                            name: $filter('translate')('453'),
                             fun: {
                                 default: vm.service.default.navbar.menu,
                                 params: '\'history\',' + JSON.stringify(vm.data.interaction.request)
@@ -453,7 +453,7 @@
                 type: 'btn',
                 class: 'margin-left-li-20 btn-group-li pull-left',
                 btnList: [{
-                    name: $filter('translate')('456'),
+                    name: $filter('translate')('454'),
                     icon: 'xiangzuo',
                     fun: {
                         default: vm.service.default.navbar.menu,
@@ -464,7 +464,7 @@
                 type: 'tabs',
                 class: 'menu-li pull-left first-menu-li',
                 tabList: [{
-                    name: $filter('translate')('423'),
+                    name: $filter('translate')('421'),
                     class: 'elem-active'
                 }].concat(template.menu)
             }, {

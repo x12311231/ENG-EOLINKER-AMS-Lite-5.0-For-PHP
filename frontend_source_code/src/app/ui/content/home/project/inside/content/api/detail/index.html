@@ -9,7 +9,7 @@
                         ng-switch-default ng-click="$ctrl.data.info.showStatusSelect=!$ctrl.data.info.showStatusSelect;"
                         ng-class="{'eo-color-purple':$ctrl.data.interaction.response.apiInfo.baseInfo.apiStatus==8,'eo-color-success':$ctrl.data.interaction.response.apiInfo.baseInfo.apiStatus==0,'eo-color-warning':$ctrl.data.interaction.response.apiInfo.baseInfo.apiStatus==1,'eo-color-tips':$ctrl.data.interaction.response.apiInfo.baseInfo.apiStatus==2,'eo-color-danger':$ctrl.data.interaction.response.apiInfo.baseInfo.apiStatus==7,'eo-color-yellow':$ctrl.data.interaction.response.apiInfo.baseInfo.apiStatus==3,'eo-color-default':$ctrl.data.interaction.response.apiInfo.baseInfo.apiStatus==4||$ctrl.data.interaction.response.apiInfo.baseInfo.apiStatus==5||$ctrl.data.interaction.response.apiInfo.baseInfo.apiStatus==6}">
                         <span class="triangle-bottom"></span>
-                        <span class="preview-tips-span">{{'207'|translate}}</span>
+                        <span class="preview-tips-span">{{'206'|translate}}</span>
                         <span class="api-status-span">{{$ctrl.data.interaction.response.apiInfo.baseInfo.status}}</span>
                         <span class="iconfont icon-xiangxia1" ng-if="$ctrl.data.interaction.response.apiInfo.baseInfo.status"></span>
 
@@ -28,7 +28,7 @@
                     <li class="api-starred cp common-style-li" ng-click="$ctrl.data.fun.storage()" ng-switch-default
                         ng-class="{'eo-color-warning':$ctrl.data.interaction.response.apiInfo.baseInfo.starred==1,'star-unlike':$ctrl.data.interaction.response.apiInfo.baseInfo.starred==0}">
                         <span class="triangle-bottom"></span>
-                        <span class="preview-tips-span">{{'208'|translate}}</span>
+                        <span class="preview-tips-span">{{'207'|translate}}</span>
                         <span class="iconfont " ng-class="{'icon-favor':$ctrl.data.interaction.response.apiInfo.baseInfo.starred==0,'icon-favorfill':$ctrl.data.interaction.response.apiInfo.baseInfo.starred==1}"></span>{{'76'|translate}}
 
                     </li>
@@ -53,10 +53,10 @@
                             </li>
                             <li class=" api-name">{{$ctrl.data.interaction.response.apiInfo.baseInfo.apiName}}</li>
                             <li class="others-li">
-                                <span class="group-span">{{'209'|translate}}&nbsp;{{$ctrl.data.interaction.response.apiInfo.baseInfo.sgroupInfo}}</span>
-                                <span>{{'210'|translate}}&nbsp;{{$ctrl.data.interaction.response.apiInfo.baseInfo.creator||'20'|translate}}</span>
-                                <span>{{'211'|translate}}&nbsp;{{$ctrl.data.interaction.response.apiInfo.baseInfo.updater}}</span>
-                                <span class="update-span">{{'212'|translate}}{{$ctrl.data.interaction.response.apiInfo.baseInfo.apiUpdateTime}}</span>
+                                <span class="group-span">{{'208'|translate}}&nbsp;{{$ctrl.data.interaction.response.apiInfo.baseInfo.sgroupInfo}}</span>
+                                <span>{{'209'|translate}}&nbsp;{{$ctrl.data.interaction.response.apiInfo.baseInfo.creator||'20'|translate}}</span>
+                                <span>{{'210'|translate}}&nbsp;{{$ctrl.data.interaction.response.apiInfo.baseInfo.updater}}</span>
+                                <span class="update-span">{{'211'|translate}}{{$ctrl.data.interaction.response.apiInfo.baseInfo.apiUpdateTime}}</span>
                             </li>
                         </ul>
                     </li>
@@ -69,8 +69,8 @@
                 <table class="common-table">
                     <thead>
                         <tr>
-                            <td class="request-header-label">{{'213'|translate}}</td>
-                            <td>{{'214'|translate}}</td>
+                            <td class="request-header-label">{{'212'|translate}}</td>
+                            <td>{{'213'|translate}}</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -98,7 +98,7 @@
                             <td class="param-name">{{'41'|translate}}</td>
                             <td class="require-label">{{'42'|translate}}</td>
                             <td class="param-desc">{{'43'|translate}}</td>
-                            <td class="operate-td">{{'215'|translate}}</td>
+                            <td class="operate-td">{{'214'|translate}}</td>
                         </tr>
                     </thead>
                 </table>
@@ -109,23 +109,23 @@
                                 ng-click="item.paramValue||item.paramLimit||(item.paramValueList.length>0&&item.paramValueList[0].value)?item.isClick=!item.isClick:''">
                                 <th class="param-name">
                                     <span class="param-name-span">{{item.paramKey}}</span>
-                                    <span class="btn-copy btn-hover" copy-common-directive copy-model="item.paramKey">{{'216'|translate}}</span>
+                                    <span class="btn-copy btn-hover" copy-common-directive copy-model="item.paramKey">{{'215'|translate}}</span>
                                 </th>
                                 <td class="require-label">{{item.paramNotNull==0?('45'|translate):''}}</td>
                                 <td class="param-desc" title="{{item.paramName}}">{{item.paramName}}</td>
                                 <td class="operate-td">
-                                    <span class="eo-status-default" ng-show="item.paramValue||item.paramLimit||(item.paramValueList.length>0&&item.paramValueList[0].value)">{{item.isClick?('217'|translate):('218'|translate)}}</span>
+                                    <span class="eo-status-default" ng-show="item.paramValue||item.paramLimit||(item.paramValueList.length>0&&item.paramValueList[0].value)">{{item.isClick?('216'|translate):('217'|translate)}}</span>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="more-div" style="text-indent: {{(item.paramLevel+1||1)*10}}px" ng-show="item.isClick">
                         <p ng-show="item.paramLimit">
-                            <span class="title-span pull-left">{{'219'|translate}}</span>
+                            <span class="title-span pull-left">{{'218'|translate}}</span>
                             <span>{{item.paramLimit}}</span>
                         </p>
                         <div style="display: flex;" ng-show="(item.paramValueList.length>0&&item.paramValueList[0].value)">
-                            <span class="title-span pull-left">{{'220'|translate}}</span>
+                            <span class="title-span pull-left">{{'219'|translate}}</span>
                             <table>
                                 <tr ng-repeat="childItem in item.paramValueList track by $index">
                                     <td class="value-td">
@@ -135,7 +135,7 @@
                                         <span class="pull-right divide-span">|</span>
                                     </td>
                                     <td class="default-td">
-                                        <span ng-if="item.default==$index">{{'221'|translate}}</span>
+                                        <span ng-if="item.default==$index">{{'220'|translate}}</span>
                                     </td>
                                     <td>
                                         <span class="pull-right divide-span">|</span>
@@ -145,7 +145,7 @@
                             </table>
                         </div>
                         <p ng-show="item.paramValue">
-                            <span class="title-span pull-left">{{'222'|translate}}</span>
+                            <span class="title-span pull-left">{{'221'|translate}}</span>
                             <span>{{item.paramValue}}</span>
                         </p>
                     </div>
@@ -161,7 +161,7 @@
                                 <td class="type-label">{{'44'|translate}}</td>
                                 <td class="require-label">{{'42'|translate}}</td>
                                 <td class="param-desc">{{'43'|translate}}</td>
-                                <td class="operate-td">{{'215'|translate}}</td>
+                                <td class="operate-td">{{'214'|translate}}</td>
                             </tr>
                         </thead>
                     </table>
@@ -185,7 +185,7 @@
                                         <span ng-if="item.paramLevel" class="iconfont icon-xiangyou eo-status-tips"
                                             style="font-size: 12px;" ng-switch-default></span>
                                         <span class="param-name-span">{{item.paramKeyHtml}}</span>
-                                        <span class="btn-copy btn-hover" copy-common-directive copy-model="item.paramKeyHtml">{{'216'|translate}}</span>
+                                        <span class="btn-copy btn-hover" copy-common-directive copy-model="item.paramKeyHtml">{{'215'|translate}}</span>
                                     </th>
                                     <td class="type-label">
                                         <span class="param-type-span">{{item.paramType==0?"[string]":item.paramType==1?"[file]":item.paramType==2?"[json]":item.paramType==3?"[int]":item.paramType==4?"[float]":item.paramType==5?"[double]":item.paramType==6?"[date]":item.paramType==7?"[datetime]":item.paramType==8?"[boolean]":item.paramType==9?"[byte]":item.paramType==10?"[short]":item.paramType==11?"[long]":item.paramType==12?"[array]":item.paramType==13?"[object]":item.paramType==14?"[number]":'['+($ctrl.data.interaction.response.apiInfo.dataStructureList[item.paramType].structureName||'undefined')+']'}}</span>
@@ -193,18 +193,18 @@
                                     <td class="require-label">{{item.paramNotNull==0?('45'|translate):''}}</td>
                                     <td class="param-desc" title="{{item.paramName}}">{{item.paramName}}</td>
                                     <td class="operate-td">
-                                        <span class="eo-status-default" ng-show="item.paramValue||item.paramLimit||(item.paramValueList.length>0&&item.paramValueList[0].value)">{{item.isClick?('217'|translate):('218'|translate)}}</span>
+                                        <span class="eo-status-default" ng-show="item.paramValue||item.paramLimit||(item.paramValueList.length>0&&item.paramValueList[0].value)">{{item.isClick?('216'|translate):('217'|translate)}}</span>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                         <div class="more-div" style="text-indent: {{(item.paramLevel+1||1)*10}}px" ng-show="item.isClick">
                             <p ng-show="item.paramLimit">
-                                <span class="title-span pull-left">{{'219'|translate}}</span>
+                                <span class="title-span pull-left">{{'218'|translate}}</span>
                                 <span>{{item.paramLimit}}</span>
                             </p>
                             <div style="display: flex;" ng-show="(item.paramValueList.length>0&&item.paramValueList[0].value)">
-                                <span class="title-span pull-left">{{'220'|translate}}</span>
+                                <span class="title-span pull-left">{{'219'|translate}}</span>
                                 <table>
                                     <tr ng-repeat="childItem in item.paramValueList track by $index">
                                         <td class="value-td">
@@ -220,7 +220,7 @@
                                             <span class="pull-right divide-span">|</span>
                                         </td>
                                         <td class="default-td">
-                                            <span ng-if="item.default==$index">{{'221'|translate}}</span>
+                                            <span ng-if="item.default==$index">{{'220'|translate}}</span>
                                         </td>
                                         <td>
                                             <span class="pull-right divide-span">|</span>
@@ -232,7 +232,7 @@
                                 </table>
                             </div>
                             <p ng-show="item.paramValue">
-                                <span class="title-span pull-left">{{'222'|translate}}</span>
+                                <span class="title-span pull-left">{{'221'|translate}}</span>
                                 <span>{{item.paramValue}}</span>
                             </p>
                         </div>
@@ -253,7 +253,7 @@
                             <td class="type-label">{{'44'|translate}}</td>
                             <td class="require-label">{{'42'|translate}}</td>
                             <td class="param-desc">{{'43'|translate}}</td>
-                            <td class="operate-td">{{'215'|translate}}</td>
+                            <td class="operate-td">{{'214'|translate}}</td>
                         </tr>
                     </thead>
                 </table>
@@ -276,7 +276,7 @@
                                     <span ng-if="item.paramLevel" class="iconfont icon-xiangyou eo-status-tips" style="font-size: 12px;"
                                         ng-switch-default></span>
                                     <span class="param-name-span">{{item.paramKeyHtml}}</span>
-                                    <span class="btn-copy btn-hover" copy-common-directive copy-model="item.paramKeyHtml">{{'216'|translate}}</span>
+                                    <span class="btn-copy btn-hover" copy-common-directive copy-model="item.paramKeyHtml">{{'215'|translate}}</span>
                                 <td class="type-label">
                                     <span class="param-type-span">{{item.paramType==0?"[string]":item.paramType==1?"[file]":item.paramType==2?"[json]":item.paramType==3?"[int]":item.paramType==4?"[float]":item.paramType==5?"[double]":item.paramType==6?"[date]":item.paramType==7?"[datetime]":item.paramType==8?"[boolean]":item.paramType==9?"[byte]":item.paramType==10?"[short]":item.paramType==11?"[long]":item.paramType==12?"[array]":item.paramType==13?"[object]":item.paramType==14?"[number]":'['+($ctrl.data.interaction.response.apiInfo.dataStructureList[item.paramType].structureName||'undefined')+']'}}</span>
 
@@ -284,18 +284,18 @@
                                 <td class="require-label">{{item.paramNotNull==0?('45'|translate):''}}</td>
                                 <td class="param-desc" title="{{item.paramName}}">{{item.paramName}}</td>
                                 <td class="operate-td">
-                                    <span class="eo-status-default" ng-show="item.paramValue||item.paramLimit||(item.paramValueList.length>0&&item.paramValueList[0].value)">{{item.isClick?('217'|translate):('218'|translate)}}</span>
+                                    <span class="eo-status-default" ng-show="item.paramValue||item.paramLimit||(item.paramValueList.length>0&&item.paramValueList[0].value)">{{item.isClick?('216'|translate):('217'|translate)}}</span>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="more-div" style="text-indent: {{(item.paramLevel+1||1)*10}}px" ng-show="item.isClick">
                         <p ng-show="item.paramLimit">
-                            <span class="title-span pull-left">{{'219'|translate}}</span>
+                            <span class="title-span pull-left">{{'218'|translate}}</span>
                             <span>{{item.paramLimit}}</span>
                         </p>
                         <div style="display: flex;" ng-show="item.paramValueList.length>0&&item.paramValueList[0].value">
-                            <span class="title-span pull-left">{{'220'|translate}}</span>
+                            <span class="title-span pull-left">{{'219'|translate}}</span>
                             <table>
                                 <tr ng-repeat="childItem in item.paramValueList track by $index">
                                     <td class="value-td">
@@ -311,7 +311,7 @@
                                         <span class="pull-right divide-span">|</span>
                                     </td>
                                     <td class="default-td">
-                                        <span ng-if="item.default==$index">{{'221'|translate}}</span>
+                                        <span ng-if="item.default==$index">{{'220'|translate}}</span>
                                     </td>
                                     <td>
                                         <span class="pull-right divide-span">|</span>
@@ -321,22 +321,22 @@
                             </table>
                         </div>
                         <p ng-show="item.paramValue">
-                            <span class="title-span pull-left">{{'222'|translate}}</span>
+                            <span class="title-span pull-left">{{'221'|translate}}</span>
                             <span>{{item.paramValue}}</span>
                         </p>
                     </div>
                 </div>
             </div>
 
-            <!--{{'223'|translate}}-->
+            <!--{{'222'|translate}}-->
             <div class="eo-tab-menu mt20" ng-if="$ctrl.data.interaction.response.apiInfo.responseHeader.length>0">
-                <div class="pull-left  item-tab active-item">{{'223'|translate}}</div>
+                <div class="pull-left  item-tab active-item">{{'222'|translate}}</div>
             </div>
             <div class="item-part eo-tab-container request-header-part" ng-if="$ctrl.data.interaction.response.apiInfo.responseHeader.length>0">
                 <table class="common-table">
                     <thead>
                         <tr>
-                            <td class="request-header-label">{{'213'|translate}}</td>
+                            <td class="request-header-label">{{'212'|translate}}</td>
                             <td>{{'43'|translate}}</td>
                         </tr>
                     </thead>
@@ -350,9 +350,9 @@
                     </tbody>
                 </table>
             </div>
-            <!--{{'224'|translate}}-->
+            <!--{{'223'|translate}}-->
             <div class="eo-tab-menu mt20" id="Response" ng-if="$ctrl.data.interaction.response.apiInfo.resultInfo.length>0">
-                <div class="pull-left  item-tab active-item">{{'224'|translate}}</div>
+                <div class="pull-left  item-tab active-item">{{'223'|translate}}</div>
             </div>
             <div class="item-part eo-tab-container response-param-part" ng-if="$ctrl.data.interaction.response.apiInfo.resultInfo.length>0">
                 <table class="common-table">
@@ -362,7 +362,7 @@
                             <td class="type-label">{{'44'|translate}}</td>
                             <td class="require-label">{{'54'|translate}}</td>
                             <td class="param-desc">{{'43'|translate}}</td>
-                            <td class="operate-td">{{'215'|translate}}</td>
+                            <td class="operate-td">{{'214'|translate}}</td>
                         </tr>
                     </thead>
                 </table>
@@ -385,7 +385,7 @@
                                     <span ng-if="item.paramLevel" class="iconfont icon-xiangyou eo-status-tips" style="font-size: 12px;"
                                         ng-switch-default></span>
                                     <span class="param-name-span">{{item.paramKeyHtml}}</span>
-                                    <span class="btn-copy btn-hover" copy-common-directive copy-model="item.paramKeyHtml">{{'216'|translate}}</span>
+                                    <span class="btn-copy btn-hover" copy-common-directive copy-model="item.paramKeyHtml">{{'215'|translate}}</span>
                                 </th>
                                 <td class="type-label">
                                     <span class="param-type-span">{{item.paramType==0?"[string]":item.paramType==1?"[file]":item.paramType==2?"[json]":item.paramType==3?"[int]":item.paramType==4?"[float]":item.paramType==5?"[double]":item.paramType==6?"[date]":item.paramType==7?"[datetime]":item.paramType==8?"[boolean]":item.paramType==9?"[byte]":item.paramType==10?"[short]":item.paramType==11?"[long]":item.paramType==12?"[array]":item.paramType==13?"[object]":item.paramType==14?"[number]":'['+($ctrl.data.interaction.response.apiInfo.dataStructureList[item.paramType].structureName||'undefined')+']'}}</span>
@@ -393,18 +393,18 @@
                                 <td class="require-label">{{item.paramNotNull==0?('45'|translate):''}}</td>
                                 <td class="param-desc" title="{{item.paramName}}">{{item.paramName}}</td>
                                 <td class="operate-td">
-                                    <span class="eo-status-default" ng-show="item.paramValue||item.paramLimit||(item.paramValueList.length>0&&item.paramValueList[0].value)">{{item.isClick?('217'|translate):('218'|translate)}}</span>
+                                    <span class="eo-status-default" ng-show="item.paramValue||item.paramLimit||(item.paramValueList.length>0&&item.paramValueList[0].value)">{{item.isClick?('216'|translate):('217'|translate)}}</span>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="more-div" style="text-indent: {{(item.paramLevel+1||1)*10}}px" ng-show="item.isClick">
                         <p ng-show="item.paramLimit">
-                            <span class="title-span pull-left">{{'219'|translate}}</span>
+                            <span class="title-span pull-left">{{'218'|translate}}</span>
                             <span>{{item.paramLimit}}</span>
                         </p>
                         <div style="display: flex;" ng-show="item.paramValueList.length>0&&item.paramValueList[0].value">
-                            <span class="title-span pull-left">{{'220'|translate}}</span>
+                            <span class="title-span pull-left">{{'219'|translate}}</span>
                             <table>
                                 <tr ng-repeat="childItem in item.paramValueList track by $index">
                                     <td class="value-td">
@@ -424,15 +424,15 @@
                             </table>
                         </div>
                         <p ng-show="item.paramValue">
-                            <span class="title-span pull-left">{{'222'|translate}}</span>
+                            <span class="title-span pull-left">{{'221'|translate}}</span>
                             <span>{{item.paramValue}}</span>
                         </p>
                     </div>
                 </div>
             </div>
             <div class="eo-tab-menu mt20" id="Result_Mock" ng-show="$ctrl.data.interaction.response.apiInfo.baseInfo">
-                <div class="pull-left  item-tab" ng-class="{'active-item':!$ctrl.data.info.mock.isFailure}" ng-click="$ctrl.data.info.mock.isFailure = false;">{{'225'|translate}}</div>
-                <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.info.mock.isFailure}" ng-click="$ctrl.data.info.mock.isFailure = true;">{{'226'|translate}}</div>
+                <div class="pull-left  item-tab" ng-class="{'active-item':!$ctrl.data.info.mock.isFailure}" ng-click="$ctrl.data.info.mock.isFailure = false;">{{'224'|translate}}</div>
+                <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.info.mock.isFailure}" ng-click="$ctrl.data.info.mock.isFailure = true;">{{'225'|translate}}</div>
             </div>
             <div class="item-part eo-tab-container response-example-part" ng-show="$ctrl.data.interaction.response.apiInfo.baseInfo"
                 ng-switch="$ctrl.data.info.mock.isFailure">
@@ -441,12 +441,12 @@
                         <li ng-hide="$ctrl.data.info.mock.isFailure">
                             <button class="eo-button-info change-type-btn send-format" arrange-format="apiResult_js"
                                 ng-model="$ctrl.data.interaction.response.apiInfo.baseInfo.apiSuccessMock">
-                                <span class="iconfont icon-magic"></span>{{'227'|translate}}</button>
+                                <span class="iconfont icon-magic"></span>{{'226'|translate}}</button>
                         </li>
                         <li ng-show="$ctrl.data.info.mock.isFailure">
                             <button class="eo-button-info change-type-btn send-format" arrange-format="apiResult_js_1"
                                 ng-model="$ctrl.data.interaction.response.apiInfo.baseInfo.apiFailureMock">
-                                <span class="iconfont icon-magic"></span>{{'227'|translate}}</button>
+                                <span class="iconfont icon-magic"></span>{{'226'|translate}}</button>
                         </li>
                     </ul>
                 </header>
@@ -473,7 +473,7 @@
                         </p>
                         <pre class="back-result-content " id="apiResult_js"><span class="null-tip-span fs14"></span></pre>
                         <a class="result-forward eo-link" ng-if="!$ctrl.data.interaction.response.apiInfo.baseInfo.apiSuccessMock&&$ctrl.service.authority.permission.project.apiManagement.edit"
-                            ng-click="$ctrl.data.fun.set('Success_Example')">{{'228'|translate}}</a>
+                            ng-click="$ctrl.data.fun.set('Success_Example')">{{'227'|translate}}</a>
                     </div>
                 </article>
                 <article>
@@ -481,7 +481,7 @@
                         <ul>
                             <li>
                                 <span class="input-icon-span">Mock&nbsp;URL
-                                    <tip-directive input="<p>{{'229'|translate}}</p>"></tip-directive>：
+                                    <tip-directive input="<p>{{'228'|translate}}</p>"></tip-directive>：
                                 </span>
                                 <copy-default-common-component copy-model="$ctrl.data.interaction.response.apiInfo.baseInfo.failureMockURL"></copy-default-common-component>
                             </li>
@@ -491,7 +491,7 @@
                         <p class="demo-setting-p">
                             <span class="code-span">HTTP Status Code:
                                 {{$ctrl.data.interaction.response.apiInfo.baseInfo.apiFailureStatusCode||'200'}}
-                                <tip-directive input="<p>{{'230'|translate}}</p>"></tip-directive>
+                                <tip-directive input="<p>{{'229'|translate}}</p>"></tip-directive>
                             </span>
                             <span class="code-span">Content-Type:
                                 {{$ctrl.data.interaction.response.apiInfo.baseInfo.apiFailureContentType||'text/html;
@@ -501,23 +501,23 @@
                                 <span class="null-tip-span fs14"></span>
                                 </pre>
                         <a class="result-forward eo-link" ng-if="!$ctrl.data.interaction.response.apiInfo.baseInfo.apiFailureMock&&$ctrl.service.authority.permission.project.apiManagement.edit"
-                            ng-click="$ctrl.data.fun.set('Failure_Example')">{{'231'|translate}}</a>
+                            ng-click="$ctrl.data.fun.set('Failure_Example')">{{'230'|translate}}</a>
                     </div>
                 </article>
             </div>
         </div>
         <div class="nav-sidebar ">
             <ul class="first-nav-ul">
-                <li class="title-li">{{'103'|translate}}</li>
-                <li ng-click="$ctrl.data.fun.anchor('Basic_Info')">{{'232'|translate}}</li>
-                <li ng-if="$ctrl.service.home.envObject.object.model.headerInfo.length>0" ng-click="$ctrl.data.fun.anchor('Header')">{{'233'|translate}}</li>
-                <li ng-click="$ctrl.data.fun.anchor('Request')" ng-if="$ctrl.service.home.envObject.object.model.urlParam.length>0||$ctrl.data.interaction.response.apiInfo.restfulParam.length>0||$ctrl.service.home.envObject.object.model.requestInfo.length>0||($ctrl.service.home.envObject.object.model.requestInfo.length>0&&$ctrl.data.interaction.response.apiInfo.baseInfo.apiRequestParamType!=1)||($ctrl.data.interaction.response.apiInfo.baseInfo.apiRequestParamType==1&&$ctrl.service.home.envObject.object.model.baseInfo.apiRequestRaw)">{{'234'|translate}}</li>
-                <li ng-if="$ctrl.data.interaction.response.apiInfo.resultInfo.length>0" ng-click="$ctrl.data.fun.anchor('Response')">{{'235'|translate}}</li>
-                <li ng-click="$ctrl.data.fun.anchor('Result_Mock')">{{'236'|translate}} & Mock</li>
-                <li ng-if="$ctrl.data.interaction.response.apiInfo.baseInfo.apiNoteHtml" ng-click="$ctrl.data.fun.anchor('Detail_Doc')">{{'237'|translate}}</li>
+                <li class="title-li">{{'106'|translate}}</li>
+                <li ng-click="$ctrl.data.fun.anchor('Basic_Info')">{{'231'|translate}}</li>
+                <li ng-if="$ctrl.service.home.envObject.object.model.headerInfo.length>0" ng-click="$ctrl.data.fun.anchor('Header')">{{'232'|translate}}</li>
+                <li ng-click="$ctrl.data.fun.anchor('Request')" ng-if="$ctrl.service.home.envObject.object.model.urlParam.length>0||$ctrl.data.interaction.response.apiInfo.restfulParam.length>0||$ctrl.service.home.envObject.object.model.requestInfo.length>0||($ctrl.service.home.envObject.object.model.requestInfo.length>0&&$ctrl.data.interaction.response.apiInfo.baseInfo.apiRequestParamType!=1)||($ctrl.data.interaction.response.apiInfo.baseInfo.apiRequestParamType==1&&$ctrl.service.home.envObject.object.model.baseInfo.apiRequestRaw)">{{'233'|translate}}</li>
+                <li ng-if="$ctrl.data.interaction.response.apiInfo.resultInfo.length>0" ng-click="$ctrl.data.fun.anchor('Response')">{{'234'|translate}}</li>
+                <li ng-click="$ctrl.data.fun.anchor('Result_Mock')">{{'235'|translate}} & Mock</li>
+                <li ng-if="$ctrl.data.interaction.response.apiInfo.baseInfo.apiNoteHtml" ng-click="$ctrl.data.fun.anchor('Detail_Doc')">{{'236'|translate}}</li>
             </ul>
             <ul class="second-recent-api-ul">
-                <li class="title-li">{{'238'|translate}}</li>
+                <li class="title-li">{{'237'|translate}}</li>
                 <li ng-repeat="item in $ctrl.data.info.recentApiList.slice(1) track by $index" ui-sref="home.project.inside.api.detail({apiID:item.apiID,groupID:item.groupID})">
                     <span class="api-requst-type" ng-class="{'eo-status-success':item.apiRequestType==0,'eo-status-default':item.apiRequestType==1,'eo-status-others':item.apiRequestType==2,'eo-status-warning':item.apiRequestType==6,'eo-status-danger':item.apiRequestType==3,'eo-status-yellow':item.apiRequestType==4,'eo-status-options':item.apiRequestType==5}">{{item.apiRequestType==0?'POST':item.apiRequestType==1?'GET':item.apiRequestType==2?'PUT':item.apiRequestType==3?'DEL':item.apiRequestType==4?'HEAD':item.apiRequestType==5?'OPTS':'PATCH'}}</span>
                     <span class="api-name">{{item.apiName}}</span>

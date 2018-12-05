@@ -59,7 +59,7 @@
                 angular.forEach(vm.mainObject.item.default, function (val, key) {
                     template.loopHtml = template.loopHtml + '<li ' + (val.contentClass ? ('class="' + val.contentClass + '" ') : '') + ' ng-if="' + !val.hideKey + '" ' + (val.switch ? ('ng-switch = "item.' + val.switch+'"') : '') + ' > ' + val.html + ' </li>';
                 })
-                vm.data.canChangeViewHtml = '<ul  class="hover-tr" ng-class="{\"disabled-tr\":' + (vm.mainObject.baseInfo.disabled || false) + ',\"elem-active\":item.isClick&&$ctrl.activeObject[$ctrl.mainObject.baseInfo.active]}" ng-repeat="($outerIndex,item) in $ctrl.list" ng-click="$ctrl.mainObject.baseFun.click({item:item,$index:$index})">' + template.loopHtml + template.html + '</ul>' + '<div class="eo-none-p" ng-if="$ctrl.list.length==0" ng-show="$ctrl.showObject.view==1">' + (vm.mainObject.baseInfo.warningType == 'customized-html' ? vm.mainObject.baseInfo.warning : '<span >{{$ctrl.mainObject.baseInfo.warning||\'374\'|translate}}</span>') + '</div>';
+                vm.data.canChangeViewHtml = '<ul  class="hover-tr" ng-class="{\"disabled-tr\":' + (vm.mainObject.baseInfo.disabled || false) + ',\"elem-active\":item.isClick&&$ctrl.activeObject[$ctrl.mainObject.baseInfo.active]}" ng-repeat="($outerIndex,item) in $ctrl.list" ng-click="$ctrl.mainObject.baseFun.click({item:item,$index:$index})">' + template.loopHtml + template.html + '</ul>' + '<div class="eo-none-p" ng-if="$ctrl.list.length==0" ng-show="$ctrl.showObject.view==1">' + (vm.mainObject.baseInfo.warningType == 'customized-html' ? vm.mainObject.baseInfo.warning : '<span >{{$ctrl.mainObject.baseInfo.warning||\'373\'|translate}}</span>') + '</div>';
             } else {
                 template.html = '<td  ng-if="$ctrl.mainObject.item.fun&&(!$ctrl.mainObject.baseInfo.operate||($ctrl.mainObject.baseInfo.operate&&$ctrl.authorityObject.operate))">' +
                     '<div ' + (vm.mainObject.item.fun ? ('ng-if="' + '!(' + vm.mainObject.item.fun.hideKey + ')&&' + vm.mainObject.item.fun.power + '"') : '') + '>' +
@@ -71,7 +71,7 @@
                 })
                 vm.data.html = '<tr  class="' + (vm.mainObject.baseInfo.unhover ? 'unhover-tr' : 'hover-tr') + '" ng-style="$ctrl.mainObject.baseInfo.style" ng-class="{\'disabled-tr\':' + (vm.mainObject.baseInfo.disabled || false) + ',\'elem-active\':item.isClick&&$ctrl.activeObject[$ctrl.mainObject.baseInfo.active]}" ng-repeat=\'($outerIndex,item) in $ctrl.list\' ng-click="$ctrl.mainObject.baseFun.click({item:item,$index:$index})" ng-init="item.$index=$index">' + template.loopHtml + template.html + '</tr>' +
                     '        <tr class="eo-none-tr" ng-if="$ctrl.list.length==0">' +
-                    '            <td colspan="{{$ctrl.mainObject.baseInfo.colspan}}">' + (vm.mainObject.baseInfo.warningType == 'customized-html' ? vm.mainObject.baseInfo.warning : '<span >{{$ctrl.mainObject.baseInfo.warning||\'' + $filter('translate')('374') + '\'}}</span>') +
+                    '            <td colspan="{{$ctrl.mainObject.baseInfo.colspan}}">' + (vm.mainObject.baseInfo.warningType == 'customized-html' ? vm.mainObject.baseInfo.warning : '<span >{{$ctrl.mainObject.baseInfo.warning||\'' + $filter('translate')('373') + '\'}}</span>') +
                     '            </td>' +
                     '        </tr>';
             }

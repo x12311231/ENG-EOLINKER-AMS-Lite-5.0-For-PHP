@@ -30,13 +30,13 @@
                         data.elem.click();
                         try {
                             if (document.execCommand('copy')) {
-                                $rootScope.InfoModal($filter('translate')('313'), 'success');
+                                $rootScope.InfoModal($filter('translate')('312'), 'success');
                             } else {
-                                $rootScope.InfoModal($filter('translate')('303'), 'error');
+                                $rootScope.InfoModal($filter('translate')('302'), 'error');
                             }
 
                         } catch (err) {
-                            $rootScope.InfoModal($filter('translate')('303'), 'error');
+                            $rootScope.InfoModal($filter('translate')('302'), 'error');
                         }
                     }
                     fun.init = (function () {

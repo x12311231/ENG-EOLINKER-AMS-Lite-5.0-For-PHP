@@ -16,7 +16,7 @@
             },
             navbar: {
                 menu: null, //菜单功能
-                delete: null, //{{\'409\'|translate}}
+                delete: null, //{{\'407\'|translate}}
                 recover: null, //恢复接口
                 deleteCompletely: null, //彻底删除接口
             }
@@ -128,7 +128,7 @@
                     grandSonGroupID:arg.grandSonGroupID
                 }
             }
-            $rootScope.EnsureModal($filter('translate')('409'), false, $filter('translate')('410'), {}, function (callback) {
+            $rootScope.EnsureModal($filter('translate')('407'), false, $filter('translate')('408'), {}, function (callback) {
                 if (callback) {
                     ApiManagementResource.Api.Delete(template.request).$promise
                         .then(function (response) {
@@ -136,7 +136,7 @@
                                 case CODE.COMMON.SUCCESS:
                                     {
                                         $state.go('home.project.inside.api.list', template.uri);
-                                        $rootScope.InfoModal($filter('translate')('411'), 'success');
+                                        $rootScope.InfoModal($filter('translate')('409'), 'success');
                                         break;
                                     }
                             }
@@ -148,7 +148,7 @@
             var template = {
                 modal: {
                     list: angular.copy(GroupService.get()),
-                    title: $filter('translate')('412')
+                    title: $filter('translate')('410')
                 },
                 request: {
                     spaceKey: arg.spaceKey,
@@ -163,7 +163,7 @@
                 }
             }
             if (!template.modal.list) {
-                $rootScope.InfoModal($filter('translate')('413'), 'error');
+                $rootScope.InfoModal($filter('translate')('411'), 'error');
                 return;
             }
             $rootScope.SelectVisualGroupModal(template.modal, function (callback) {
@@ -174,7 +174,7 @@
                             switch (response.statusCode) {
                                 case CODE.COMMON.SUCCESS:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('414'), 'success');
+                                        $rootScope.InfoModal($filter('translate')('412'), 'success');
                                         $state.go('home.project.inside.api.list', template.uri);
                                         break;
                                     }
@@ -196,7 +196,7 @@
                     grandSonGroupID:arg.grandSonGroupID
                 }
             }
-            $rootScope.EnsureModal($filter('translate')('415'), false,ENSURE_WARNIMG.DELETE, {}, function (callback) {
+            $rootScope.EnsureModal($filter('translate')('413'), false,ENSURE_WARNIMG.DELETE, {}, function (callback) {
                 if (callback) {
                     ApiManagementResource.Trash.Delete(template.request).$promise
                         .then(function (response) {
@@ -204,12 +204,12 @@
                                 case CODE.COMMON.SUCCESS:
                                     {
                                         $state.go('home.project.inside.api.list', template.uri);
-                                        $rootScope.InfoModal($filter('translate')('416'), 'success');
+                                        $rootScope.InfoModal($filter('translate')('414'), 'success');
                                         break;
                                     }
                                 default:
                                     {
-                                        $rootScope.InfoModal($filter('translate')('387') + RESPONSE_TEXT.FAILURE, 'error');
+                                        $rootScope.InfoModal($filter('translate')('385') + RESPONSE_TEXT.FAILURE, 'error');
                                         break;
                                     }
                             }
