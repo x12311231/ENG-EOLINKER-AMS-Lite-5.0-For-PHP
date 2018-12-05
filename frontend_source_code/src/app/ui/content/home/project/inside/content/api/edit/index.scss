@@ -1,0 +1,408 @@
+.ams-scss-api-edit {
+    z-index: 0;
+    >div {
+        padding: $PLATE_HOME_NAVBAR_HEIGHT $PLATE_PADDING $PLATE_PADDING;
+    }
+    .first-level-article {
+        .tips-ul {
+            padding: 0 10px;
+            @include eo-line(32px);
+            li {
+                font-size: 12px;
+            }
+            .title-li {
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+        }
+        .common-ul {
+            @include eo-color(#f1f8e9, #dcedc8);
+            * {
+                color: $buttonSuccessBgColor;
+            }
+        }
+        .default-ul {
+            @include eo-color(#e3f2fd,#bbdefb);
+            * {
+                color: $buttonInfoBgColor;
+            }
+        }
+        .first-part {
+            padding: 0 10px 10px 10px;
+            padding-top: 0;
+            min-height: 50px;
+            background-color: #fff;
+            box-shadow: $PLATE_SHADOW;
+            border-radius: 3px;
+            display: grid;
+            .api-message-url input[type=text],.api-message-name input[type=text] {
+                width: 100%;
+            }
+            .first-select-li {
+                line-height: 35px;
+                span {
+                    width: 50px;
+                    display: inline-block;
+                }
+            }
+            select {
+                width: auto;
+                text-indent: 0;
+                padding: 0 5px;
+            }
+            .api-message-send {
+                margin-top: 10px;
+                width: 100%;
+                display: table;
+                .icon-favor {
+                    color: #ccc;
+                }
+                .icon-favorfill {
+                    color: #f48932;
+                }
+                select {
+                    margin-right: 5px;
+                }
+            }
+            .api-message-url,
+            .api-message-name {
+                margin-top: 10px;
+                display: inline-flex;
+                width: 100%;
+                .common-li {
+                    @include eo-width(100%, 2px);
+                }
+            }
+            .api-message-url {
+                .protocol-li {
+                    select {
+                        border-radius: 3px 0 0 3px;
+                    }
+                }
+                select {
+                    border-right: none;
+                }
+                .method-li {
+                    select {
+                        border-radius: 0;
+                    }
+                }
+                .common-li {
+                    input {
+                        border-radius: 0 3px 3px 0;
+                    }
+                }
+            }
+        }
+        .item-part {
+            background-color: #fff;
+            .eo-input {
+                @include eo-line(40px);
+            }
+            .elem-hover-li {
+                background-color: #fff;
+                &:hover,
+                &:focus,
+                &:active,
+                &:visited {
+                    background-color: #f5f5f5;
+                }
+            }
+            .sv-helper {
+                background-color: #f5f5f5;
+                border-bottom: 1px solid #ddd;
+            }
+            .common-table {
+                width: 100%;
+                border-spacing: 0;
+                table-layout: fixed;
+                td {
+                    height: 40px;
+                    line-height: 20px;
+                    cursor: default;
+                    &:nth-child(n + 2) {
+                        border-left: 1px dashed #e5e5e5;
+                    }
+                    .eo-input {
+                        border: none;
+                        width: 100%;
+                        border-radius: 0;
+                    }
+                    .eo-input-error {
+                        box-shadow: 0px 0px 3px 0px red inset;
+                    }
+                    .eo-had-input-error input {
+                        box-shadow: 0px 0px 3px 0px red inset;
+                    }
+                }
+                .required-td {
+                    width: 120px;
+                    text-indent: 0;
+                    padding-left: 10px;
+                }
+                .operate-td {
+                    padding-left: 10px;
+                    text-indent: 0;
+                }
+                thead {
+                    background-color: #fafafa;
+                    td {
+                        text-indent: 10px;
+                    }
+                }
+                tbody {
+                    .number-label {
+                        width: 25px;
+                        @include eo-line(25px);
+                        border-radius: 3px;
+                        background-color: #f2f2f2;
+                        color: #999;
+                        display: inline-block;
+                        text-align: center;
+                        border: 1px solid #ddd;
+                    }
+                    .icon-shanchu {
+                        &:hover {
+                            background-color: $buttonDangerBgColor;
+                            color: #fff;
+                            border: 1px solid $buttonDangerFocusBgColor;
+                        }
+                    }
+                    .radio-input {
+                        border: 1px solid #ddd;
+                        @include eo-line(23px);
+                        width: 23px;
+                        font-size: 13px;
+                        cursor: pointer;
+                        display: inline-block;
+                        text-align: center;
+                        border-radius: 3px;
+                    }
+                    tr {
+                        td {
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                        }
+                        &:nth-last-child(n + 2) {
+                            td {
+                                border-bottom: 1px dashed #e5e5e5;
+                            }
+                        }
+                        &:first-child {
+                            td {
+                                border-top: 1px solid #ddd;
+                            }
+                        }
+                    }
+                }
+            }
+            header {
+                padding: 10px 10px 12px 10px;
+                min-height: 30px;
+                .send-format {
+                    color: $buttonInfoFocusBgColor;
+                    text-align: center;
+                    @include eo-line(30px);
+                    border: 1px solid #bcdffb;
+                    padding: 0 10px;
+                    background-color: #e3f7ff;
+                    &:hover {
+                        background-color: $buttonInfoFocusBgColor;
+                        color: #fff;
+                        * {
+                            color: #fff;
+                        }
+                    }
+                }
+                .test-nav-li {
+                    text-align: center;
+                    min-width: 80px;
+                    padding: 0 10px;
+                    font-weight: initial;
+                    @include eo-line(28px);
+                    background-color: #edf7ee;
+                    cursor: pointer;
+                    color: $buttonSuccessFocusBgColor;
+                    border: 1px solid #b2d8b6;
+                    &:hover {
+                        background-color: $buttonSuccessBgColor;
+                        border-color: $buttonSuccessFocusBgColor;
+                        color: #fff;
+                    }
+                }
+                .success-li {
+                    border-radius: 3px 0 0 3px;
+                    border-right: none;
+                }
+                .failure-li {
+                    border-radius: 0 3px 3px 0;
+                    border-left: none;
+                    margin-right: 5px;
+                }
+                .active {
+                    background-color: $buttonSuccessFocusBgColor;
+                    border-color: $buttonSuccessFocusBgColor;
+                    color: #fff;
+                }
+            }
+        }
+        .eo-static-hidden {
+            border: none;
+        }
+        .request-header-part {
+            header {
+                border-bottom: 1px solid #ddd;
+            }
+            table {
+                .request-header-label {
+                    width: 300px;
+                }
+                .operate-td {
+                    width: 150px;
+                }
+                tbody {
+                    .label-td {
+                        .icon-xiangxia {
+                            position: absolute;
+                            margin-left: -26px;
+                            display: inline-block;
+                            height: 40px;
+                            line-height: 43px;
+                        }
+                        .auto-complete-message {
+                            line-height: 20px;
+                            text-indent: 10px;
+                            font-size: 12px;
+                            margin-left: -1px;
+                        }
+                    }
+                }
+            }
+        }
+        .request-param-part {
+            header {
+                border-bottom: 1px solid #ddd;
+            }
+            table {
+                .type-td {
+                    width: 130px;
+                    select {
+                        text-indent: 0;
+                    }
+                }
+                .name-td {
+                    width: 300px;
+                }
+                .operate-td {
+                    width: 170px;
+                    .get-more-btn {
+                        padding: 0 5px;
+                        font-size: 12px;
+                        @include eo-line(27px);
+                    }
+                }
+            }
+            .eo-static-hidden {
+                margin-top: 0;
+            }
+        }
+        .response-param-part {
+            header {
+                border-bottom: 1px solid #ddd;
+            }
+            table {
+                .type-td {
+                    width: 130px;
+                    select {
+                        text-indent: 0;
+                    }
+                }
+                .name-td {
+                    width: 300px;
+                }
+                .operate-td {
+                    width: 170px;
+                    .get-more-btn {
+                        padding: 0 5px;
+                        font-size: 12px;
+                        @include eo-line(27px);
+                    }
+                }
+            }
+        }
+        .response-example-part {
+            .match-title-p {
+                font-size: 12px;
+                color: #999;
+            }
+            header {
+                padding: 0 10px;
+                .regex-p {
+                    select {
+                        width: auto;
+                        text-indent: 0;
+                        @include eo-line(35px);
+                    }
+                    input[type="text"] {
+                        @include eo-line(33px, 35px);
+                    }
+                }
+            }
+            article {
+                line-height: 0;
+            }
+        }
+        .remark-part {
+            article {
+                min-height: 237px;
+                padding: 10px 12px 10px 10px;
+            }
+        }
+        .mock-part {
+            header {
+                border-bottom: 1px solid #ddd;
+            }
+            table {
+                .type-td {
+                    width: 130px;
+                    select {
+                        text-indent: 0;
+                    }
+                }
+                .value-td {
+                    padding-right: 5px;
+                }
+                .name-td {
+                    width: 300px;
+                    text-indent: 10px;
+                }
+                .readonly-value-td {
+                    text-indent: 10px;
+                }
+            }
+        }
+        .mock-data-part {
+            article {
+                min-height: 137px;
+                display: table;
+                width: 100%;
+                .back-result-content {
+                    min-height: 230px;
+                    max-height: 500px;
+                    overflow: auto;
+                    border: 1px solid #ddd;
+                    margin: 0 10px 10px 10px;
+                    border-radius: 3px;
+                    padding: 5px;
+                    line-height: 20px;
+                    font-size: 12px;
+                    max-width: 100%;
+                    @include eo-width(100%, 32px);
+                    word-break: break-all;
+                    white-space: pre-wrap;
+                }
+            }
+        }
+    }
+}

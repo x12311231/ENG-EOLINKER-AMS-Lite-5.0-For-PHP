@@ -1,0 +1,74 @@
+group-quick-test-common-component {
+  .home-project-inside-group {
+    .group-ul{
+      margin-top:$PLATE_PADDING;
+      @include eo-height(100%,92px);
+    }
+    .child-group-div {
+      .group-list-li {
+        padding-right: 0;
+        >.group-li {
+          padding-left: 2em;
+        }
+        .group-name {
+          text-indent: 0;
+          color: #333;
+        }
+        .group-function {
+          margin-left: -67px;
+        }
+      }
+    }
+    .third-level-group-div {
+      .group-list-li {
+        >.group-li {
+          padding-left: 3em;
+        }
+      }
+    }
+    .api-first-level-ul {
+      .api-list-li {
+        padding-left: 7px;
+      }
+    }
+    .api-second-level-ul {
+      .api-list-li {
+        padding-left: 2.5em;
+      }
+    }
+    .api-third-level-ul {
+      .api-list-li {
+        padding-left: 4.5em;
+      }
+    }
+    .api-list-ul {
+      font-size: 12px;
+      .api-list-li {
+        cursor: pointer;
+        @include eo-line(40px);
+        .api-request-type {
+          font-weight: bold;
+          margin-right: 10px;
+          width: 33px;
+          display: inline-block;
+        }
+        .api-name {
+          width: calc(100% - 50px);
+          display: inline-block;
+          white-space: nowrap;
+          vertical-align: middle;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}
+
+.shrink-div {
+  group-quick-test-common-component {
+    .home-project-inside-group {
+      left: 71px;
+    }
+  }
+}

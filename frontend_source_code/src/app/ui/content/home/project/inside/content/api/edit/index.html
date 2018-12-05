@@ -1,0 +1,579 @@
+<div class="ams-scss-api-edit">
+    <menu-common-component class="fix-menu-common-component" list="$ctrl.component.menuObject.list" authority-object="$ctrl.service.authority.noticePermission" active-object="$ctrl.data"></menu-common-component>
+    <div>
+        <article class="first-level-article" ng-show="$ctrl.data.menu==0">
+            <div class="first-part">
+                <ng-form autocomplete="off" name="editForm">
+                    <ul>
+                        <li>
+                            <ul class="api-message-send">
+                                <li class="pull-left first-select-li">
+                                    <span class="fwb" >{{'85'|translate}}</span>
+                                </li>
+                                <li class="pull-left">
+                                    <select-multistage-common-component output="$ctrl.component.selectMultistageCommonComponentObject" input="{query:$ctrl.data.apiGroup,key:'groupName',child:'childGroupList',value:'groupID',initialData:[$ctrl.interaction.response.apiInfo.groupID,$ctrl.interaction.response.apiInfo.childGroupID,$ctrl.interaction.response.apiInfo.grandSonGroupID]}"></select-multistage-common-component>
+                                </li>
+                                <li class="pull-right" ng-click="$ctrl.fun.storage()">
+                                    <span>
+                                        <a class="iconfont " ng-class="{'icon-favor':$ctrl.interaction.response.apiInfo.starred==0,'icon-favorfill':$ctrl.interaction.response.apiInfo.starred==1}"></a>
+                                    </span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="api-message-send">
+                                <li class="pull-left first-select-li">
+                                    <span class="fwb">{{'239'|translate}}</span>
+                                </li>
+                                <li class="pull-left">
+                                    <select class="eo-select" ng-model="$ctrl.interaction.response.apiInfo.apiStatus">
+                                        <option value="0">{{'58'|translate}}</option>
+                                        <option value="1">{{'60'|translate}}</option>
+                                        <option value="2">{{'62'|translate}}</option>
+                                        <option value="3">{{'64'|translate}}</option>
+                                        <option value="8">{{'65'|translate}}</option>
+                                        <option value="4">{{'59'|translate}}</option>
+                                        <option value="5">{{'61'|translate}}</option>
+                                        <option value="6">{{'63'|translate}}</option>
+                                        <option value="7">BUG</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="api-message-url">
+                                <li class="pull-left first-select-li">
+                                    <span class="fwb">URI</span>
+                                </li>
+                                <li class="pull-left protocol-li">
+                                    <select class="eo-select" ng-model="$ctrl.interaction.response.apiInfo.apiProtocol">
+                                        <option value="0">HTTP</option>
+                                        <option value="1">HTTPS</option>
+                                    </select>
+                                </li>
+                                <li class="pull-left method-li">
+                                    <select class="eo-select" ng-model="$ctrl.interaction.response.apiInfo.apiRequestType">
+                                        <option value="0">POST</option>
+                                        <option value="1">GET</option>
+                                        <option value="2">PUT</option>
+                                        <option value="3">DELETE</option>
+                                        <option value="4">HEAD</option>
+                                        <option value="5">OPTIONS</option>
+                                        <option value="6">PATCH</option>
+                                    </select>
+                                </li>
+                                <li class="common-li">
+                                    <input autocomplete="off" class="eo-input" type="text" name="uri" ng-model="$ctrl.interaction.response.apiInfo.apiURI"
+                                        ng-class="{'eo-input-error':($ctrl.data.input.submited&&editForm.uri.$invalid)}"
+                                        autofocus="true" required>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="api-message-name">
+                                <li class="pull-left first-select-li">
+                                    <span class="fwb">{{'240'|translate}}</span>
+                                </li>
+                                <li class="common-li">
+                                    <input autocomplete="off" class="eo-input" type="text" name="name" ng-model="$ctrl.interaction.response.apiInfo.apiName"
+                                        ng-class="{'eo-input-error':($ctrl.data.input.submited&&editForm.name.$invalid)}"
+                                        maxlength="255" required>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </ng-form>
+            </div>
+            <div class="eo-tab-menu mt20">
+                <div class="pull-left  item-tab" ng-class="{'active-item':$ctrl.data.menuType=='headers'}" ng-click="$ctrl.data.menuType='headers'">{{'27'|translate}}
+                    <span class="iconfont icon-circle" ng-show="$ctrl.interaction.response.apiInfo.apiHeader.length>1"></span>
+                </div>
+                <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.menuType=='body'}" ng-click="$ctrl.data.menuType='body'">{{'37'|translate}}
+                    <span class="iconfont icon-circle" ng-show="($ctrl.interaction.response.apiInfo.apiRequestParamType!='1'&&$ctrl.interaction.response.apiInfo.apiRequestParam.length>1)||($ctrl.interaction.response.apiInfo.apiRequestParamType=='1'&&$ctrl.interaction.response.apiInfo.apiRequestRaw)"></span>
+                </div>
+                <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.menuType=='restful'}" ng-click="$ctrl.data.menuType='restful'">{{'38'|translate}}
+                    <tip-directive input="<p>{{'241'|translate}}{param_name}{{'242'|translate}}</p>"></tip-directive>
+                    <span class="iconfont icon-circle" ng-show="$ctrl.interaction.response.apiInfo.apiRestfulParam.length>1"></span>
+                </div>
+                <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.menuType=='urlParam'}" ng-click="$ctrl.data.menuType='urlParam'">{{'39'|translate}}
+                    <span class="iconfont icon-circle" ng-show="$ctrl.interaction.response.apiInfo.apiUrlParam.length>1"></span>
+                </div>
+                <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.menuType=='auth'}" ng-click="$ctrl.data.menuType='auth'">{{'243'|translate}}
+                    <span class="iconfont icon-circle" ng-show="$ctrl.interaction.response.apiInfo.apiAuth.status!='0'"></span>
+                </div>
+                <!-- <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.menuType=='inject'}" ng-click="$ctrl.data.menuType='inject'">{{'244'|translate}}
+                    <tip-directive input="<p>{{'245'|translate}}</p>"></tip-directive>
+                    <span class="iconfont icon-circle" ng-show="$ctrl.interaction.response.apiInfo.beforeInject||$ctrl.interaction.response.apiInfo.afterInject"></span>
+                </div> -->
+            </div>
+            <div class="item-part eo-tab-container request-header-part" ng-show="$ctrl.data.menuType=='headers'">
+                <header>
+                    <ul>
+                        <li>
+                            <button class="eo-button-info change-type-btn send-format" set-to-params="headerName" update-desc="{index:$ctrl.data.index.header,which:'header'}"
+                                item="{{$ctrl.data.jsonToParamObject.headerItem}}" reset-result="$ctrl.interaction.response.apiInfo.apiHeader"
+                                set-value="headerValue" import-method="2"></button>
+                        </li>
+                    </ul>
+                </header>
+                <table class="common-table">
+                    <thead>
+                        <tr>
+                            <td class="request-header-label">{{'213'|translate}}</td>
+                            <td>{{'214'|translate}}</td>
+                            <td class="operate-td">{{'7'|translate}}</td>
+                        </tr>
+                    </thead>
+                </table>
+                <ul class="header-form-ul" sv-root sv-part="$ctrl.interaction.response.apiInfo.apiHeader">
+                    <li ng-repeat="item in $ctrl.interaction.response.apiInfo.apiHeader" sv-element="$ctrl.data.sort.headerForm" class="elem-hover-li"
+                        ng-switch="$last" ng-init="item.$index=$ctrl.data.isOrigin?$index:item.$index?item.$index:$index">
+                        <table class="common-table">
+                            <tbody>
+                                <td class="label-td request-header-label">
+                                    <ul class="request-header-icon-form">
+                                        <li ng-class="{'eo-had-input-error':(item.headerValue&&!item.headerName)}">
+                                            <auto-complete-ams-component model="item" key-name="headerName" array="$ctrl.constant.requestHeader" input-change-fun="$ctrl.fun.last('header',{$last:$last,item:item,index:$index})"></auto-complete-ams-component>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <input autocomplete="off" class="eo-input " type="text" ng-model="item.headerValue" maxlength="65530" ng-change="$ctrl.fun.last('header',{$last:$last,item:item})">
+                                </td>
+                                <td class="operate-td" ng-switch-when=true>
+                                    <span sv-handle></span>
+                                </td>
+                                <td class="operate-td" ng-switch-when=false>
+                                    <label class="eo-sv-handle iconfont icon-111zhuanhuan number-label" sv-handle></label>
+                                    <label>
+                                        <a class="iconfont icon-shanchu number-label" ng-click="$ctrl.fun.delete('header',{$index:$index,item:item})"></a>
+                                    </label>
+                                </td>
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+            </div>
+            <div class="item-part eo-tab-container request-param-part" ng-class="{'eo-static-hidden':$ctrl.data.menuType!='body'}">
+                <header>
+                    <ul>
+                        <li class="pull-left test-nav-li success-li" ng-class="{'active':$ctrl.interaction.response.apiInfo.apiRequestParamType=='0'}"
+                            ng-click="$ctrl.interaction.response.apiInfo.apiRequestParamType = '0'">Form-data</li>
+                        <li class="pull-left test-nav-li failure-li" ng-class="{'active':$ctrl.interaction.response.apiInfo.apiRequestParamType=='1'}"
+                            ng-click="$ctrl.interaction.response.apiInfo.apiRequestParamType = '1'">Raw</li>
+                        <li ng-hide="$ctrl.interaction.response.apiInfo.apiRequestParamType=='1'">
+                            <button class="eo-button-info change-type-btn send-format" set-to-params="paramKey" update-desc="{index:$ctrl.data.index.body,which:'body'}"
+                                item="{{$ctrl.data.jsonToParamObject.requestItem}}" value-item="{{$ctrl.data.jsonToParamObject.requestValueItem}}"
+                                reset-result="$ctrl.interaction.response.apiInfo.apiRequestParam" set-value="paramValueList"
+                                set-value-key="value"></button>
+                            <button class="eo-button-info change-type-btn send-format" set-to-params="paramKey" update-desc="{index:$ctrl.data.index.body,which:'body'}"
+                                item="{{$ctrl.data.jsonToParamObject.requestItem}}" value-item="{{$ctrl.data.jsonToParamObject.requestValueItem}}"
+                                reset-result="$ctrl.interaction.response.apiInfo.apiRequestParam" set-value="paramValueList"
+                                set-value-key="value" import-method="3"></button>
+                        </li>
+                        <li class="pull-left" ng-hide="$ctrl.interaction.response.apiInfo.apiRequestParamType=='0'">
+                            <div class="content-type-select-div" ng-class="{'content-type-select-active-div':$ctrl.data.contentType.isClick}">
+                                <a class="content-type-select-a" ng-click="$ctrl.fun.quickSelectContentType('show',{$event:$event})">
+                                    <p class="desc-p">{{$ctrl.data.contentType.current.key}}
+                                        <span class="iconfont icon-xiangxia">
+                                            <tip-directive input="<p>{{'246'|translate}}</p>"></tip-directive>
+                                        </span>
+                                    </p>
+                                </a>
+                                <div class="content-type-select-content-div">
+                                    <a ng-repeat="item in $ctrl.data.contentType.array" ng-click="$ctrl.fun.quickSelectContentType('select',{$event:$event,item:item})">
+                                        <p>{{item.key}}</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </header>
+                <table class="common-table" ng-class="{'hidden':$ctrl.interaction.response.apiInfo.apiRequestParamType=='1'}">
+                    <thead>
+                        <tr>
+                            <td class="name-td">{{'41'|translate}}</td>
+                            <td class="type-td">{{'44'|translate}}</td>
+                            <td class="required-td">
+                                <input autocomplete="off" class="hidden" type="checkbox" id="body_checkbox_all" ng-model="$ctrl.data.allObject.body"
+                                    ng-change="$ctrl.fun.all('body')">
+                                <label for="body_checkbox_all" class="eo-checkbox iconfont" ng-class="{'icon-check':$ctrl.data.allObject.body}">{{$ctrl.data.allObject.body?'':'&nbsp;'}}</label>{{'42'|translate}}
+                            </td>
+                            <td>{{'43'|translate}}</td>
+                            <td>{{'50'|translate}}</td>
+                            <td class="operate-td">{{'7'|translate}}</td>
+                        </tr>
+                    </thead>
+                </table>
+                <ul class="request-form-ul" sv-root sv-part="$ctrl.interaction.response.apiInfo.apiRequestParam" ng-hide="$ctrl.interaction.response.apiInfo.apiRequestParamType=='1'">
+                    <li class="elem-hover-li" ng-repeat="item in $ctrl.interaction.response.apiInfo.apiRequestParam" ng-init="outerIndex=$index;item.$index=item.$index?item.$index:$index"
+                        sv-element="$ctrl.data.sort.requestParamForm">
+                        <table class="common-table" ng-switch="$last">
+                            <tbody>
+                                <tr>
+                                    <td class="name-td">
+                                        <input autocomplete="off" class="eo-input" type="text" ng-model="item.paramKey" ng-class="{'eo-input-error':(!item.paramKey&&item.paramName)}"
+                                            maxlength="255" ng-change="$ctrl.fun.last('body',{$last:$last,item:item})"
+                                            required>
+                                    </td>
+                                    <td class="type-td">
+                                        <select class="eo-input request-type-select" ng-options="type.value as type.name for type in $ctrl.data.typeSelect"
+                                            ng-model="item.paramType" ng-change="$ctrl.fun.last('body',{$last:$last,item:item})">
+                                        </select>
+                                    </td>
+                                    <td class="required-td">
+                                        <input autocomplete="off" class="hidden" type="checkbox" name="request-body-{{$index}}" id="request-body-{{$index}}" ng-model="item.paramNotNull"
+                                            ng-change="$ctrl.fun.last('body',{$last:$last,item:item})">
+                                        <label for="request-body-{{$index}}" class="radio-input iconfont " ng-class="{'icon-check':item.paramNotNull}">{{item.paramNotNull?'':'&nbsp;'}}</label>
+                                    </td>
+                                    <td>
+                                        <input autocomplete="off" class="eo-input" type="text" ng-model="item.paramName" maxlength="255" ng-change="$ctrl.fun.last('body',{$last:$last,item:item})">
+                                    </td>
+                                    <td>
+                                        <input autocomplete="off" class="eo-input" type="text" ng-model="item.paramValue" ng-change="$ctrl.fun.last('body',{$last:$last,item:item})">
+                                    </td>
+                                    <td class="operate-td" ng-switch-when=true>
+                                        <span sv-handle></span>
+                                    </td>
+                                    <td class="operate-td" ng-switch-when=false>
+                                        <button class="get-more-btn eo-button-default" ng-click="$ctrl.fun.moreRequest('body',{$index:$index,item:item})" ng-disabled="!item.paramKey">{{'247'|translate}}</button>
+                                        <button class="get-more-btn eo-button-default" ng-click="$ctrl.fun.add('insertBody',{item:item,$index:$index})" ng-disabled="!item.paramKey">{{'35'|translate}}</button>
+                                        <label class="eo-sv-handle iconfont icon-111zhuanhuan number-label" sv-handle></label>
+                                        <label>
+                                            <a class="iconfont icon-shanchu number-label" ng-click="$ctrl.fun.delete('body',{item:item,$index:$index})"></a>
+                                        </label>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+                <div class="ace-editor-ams-component-container-div" ng-class="{'eo-static-hidden':$ctrl.interaction.response.apiInfo.apiRequestParamType!='1'}">
+                    <ace-editor-ams-component class="ace-editor-container" set-model="$ctrl.interaction.response.apiInfo.apiRequestRaw"
+                        id="_Raw_Ace_Editor_Js"></ace-editor-ams-component>
+                </div>
+            </div>
+            <div class="item-part eo-tab-container request-param-part" ng-show="$ctrl.data.menuType=='restful'">
+                <header>
+                    <ul>
+                        <li>
+                            <button class="eo-button-info change-type-btn send-format" set-to-params="paramKey" update-desc="{index:$ctrl.data.index.restful,which:'restful'}"
+                                item="{{$ctrl.data.jsonToParamObject.requestItem}}" value-item="{{$ctrl.data.jsonToParamObject.requestValueItem}}"
+                                reset-result="$ctrl.interaction.response.apiInfo.apiRestfulParam" set-value="paramValueList"
+                                set-value-key="value"></button>
+                        </li>
+                    </ul>
+                </header>
+                <table class="common-table">
+                    <thead>
+                        <tr>
+                            <td class="name-td">{{'41'|translate}}</td>
+                            <td class="type-td">{{'44'|translate}}</td>
+                            <td class="required-td">
+                                <input autocomplete="off" class="hidden" type="checkbox" id="restful_checkbox_all" ng-model="$ctrl.data.allObject.restful"
+                                    ng-change="$ctrl.fun.all('restful')">
+                                <label for="restful_checkbox_all" class="eo-checkbox iconfont" ng-class="{'icon-check':$ctrl.data.allObject.restful}">{{$ctrl.data.allObject.restful?'':'&nbsp;'}}</label>{{'42'|translate}}
+                            </td>
+                            <td>{{'43'|translate}}</td>
+                            <td>{{'50'|translate}}</td>
+                            <td class="operate-td">{{'7'|translate}}</td>
+                        </tr>
+                    </thead>
+                </table>
+                <ul class="restful-form-ul" sv-root sv-part="$ctrl.interaction.response.apiInfo.apiRestfulParam">
+                    <li class="elem-hover-li" ng-repeat="item in $ctrl.interaction.response.apiInfo.apiRestfulParam" ng-init="item.$index=$ctrl.data.isOrigin?$index:item.$index?item.$index:$index"
+                        sv-element="$ctrl.data.sort.restfulParamForm">
+                        <table class="common-table" ng-switch="$last">
+                            <tbody>
+                                <td class="name-td">
+                                    <input autocomplete="off" class="eo-input" type="text" ng-model="item.paramKey" ng-class="{'eo-input-error':(!item.paramKey&&item.paramName)}"
+                                        maxlength="255" ng-change="$ctrl.fun.last('restful',{$last:$last,item:item})"
+                                        required>
+                                </td>
+                                <td class="type-td">
+                                    <select class="eo-input request-type-select" ng-options="type.value as type.name for type in $ctrl.data.typeSelect"
+                                        ng-model="item.paramType" ng-change="$ctrl.fun.last('restful',{$last:$last,item:item})">
+                                    </select>
+                                </td>
+                                <td class="required-td">
+                                    <input autocomplete="off" class="hidden" type="checkbox" name="restful-body-{{$index}}" id="restful-body-{{$index}}" ng-model="item.paramNotNull"
+                                        ng-change="$ctrl.fun.last('restful',{$last:$last,item:item})">
+                                    <label for="restful-body-{{$index}}" class="radio-input iconfont " ng-class="{'icon-check':item.paramNotNull}">{{item.paramNotNull?'':'&nbsp;'}}</label>
+                                </td>
+                                <td>
+                                    <input autocomplete="off" class="eo-input" type="text" ng-model="item.paramName" maxlength="255" ng-change="$ctrl.fun.last('restful',{$last:$last,item:item})">
+                                </td>
+                                <td>
+                                    <input autocomplete="off" class="eo-input" type="text" ng-model="item.paramValue" ng-change="$ctrl.fun.last('restful',{$last:$last,item:item})">
+                                </td>
+                                <td class="operate-td" ng-switch-when=true>
+                                    <span sv-handle></span>
+                                </td>
+                                <td class="operate-td" ng-switch-when=false>
+                                    <button class="get-more-btn eo-button-default" ng-click="$ctrl.fun.moreRequest('restful',{item:item,$index:$index})"
+                                        ng-disabled="!item.paramKey">{{'247'|translate}}</button>
+                                    <button class="get-more-btn eo-button-default" ng-click="$ctrl.fun.add('insertRestful',{item:item,$index:$index})" ng-disabled="!item.paramKey">{{'35'|translate}}</button>
+                                    <label class="eo-sv-handle iconfont icon-111zhuanhuan number-label" sv-handle></label>
+                                    <label>
+                                        <a class="iconfont icon-shanchu number-label" ng-click="$ctrl.fun.delete('restful',{item:item,$index:$index})"></a>
+                                    </label>
+                                </td>
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+            </div>
+            <div class="item-part eo-tab-container request-param-part" ng-class="{'eo-static-hidden':$ctrl.data.menuType!='urlParam'}">
+                <header>
+                    <ul>
+                        <li>
+                            <button class="eo-button-info change-type-btn send-format" set-to-params="paramKey" update-desc="{index:$ctrl.data.index.url,which:'url'}"
+                                item="{{$ctrl.data.jsonToParamObject.requestItem}}" value-item="{{$ctrl.data.jsonToParamObject.urlValueItem}}"
+                                reset-result="$ctrl.interaction.response.apiInfo.apiUrlParam" set-value="paramValueList"
+                                set-value-key="value" import-method="1"></button>
+                        </li>
+                    </ul>
+                </header>
+                <table class="common-table">
+                    <thead>
+                        <tr>
+                            <td class="name-td">{{'41'|translate}}</td>
+                            <td class="required-td">
+                                <input autocomplete="off" class="hidden" type="checkbox" id="url_checkbox_all" ng-model="$ctrl.data.allObject.url" ng-change="$ctrl.fun.all('url')">
+                                <label for="url_checkbox_all" class="eo-checkbox iconfont" ng-class="{'icon-check':$ctrl.data.allObject.url}">{{$ctrl.data.allObject.url?'':'&nbsp;'}}</label>{{'42'|translate}}
+                            </td>
+                            <td>{{'43'|translate}}</td>
+                            <td>{{'50'|translate}}</td>
+                            <td class="operate-td">{{'7'|translate}}</td>
+                        </tr>
+                    </thead>
+                </table>
+                <ul class="url-form-ul" sv-root sv-part="$ctrl.interaction.response.apiInfo.apiUrlParam">
+                    <li class="elem-hover-li" ng-repeat="item in $ctrl.interaction.response.apiInfo.apiUrlParam" ng-init="item.$index=$ctrl.data.isOrigin?$index:item.$index?item.$index:$index"
+                        sv-element="$ctrl.data.sort.urlParamForm">
+                        <table class="common-table" ng-switch="$last">
+                            <tbody>
+                                <td class="name-td">
+                                    <input autocomplete="off" class="eo-input" type="text" ng-model="item.paramKey" ng-class="{'eo-input-error':(!item.paramKey&&item.paramName)}"
+                                        maxlength="255" ng-change="$ctrl.fun.last('url',{$last:$last,item:item})"
+                                        required>
+                                </td>
+                                <td class="required-td">
+                                    <input autocomplete="off" class="hidden" type="checkbox" name="url-param-{{$index}}" id="url-param-{{$index}}" ng-model="item.paramNotNull"
+                                        ng-change="$ctrl.fun.last('url',{$last:$last,item:item})">
+                                    <label for="url-param-{{$index}}" class="radio-input iconfont " ng-class="{'icon-check':item.paramNotNull}">{{item.paramNotNull?'':'&nbsp;'}}</label>
+                                </td>
+                                <td>
+                                    <input autocomplete="off" class="eo-input" type="text" ng-model="item.paramName" maxlength="255" ng-change="$ctrl.fun.last('url',{$last:$last,item:item})">
+                                </td>
+                                <td>
+                                    <input autocomplete="off" class="eo-input" type="text" ng-model="item.paramValue" ng-change="$ctrl.fun.last('url',{$last:$last,item:item})">
+                                </td>
+                                <td class="operate-td" ng-switch-when=true>
+                                    <span sv-handle></span>
+                                </td>
+                                <td class="operate-td" ng-switch-when=false>
+                                    <button class="get-more-btn eo-button-default" ng-click="$ctrl.fun.moreRequest('url',{item:item,$index:$index})" ng-disabled="!item.paramKey">{{'247'|translate}}</button>
+                                    <button class="get-more-btn eo-button-default" ng-click="$ctrl.fun.add('insertUrl',{item:item,$index:$index})" ng-disabled="!item.paramKey">{{'35'|translate}}</button>
+                                    <label class="eo-sv-handle iconfont icon-111zhuanhuan number-label" sv-handle></label>
+                                    <label>
+                                        <a class="iconfont icon-shanchu number-label" ng-click="$ctrl.fun.delete('url',{item:item,$index:$index})"></a>
+                                    </label>
+                                </td>
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+            </div>
+            <div class="eo-tab-container" ng-show="$ctrl.data.menuType=='auth'">
+                <auth-ams-component auth-object="$ctrl.interaction.response.apiInfo.apiAuth"></auth-ams-component>
+            </div>
+            <!-- <div class="item-part eo-tab-container request-param-part" ng-class="{'eo-static-hidden':$ctrl.data.menuType!='inject'}">
+                <header>
+                    <ul class="menu-ul">
+                        <li class="pull-left test-nav-li success-li" ng-class="{'active':$ctrl.data.script.type=='0'}" ng-click="$ctrl.data.script.type='0'">{{'248'|translate}}</li>
+                        <li style="border-left:none;" class="pull-left test-nav-li failure-li" ng-class="{'active':$ctrl.data.script.type=='1'}"
+                            ng-click="$ctrl.data.script.type='1'">{{'249'|translate}}</li>
+                    </ul>
+                </header>
+                <ace-menu-editor-ams-component mark="project" set-model="$ctrl.interaction.response.apiInfo" set-variable="$ctrl.data.script.type=='0'?'beforeInject':'afterInject'"
+                    watch-model="$ctrl.data.script.type" input-object="$ctrl.component.aceEditorMenu"></ace-menu-editor-ams-component>
+            </div> -->
+            <div class="eo-tab-menu mt20">
+                    <div class="pull-left  item-tab" ng-class="{'active-item':$ctrl.data.responseMenuType=='responseHeader'}"  ng-click="$ctrl.data.responseMenuType='responseHeader'">{{'223'|translate}}<span class="iconfont icon-circle" ng-show="$ctrl.interaction.response.apiInfo.responseHeader.length>1"></span></div>
+                    <div class="pull-left  item-tab" ng-class="{'active-item':$ctrl.data.responseMenuType=='response'}"  ng-click="$ctrl.data.responseMenuType='response'">{{'224'|translate}}<span class="iconfont icon-circle" ng-show="$ctrl.interaction.response.apiInfo.apiResultParam.length>1"></span></div>
+            </div>
+            <!--{{'223'|translate}}-->
+            
+            <div class="item-part eo-tab-container request-header-part" ng-show="$ctrl.data.responseMenuType=='responseHeader'">
+                    <header>
+                            <ul>
+                                <li>
+                                    <button class="eo-button-info change-type-btn send-format" set-to-params="headerName" update-desc="{index:$ctrl.data.index.header,which:'responseHeader'}"
+                                        item="{{$ctrl.data.jsonToParamObject.headerItem}}" reset-result="$ctrl.interaction.response.apiInfo.responseHeader"
+                                        set-value="headerValue" import-method="2"></button>
+                                </li>
+                            </ul>
+                        </header>
+                        <table class="common-table">
+                            <thead>
+                                <tr>
+                                    <td class="request-header-label">{{'213'|translate}}</td>
+                                    <td>{{'43'|translate}}</td>
+                                    <td class="operate-td">{{'7'|translate}}</td>
+                                </tr>
+                            </thead>
+                        </table>
+                        <ul class="header-form-ul" sv-root sv-part="$ctrl.interaction.response.apiInfo.responseHeader">
+                            <li ng-repeat="item in $ctrl.interaction.response.apiInfo.responseHeader" sv-element="$ctrl.data.sort.headerForm" class="elem-hover-li"
+                                ng-switch="$last" ng-init="item.$index=$ctrl.data.isOrigin?$index:item.$index?item.$index:$index">
+                                <table class="common-table">
+                                    <tbody>
+                                        <td class="label-td request-header-label">
+                                            <ul class="request-header-icon-form">
+                                                <li ng-class="{'eo-had-input-error':(item.headerValue&&!item.headerName)}">
+                                                    <auto-complete-ams-component model="item" key-name="headerName" array="$ctrl.constant.requestHeader" input-change-fun="$ctrl.fun.last('responseHeader',{$last:$last,item:item,index:$index})"></auto-complete-ams-component>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <input autocomplete="off" class="eo-input " type="text" ng-model="item.headerValue" maxlength="65530" ng-change="$ctrl.fun.last('responseHeader',{$last:$last,item:item})">
+                                        </td>
+                                        <td class="operate-td" ng-switch-when=true>
+                                            <span sv-handle></span>
+                                        </td>
+                                        <td class="operate-td" ng-switch-when=false>
+                                            <label class="eo-sv-handle iconfont icon-111zhuanhuan number-label" sv-handle></label>
+                                            <label>
+                                                <a class="iconfont icon-shanchu number-label" ng-click="$ctrl.fun.delete('responseHeader',{$index:$index,item:item})"></a>
+                                            </label>
+                                        </td>
+                                    </tbody>
+                                </table>
+                            </li>
+                        </ul>
+                </div>
+            <div class="item-part eo-tab-container response-param-part" ng-show="$ctrl.data.responseMenuType=='response'">
+                <header>
+                    <ul>
+                        <li>
+                            <button class="eo-button-info change-type-btn send-format" set-to-params="paramKey" update-desc="{index:$ctrl.data.index.response,which:'response'}"
+                                item="{{$ctrl.data.jsonToParamObject.resultItem}}" value-item="{{$ctrl.data.jsonToParamObject.resultValueItem}}"
+                                reset-result="$ctrl.interaction.response.apiInfo.apiResultParam" set-value="paramValueList"
+                                set-value-key="value"></button>
+                            <button class="eo-button-info change-type-btn send-format" set-to-params="paramKey" update-desc="{index:$ctrl.data.index.response,which:'response'}"
+                                item="{{$ctrl.data.jsonToParamObject.resultItem}}" value-item="{{$ctrl.data.jsonToParamObject.resultValueItem}}"
+                                reset-result="$ctrl.interaction.response.apiInfo.apiResultParam" set-value="paramValueList"
+                                set-value-key="value" import-method="3"></button>
+                        </li>
+                    </ul>
+                </header>
+                <table class="common-table">
+                    <thead>
+                        <tr>
+
+                            <td class="name-td">{{'250'|translate}}</td>
+                            <td class="type-td">{{'44'|translate}}</td>
+                            <td class="required-td">
+                                <input autocomplete="off" class="hidden" type="checkbox" id="response_checkbox_all" ng-model="$ctrl.data.allObject.response"
+                                    ng-change="$ctrl.fun.all('response')">
+                                <label for="response_checkbox_all" class="eo-checkbox iconfont" ng-class="{'icon-check':$ctrl.data.allObject.response}">{{$ctrl.data.allObject.response?'':'&nbsp;'}}</label>{{'54'|translate}}
+                            </td>
+                            <td>{{'43'|translate}}</td>
+                            <td class="operate-td">{{'7'|translate}}</td>
+                        </tr>
+                    </thead>
+                </table>
+                <ul class="response-form-ul" sv-root sv-part="$ctrl.interaction.response.apiInfo.apiResultParam">
+                    <li class="elem-hover-li" ng-repeat="item in $ctrl.interaction.response.apiInfo.apiResultParam track by $index"  sv-element="$ctrl.data.sort.responseParamForm"
+                        ng-init="item.$index=$ctrl.data.isOrigin?$index:item.$index?item.$index:$index">
+                        <table class="common-table" ng-switch="$last">
+                            <tbody>
+                                <td class="name-td">
+                                    <input autocomplete="off" class="eo-input" type="text" ng-model="item.paramKey" ng-class="{'eo-input-error':(!item.paramKey&&item.paramName)}"
+                                        maxlength="255" ng-change="$ctrl.fun.last('response',{$last:$last,item:item})"
+                                        required>
+                                </td>
+                                <td class="type-td">
+                                    <select class="eo-input request-type-select" ng-options="type.value as type.name for type in $ctrl.data.typeSelect"
+                                        ng-model="item.paramType" ng-change="$ctrl.fun.last('response',{$last:$last,item:item})">
+                                    </select>
+                                </td>
+                                <td class="required-td">
+                                    <input autocomplete="off" class="hidden" type="checkbox" name="response-body-{{$index}}" id="response-body-{{$index}}" ng-model="item.paramNotNull"
+                                        ng-change="$ctrl.fun.last('response',{$last:$last,item:item})">
+                                    <label for="response-body-{{$index}}" class="radio-input iconfont " ng-class="{'icon-check':item.paramNotNull}">{{item.paramNotNull?'':'&nbsp;'}}</label>
+                                </td>
+                                <td>
+                                    <input autocomplete="off" class="eo-input" type="text" ng-model="item.paramName" maxlength="255" ng-change="$ctrl.fun.last('response',{$last:$last,item:item})">
+                                </td>
+                                <td class="operate-td" ng-switch-when=true>
+                                    <span sv-handle></span>
+                                </td>
+                                <td class="operate-td" ng-switch-when=false>
+                                    <button class="get-more-btn eo-button-default" ng-click="$ctrl.fun.moreResponse({item:item,$index:$index})" ng-disabled="!item.paramKey">{{'247'|translate}}</button>
+                                    <button class="get-more-btn eo-button-default" ng-click="$ctrl.fun.add('insertResponse',{item:item,$index:$index})"
+                                        ng-disabled="!item.paramKey">{{'35'|translate}}</button>
+                                    <label class="eo-sv-handle iconfont icon-111zhuanhuan number-label" sv-handle></label>
+                                    <label>
+                                        <a class="iconfont icon-shanchu number-label" ng-click="$ctrl.fun.delete('response',{item:item,$index:$index})"></a>
+                                    </label>
+                                </td>
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+            </div>
+            <div class="eo-tab-menu mt20">
+                <div class="pull-left  item-tab" ng-class="{'active-item':!$ctrl.data.mock.isFailure}" ng-click="$ctrl.data.mock.isFailure = false;" id="Success_Example">{{'225'|translate}}</div>
+                <div class="pull-left item-tab" ng-class="{'active-item':$ctrl.data.mock.isFailure}" ng-click="$ctrl.data.mock.isFailure = true;" id="Failure_Example">{{'226'|translate}}</div>
+            </div>
+            <div class="item-part eo-tab-container response-example-part">
+                <header>
+                    <p class="match-title-p ptb10">HTTP Status Code</p>
+                    <p class="regex-p f_row" ng-hide="$ctrl.data.mock.isFailure">
+                        <select class="eo-select mr5" ng-model="$ctrl.interaction.response.apiInfo.successCode" ng-if="$ctrl.data.reset.status=='add'">
+                            <option value="200">200</option>
+                            <option value="302">302</option>
+                            <option value="404">404</option>
+                            <option value="500">500</option>
+                            <option value="502">502</option>
+                            <option value="">{{'251'|translate}}</option>
+                        </select>
+                        <input autocomplete="off" type="text" class="eo-input" ng-show="!$ctrl.interaction.response.apiInfo.successCode||$ctrl.data.reset.status!='add'"
+                            placeholder="{{'252'|translate}}" ng-model="$ctrl.interaction.response.apiInfo.apiSuccessStatusCode"
+                            maxlength="11">
+                    </p>
+                    <p class="regex-p f_row" ng-show="$ctrl.data.mock.isFailure">
+                        <select class="eo-select mr5" ng-model="$ctrl.interaction.response.apiInfo.failureCode" ng-if="$ctrl.data.reset.status=='add'">
+                            <option value="200">200</option>
+                            <option value="302">302</option>
+                            <option value="404">404</option>
+                            <option value="500">500</option>
+                            <option value="502">502</option>
+                            <option value="">{{'251'|translate}}</option>
+                        </select>
+                        <input autocomplete="off" type="text" class="eo-input" ng-show="!$ctrl.interaction.response.apiInfo.failureCode||$ctrl.data.reset.status!='add'"
+                            placeholder="{{'252'|translate}}" ng-model="$ctrl.interaction.response.apiInfo.apiFailureStatusCode"
+                            maxlength="11">
+                    </p>
+                    <p class="match-title-p ptb10">Content-Type</p>
+                    <p class="regex-p" ng-hide="$ctrl.data.mock.isFailure">
+                        <input autocomplete="off" type="text" class="eo-input" ng-model="$ctrl.interaction.response.apiInfo.apiSuccessContentType">
+                    </p>
+                    <p class="regex-p" ng-show="$ctrl.data.mock.isFailure">
+                            <input autocomplete="off" type="text" class="eo-input" ng-model="$ctrl.interaction.response.apiInfo.apiFailureContentType">
+                        </p>
+                    <p class="match-title-p pt10">{{'253'|translate}}</p>
+                </header>
+                
+                <article>
+                    <ace-editor-ams-component set-model="$ctrl.interaction.response.apiInfo" set-variable="$ctrl.data.mock.isFailure?'apiFailureMock':'apiSuccessMock'"
+                        watch-model="$ctrl.data.mock.isFailure" id="_Mock_Ace_Editor_Js"></ace-editor-ams-component>
+                </article>
+            </div>
+        </article>
+    </div>
+    <loading-common-component fun="$ctrl.fun.load(arg)" interaction="{request:{delay:true}}"></loading-common-component>
+</div>
+<div oc-lazy-load="$ctrl.constant.lazyload"></div>

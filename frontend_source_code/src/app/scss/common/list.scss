@@ -1,0 +1,245 @@
+/**
+* @name 列表默认样式
+* @author 银云信息科技有限公司
+*/
+.common-scss-list {
+    display: flex;
+    width: 100%;
+
+    .first-level-article {
+        margin-top: 10px;
+        border-radius: 3px;
+        box-shadow: $PLATE_SHADOW;
+
+        table {
+            width: 100%;
+            background: #fff;
+            border-spacing: 0;
+            text-align: left;
+            text-indent: 15px;
+            border-radius: 3px;
+            table-layout: fixed;
+
+            thead {
+                @include eo-line(40px);
+
+                th {
+                    cursor: default;
+                }
+
+                td,
+                th {
+                    border-bottom: 1px solid #ddd;
+                }
+            }
+        }
+
+        tbody tr {
+            @include eo-line(40px);
+
+            td {
+                cursor: inherit;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            &:hover {
+                background-color: #efefef;
+            }
+        }
+
+        .unnecessary-td {
+            color: #999;
+        }
+
+        .hover-tr {
+            cursor: pointer;
+        }
+
+        .unhover-tr {
+            cursor: default;
+        }
+
+        .disabled-tr {
+            cursor: not-allowed;
+
+            td {
+                button {
+                    &:disabled {
+                        cursor: not-allowed;
+
+                        &:hover {
+                            color: #999;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .eo-none-tr {
+        cursor: default;
+
+        td {
+            color: #999;
+        }
+    }
+
+    .eo-none-p {
+        background-color: #fff;
+        text-align: center;
+        height: 150px;
+        line-height: 150px;
+        color: #999;
+    }
+
+    .eo-width-200 {
+        width: 200px;
+    }
+
+    .eo-width-180 {
+        width: 180px;
+    }
+
+    .eo-width-50 {
+        width: 50px;
+    }
+
+    .eo-width-90 {
+        width: 90px;
+    }
+
+    .eo-width-120 {
+        width: 120px;
+    }
+
+    .eo-width-150 {
+        width: 150px;
+    }
+
+    .eo-width-170 {
+        width: 170px;
+    }
+
+    .eo-width-180 {
+        width: 180px;
+    }
+
+    .eo-width-250 {
+        width: 250px;
+    }
+
+    .eo-width-280 {
+        width: 280px;
+    }
+
+    .list-container {
+        ul {
+            display: table;
+            width: 100%;
+            background: #fff;
+            border-spacing: 0;
+            text-align: left;
+            text-indent: 15px;
+            border-radius: 3px;
+            table-layout: fixed;
+
+            &:hover {
+                background-color: #efefef;
+            }
+
+            li {
+                height: 40px;
+                line-height: 40px;
+                display: table-cell;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+
+    .tab-container {
+        box-shadow: none;
+        margin-top: 0;
+
+        ul {
+            display: block;
+            border-radius: 3px;
+            height: 120px;
+            width: 200px;
+            box-shadow: $PLATE_SHADOW;
+            margin-right: 15px;
+            margin-top: 15px;
+            background-color: #fff;
+            float: left;
+            padding: 20px;
+            color: #999;
+            font-size: 12px;
+            line-height: 1.75em;
+
+            .item-title-li {
+                font-size: 16px;
+                margin-bottom: 12px;
+                color: #333;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .item-btn-group-li {
+                margin-top: 12px;
+            }
+
+            &:hover {
+                background-color: #efefef;
+            }
+        }
+
+    }
+
+    .disabled-tab-container {
+        ul {
+            height: 150px;
+        }
+    }
+
+    .elem-active {
+
+        &:nth-child(odd),
+        &:nth-child(even) {
+            background-color: #ffecb3;
+        }
+    }
+
+    .eo-operate-btn {
+        .eo-tip-container .message-li {
+            white-space: pre-line;
+            max-width: 120px;
+            min-width: 120px;
+        }
+
+        &:hover {
+            text-decoration: underline;
+
+            .eo-tip-container {
+                visibility: visible;
+                margin-top: -70px;
+                margin-left: -8px;
+            }
+        }
+    }
+}
+
+.grey-black-list {
+    tbody {
+        tr:nth-child(odd) {
+            background: #fafafa;
+        }
+
+        tr:nth-child(even) {
+            background: #fff;
+        }
+    }
+}

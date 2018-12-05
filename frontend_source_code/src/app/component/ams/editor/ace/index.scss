@@ -1,0 +1,14 @@
+ace-editor-ams-component{
+    display: inline-block;
+    border: 1px solid #ddd;
+    margin: 10px;
+    border-radius: 3px;
+    max-width: 100%;
+    @include eo-width(100%,22px);
+    .ace_scrollbar{
+        z-index: 4;
+    }
+}
+.ace-editor-ams-component-container-div{
+    display: flex;
+}

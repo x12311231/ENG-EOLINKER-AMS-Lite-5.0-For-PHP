@@ -1,0 +1,105 @@
+<!-- author：广州银云信息科技有限公司 -->
+<!-- [scar:8.29]增加协作人员、板块的跳转 -->
+<div class="ams-scss-overview ">
+    <div class="left-div">
+        <div class="first-div mt20">
+            <ul>
+                <li class="title-li" title="{{$ctrl.interaction.response.projectInfo.projectName}}">
+                    <b class="pull-left">{{$ctrl.interaction.response.projectInfo.projectName}}</b>
+                </li>
+                <li class="desc-li" ng-if="$ctrl.interaction.response.projectInfo.projectDesc">
+                    <p>{{$ctrl.interaction.response.projectInfo.projectDesc}}</p>
+                </li>
+            </ul>
+        </div>
+        <div class="item-div second-div">
+            <ul>
+                <li class="pull-left first-li">
+                    <p class="title-p" ng-switch="$ctrl.interaction.response.projectInfo.projectType">
+                        <span ng-switch-when=0>Web</span>
+                        <span ng-switch-when=1>App</span>
+                        <span ng-switch-when=2>PC</span>
+                        <span ng-switch-when=3>{{'176'|translate}}</span>
+                        <span ng-switch-when=4>{{'177'|translate}}</span>
+                    </p>
+                    <p class="desc-p">{{'178'|translate}}</p>
+                </li>
+                <li class="pull-left center-li">
+                    <p class="title-p">V{{$ctrl.interaction.response.projectInfo.projectVersion}}</p>
+                    <p class="desc-p">{{'179'|translate}}</p>
+                </li>
+                <a>
+                    <li class="pull-left center-li" ng-click="$ctrl.fun.menu({switch:2})">
+                        <p class="title-p">
+                            <!-- <label class="iconfont icon-gongzuojihua"></label> -->
+                            {{$ctrl.interaction.response.projectInfo.logCount}} {{'180'|translate}}
+                        </p>
+                        <p class="desc-p">{{'181'|translate}}</p>
+                    </li>
+                </a>
+                <li class="last-li">
+                    <p class="title-p">{{$ctrl.interaction.response.projectInfo.projectUpdateTime}}</p>
+                    <p class="desc-p">{{'182'|translate}}</p>
+                </li>
+            </ul>
+        </div>
+        <div class="item-div third-div three-div">
+            <ul>
+                <li class="pull-left first-li" ng-click="$ctrl.fun.menu({switch:0})">
+                    <p class="title-p">
+                        <label class="iconfont icon-api"></label>
+                        {{$ctrl.interaction.response.projectInfo.apiCount}} {{'183'|translate}}
+                    </p>
+                    <p class="desc-p">{{'184'|translate}}</p>
+                </li>
+                <li class="pull-left center-li" ng-click="$ctrl.fun.menu({switch:1})">
+                    <p class="title-p">
+                        <label class="iconfont icon-icocode"></label>
+                        {{$ctrl.interaction.response.projectInfo.statusCodeCount}} {{'185'|translate}}
+                    </p>
+                    <p class="desc-p">{{'186'|translate}}</p>
+                </li>
+                <li class="last-li" ng-click="$ctrl.fun.menu({switch:3})">
+                    <p class="title-p">
+                        <label class="iconfont icon-renyuanguanli"></label>
+                        {{$ctrl.interaction.response.projectInfo.partnerCount}} {{'187'|translate}}
+                    </p>
+                    <p class="desc-p">{{'188'|translate}}</p>
+                </li>
+            </ul>
+        </div>
+        <p class="item-p" ng-if="$ctrl.service.authority.permission.project.exportAndShare.export">{{'189'|translate}}</p>
+        <div class="item-div forth-div" ng-if="$ctrl.service.authority.permission.project.exportAndShare.export">
+            <ul>
+                <li class=" pull-left  only-li" ng-click="$ctrl.fun.dump()">
+                    <p class="title-p">
+                        <label class="iconfont icon-xiazai"></label>
+                        {{'190'|translate}}
+                    </p>
+                    <p class="desc-p">{{'191'|translate}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="right-div">
+        <ul>
+            <li class="title-li">
+                <label class="iconfont icon-gongzuojihua"></label>
+                {{'192'|translate}}
+            </li>
+            <li class="item-li" ng-repeat="item in $ctrl.interaction.response.projectInfo.logList">
+                <p class="title-p">
+                    <span class="icon-span pull-left">·</span> {{item.opTime}}
+                </p>
+                <p class="desc-p">{{item.operator}}&nbsp;{{item.opDesc}}</p>
+            </li>
+            <li class="item-li more-li">
+                <p class="title-p">
+                    <span class="icon-span pull-left">·</span>
+                    <span class="more-span" ui-sref="home.project.inside.log">{{'193'|translate}}</span>
+                </p>
+            </li>
+        </ul>
+    </div>
+    <loading-common-component fun="$ctrl.fun.init(arg)"></loading-common-component>
+</div>

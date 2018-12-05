@@ -1,0 +1,53 @@
+<div class="ams-scss-version">
+    <menu-common-component class="fix-menu-common-component" authority-object="$ctrl.service.authority.permission.project.apiManagement"
+        list="$ctrl.component.menuObject.list"></menu-common-component>
+    {{$ctrl.data.interaction.response.query}}
+    <article class="first-level-article">
+        <table>
+            <thead>
+                <tr>
+                    <th class="first-th">
+                        {{'254'|translate}}
+                    </th>
+                    <th class="api-name second-th">
+                        {{'255'|translate}}
+                    </th>
+                    <th class="third-th">{{'256'|translate}}</th>
+                    <th class="forth-th">{{'257'|translate}}</th>
+                    <th class="fifth-th" ng-if="$ctrl.service.authority.permission.project.apiManagement.edit">{{'7'|translate}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-if="$ctrl.data.interaction.response.query.length" ng-repeat="item in $ctrl.data.interaction.response.query">
+                    <th class="first-th">
+                        <label class="iconfont icon-check" ng-if="item.isNow==1"></label>
+                    </th>
+                    <td class="second-th">
+                        {{item.updateTime}}
+                    </td>
+                    <td class="third-th">
+                        {{item.operator}}
+                    </td>
+                    <td class="forth-th" title="{{item.updateDesc}}">
+                        {{item.updateDesc}}
+                    </td>
+                    <td class="fifth-th" ng-if="$ctrl.service.authority.permission.project.apiManagement.edit">
+                        <a class="eo-operate-btn" ng-click="$ctrl.data.fun.showUpdateDesc({item:item})">{{'258'|translate}}</a>
+                        <a class="eo-operate-btn" ng-click="$ctrl.data.fun.toggleHistory({item:item})" ng-class="{'hidden':item.isNow==1}">{{'259'|translate}}</a>
+                        <a class="eo-operate-btn" ng-click="$ctrl.data.fun.deleteHistory({item:item,$index:$index})"
+                            ng-class="{'hidden':item.isNow==1}">{{'260'|translate}}</a>
+                    </td>
+                </tr>
+                <tr ng-if="$ctrl.data.interaction.response.query.length==0" class="eo-none-tr">
+                    <td colspan="{{$ctrl.service.authority.permission.project.apiManagement.edit?5:4}}">{{'261'|translate}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </article>
+    <footer class="pageFooter" ng-if="$ctrl.data.interaction.response.query.length>0">
+        <uib-pagination total-items="$ctrl.data.info.pagination.msgCount" items-per-page="$ctrl.data.info.pagination.pageSize"
+            ng-model="$ctrl.data.info.pagination.page" max-size="$ctrl.data.info.pagination.maxSize" class="pagination-sm "
+            boundary-link-Number="true" rotate="false" next-text="&#xe684;" previous-text="&#xe685;" ng-change="$ctrl.data.fun.pageChanged()"></uib-pagination>
+    </footer>
+    <loading-common-component fun="$ctrl.data.fun.init(arg)"></loading-common-component>
+</div>

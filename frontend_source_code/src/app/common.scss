@@ -1,0 +1,837 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.base-container-div {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 0;
+}
+
+span,
+li,
+thead th,
+p {
+    cursor: inherit;
+}
+
+th,
+td {
+    text-align: left;
+    word-break: break-all;
+}
+
+ol,ul {
+    list-style-type: none;
+}
+
+body {
+    position: absolute;
+    font-family: $defaultFontFamily;
+    background: #fff;
+    min-width: $bodyWidth;
+    width: 100%;
+    height: 100%;
+    color: #333;
+    font-size: 14px;
+}
+
+a,
+button {
+    cursor: pointer;
+    text-decoration: none;
+    * {
+        cursor: inherit;
+    }
+    input[type=text] {
+        cursor: text;
+    }
+}
+
+textarea {
+    resize: none;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+input::-ms-reveal {
+    display: none;
+}
+
+select {
+    font-size: 12px;
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.eo-blod {
+    font-weight: bold;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.eo-tip-container{
+    position: absolute;
+    z-index: 100;
+    visibility: hidden;
+    .message-li {
+        padding: 10px;
+        line-height: initial;
+        border-radius: 3px;
+        background-color: #000;
+        color: #fff;
+        font-size: 12px;
+        text-align: left;
+        max-width:500px;
+        min-width: 200px;
+        *{
+            color:#fff;
+        }
+    }
+    .arrow-li {
+        border-color: #000 transparent transparent transparent;
+        border-width: 5px 5px 0 5px;
+        border-style: solid;
+        width: 0;
+        margin-left: 8px;
+    }
+}
+.eo-modal-header {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 18px;
+    padding: 0 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    a,
+    input[type=button] {
+        padding: 0 16px;
+    }
+}
+.eo-modal-article {
+    padding: 20px;
+    .first-form-item-title-li {
+        margin-bottom: 8px;
+    }
+    .form-item-title-li {
+        margin: 20px 0 8px 0;
+    }
+}
+.eo-modal-footer {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    border-top: 1px solid #e5e5e5;
+    button,
+    input[type=button] {
+        padding: 0 16px;
+    }
+    input[type=button],
+    button {
+        margin-right: 10px;
+    }
+}
+.eo-modal-tip {
+    color: #999;
+}
+.eo-operate-btn {
+    color: #03a9f4;
+    margin-right: 10px;
+    border: none;
+    background: none;
+    text-indent: 0;
+    .iconfont {
+        padding-right: 2px;
+    }
+    &:hover {
+        color: $buttonInfoFocusBgColor;
+    }
+    &:disabled {
+        color: #ccc;
+        cursor: not-allowed;
+        .iconfont {
+            cursor: not-allowed;
+        }
+    }
+}
+
+.eo-static-hidden {
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    position: relative;
+}
+
+.common-modal-table {
+    width: 100%;
+    background: #fff;
+    border-spacing: 0;
+    text-align: left;
+    border-bottom: none;
+    tr {
+        @include eo-line(40px);
+    }
+    th {
+        font-weight: normal;
+        text-indent: 10px;
+        border-right: 2px dotted #ddd;
+    }
+    td {
+        border-right: 2px dotted #ddd;
+        border-top: 1px solid #ddd;
+        padding:0 10px;
+    }
+    td:last-child,
+    th:last-child {
+        border-right: none;
+    }
+
+    .table-header {
+        tr {
+            background-color: #f7f7f7;
+        }
+    }
+    .eo-input {
+        width: 100%;
+        border: none;
+        @include eo-line(40px);
+        &:focus {
+            border-color: none;
+            box-shadow: none;
+        }
+    }
+    .eo-input-error {
+        border-radius: 0;
+        box-shadow: 0 0 3px 0 red inset;
+        &:focus {
+            border-radius: 0;
+            box-shadow: 0 0 3px 0 red inset;
+        }
+    }
+    .sv-helper {
+        @include eo-line(40px);
+        background-color: #fff;
+        td {
+            border-bottom: 1px solid #ddd;
+        }
+    }
+    .operate-td {
+        .number-label {
+            width: 25px;
+            @include eo-line(25px);
+            border-radius: 3px;
+            background-color: #f2f2f2;
+            color: #999;
+            display: inline-block;
+            text-align: center;
+            border: 1px solid #ddd;
+            font-size: 12px;
+            text-indent: 0px;
+            .iconfont {
+                font-size: 12px;
+            }
+        }
+        .icon-shanchu:hover {
+            background-color: #e83333;
+            color: #fff;
+            border: 1px solid #d03333;
+        }
+    }
+}
+
+.eo-none-tr {
+    background-color: #fff;
+    td {
+        text-align: center;
+        height: 100px;
+        line-height: 100px;
+        &:hover {
+            background-color: #fff;
+        }
+    }
+    color: #999;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.wrap {
+    width: $bodyWidth;
+    height: auto;
+    margin: 0 auto;
+}
+
+.mask {
+    position: fixed;
+    z-index: -1;
+    background: #f7f7f7;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.null-tip-span {
+    font-size: 16px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    line-height: 140px;
+    color: #999;
+}
+.eo-sv-handle {
+    cursor: move;
+}
+
+.eo-input,
+.eo-select {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 3px;
+    color: #333;
+    &:hover {
+        border-color: #999;
+        transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    &:focus {
+        border-color: $buttonSuccessFocusBgColor;
+        box-shadow: 0px 0px 0px 2px #C8E6C9;
+    }
+    &:disabled{
+        color: #999;
+        cursor: not-allowed;
+        background-color: #fafafa;
+    }
+}
+
+.eo-input {
+    height: 33px;
+    text-indent: 10px;
+    width: 248px;
+}
+
+.eo-select {
+    height: 35px;
+    width: 250px;
+}
+
+.eo-checkbox {
+    border: 1px solid #dcdcdc;
+    @include eo-line(23px);
+    width: 23px;
+    font-size: 13px;
+    margin-right: 4px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    border-radius: 3px;
+    text-indent: 0;
+}
+
+.eo-link {
+    color: $buttonInfoBgColor;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+
+.eo-button-delete {
+    @include eo-button($buttonDeleteBgColor, $buttonDeleteColor, $buttonDangerBgColor, $buttonQSColor);
+}
+
+.eo-button-success {
+    @include eo-button($buttonSuccessBgColor, $buttonSuccessColor, $buttonSuccessFocusBgColor, $buttonSuccessColor);
+}
+
+.eo-button-default {
+    @include eo-button($buttonDefaultBgColor, $buttonESColor, $buttonDefaultFocusBgColor, $buttonDefaultBorderColor, $buttonDefaultBorderColor);
+    border: 1px solid #ddd;
+}
+
+.eo-button-info {
+    @include eo-button($buttonInfoBgColor, $buttonQSColor, $buttonInfoFocusBgColor, $buttonQSColor);
+    border: 1px solid $buttonInfoBgColor;
+}
+
+.eo-button-orange {
+    @include eo-button(#FF9800, $buttonQSColor, #f47c36, $buttonQSColor);
+}
+
+.eo-button-warning {
+    @include eo-button(#FF5722, $buttonQSColor, #f44336, $buttonQSColor);
+}
+
+.eo-button-danger {
+    @include eo-button($buttonDangerBgColor, $buttonQSColor, $buttonDangerFocusBgColor, $buttonQSColor);
+}
+
+.eo-label-purple{
+    @include eo-label(#f8fff9, #9C27B0);
+}
+
+.eo-label-success {
+    @include eo-label(#f8fff9, #58a942);
+}
+
+.eo-label-default {
+    @include eo-label(#fcfeff, #07a1ea)
+}
+
+.eo-label-danger {
+    @include eo-label(#fffdfd, #ea0707);
+}
+
+.eo-label-warning {
+    @include eo-label(#fffdf8, #f18f00);
+}
+
+.eo-label-tips {
+    @include eo-label(#f5f5f5, #999);
+}
+
+.eo-label-others {
+    @include eo-label(#fffcfb, #6D4C41);
+}
+
+.eo-label-yellow {
+    @include eo-label(#fffef6, #FF8F00);
+}
+
+.eo-label-options {
+    @include eo-label(#fafdff, #546E7A);
+}
+
+.eo-color-default {
+    @include eo-color(#07a1ea);
+}
+
+.eo-color-success {
+    @include eo-color($buttonSuccessBgColor);
+}
+
+.eo-color-warning {
+    @include eo-color(#f18f00);
+}
+
+.eo-color-error {
+    @include eo-color($buttonDangerBgColor);
+}
+
+.eo-color-yellow {
+    @include eo-color(#ffcc00);
+}
+
+.eo-color-danger {
+    @include eo-color(#ea0707);
+}
+
+.eo-color-tips {
+    @include eo-color(#999);
+}
+
+.eo-color-others {
+    @include eo-color(#795548, #6D4C41);
+}
+
+.eo-color-options {
+    @include eo-color(#607D8B, #546E7A);
+}
+
+.eo-color-unuse {
+    @include eo-color(#999, rgb(198, 62, 33));
+}
+.eo-color-purple{
+    @include eo-color(#9C27B0);
+}
+
+.eo-status-options {
+    color: #546E7A;
+}
+
+.eo-status-others {
+    color: #6D4C41;
+}
+
+.eo-status-default {
+    color: #07a1ea;
+}
+
+.eo-status-success {
+    color: $buttonSuccessBgColor;
+}
+
+.eo-status-warning {
+    color: #f18f00;
+}
+
+.eo-status-error {
+    color: $buttonDangerBgColor;
+}
+
+.eo-status-yellow {
+    color: #ffcc00;
+}
+.eo-status-purple {
+    color: #9C27B0;
+}
+.eo-status-danger {
+    color: #ea0707;
+}
+
+.eo-status-tips {
+    color: #999;
+}
+
+//动画
+@keyframes flicker {
+    0% {
+        border: 1px solid #ddd;
+    }
+    50% {
+        border: 1px solid $buttonSuccessFocusBgColor;
+    }
+    100% {
+        border: 1px solid #ddd;
+    }
+}
+
+.eo-copy {
+    @include eo-animation(flicker 1s);
+}
+
+//modal
+
+
+.eo-tab-menu {
+    background-color: #efefef;
+    display: table;
+    border-radius: 3px 3px 0 0;
+    box-shadow: $PLATE_SHADOW;
+    border-bottom: 0;
+    margin-bottom: -1px;
+    .item-tab {
+        min-width: 80px;
+        padding: 0 10px;
+        display: inline-block;
+        @include eo-line(33px);
+        cursor: pointer;
+        .icon-circle {
+            font-size: 12px;
+            margin-left: 5px;
+            color: $buttonInfoBgColor;
+        }
+        &:first-child {
+            border-radius: 0 3px 0 0;
+        }
+        &:nth-last-child(n+2) {
+            border-radius: 0 3px 0 0;
+            border-right: 1px solid #ddd;
+        }
+        &:last-child {
+            border-radius: 3px 0 0 0;
+        }
+    }
+    .active-item {
+        background-color: #fff;
+        border-bottom: 1px solid #fff;
+    }
+}
+
+.eo-tab-container {
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: $PLATE_SHADOW;
+    display: block;
+}
+
+.eo-method-label {
+    border-radius: 3px;
+    margin-right: 8px;
+    font-size: 12px;
+    display: inline-block;
+    width: 45px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    text-indent: 0;
+}
+
+.eo-absolute {
+    position: absolute;
+}
+.eo-relative {
+    position: relative;
+}
+
+.opacity-none {
+    opacity: 0;
+}
+
+.eo-had-input-error {
+    input {
+        border: 1px solid #d85030;
+    }
+}
+
+.eo-had-content-error {
+    * {
+        color:#d85030;
+    }
+}
+
+.eo-input-error {
+    border: 1px solid #d85030;
+    &:focus {
+        border-color: #d85030;
+        box-shadow: 0 0 0 2px #FFCDD2;
+    }
+}
+
+.eo-input-success {
+    border: 1px solid $buttonSuccessBgColor;
+}
+
+.eo-common-table {
+    border-spacing: 0;
+    table-layout: fixed;
+    border-radius: 3px;
+    border: 1px solid #e5e5e5;
+    thead {
+        td {
+            background-color: #fafafa;
+        }
+    }
+    td {
+        @include eo-line(40px);
+        vertical-align: top;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding-left: 10px;
+        &:nth-last-child(n + 2) {
+            border-right: 1px dashed #e5e5e5;
+        }
+    }
+    thead {
+        background-color: #fafafa;
+    }
+    .btn-delete {
+        height: 25px;
+        line-height: 25px;
+        border-radius: 3px;
+        background-color: #f2f2f2;
+        color: #999;
+        display: inline-block;
+        text-align: center;
+        border: 1px solid #ddd;
+        padding: 0 5px;
+        font-size: 12px;
+        &:hover {
+            background-color: #e83333;
+            color: #fff;
+            border: 1px solid #d03333;
+        }
+    }
+    tbody {
+        tr {
+            &:nth-last-child(n + 2) {
+                td {
+                    border-bottom: 1px dashed #e5e5e5;
+                }
+            }
+            &:first-child {
+                td {
+                    border-top: 1px solid #ddd;
+                }
+            }
+        }
+        .hover-tr {
+            &:hover {
+                background-color: #fafafa;
+            }
+        }
+    }
+}
+
+//popover
+.popover {
+    position: absolute;
+    z-index: 2;
+    table {
+        border-spacing: 0;
+    }
+}
+
+.arrow {
+    border-style: solid;
+    border-width: 5px 10px 5px 0;
+    border-color: transparent #333 transparent transparent;
+}
+
+.popover-inner {
+    background-color: #333;
+    padding: 5px 10px;
+    min-width: 150px;
+    max-width: 215px;
+    .popover-content {
+        color: #fff;
+        font-size: 12px;
+        line-height: 20px;
+    }
+}
+
+
+//placeholder
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color: #ccc;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: #ccc;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #ccc;
+}
+
+/*分页*/
+
+.pageFooter {
+    text-align: center;
+    .pagination>li>a,
+    .pagination>li>span {
+        color: $buttonESColor;
+        width: 35px;
+    }
+    .pagination>.disabled>a {
+        color: #e5e5e5;
+        cursor: default;
+    }
+    .pagination-prev,
+    .pagination-next {
+        border-radius: 3px;
+    }
+    .pagination>.active,
+    .pagination>.active:hover,
+    .pagination>.active:focus,
+    .pagination>.active,
+    .pagination>.active:hover,
+    .pagination>.active:focus {
+        background-color: $buttonSuccessFocusBgColor;
+        a {
+            color: #fff;
+        }
+    }
+    .pagination-jump {
+        margin: 20px 0;
+        color: $buttonESColor;
+        margin-top: 37px;
+        margin-left: 10px;
+        display: inline-block;
+        li {
+            @include eo-line(37px);
+            display: inline-block;
+            input {
+                @include eo-line(33px);
+                margin: 0 8px;
+                width: 55px;
+                border: 1px solid #dfdfdf;
+                background-color: #fff;
+            }
+            button {
+                width: 50px;
+            }
+            input {
+                text-indent: 1em;
+            }
+        }
+    }
+    .pagination-sm {
+        margin: 25px;
+        display: inline-block;
+        li {
+            width: 35px;
+            @include eo-line(35px, 36px);
+            background-color: #fff;
+            border: 1px solid rgba(0, 0, 0, .06);
+            border-left: none;
+            text-align: center;
+            display: inline-flex;
+        }
+        .pagination-prev {
+            margin-right: 10px;
+            border-left: 1px solid rgba(0, 0, 0, .06);
+        }
+        .pagination-next {
+            margin-left: 10px;
+            border-left: 1px solid rgba(0, 0, 0, .06);
+        }
+        li:nth-child(2) {
+            border-left: 1px solid rgba(0, 0, 0, .06);
+        }
+    }
+    .first-page {
+        border-radius: 3px 0 0 3px;
+    }
+    .last-page {
+        border-radius: 0 3px 3px 0;
+    }
+    .only-page {
+        border-radius: 3px;
+    }
+}
+
+//wangeditor
+.wangEditor-container {
+    .wangEditor-txt {
+        ol {
+            li {
+                list-style-type: decimal;
+            }
+        }
+        ul {
+            li {
+                list-style-type: initial;
+            }
+        }
+        * {
+            white-space: pre-wrap;
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,78 @@
+<!-- author：广州银云信息科技有限公司 -->
+<div class="home-project-inside-group common-scss-group">
+    <article class="group-article-0">
+        <ul class="group-ul">
+            <li class="title-li">
+                <b>{{$ctrl.mainObject.baseInfo.title||"{{'85'|translate}}"}}</b>
+            </li>
+            <li class="item-li">
+                <ul>
+                    <li class="background-group-li" ng-repeat='($outerIndex,item) in $ctrl.list track by $index' ng-init="item.$index=$index;item.isSpreed=true;">
+                        <div class="group-li" ng-click="$ctrl.mainObject.baseFun.click('first-level',{item:item})" ng-class="{'elem-active':item[$ctrl.mainObject.baseInfo.id]==$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.id]&&!$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.secondLevelGroupID]&&!$ctrl.mainObject.baseInfo.current.apiID}">
+                            <span class="title-icon iconfont" ng-class="{'icon-wenjian':(item[$ctrl.mainObject.baseInfo.id]!=$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.id]||!item.isSpreed),'icon-dakaiwenjianjia2':item[$ctrl.mainObject.baseInfo.id]==$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.id]&&item.isSpreed}"
+                                ng-click="$ctrl.mainObject.baseFun.spreed({item:item,$event:$event})"></span>
+                            <span class="group-name" ng-class="{'pull-left':item[$ctrl.mainObject.baseInfo.id]>0}">{{item[$ctrl.mainObject.baseInfo.name]}}</span>
+                        </div>
+                        <div class="child-group-div" ng-show="item[$ctrl.mainObject.baseInfo.id]==$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.id]&&item.isSpreed"
+                            ng-if="$ctrl.mainObject.level">
+                            <ul>
+                                <li class="background-group-li group-list-li" ng-repeat='($index1,item1) in item[$ctrl.mainObject.baseInfo.child] track by $index'
+                                    ng-init="item1.$index=$index;">
+                                    <div class="group-li" ng-click="$ctrl.mainObject.baseFun.click('second-level',{parentItem:item,item:item1})" ng-class="{'elem-active':item1[$ctrl.mainObject.baseInfo.id]==$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.secondLevelGroupID]&&!$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.thirdLevelGroupID]&&!$ctrl.mainObject.baseInfo.current.apiID}">
+                                        <span class="title-icon iconfont " ng-class="{'icon-wenjian':(item1[$ctrl.mainObject.baseInfo.id]!=$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.secondLevelGroupID]||!item1.isSpreed),'icon-dakaiwenjianjia2':item1[$ctrl.mainObject.baseInfo.id]==$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.secondLevelGroupID]&&item1.isSpreed}"
+                                            ng-click="$ctrl.mainObject.baseFun.spreed({item:item1,$event:$event})"></span>
+                                        <span class="group-name pull-left child-group-name">{{item1[$ctrl.mainObject.baseInfo.name]}}</span>
+                                    </div>
+                                    <div class="third-level-group-div" ng-show="item1[$ctrl.mainObject.baseInfo.id]==$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.secondLevelGroupID]&&item1.isSpreed"
+                                        ng-if="$ctrl.mainObject.level">
+                                        <ul>
+                                            <li class="background-group-li group-list-li" ng-repeat='($index2,item2) in item1[$ctrl.mainObject.baseInfo.child] track by $index'
+                                                ng-init="item2.isSpreed=true;">
+                                                <div class="group-li" ng-click="$ctrl.mainObject.baseFun.click('third-level',{grandParentItem:item,parentItem:item1,item:item2})"
+                                                    ng-class="{'elem-active':item2[$ctrl.mainObject.baseInfo.id]==$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.thirdLevelGroupID]&&!$ctrl.mainObject.baseInfo.current.apiID}">
+                                                    <span class="title-icon iconfont" ng-class="{'icon-wenjian':(item2[$ctrl.mainObject.baseInfo.id]!=$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.thirdLevelGroupID]||!item2.isSpreed),'icon-dakaiwenjianjia2':item2[$ctrl.mainObject.baseInfo.id]==$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.thirdLevelGroupID]&&item2.isSpreed}"
+                                                        ng-click="$ctrl.mainObject.baseFun.spreed({item:item2,$event:$event})"></span>
+                                                    <span class="group-name pull-left child-group-name">{{item2[$ctrl.mainObject.baseInfo.name]}}</span>
+                                                </div>
+                                                <ul class="api-list-ul api-third-level-ul" ng-show="item2[$ctrl.mainObject.baseInfo.id]==$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.thirdLevelGroupID]&&item2.isSpreed">
+                                                    <li class="api-list-li" ng-if="item2.apiList.length==0">
+                                                        <span class="api-name eo-status-tips">{{'undefined'|translate}}</span>
+                                                    </li>
+                                                    <li class="api-list-li" ng-repeat='($index1,apiItem) in item2.apiList track by $index' ng-click="$ctrl.mainObject.baseFun.go({item:apiItem})"
+                                                        ng-class="{'elem-active':apiItem.apiID==$ctrl.mainObject.baseInfo.current.apiID}">
+                                                        <span class="api-request-type" ng-class="{'eo-status-success':apiItem.apiRequestType==0,'eo-status-default':apiItem.apiRequestType==1,'eo-status-others':apiItem.apiRequestType==2,'eo-status-warning':apiItem.apiRequestType==6,'eo-status-danger':apiItem.apiRequestType==3,'eo-status-yellow':apiItem.apiRequestType==4,'eo-status-options':apiItem.apiRequestType==5}">{{apiItem.apiRequestType==0?'POST':apiItem.apiRequestType==1?'GET':apiItem.apiRequestType==2?'PUT':apiItem.apiRequestType==3?'DEL':apiItem.apiRequestType==4?'HEAD':apiItem.apiRequestType==5?'OPTS':'PATCH'}}</span>
+                                                        <span class="api-name">{{apiItem.apiName}}</span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <ul class="api-list-ul api-second-level-ul" ng-show="item1[$ctrl.mainObject.baseInfo.id]==$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.secondLevelGroupID]&&item1.isSpreed">
+                                        <li class="api-list-li" ng-if="item1.apiList.length==0&&item1[$ctrl.mainObject.baseInfo.child].length==0">
+                                            <span class="api-name eo-status-tips">{{'undefined'|translate}}</span>
+                                        </li>
+                                        <li class="background-group-li api-list-li" ng-repeat='($index1,apiItem) in item1.apiList track by $index' ng-click="$ctrl.mainObject.baseFun.go({item:apiItem})"
+                                            ng-class="{'elem-active':apiItem.apiID==$ctrl.mainObject.baseInfo.current.apiID}">
+                                            <span class="api-request-type" ng-class="{'eo-status-success':apiItem.apiRequestType==0,'eo-status-default':apiItem.apiRequestType==1,'eo-status-others':apiItem.apiRequestType==2,'eo-status-warning':apiItem.apiRequestType==6,'eo-status-danger':apiItem.apiRequestType==3,'eo-status-yellow':apiItem.apiRequestType==4,'eo-status-options':apiItem.apiRequestType==5}">{{apiItem.apiRequestType==0?'POST':apiItem.apiRequestType==1?'GET':apiItem.apiRequestType==2?'PUT':apiItem.apiRequestType==3?'DEL':apiItem.apiRequestType==4?'HEAD':apiItem.apiRequestType==5?'OPTS':'PATCH'}}</span>
+                                            <span class="api-name">{{apiItem.apiName}}</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul class="api-list-ul api-first-level-ul" ng-show="item[$ctrl.mainObject.baseInfo.id]==$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.id]&&item.isSpreed">
+                            <li class="api-list-li" ng-if="item.apiList.length==0&&item[$ctrl.mainObject.baseInfo.child].length==0">
+                                <span class="api-name eo-status-tips">{{'undefined'|translate}}</span>
+                            </li>
+                            <li class="background-group-li api-list-li" ng-repeat='($index1,apiItem) in item.apiList track by $index' ng-click="$ctrl.mainObject.baseFun.go({item:apiItem})"
+                                ng-class="{'elem-active':apiItem.apiID==$ctrl.mainObject.baseInfo.current.apiID}">
+                                <span class="api-request-type" ng-class="{'eo-status-success':apiItem.apiRequestType==0,'eo-status-default':apiItem.apiRequestType==1,'eo-status-others':apiItem.apiRequestType==2,'eo-status-warning':apiItem.apiRequestType==6,'eo-status-danger':apiItem.apiRequestType==3,'eo-status-yellow':apiItem.apiRequestType==4,'eo-status-options':apiItem.apiRequestType==5}">{{apiItem.apiRequestType==0?'POST':apiItem.apiRequestType==1?'GET':apiItem.apiRequestType==2?'PUT':apiItem.apiRequestType==3?'DEL':apiItem.apiRequestType==4?'HEAD':apiItem.apiRequestType==5?'OPTS':'PATCH'}}</span>
+                                <span class="api-name">{{apiItem.apiName}}</span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </article>
+</div>

@@ -1,0 +1,156 @@
+$defaultFontFamily: "Helvetica Neue",
+"Helvetica",
+"PingFang SC",
+"Hiragino Sans GB",
+"Microsoft YaHei",
+"Noto Sans CJK SC",
+"WenQuanYi Micro Hei",
+"Arial",
+sans-serif;
+$bodyWidth:1250px;
+$buttonDeleteBgColor:#f2f2f2;
+$buttonDeleteColor:#a3a3a3;
+$buttonDeleteBorderColor:#e5e5e5;
+$buttonSuccessBgColor:#4CAF50;
+$buttonSuccessColor:#fff;
+$buttonSuccessFocusBgColor:#43A047;
+$buttonDefaultBgColor:#fff;
+$buttonDefaultFocusBgColor:#fff;
+$buttonDefaultBorderColor:#1e88e5;
+$buttonInfoBgColor:#2196f3;
+$buttonInfoFocusBgColor:#1e88e5;
+$buttonInfoBorderColor:rgba(0, 0, 0, .21);
+$buttonDangerBgColor:#e83333;
+$buttonDangerFocusBgColor:#d03333;
+$buttonWarningBgColor:#FFB300;
+$buttonWarningBorderColor:#FFA000;
+$buttonWarningFocusBgColor:#D84A4A;
+$buttonWarningFocusBorderColor:#e83333;
+$buttonESColor:#555;
+$buttonQSColor:#fff;
+$BUTTON_FONT_SIZE:12px;
+$BUTTON_HOVER_SHADOW:0px 3px 3px rgba(0, 0, 0, 0.15);
+$PLATE_PADDING:20px;
+$PLATE_HOME_NAVBAR_HEIGHT:71px;
+$PLATE_HOME_SIDEBAR_LEFT:261px;
+$PLATE_SHADOW:0 4px 6px 0 rgba(31, 31, 31, 0.05),
+0 0 2px 0 rgba(31, 31, 31, 0.2);
+$MODAL_SHADOW:0 10px 29px rgba(0, 0, 0, 0.1);
+$CONTENT-TOP: 106px;
+$INHERIT-BORDER-COLOR: #eaeaea;
+$HOME-SECOND-SIDEBAR-LEFT:242px;
+$HOME-SIDEBAR-LEFT:241px;
+$HOME-GROUP-SIDEBAR-LEFT:251px;
+$HOME-SHRINK-SIDEBAR-LEFT:51px;
+$HOME-NAVBAR-HEIGHT:51px;
+$DISPLAY-NAV-TOP:61px;
+
+@mixin eo-animation ($animation) {
+    -ms-animation: $animation;
+    -moz-animation: $animation;
+    -webkit-animation: $animation;
+    animation: $animation;
+}
+
+@mixin eo-line ($height, $line-height:$height) {
+    height: $height;
+    line-height: $line-height;
+}
+@mixin eo-button ($bgColor, $color, $bgHoverColor:$bgColor, $hoverColor:$color, $hoverBorderColor:$bgColor) {
+    background-color: $bgColor;
+    color: $color;
+    @include eo-line(30px, 28px);
+    cursor: pointer;
+    border-radius: 3px;
+    border: none;
+    font-size: $BUTTON_FONT_SIZE;
+    &:hover {
+        background-color: $bgHoverColor;
+        color: $hoverColor;
+        border-color: $hoverBorderColor;
+        transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    &:disabled {
+        color: #999;
+        cursor: not-allowed;
+        background-color: #eee;
+        border: 1px solid #ddd;
+    }
+}
+@mixin eo-color ($color, $borderColor:$color) {
+    color: #fff;
+    background-color: $color;
+    border: 1px solid $borderColor;
+    border-radius: 3px;
+}
+
+@mixin eo-label ($color, $borderColor) {
+    color: $borderColor;
+    background-color: $color;
+    border: 1px solid $borderColor;
+    border-radius: 3px;
+}
+@mixin eo-modal-color ($color, $bgColor) {
+    background-color: $bgColor;
+    border: 1px solid $color;
+    span,
+    i {
+        color: $color;
+    }
+}
+
+//百分比-数字
+@mixin eo-height ($percent, $height) {
+    height: -webkit-calc(#{$percent} - #{$height});
+    height: -ms-calc(#{$percent} - #{$height});
+    height: -moz-calc(#{$percent} - #{$height});
+    height: calc(#{$percent} - #{$height});
+}
+
+@mixin eo-min-height ($percent, $height) {
+    min-height: -webkit-calc(#{$percent} - #{$height});
+    min-height: -ms-calc(#{$percent} - #{$height});
+    min-height: -moz-calc(#{$percent} - #{$height});
+    min-height: calc(#{$percent} - #{$height});
+}
+
+@mixin eo-max-height ($percent, $height) {
+    max-height: -webkit-calc(#{$percent} - #{$height});
+    max-height: -ms-calc(#{$percent} - #{$height});
+    max-height: -moz-calc(#{$percent} - #{$height});
+    max-height: calc(#{$percent} - #{$height});
+}
+
+@mixin eo-width ($percent, $width) {
+    width: -webkit-calc(#{$percent} - #{$width});
+    width: -ms-calc(#{$percent} - #{$width});
+    width: -moz-calc(#{$percent} - #{$width});
+    width: calc(#{$percent} - #{$width});
+}
+
+@mixin eo-max-width ($percent, $width) {
+    max-width: -webkit-calc(#{$percent} - #{$width});
+    max-width: -ms-calc(#{$percent} - #{$width});
+    max-width: -moz-calc(#{$percent} - #{$width});
+    max-width: calc(#{$percent} - #{$width});
+}
+
+@mixin eo-left ($percent, $left) {
+    left: -webkit-calc(#{$percent} - #{$left});
+    left: -ms-calc(#{$percent} - #{$left});
+    left: -moz-calc(#{$percent} - #{$left});
+    left: calc(#{$percent} - #{$left});
+}
+
+@mixin eo-margin-top ($percent, $left) {
+    margin-top: -webkit-calc(#{$percent} - #{$left});
+    margin-top: -ms-calc(#{$percent} - #{$left});
+    margin-top: -moz-calc(#{$percent} - #{$left});
+    margin-top: calc(#{$percent} - #{$left});
+}
+@mixin EO-COLOR ($COLOR, $BORDER-COLOR, $BG-COLOR, $BORDER-TYPE:solid) {
+    background-color: $BG-COLOR;
+    border: 1px $BORDER-TYPE $BORDER-COLOR;
+    color: $COLOR;
+}
+

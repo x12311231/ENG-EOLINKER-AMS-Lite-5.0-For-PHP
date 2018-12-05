@@ -1,0 +1,153 @@
+<!-- author：广州银云信息科技有限公司 -->
+<div class="home-project-inside-group common-scss-group" ng-class="{'un-top-group-default-common-component':$ctrl.funObject.unTop&&!$ctrl.authorityObject.edit}">
+    <article class="group-article-0">
+        <ul class="title-ul" ng-if="!$ctrl.funObject.unTop||($ctrl.funObject.unTop&&$ctrl.authorityObject.edit)">
+            <li class="btn-group-li" ng-if="$ctrl.authorityObject.edit||$ctrl.funObject.itemQueryAuthority">
+                <a ng-repeat="(key,item) in $ctrl.funObject.btnGroupList" class="{{item.class}} common-btn" ng-click="item.fun()"
+                    ng-show="$ctrl.funObject.showObject[$ctrl.funObject.showVar]==item.showable" ng-if="!item.authority||$ctrl.authorityObject[item.authority]">
+                    <span class="tips-span" ng-if="item.tips">{{item.key}}</span>
+                    <span class="pull-left triangle-bottom" ng-if="item.tips"></span>
+                    <span class="icon-{{item.icon}} pull-left" ng-class="{'iconfont':item.icon}"></span>
+                    <span class="btn-name" ng-if="!item.tips">{{item.key}}</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="group-ul group-form-ul" ng-if="$ctrl.sortObject.sortable" sv-root sv-part="$ctrl.sortObject.originQuery"
+            ng-show="$ctrl.funObject.showObject[$ctrl.funObject.showVar]">
+            <li class="title-li">
+                <b>{{$ctrl.mainObject.baseInfo.title||'85'|translate}}</b>
+            </li>
+            <li class="item-li margin-top">
+                <ul>
+                    <li class="sort-group-li" ng-repeat='item in $ctrl.sortObject.originQuery track by $index'
+                        sv-element="$ctrl.data.info.sortForm">
+                        <div class="group-li" sv-handle>
+                            <span class="title-icon iconfont" ng-class="{'icon-wenjian':item[$ctrl.mainObject.baseInfo.child].length==0,'icon-dakaiwenjianjia2':item[$ctrl.mainObject.baseInfo.child].length>0}"></span>
+                            <span class="group-name pull-left">
+                                {{item[$ctrl.mainObject.baseInfo.name]}}
+                            </span>
+                        </div>
+                        <div class="child-group-div">
+                            <ul class="child-group-form-ul" sv-root sv-part="item[$ctrl.mainObject.baseInfo.child]">
+                                <li class="api-list-li" ng-repeat='item1 in item[$ctrl.mainObject.baseInfo.child] track by $index'
+                                    sv-element="$ctrl.data.info.sortForm.child">
+                                    <div class="group-li" sv-handle>
+                                        <span class="title-icon iconfont" ng-class="{'icon-wenjian':item1[$ctrl.mainObject.baseInfo.child].length==0,'icon-dakaiwenjianjia2':item1[$ctrl.mainObject.baseInfo.child].length>0}"></span>
+                                        <span class="group-name pull-left child-group-name">
+                                            {{item1[$ctrl.mainObject.baseInfo.name]}}
+                                        </span>
+                                    </div>
+                                    <div class="child-group-div third-level-group-div">
+                                        <ul class="third-level-group-form-ul" sv-root sv-part="item1[$ctrl.mainObject.baseInfo.child]">
+                                            <li class=" api-list-li" ng-repeat='item2 in item1[$ctrl.mainObject.baseInfo.child] track by $index'
+                                                sv-element="$ctrl.data.info.sortForm.grandson">
+                                                <div class="group-li" sv-handle>
+                                                    <span class="title-icon iconfont icon-wenjian"></span>
+                                                    <span class="group-name pull-left child-group-name">
+                                                        {{item2[$ctrl.mainObject.baseInfo.name]}}
+                                                    </span>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="group-ul" ng-hide="$ctrl.funObject.showObject[$ctrl.funObject.showVar]">
+            <li class="title-li">
+                <b>{{$ctrl.mainObject.baseInfo.title||'85'|translate}}</b>
+            </li>
+            <li class="item-li">
+                <ul>
+                    <li class="background-group-li" ng-show="$ctrl.mainObject.searchObject">
+                        <div class="group-li search-group-li" ng-click="$ctrl.mainObject.searchObject.fun.click()"
+                            ng-class="{'elem-active':$ctrl.mainObject.searchObject.data.active==$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.id]}">
+                            <span class="title-icon iconfont icon-sousuo"></span>
+                            <span class="group-name">{{'80'|translate}}</span>
+                            <a class="pull-right cancle-btn" ng-click="$ctrl.mainObject.searchObject.fun.clean()">
+                                <span>{{'104'|translate}}</span>
+                                <span class="iconfont icon-close"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="background-group-li static-group-li" ng-repeat='item in $ctrl.mainObject.staticQuery track by $index' ng-if="!item.authority||item.authority&&$ctrl.authorityObject[item.authority]">
+                        <div class="group-li" ng-click="$ctrl.mainObject.baseFun.click('first-level',{item:item})" ng-class="{'elem-active':item[$ctrl.mainObject.baseInfo.id]==$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.id]}">
+                            <span class="title-icon iconfont icon-{{item.icon}}"></span>
+                            <span class="group-name">{{item[$ctrl.mainObject.baseInfo.name]}}</span>
+                            <inner-html-common-directive html="item.tipHtml"></inner-html-common-directive>
+                        </div>
+                    </li>
+                    <div ng-if="$ctrl.mainObject.staticQuery.length" class="divide-li"></div>
+                    <li class="background-group-li" ng-repeat='($outerIndex,item) in $ctrl.list track by $index'
+                        ng-init="item.$index=$index;item.isSpreed=true;">
+                        <div class="group-li" ng-click="$ctrl.mainObject.baseFun.click('first-level',{item:item})"
+                            ng-class="{'elem-active':item[$ctrl.mainObject.baseInfo.id]==$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.id]&&!$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.secondLevelGroupID]}">
+                            <span class="title-icon iconfont " ng-if="$ctrl.mainObject.baseInfo.hasIcon!='0'" ng-class="{'icon-wenjian':(item[$ctrl.mainObject.baseInfo.id]!=$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.id]||!item.isSpreed),'icon-dakaiwenjianjia2':item[$ctrl.mainObject.baseInfo.id]==$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.id]&&item.isSpreed}"
+                                ng-click="$ctrl.mainObject.baseFun.spreed({item:item,$event:$event})"></span>
+                            <span class="group-name pull-left">{{item[$ctrl.mainObject.baseInfo.name]}}</span>
+                            <inner-html-common-directive html="item.tipHtml"></inner-html-common-directive>
+                            <div class="active " ng-if="item[$ctrl.mainObject.baseInfo.id]>0&&$ctrl.authorityObject.edit"
+                                ng-click="$ctrl.data.fun.more({item:item,$event:$event})" ng-mouseleave="item.listIsClick=false">
+                                <span class="iconfont icon-caidan"></span>
+                                <ul class="group-function" ng-class="{'envFirst':$first}" ng-show="item.listIsClick">
+                                    <li ng-repeat="(funKey,funItem) in $ctrl.mainObject.parentFun" class="{{funItem.class}}"
+                                        ng-click="$ctrl.data.fun.common(funItem,{item:item,$outerIndex:$outerIndex,$index:$outerIndex})"
+                                        ng-if="!funItem.authority||$ctrl.authorityObject[funItem.authority]">{{funItem.key}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="child-group-div" ng-show="item[$ctrl.mainObject.baseInfo.id]==$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.id]&&item.isSpreed"
+                            ng-if="$ctrl.mainObject.level">
+                            <ul>
+                                <li class="background-group-li api-list-li" ng-repeat='($index1,item1) in item[$ctrl.mainObject.baseInfo.child] track by $index'
+                                    ng-init="item1.$index=$index;">
+                                    <div class="group-li" ng-click="$ctrl.mainObject.baseFun.click('second-level',{parentItem:item,item:item1})"
+                                        ng-class="{'elem-active':item1[$ctrl.mainObject.baseInfo.id]==$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.secondLevelGroupID]&&!$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.thirdLevelGroupID]}">
+                                        <span class="title-icon iconfont " ng-class="{'icon-wenjian':(item1[$ctrl.mainObject.baseInfo.id]!=$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.secondLevelGroupID]||!item1.isSpreed),'icon-dakaiwenjianjia2':item1[$ctrl.mainObject.baseInfo.id]==$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.secondLevelGroupID]&&item1.isSpreed}"
+                                            ng-click="$ctrl.mainObject.baseFun.spreed({item:item1,$event:$event})"></span>
+                                        <span class="group-name pull-left child-group-name">{{item1[$ctrl.mainObject.baseInfo.name]}}</span>
+                                        <div class="active " ng-if="$ctrl.authorityObject.edit" ng-click="$ctrl.data.fun.more({item:item1,$event:$event})"
+                                            ng-mouseleave="item1.listIsClick=false">
+                                            <span class="iconfont icon-caidan"></span>
+                                            <ul class="group-function" ng-class="{'envFirst':$first}" ng-show="item1.listIsClick">
+                                                <li ng-repeat="(funKey,funItem) in $ctrl.mainObject.parentFun" ng-click="$ctrl.data.fun.common(funItem,{item:item1,parentItem:item,$outerIndex:$outerIndex,$index:$index1})"
+                                                    ng-if="!funItem.authority||$ctrl.authorityObject[funItem.authority]">{{funItem.key}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="child-group-div third-level-group-div" ng-show="item1[$ctrl.mainObject.baseInfo.id]==$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.secondLevelGroupID]&&item1.isSpreed"
+                                        ng-if="$ctrl.mainObject.level">
+                                        <ul>
+                                            <li class="group-li api-list-li" ng-repeat='($index2,item2) in item1[$ctrl.mainObject.baseInfo.child] track by $index'
+                                                ng-class="{'elem-active':item2[$ctrl.mainObject.baseInfo.id]==$ctrl.mainObject.baseInfo.current[$ctrl.mainObject.baseInfo.thirdLevelGroupID]}"
+                                                ng-click="$ctrl.mainObject.baseFun.click('third-level',{grandParentItem:item,parentItem:item1,item:item2})"
+                                                ng-init="item2.$index=$index;">
+                                                <span class="title-icon iconfont " ng-class="{'icon-wenjian':!item2.isSpreed,'icon-dakaiwenjianjia2':item2.isSpreed}"
+                                                    ng-click="$ctrl.mainObject.baseFun.spreed({item:item2,$event:$event})"></span>
+                                                <span class="group-name pull-left child-group-name">{{item2[$ctrl.mainObject.baseInfo.name]}}</span>
+                                                <div class="active " ng-if="$ctrl.authorityObject.edit" ng-click="$ctrl.data.fun.more({item:item2,$event:$event})"
+                                                    ng-mouseleave="item2.listIsClick=false">
+                                                    <span class="iconfont icon-caidan"></span>
+                                                    <ul class="group-function" ng-class="{'envFirst':$first}" ng-show="item2.listIsClick">
+                                                        <li ng-repeat="(funKey,funItem) in $ctrl.mainObject.childFun"
+                                                            ng-click="$ctrl.data.fun.common(funItem,{item:item2,parentItem:item1,grandParentItem:item,$outerIndex:$outerIndex,$index1:$index1,$index:$index2})"
+                                                            ng-if="!funItem.authority||$ctrl.authorityObject[funItem.authority]">{{funItem.key}}</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </article>
+</div>

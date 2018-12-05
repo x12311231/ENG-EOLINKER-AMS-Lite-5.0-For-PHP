@@ -1,0 +1,109 @@
+<article class="auth-article" ng-switch="$ctrl.authObject.status">
+        <p class="select-p">
+            <label>Authorization&nbsp;Type</label>
+            <select class="eo-input" ng-model="$ctrl.authObject.status" ng-disabled="$ctrl.disableObject.isPreview" ng-change="$ctrl.fun.changeAuthType()">
+                <option value="0">{{'20'|translate}}</option>
+                <option value="1">Basic Auth</option>
+                <option value="2">JWT</option>
+            </select>
+        </p>
+        <div ng-switch-when='1'>
+            <p class="common-p">
+                <label>{{'21'|translate}}</label>
+                <input autocomplete="off" class="eo-input" type="text" placeholder="Username" ng-model="$ctrl.authObject.basicAuth.username"
+                    ng-disabled="$ctrl.disableObject.isPreview">
+            </p>
+            <p class="common-p">
+                <label>{{'22'|translate}}</label>
+                <input autocomplete="off" class="eo-input" type="password" placeholder="Password" ng-model="$ctrl.authObject.basicAuth.password"
+                    ng-disabled="$ctrl.disableObject.isPreview">
+            </p>
+        </div>
+        <div ng-switch-when='2'>
+            <p class="first-item-title-p">Header</p>
+            <table class="auth-item-common-table">
+                <thead>
+                    <tr>
+                        <td>typ</td>
+                        <td>alg</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input autocomplete="off" class="eo-input" placeholder="JWT" disabled />
+                        </td>
+                        <td>
+                            <select class="eo-select" ng-model="$ctrl.authObject.jwtAuth.alg" ng-disabled="$ctrl.disableObject.isPreview">
+                                <option value="HS256">HS256</option>
+                                <option value="HS384">HS384</option>
+                                <option value="HS512">HS512</option>
+                                <option value="RS256">RS256</option>
+                                <option value="RS384">RS384</option>
+                                <option value="RS512">RS512</option>
+                                <option value="ES256">ES256</option>
+                                <option value="ES384">ES384</option>
+                                <option value="ES512">ES512</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="item-title-p">Payload</p>
+            <table class="auth-item-common-table">
+                <thead>
+                    <tr>
+                        <td>Data</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <textarea autocomplete="off" class="eo-input" ng-model="$ctrl.authObject.jwtAuth.payload" ng-disabled="$ctrl.disableObject.isPreview"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="item-title-p">Signature</p>
+            <table class="auth-item-common-table">
+                <thead>
+                    <tr>
+                        <td>Secret Salt</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <textarea autocomplete="off" class="eo-input" ng-model="$ctrl.authObject.jwtAuth.secretSalt" ng-disabled="$ctrl.disableObject.isPreview"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="item-title-p">JWT Token Position</p>
+            <table class="auth-item-common-table">
+                <thead>
+                    <tr>
+                        <td>Position</td>
+                        <td>
+                            Token Name
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <select class="eo-select" ng-model="$ctrl.authObject.jwtAuth.position" ng-disabled="$ctrl.disableObject.isPreview">
+                                <option value="header">Header</option>
+                                <option value="query">Query</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input autocomplete="off" class="eo-input" ng-model="$ctrl.authObject.jwtAuth.tokenName" ng-disabled="$ctrl.disableObject.isPreview"
+                            />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    
+        </div>
+    </article>

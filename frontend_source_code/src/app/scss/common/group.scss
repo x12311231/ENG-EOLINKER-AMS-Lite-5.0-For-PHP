@@ -1,0 +1,184 @@
+.common-scss-group {
+    width: 240px;
+    position: fixed;
+    left: e;
+    z-index: 3;
+    @include eo-height(100%, 51px);
+    top: $HOME-NAVBAR-HEIGHT + 10px;
+    .title-ul {
+        .common-btn {
+            @include eo-line(30px);
+            padding: 0 10px;
+            font-size: 12px;
+            display: inline-block;
+            .iconfont {
+                font-size: 12px;
+                margin-right: 5px;
+            }
+            .tips-span {
+                position: absolute;
+                z-index: 3;
+                box-shadow: 0 5px 10px #ddd;
+                padding: 0 10px;
+                white-space: nowrap;
+                border-radius: 3px;
+                text-indent: 0;
+                background-color: #000;
+                color: #fff;
+                margin-left: 37px;
+                @include eo-line(25px);
+                font-size: 12px;
+                display: none;
+            }
+            .triangle-bottom {
+                width: 0;
+                height: 0;
+                border-top: 4px solid transparent;
+                border-right: 5px solid #000;
+                border-bottom: 4px solid transparent;
+                position: absolute;
+                z-index: 3;
+                display: none;
+                margin-left: 33px;
+                margin-top: 8px;
+            }
+            &:hover {
+                .tips-span,
+                .triangle-bottom {
+                    display: inline-block;
+                }
+            }
+        }
+        .default-btn {
+            border: 1px solid #ddd;
+            margin-left: 5px;
+            border-radius: 3px;
+            background-color: #fff;
+            &:hover {
+                background-color: #fafafa;
+            }
+        }
+        .first-btn {
+            margin-left: 0;
+        }
+    }
+    .group-ul {
+        border-radius: 3px 0 0 3px;
+        @include eo-height(100%, 72px);
+        position: absolute;
+        width: 100%;
+        background-color: #fff;
+        margin-top: 10px;
+        box-shadow: $PLATE_SHADOW;
+        >.title-li {
+            @include eo-line(40px, 41px);
+            padding: 0 10px;
+            border-bottom: 1px solid #ddd;
+            position: fixed;
+            width: 220px;
+            background-color: #fff;
+        }
+        .item-li {
+            margin-top: 40px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            height: calc(100% - 41px);
+            .background-group-li {
+                position: relative;
+            }
+        }
+        .margin-top {
+            margin-top: 40px;
+        }
+        .margin-none {
+            margin-top: 0px;
+        }
+        .group-li {
+            overflow: hidden;
+            font-size: 12px;
+            @include eo-line(40px);
+            padding-left:10px;
+            color: #555;
+            cursor: pointer;
+            .group-name {
+                max-width: 80%;
+                max-width: calc(100% - 62px);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                cursor: pointer;
+            }
+            .child-group-name {
+                max-width: 70%;
+            }
+            .active {
+                display: inline-flex;
+                float: right;
+                .icon-caidan {
+                    display: inline-block;
+                    padding-right: 10px;
+                }
+            }
+            .title-icon {
+                font-size: 13px;
+            }
+            .iconfont {
+                float: left;
+                margin-right: 5px;
+                cursor: pointer;
+                line-height: 41px;
+                color: #999;
+                font-size: 16px;
+            }
+            &:hover {
+                background-color: #eee;
+                .icon-dakaiwenjianjia2 {
+                    color: #455A64;
+                }
+                .active {
+                    .title-icon {
+                        color: #607d8b;
+                        display: inline-block;
+                        padding-right: 10px;
+                    }
+                }
+            }
+            .group-function {
+                background-color: #fff;
+                text-align: center;
+                position: absolute;
+                margin-left: -77px;
+                border: 1px solid #dcdcdc;
+                box-shadow: -5px 5px 15px #ededed;
+                border-radius: 3px;
+                z-index: 2;
+                li {
+                    color: #555;
+                    font-weight: initial;
+                    width: 100px;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: #eee;
+                        color: #607d8b;
+                    }
+                }
+                .add-child-btn {
+                    color: $buttonSuccessFocusBgColor;
+                }
+            }
+        }
+    }
+    .third-level-group-div {
+        .group-li {
+            padding-left: 3em;
+        }
+    }
+    .elem-active {
+        background-color: #eee;
+        .group-name,
+        .iconfont,
+        inner-html-common-directive {
+            color: #607d8b;
+        }
+    }
+}

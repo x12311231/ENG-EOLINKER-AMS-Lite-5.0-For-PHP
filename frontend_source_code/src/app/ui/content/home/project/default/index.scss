@@ -1,0 +1,19 @@
+/**
+* @name 项目列表样式
+* @author 广州银云信息科技有限公司
+*/
+
+home-project-default ,home-Automatic-Default{
+    display: block;
+    .title-p {
+        line-height: 50px;
+        border-bottom: 1px solid #ddd;
+        color: #999;
+    }
+    .button-archive{
+        margin-top: 20px;
+        padding: 0 10px;
+        @include eo-line(35px);
+        font-size: 14px;
+    }
+}

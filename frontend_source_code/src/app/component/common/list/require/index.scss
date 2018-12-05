@@ -1,0 +1,71 @@
+list-require-common-component {
+    >div{
+        overflow-y: auto;
+        position: fixed;
+        background-color: #fff;
+        border-radius: 0 3px 3px 0;
+        margin: 10px $PLATE_PADDING $PLATE_PADDING 0;
+        overflow-x: hidden;
+        @include eo-height(100%, 123px);
+        box-shadow: $PLATE_SHADOW;
+    }
+    .un-top-list-require-common-component{
+        @include eo-height(100%, 92px);
+        margin-top:$PLATE_PADDING;
+    }
+    table {
+        width: 100%;
+        background: #fff;
+        border-spacing: 0;
+        text-align: left;
+        text-indent: 10px;
+        table-layout: fixed;
+        .iconfont {
+            line-height: 20px;
+            cursor: inherit;
+        }
+        .eo-checkbox{
+            cursor: pointer;
+        }
+        thead {
+            @include eo-line(40px);
+        }
+        tbody {
+            tr:nth-child(odd) {
+                background: #fafafa;
+            }
+            tr:nth-child(even) {
+                background: #fff;
+            }
+            tr {
+                @include eo-line(40px);
+                td {
+                    color: #666;}
+                &:hover {
+                    background: #f0f0f0;
+                }
+            }
+            .hover-tr{
+                cursor: pointer;
+            }
+            .could-activer-tr{
+                cursor: pointer;
+            }
+            .elem-active {
+                &:nth-child(odd),
+                &:nth-child(even) {
+                    background-color: #ffecb3;
+                }
+            }
+        }
+        td,
+        th{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .margin-left{
+            margin-left:5px;
+        }
+    }
+}

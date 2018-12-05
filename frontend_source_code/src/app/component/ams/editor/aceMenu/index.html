@@ -1,0 +1,29 @@
+<table class="ace-table">
+    <tr>
+        <td>
+            <div class="ace-editor-ams-component-container-div">
+                <ace-editor-ams-component set-model='$ctrl.setModel' set-variable="$ctrl.setVariable" watch-model="$ctrl.watchModel" id="_Code_Ace_Editor_Js"
+                    type="javascript" read-only="$ctrl.readOnly" min-line=15></ace-editor-ams-component>
+            </div>
+        </td>
+        <td class="menu-td">
+            <div class="menu-box">
+                <p class="menu-title-p">
+                    <b>{{'103'|translate}}</b>
+                </p>
+                <div class="menu-div" ng-repeat="item in $ctrl.data.funMenu">
+                    <p class="second-title-p" ng-click="$ctrl.fun.clickMenu({item:item})">
+                        <b>{{item.name}}</b>
+                        <span class="iconfont pull-right" ng-class="{'icon-xiangxia':item.spreedKey!=$ctrl.data.current.spreed,'icon-xiangshang':item.spreedKey==$ctrl.data.current.spreed}"></span>
+                    </p>
+                    <ul ng-repeat="childItem in item.funList" ng-switch="childItem.type" ng-show="$ctrl.data.current.spreed==item.spreedKey">
+                        <li class="label-li" ng-switch-when="label">{{childItem.name}}：
+                            <a ng-repeat="grandSonItem in childItem.list" ng-click="$ctrl.fun.quickSetExpression(grandSonItem)">{{grandSonItem.name}}</a>
+                        </li>
+                        <li class="item-li" ng-click="$ctrl.fun.quickSetExpression(childItem)" ng-switch-default>{{childItem.name}}</li>
+                    </ul>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>

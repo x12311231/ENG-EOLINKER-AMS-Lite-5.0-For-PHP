@@ -1,0 +1,205 @@
+env-ams-component {
+    .triangle-bottom {
+        width: 0;
+        height: 0;
+        border-top: 5px solid transparent;
+        border-left: 6px solid #000;
+        border-bottom: 5px solid transparent;
+        position: absolute;
+        margin-top: 9px;
+        z-index: 3;
+        margin-left: -19px;
+        display: none;
+    }
+    .en-v-li {
+        display: inline-block;
+        .child-input-li {
+            display: flex;
+        }
+    }
+    .eo-env {
+        margin-right: 5px;
+        .default-btn {
+            @include eo-line(30px, 31px);
+            display: inline-flex;
+            width: auto;
+            padding: 0 10px;
+            text-align: center;
+            text-indent: 0;
+            border: 1px solid #ddd;
+            color: #333;
+            .iconfont {
+                margin-right: 5px;
+                color: #333;
+            }
+            &:disabled {
+                border: 1px solid #ddd;
+                color: #ddd;
+                .iconfont {
+                    color: #ddd;
+                }
+            }
+        }
+        .active-btn {
+            border: 1px solid $buttonSuccessBgColor;
+            color: $buttonSuccessBgColor;
+            .iconfont {
+                color: $buttonSuccessBgColor;
+            }
+        }
+        .message-ul {
+            .list-li {
+                @include eo-line(30px);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        .top-zindex {
+            z-index: 8;
+        }
+        .en-v-li {
+            .child-input-li {
+                input[type="text"] {
+                    cursor: pointer;
+                    width: 132px;
+                    height: 30px;
+                    float: left;
+                    padding: 0 20px 0 30px;
+                }
+                .icon-xiangxia {
+                    position: absolute;
+                    right: 0;
+                    cursor: pointer;
+                    width: 31px;
+                    height: 32px;
+                    line-height: 32px;
+                }
+                .preview-tips-span {
+                    margin-left: -135px;
+                    margin-top: -1px;
+                }
+                .show-detail-icon {
+                    position: absolute;
+                    padding-left: 10px;
+                    padding-right: 9px;
+                    border-right: 1px solid #e5e5e5;
+                    height: 28px;
+                    line-height: 29px;
+                    background-color: #fff;
+                    color: #666;
+                    margin: 2px 0 0 1px;
+                    &:hover {
+                        .triangle-bottom,
+                        .preview-tips-span {
+                            display: initial;
+                        }
+                    }
+                }
+            }
+            .enV-child-li {
+                z-index: 2;
+            }
+            .message-ul {
+                background-color: #fff;
+                width: 182px;
+                border-radius: 3px;
+                border: 1px solid #ddd;
+                margin-top: 5px;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.12);
+                max-height: 400px;
+                overflow: auto;
+                li {
+                    padding: 5px 10px;
+                    cursor: pointer;
+                }
+                .list-li {
+                    &:hover {
+                        background-color: #f0f0f0;
+                    }
+                }
+                .center-li {
+                    border-bottom: 1px solid #ddd;
+                }
+                .admin-li {
+                    height: 30px;
+                    line-height: 30px;
+                    border-top: 1px dashed #e5e5e5;
+                    &:hover {
+                        color: $buttonInfoBgColor;
+                    }
+                }
+            }
+        }
+        .enV-detail-li {
+            z-index: 8;
+            padding-top: 5px;
+            right: 10px;
+            width: 500px;
+            >div {
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.12);
+                background-color: #fff;
+                font-size: 12px;
+                border: 1px solid #e7e7e7;
+                border-radius: 3px;
+                max-height: 500px;
+                overflow: auto;
+                .title-p {
+                    background-color: #f7f7f7;
+                    line-height: 40px;
+                }
+                .second-title-p {
+                    color: #999;
+                }
+                .title-p {
+                    padding: 0 15px;
+                }
+                .common-div {
+                    padding: 5px 15px;
+                    line-height: 1.75em;
+                    &:nth-last-child(n+2) {
+                        border-bottom: 1px dashed #e7e7e7;
+                    }
+                }
+                .uri-p {
+                    padding-left: 0.75em;
+                }
+                table {
+                    table-layout: fixed;
+                    width: 100%;
+                    border-spacing: 0;
+                    td {
+                        padding: 5px 0;
+                        white-space: pre-wrap;
+                    }
+                    td:first-child {
+                        width: 150px;
+                        color: #666;
+                        padding-left: 0.75em;
+                    }
+                    tr:nth-child(even) {
+                        background-color: #f7f7f7;
+                        table-layout: fixed;
+                        width: 100%;
+                        border-spacing: 0;
+                    }
+                }
+                .tips-p {
+                    color: #999;
+                    @include eo-line(50px);
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .env-mask {
+        z-index: 7;
+        opacity: .5;
+        position: fixed;
+        background: #2d2525;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+}

@@ -1,0 +1,266 @@
+menu-common-component {
+    display: flex;
+    .title-ul {
+        margin-top:10px;
+        width: 100%;
+        font-size: 12px;
+        .margin-left-li-20{
+            margin-left: $PLATE_PADDING;
+        }
+        .iconfont{
+            font-size: 12px;
+        }
+        .common-btn,
+        .common-a {
+            padding: 0 10px;
+            display: inline-block;
+            text-align: center;
+            &:nth-child(n+2) {
+                margin-left: 5px;
+            }
+        }
+        .common-a {
+            @include eo-line(30px);
+        }
+        .common-btn {
+            @include eo-line(32px, 30px);
+            &:disabled {
+                color: #999;
+                cursor: not-allowed;
+                background-color: #fafafa;
+                border:1px solid #ddd;
+                .iconfont {
+                    color: #999;
+                    cursor: not-allowed;
+                }
+            }
+        }
+        
+        .default-btn {
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            background-color: #fff;
+            &:hover {
+                background-color: #fafafa;
+            }
+        }
+        .first-btn {
+            &:nth-child(n) {
+                margin-left: 0;
+            }
+        }
+        .divide-li,.divide-span{
+            margin: 0 10px 0 5px;
+        }
+
+        .divide-span,.divide-li span{
+            border-left: 1px solid #ddd;
+            
+        }
+        .btn-li {
+            cursor: pointer;
+            text-align: center;
+            margin-left: 5px;
+            .iconfont {
+                cursor: pointer;
+            }
+            &:hover {
+                .list-function-wrap {
+                    display: block;
+                }
+            }
+            .disabled-btn{
+                color: #999;
+                cursor: not-allowed;
+                background-color: #fafafa;
+                border:1px solid #ddd;
+                .iconfont {
+                    color: #999;
+                    cursor: not-allowed;
+                }
+                .list-function-wrap {
+                    display: none;
+                }
+            }
+            .list-function-wrap {
+                position: absolute;
+                cursor: default;
+                margin-top: -1px;
+                display: none;
+                z-index: 4;
+                .nav-function {
+                    width: 134px;
+                    margin-left: -10px;
+                    background-color: #fff;
+                    border: 1px solid #ddd;
+                    border-radius: 3px;
+                    margin-top: 5px;
+                    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+                    .strong-li {
+                        font-weight: bold;
+                        color: $buttonSuccessFocusBgColor;
+                    }
+                    li {
+                        cursor: pointer;
+                        text-align: left;
+                        text-indent: 18px;
+                        @include eo-line(33px);
+                        .iconfont{
+                            margin-right: 5px;
+                        }
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            background-color:#fafafa;
+                            border-radius: 0;
+                            @include eo-line(33px);
+                        }
+                    }
+                }
+            }
+        }
+        .elem-active {
+            background-color: $buttonSuccessBgColor;
+            color: #fff;
+            cursor: default;
+        }
+        .menu-li {
+            border: 1px solid $buttonSuccessFocusBgColor;
+            background-color: #fff;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-right: 5px;
+            a {
+                padding: 0 20px;
+                @include eo-line(30px);
+                display: inline-block;
+                &:hover {
+                    background-color: $buttonSuccessFocusBgColor;
+                    color: #fff;
+                }
+            }
+        }
+        
+        .first-menu-li {
+            margin-left: 5px;
+        }
+        .btn-group-li {
+            &:nth-last-child(n+2) {
+                margin-right: 5px;
+            }
+        }
+        .first-tab-li{
+            .common-a,.common-btn{
+                border-radius:3px 0 0 3px;
+                border-right:none;
+            }
+            &:nth-last-child(n+2) {
+                margin-right: 0px;
+            }
+        }
+        .last-tab-li{
+            margin-left:0;
+            .common-a{
+                border-radius:0 3px 3px 0;
+                
+            }
+        }
+        .margin-left-li {
+            margin-left: 10px;
+        }
+        .margin-right-li {
+            margin-right: 10px;
+        }
+        .margin-right-li-5px {
+            margin-right: 5px;
+        }
+        .margin-right-li-0px {
+            margin-right: 0px;
+        }
+        .margin-left-li-0px {
+            margin-left: 0px;
+        }
+    }
+    .divide-li{
+        line-height: 32px;
+    }
+    .search-li {
+        @include eo-line(50px);
+        display: inline-block;
+        margin-left: 0;
+        .search-function-ul {
+            .search-input-li {
+                line-height: 50px;
+                input {
+                    border-radius: 20px;
+                    padding-left: 30px;
+                    @include eo-line(30px);
+                    width: 120px;
+                    border: 1px solid #ddd;
+                    padding-right: 10px;
+                    text-indent: 0;
+                }
+            }
+            .search-btn-li {
+                position: absolute;
+                margin-top: -50px;
+                button {
+                    margin-top: 0;
+                    background: none;
+                    border: none;
+                    width: 32px;
+                    color: #999;
+                }
+            }
+        }
+    }
+    .view-btn-li {
+        margin-left:5px;
+        >p {
+            // @include eo-line(30px,32px);
+            // margin-top: 10px;
+            a {
+                background-color: #fff;
+                @include eo-line(30px);
+                display: inline-block;
+                text-align: center;
+                padding: 0 10px;
+                border: 1px solid #ddd;
+                &:nth-child(n+2){
+                    border-left:none;
+                }
+            }
+            .view-common-btn {
+                &:first-child {
+                    border-radius: 3px 0 0 3px;
+                }
+                &:last-child {
+                    margin-left: 0;
+                    border-left: none;
+                    border-radius: 0 3px 3px 0;
+                }
+            }
+        }
+    }
+    .un-margin-left{
+        margin-left:0;
+    }
+    .right-icon{
+        margin-left: 5px;
+    }
+    .left-icon {
+        margin-right: 5px;
+    }
+}
+.fix-menu-common-component{
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding-bottom:9px;
+    z-index: 5;
+    top: 51px;
+    .title-ul{
+        margin-top:9px;
+    }
+}

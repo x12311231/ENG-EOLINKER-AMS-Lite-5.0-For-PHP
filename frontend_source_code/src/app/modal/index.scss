@@ -1,0 +1,380 @@
+.modal-open {
+    top: 0;
+    left: 0;
+    overflow: hidden;
+
+    .modal {
+        opacity: 1;
+    }
+
+
+    .modal-dialog {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        overflow: auto;
+        top: 0;
+    }
+
+    .modal:nth-child(2) {
+        .modal-dialog {
+            z-index: 1;
+        }
+    }
+
+    .error {
+        @include eo-modal-color(#d85030, #fff1f0);
+        box-shadow: 0px 10px 29px #FFCDD2;
+    }
+
+    .success {
+        @include eo-modal-color(#659f13, #f2fae3);
+        box-shadow: 0px 10px 29px #C8E6C9;
+    }
+
+    @-webkit-keyframes sticky-up {
+        0% {
+            -webkit-transform: translateY(-200%);
+            -moz-transform: translateY(-200%);
+            -ms-transform: translateY(-200%);
+            transform: translateY(-200%);
+        }
+
+        100% {
+            -webkit-transform: translateY(0%);
+            -moz-transform: translateY(0%);
+            -ms-transform: translateY(0%);
+            transform: translateY(0%);
+        }
+    }
+
+    @keyframes sticky-up {
+        0% {
+            -webkit-transform: translateY(-200%);
+            -moz-transform: translateY(-200%);
+            -ms-transform: translateY(-200%);
+            transform: translateY(-200%);
+        }
+
+        100% {
+            -webkit-transform: translateY(0%);
+            -moz-transform: translateY(0%);
+            -ms-transform: translateY(0%);
+            transform: translateY(0%);
+        }
+    }
+
+    @-webkit-keyframes fade {
+        0% {
+            -webkit-transform: scale(0.7);
+            -moz-transform: scale(0.7);
+            -ms-transform: scale(0.7);
+            transform: scale(0.7);
+            opacity: 0;
+        }
+
+        100% {
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fade {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @-webkit-keyframes gradient {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 0.5;
+        }
+    }
+
+    @keyframes gradient {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 0.5;
+        }
+    }
+
+    .modal-content {
+        @include eo-height(100%,100px);
+
+        .mask {
+            background-color: rgba(0, 0, 0, 0.5);
+            @include eo-animation(fade 0.7s);
+        }
+
+        .eo-modal {
+            position: relative;
+            margin: 100px auto 20px auto;
+            select-multistage-common-component .conatiner-div{
+                @include eo-width(100%,2px);
+            }
+        }
+
+        .common-modal {
+            width: 600px;
+            text-align: left;
+            border-radius: 5px;
+            @include eo-animation(fade .2s);
+            box-shadow: $MODAL_SHADOW;
+            background: #fff;
+
+            article {
+                select {
+                    @include eo-line(35px);
+                }
+            }
+        }
+
+        .modal-message {
+            >article {
+                word-break: break-all;
+            }
+        }
+
+        .modal-project,
+        .modal-sure,
+        .modal-group,
+        .modal-visual-group,
+        .modal-bind,
+        .modal-message,{
+            width: 600px;
+
+            text-align: left;
+            border-radius: 5px;
+            @include eo-animation(fade .2s);
+            box-shadow: $MODAL_SHADOW;
+            background-color: #fff;
+            border-radius: 3px;
+
+            article {
+                select {
+                    @include eo-line(35px);
+                }
+            }
+        }
+
+        .modal-tips {
+            width: 540px;
+            text-align: left;
+            border-radius: 5px;
+            @include eo-animation(fade .2s);
+            box-shadow: $MODAL_SHADOW;
+            background-color: #fff;
+
+            .issue-article {
+                height: 410px;
+                overflow: auto;
+                line-height: 25px;
+
+                img {
+                    max-width: 100%;
+                }
+            }
+
+            .icon-roundclosefill {
+                font-size: 24px;
+            }
+
+            .modal-tips-header {
+                padding: 20px 20px 0 0;
+                text-align: right;
+            }
+        }
+
+        .modal-crop {
+            width: 500px;
+            text-align: left;
+            border-radius: 5px;
+            @include eo-animation(fade .2s);
+            box-shadow: $MODAL_SHADOW;
+            background-color: #fff;
+            overflow: hidden;
+
+            canvas {
+                vertical-align: middle;
+                margin: auto;
+            }
+        }
+
+        
+
+        .modal-expression-builder {
+            @include eo-animation(fade .2s);
+            height: 100%;
+            top: 5%;
+        }
+
+        
+
+        .modal-visual-group {
+            .common-scss-group {
+                position: initial;
+                height: 240px;
+                width: 560px;
+                border: 1px solid #ddd;
+                box-shadow: none;
+            }
+
+            .group-article-0 {
+                height: 100%;
+            }
+
+            .group-ul {
+                position: initial;
+                height: 100%;
+                box-shadow: none;
+
+                .title-li {
+                    display: none;
+                }
+
+                .item-li {
+                    margin-top: -10px;
+                    height: 100%;
+                }
+            }
+        }
+
+        
+
+        .modal-project {
+            article {
+                .eo-input[type=text] {
+                    @include eo-width(100%, 2px);
+                }
+
+                select {
+                    width: 100%;
+                }
+
+                textarea {
+                    @include eo-width(100%, 20px);
+                    padding: 10px;
+                    height: 60px;
+                    text-indent: 0;
+                }
+            }
+        }
+
+        
+
+        .modal-sure {
+            article {
+                input[type=text] {
+                    width: 100%;
+                    margin-top: 10px;
+                }
+
+                .api-desc-textarea,
+                .desc-textarea {
+                    width: 99%;
+                    height: 80px;
+                    text-indent: 0;
+                    padding: 1%;
+                }
+
+                .textarea-li {
+                    position: relative;
+                    min-height: 96px;
+                    max-height: 266px;
+
+                    pre {
+                        display: block;
+                        visibility: hidden;
+                    }
+
+                    .api-desc-textarea {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        padding: 8px;
+                        height: 100%;
+                        box-sizing: border-box;
+                    }
+                }
+
+            }
+
+            .btn-confirm {
+                width: 56px;
+            }
+
+            .btn-confirm:disabled {
+                color: #333;
+                background-color: #ddd;
+                border: none;
+            }
+        }
+
+        .modal-group {
+            article {
+                .group-ul {
+                    select {
+                        width: 100%;
+                        text-indent: 0;
+                    }
+
+                    input {
+                        @include eo-width(100%, 2px);
+                    }
+                }
+            }
+        }
+
+        .modal-bind {
+            article {
+
+                select,
+                input {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.modal-info-display {
+
+    .modal-dialog {
+        position: fixed;
+        min-width: 350px;
+        max-width: 500px;
+        text-align: center;
+        @include eo-animation(sticky-up .3s);
+        border-radius: 3px;
+        height: auto;
+        box-shadow: $MODAL_SHADOW;
+        top:0;
+        margin-top:75px;
+        @include eo-left(50%, 250px);
+    }
+
+    .modal-info {
+        p {
+            @include eo-line(50px);
+
+            .iconfont {
+                font-size: 18px;
+                margin-right: 10px;
+            }
+        }
+    }
+}

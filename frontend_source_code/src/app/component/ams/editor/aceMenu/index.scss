@@ -1,0 +1,57 @@
+ace-menu-editor-ams-component {
+    .ace-table {
+        width: 100%;
+        border-spacing: 0;
+        .menu-td {
+            width: 315px;
+            vertical-align: top;
+            .menu-box {
+                margin: 10px 10px 0 0;
+                height: 300px;
+                border: 1px solid #ddd;
+                background-color: #fff;
+                padding:0 10px;
+                overflow: auto;
+                .menu-title-p {
+                    margin: 10px 0;
+                }
+                .second-title-p {
+                    color: #999;
+                    margin-bottom: 10px;
+                    cursor: pointer;
+                    .iconfont {
+                        font-size: 12px;
+                        margin-left: 10px;
+                    }
+                    &:hover {
+                        color: #555;
+                    }
+                }
+                .label-li {
+                    line-height: 30px;
+                    a {
+                        color: $buttonInfoBgColor;
+                        margin: 0 10px 0 5px;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                .item-li {
+                    line-height: 30px;
+                    color: $buttonInfoBgColor;
+                    cursor: pointer;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+                .menu-div {
+                    &:nth-last-child(n+2) {
+                        border-bottom: 1px dashed #e5e5e5;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

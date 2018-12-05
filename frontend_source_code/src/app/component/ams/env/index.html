@@ -1,0 +1,105 @@
+<div class="eo-env">
+    <div class="en-v-li" ng-mouseleave="$ctrl.data.itemStatus='hidden'">
+        <ul>
+            <li class="child-input-li" ng-click="$ctrl.data.itemStatus='visible'">
+                <a class="  show-detail-icon" ng-class="{'top-zindex':$ctrl.data.showDetail}" ng-click="$ctrl.fun.showDetail($event)">
+                    <span class="triangle-bottom"></span><span class="preview-tips-span">{{'23'|translate}}</span>
+                    <span class="iconfont icon-attention"></span>
+                </a>
+                <input autocomplete="off" class="eo-input" placeholder="{{'24'|translate}}" type="text" ng-model="$ctrl.data.model.envName" readonly>
+                <label class="iconfont icon-xiangxia"></label>
+            </li>
+            <li class="absolute enV-child-li" ng-class="{hidden:$ctrl.data.itemStatus=='hidden'}">
+                <ul class="message-ul">
+                    <li class="list-li" ng-click="$ctrl.fun.click(null)">{{'24'|translate}}</li>
+                    <li class="list-li" ng-repeat="item in $ctrl.interaction.response.query track by $index" ng-click="$ctrl.fun.click(item)">
+                        {{item.envName}}
+                    </li>
+                    <li ng-if="!$ctrl.authorityObject||$ctrl.authorityObject.look" class="admin-li" ng-click="$ctrl.fun.href()">{{'25'|translate}}</li>
+                </ul>
+            </li>
+            <li class="absolute enV-detail-li" ng-show="$ctrl.data.showDetail" ng-click="$event.stopPropagation()">
+                <div ng-show="$ctrl.data.model.envID">
+                    <p class="title-p">{{$ctrl.data.model.envName}}</p>
+                    <div class="common-div" ng-show="$ctrl.data.model.frontURI">
+                        <p class="second-title-p">{{'26'|translate}}</p>
+                        <p class="uri-p">{{$ctrl.data.model.frontURI}}</p>
+                    </div>
+                    <div class="common-div" ng-show="$ctrl.data.model.envAuth.status=='1'">
+                        <p class="second-title-p">Basic Auth</p>
+                        <table>
+                            <tr >
+                                <td>userName</td>
+                                <td>{{$ctrl.data.model.envAuth.basicAuth.username}}</td>
+                            </tr>
+                            <tr >
+                                <td>userPassword</td>
+                                <td>{{$ctrl.data.model.envAuth.basicAuth.password}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="common-div" ng-show="$ctrl.data.model.envAuth.status=='2'">
+                        <p class="second-title-p">JWT Auth</p>
+                        <table>
+                            <tr >
+                                <td>Typ</td>
+                                <td>JWT</td>
+                            </tr>
+                            <tr >
+                                <td>Alg</td>
+                                <td>{{$ctrl.data.model.envAuth.jwtAuth.alg}}</td>
+                            </tr>
+                            <tr >
+                                <td>Payload</td>
+                                <td>{{$ctrl.data.model.envAuth.jwtAuth.payload}}</td>
+                            </tr>
+                            <tr >
+                                <td>Secret Salt</td>
+                                <td>{{$ctrl.data.model.envAuth.jwtAuth.secretSalt}}</td>
+                            </tr>
+                            <tr >
+                                <td>Position</td>
+                                <td>{{$ctrl.data.model.envAuth.jwtAuth.position}}</td>
+                            </tr>
+                            <tr >
+                                <td>Token&nbsp;name</td>
+                                <td>{{$ctrl.data.model.envAuth.jwtAuth.tokenName}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="common-div" ng-show="$ctrl.data.model.headerList.length>0">
+                        <p class="second-title-p">{{'27'|translate}}</p>
+                        <table>
+                            <tr ng-repeat="item in $ctrl.data.model.headerList">
+                                <td>{{item.headerName}}</td>
+                                <td>{{item.headerValue}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="common-div" ng-show="$ctrl.data.model.additionalParamList.length>0">
+                        <p class="second-title-p">{{'28'|translate}}</p>
+                        <table>
+                            <tr ng-repeat="item in $ctrl.data.model.additionalParamList">
+                                <td>{{item.paramKey}}</td>
+                                <td>{{item.paramValue}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="common-div" ng-show="$ctrl.data.model.paramList.length>0">
+                        <p class="second-title-p">{{'29'|translate}}</p>
+                        <table>
+                            <tr ng-repeat="item in $ctrl.data.model.paramList">
+                                <td>{{item.paramKey}}</td>
+                                <td>{{item.paramValue}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div ng-hide="$ctrl.data.model.envID">
+                    <p class="tips-p">{{'24'|translate}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="env-mask" ng-show="$ctrl.data.showDetail"></div>

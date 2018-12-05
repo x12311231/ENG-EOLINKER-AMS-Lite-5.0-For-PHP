@@ -1,0 +1,90 @@
+.ams-scss-version {
+    z-index: 0;
+    .first-level-article {
+        padding: 35px $PLATE_PADDING $PLATE_PADDING;
+        table {
+            width: 100%;
+            background: #fff;
+            border-spacing: 0;
+            text-align: left;
+            text-indent: 10px;
+            table-layout: fixed;
+            border-radius: 3px;
+            box-shadow: $PLATE_SHADOW;
+            .iconfont {
+                cursor: pointer;
+            }
+            thead {
+                font-weight: bold;
+                @include eo-line(40px);
+                th {
+                    font-weight: initial;
+                }
+                .first-th {
+                    text-align: center;
+                    text-indent: 0;
+                    width: 90px;
+                }
+                .second-th {
+                    min-width: 200px;
+                    width: 15%;
+                }
+                .third-th {
+                    min-width: 220px;
+                    width: 13%;
+                }
+                .forth-th {
+                    min-width: 100px;
+                }
+                .fifth-th {
+                    width: 20%;
+                }
+            }
+            tbody {
+                tr:nth-child(odd) {
+                    background: #fafafa;
+                }
+                tr:nth-child(even) {
+                    background: #fff;
+                }
+                tr {
+                    @include eo-line(40px);
+                    th,
+                    td {
+                        cursor: default;
+                    }
+                    th {
+                        width: 36px;
+                        text-align: center;
+                        text-indent: 0;
+                    }
+                    td {
+                        color: #666;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                    td:nth-child(2) {
+                        .icon-circle {
+                            font-size: 12px;
+                            margin-right: 5px;
+                        }
+                        span {
+                            padding: 2px;
+                            border: 1px solid rgb(39, 107, 225);
+                            background-color: rgb(72, 128, 224);
+                            color: #fff;
+                            border-radius: 5px;
+                        }
+                    }
+                }
+            }
+        }
+        .warning-tips {
+            font-size: 13px;
+            color: #999;
+            margin-top: 10px;
+            margin-left: 5px;
+        }
+    }
+}

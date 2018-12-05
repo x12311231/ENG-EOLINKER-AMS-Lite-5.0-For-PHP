@@ -1,0 +1,21 @@
+.guide-first-step {
+    background-color: #fff;
+    box-shadow: 0 4px 6px 0 rgba(31,31,31,.05), 0 0 2px 0 rgba(31,31,31,.2);
+    border-radius: 5px;
+    padding: 25px 25px;
+    .guide-version {
+        font-weight: bold;
+    }
+    .guide-info {
+        margin-bottom: 15px;
+    }
+    .guide-button {
+        a {
+            color: #fff;
+        }
+    }
+    .eo-button-success:hover {
+        border-radius: 17px;
+    }
+}
+

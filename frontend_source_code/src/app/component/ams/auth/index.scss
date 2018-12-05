@@ -1,0 +1,104 @@
+auth-ams-component {
+    .auth-article {
+        padding-bottom: 10px;
+        label {
+            
+            display: inline-block;
+            text-indent: 20px;
+            font-weight: bold;
+        }
+        .common-p label{
+            width: 70px;
+        }
+        .select-p label{
+            width: 155px;
+        }
+        .select-p {
+            line-height: 65px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+            select {
+                text-indent: 0;
+            }
+        }
+        .common-p {
+            padding-bottom: 10px;
+        }
+    }
+    .item-title-p {
+        margin: 20px 0 10px 20px;
+    }
+    .first-item-title-p {
+        margin: 20px 0 10px 20px;
+    }
+    .auth-item-common-table {
+        width: 500px;
+        border-spacing: 0;
+        table-layout: fixed;
+        border-radius: 3px;
+        border: 1px solid #e5e5e5;
+        margin-left: 20px;
+        thead {
+            td {
+                background-color: #fafafa;
+                padding-left: 10px;
+            }
+        }
+        td {
+            @include eo-line(40px);
+            vertical-align: top;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            &:nth-last-child(n + 2) {
+                border-right: 1px dashed #e5e5e5;
+            }
+        }
+        thead {
+            background-color: #fafafa;
+        }
+        tr {
+            .operate-td {
+                width: 40px;
+                font-size: 12px;
+            }
+        }
+        tbody {
+            tr {
+                &:nth-last-child(n + 2) {
+                    td {
+                        border-bottom: 1px dashed #e5e5e5;
+                    }
+                }
+                &:first-child {
+                    td {
+                        border-top: 1px solid #ddd;
+                    }
+                }
+            }
+            .hover-tr {
+                &:hover {
+                    background-color: #fafafa;
+                }
+            }
+        }
+        .eo-input,.eo-select {
+            border: none;
+            
+            border-radius: 0;
+        }
+        input,select{
+            height: 100%;
+            line-height: 40px;
+            width: 100%;
+        }
+        textarea {
+            height: 100%;
+            line-height: 1.75em;
+            padding: 10px;
+            font-size: 12px;
+            text-indent: 0;
+            width: 480px;
+        }
+    }
+}

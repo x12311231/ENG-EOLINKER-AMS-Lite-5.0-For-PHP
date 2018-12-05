@@ -1,0 +1,53 @@
+
+.checkbox-btn {
+    text-align: center;
+    border-radius: 3px;
+    border: 1px solid #bcdffb;
+    background-color: #e3f7ff;
+    color: $buttonInfoFocusBgColor;
+    padding: 0 5px;
+    .eo-checkbox {
+        margin: 6px 5px 0 0;
+        @include eo-line(15px);
+        width: 15px;
+        border-color: $buttonInfoFocusBgColor;
+    }
+}
+
+.preview-tips-span {
+    position: absolute;
+    z-index: 6;
+    background-color: #000;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    padding: 0 10px;
+    white-space: nowrap;
+    border-radius: 3px;
+    text-indent: 0;
+    color: #fff;
+    font-size: 12px;
+    display: none;
+}
+
+.input-icon-span {
+    position: absolute;
+    background-color: #efefef;
+    display: inline-block;
+    line-height: 33px;
+    margin: 1px;
+    border-right: 1px solid #ddd;
+    text-align: center;
+    width: 115px;
+}
+
+.display-container-div {
+    display: table;
+    background-color: #f7f8fc;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: -1;
+}

@@ -1,0 +1,181 @@
+//author：广州银云信息科技有限公司
+home-project-inside-team {
+    .home-project-inside-team {
+        margin: $HOME-NAVBAR-HEIGHT + 10px 20px 20px 10px;
+        article {
+            padding-left: 20px;
+            padding-top: 0;
+            background-color: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 3px;
+            .item-li {
+                .title-p {
+                    font-size: 14px;
+                    font-weight: bold;
+                    @include eo-line(36px, 44px);
+                    text-indent: 0;
+                }
+
+                .people-ul {
+                    @include eo-line(40px);
+                    margin-top: 10px;
+                    .name-summary-li {
+                        border-radius: 23px;
+                        width: 41px;
+                        @include eo-line(41px);
+                        background-color: #fafafa;
+                        text-align: center;
+                        color: #999;
+                        border: 1px solid #ddd;
+                        font-size: 14px;
+                    }
+
+                    .people-li {
+                        margin-left: 15px;
+                        width: 142px;
+
+                        p {
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            @include eo-line(21.5px);
+                            font-size: 14px;
+
+                            .icon-huangguan {
+                                color: $buttonWarningBorderColor;
+                            }
+                        }
+
+                        .userName-p {
+                            color: #999;
+                        }
+                    }
+                }
+            }
+
+            .search-input-li {
+                .form-div {
+                    input[type=text] {
+                        width: 380px;
+                        margin-left: 15px;
+                    }
+
+                    .search-btn,
+                    .invition-link-btn {
+                        width: 100px;
+                        display: inline-block;
+                        text-align: center;
+                        font-size: 14px;
+
+                        .iconfont {
+                            font-size: 14px;
+                        }
+                    }
+
+                    .search-btn {
+                        @include eo-line(33px);
+                    }
+
+                    .invition-link-btn {
+                        @include eo-line(35px, 33px);
+                    }
+
+                    .divide-line {
+                        border-right: 1px solid #e5e5e5;
+                        margin: 0 10px;
+                    }
+
+                    @include eo-line(65px);
+                    border-bottom:1px dashed #e5e5e5;
+                }
+            }
+
+            .admin-li,
+            .partner-li {
+                overflow: auto;
+                margin-bottom: 30px;
+                .item-child-li {
+                    width: 220px;
+                    padding: 10px 10px;
+                    @include eo-line(45px);
+                    overflow: hidden;
+                    margin-right: 10px;
+                    border: 1px solid #ededed;
+                    border-radius: 3px;
+                    margin-top: 10px;
+
+                    &:hover {
+                        border: 1px solid $buttonSuccessFocusBgColor;
+                    }
+
+                    .people-ul {
+                        margin-top: 0;
+
+                        .list-li {
+                            .icon-caidan {
+                                display: block;
+                                color: #999;
+                                font-size: 14px;
+                                cursor: pointer;
+                            }
+
+                            &:hover {
+                                .icon-caidan {
+                                    color: #333;
+                                }
+                            }
+
+                            .list-function-wrap {
+                                position: absolute;
+                                cursor: default;
+                                margin-left: -65px;
+                                margin-top: -54px;
+                                min-width: 90px;
+                                margin-bottom: 10px;
+
+                                .iconfont {
+                                    margin: 0;
+                                    cursor: pointer;
+                                }
+
+                                .list-function-ul {
+                                    background-color: #fff;
+                                    border: 1px solid #e7e7e7;
+                                    border-radius: 3px;
+                                    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+
+                                    .iconfont {
+                                        color: #333;
+                                        float: right;
+                                        @include eo-line(40px);
+                                    }
+
+                                    li {
+                                        float: none;
+                                        cursor: pointer;
+                                        font-weight: initial;
+                                        text-align: left;
+                                        height: auto;
+                                    }
+
+                                    .list-function-detail {
+                                        li {
+                                            padding: 0 10px;
+                                            @include eo-line(35px);
+                                            padding: 0 10px;
+                                            font-size: 13px;
+
+                                            &:hover {
+                                                background-color: #f0f0f0;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

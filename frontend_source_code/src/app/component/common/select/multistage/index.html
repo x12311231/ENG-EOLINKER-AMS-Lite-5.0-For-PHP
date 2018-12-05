@@ -1,0 +1,27 @@
+<div class="conatiner-div" ng-click="$ctrl.fun.click($event)">
+    <div class="text-div f_row" ng-click="$ctrl.fun.wantToSelect($event)">
+        <div class="select-item-div">
+            <span ng-repeat="item in $ctrl.data.textList">{{$first?'':'&nbsp;/&nbsp;'}}{{item.key}}</span>
+        </div>
+        <span class="iconfont icon-xiangxia pull-right"></span>
+    </div>
+    <div class="list-container-div" ng-show="$ctrl.data.wantToSelect&&($ctrl.data.query.length>0||$ctrl.data.q)">
+        <p class="search-p bbd f_row">
+            <span class="iconfont icon-sousuo"></span>
+            <input type="text" autocomplete="off" ng-model="$ctrl.data.q" placeholder="{{'80'|translate}}">
+            <input class="select-multistage-btn-clear-text eo-button-default pull-right " type="button" value="{{'104'|translate}}"
+                ng-show="$ctrl.data.q" />
+        </p>
+        <p class="select-multistage-btn-back common-class-item bbd " ng-if="$ctrl.data.parentNodeList.length>0"><span
+                class="iconfont icon-huidaodingbu-copy mr10"></span>{{'105'|translate}}</p>
+        <div class="query-container-child-div">
+            <p class="select-multistage-btn-item common-class-item " ng-repeat="item in $ctrl.data.query | filter:$ctrl.fun.filter"
+                eo-attr-index="{{$index}}">{{item[$ctrl.input.key]}}<span class="select-multistage-btn-item-span iconfont icon-xiangyou pull-right"
+                    ng-if="item[$ctrl.input.child].length>0"></span></p>
+            <p class="un-search-response-p eo-status-tips" ng-if="($ctrl.data.query | filter:$ctrl.fun.filter).length==0&&$ctrl.data.q">{{'106'|translate}}</p>
+        </div>
+
+        <p class="select-multistage-btn-close common-class-item btd eo-status-success tac" ng-if="$ctrl.data.parentNodeList.length>0&&$ctrl.data.queryHaveChild">{{'52'|translate}}</p>
+
+    </div>
+</div>

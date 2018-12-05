@@ -1,0 +1,499 @@
+<div class="api-management-pro-modal modal">
+        <script type="text/ng-template" id="ExpressionBuilderModal">
+            <div class="modal-expression-builder eo-modal" expression-builder-directive="fun.callback(callback)" input="directive.expressionBuilderObject" bind-fun="fun.bindFun(callback)">
+            </div>
+            <div class="mask"></div>
+        </script>
+    <!-- JSON转param输入弹窗 -->
+    <script type="text/ng-template" id="AMS_JsonToParamInputModal">
+        <div class="modal-sure eo-modal modal-json-to-param">
+                <form autocomplete="off" name="sureForm">
+                    <header class="eo-modal-header" ng-switch="data.input.method">
+                        <span ng-switch-when='1'>{{'30'|translate}}</span>
+                        <span ng-switch-when='2'>{{'31'|translate}}</span>
+                        <span ng-switch-when='3'>{{'32'|translate}}</span>
+                        <span ng-switch-default>{{'33'|translate}}</span>
+                    </header>
+                    <article class="eo-modal-article">
+                        <textarea type="text" name="description" ng-model="info.desc" placeholder="{{'34'|translate}}" class="eo-input desc-textarea" ng-class="{'eo-input-error':(submited&&sureForm.description.$invalid)}">
+                        </textarea>
+                    </article>
+                    <footer class="eo-modal-footer">
+                        <button class="eo-button-info" ng-click="ok(0)">{{'35'|translate}}</button>
+                        <button class="eo-button-info" ng-click="ok(1)">{{'36'|translate}}</button>
+                        <input type="button" class="eo-button-default" value="{{'13'|translate}}" ng-click="cancel()">
+                    </footer>
+                </form>
+            </div>
+            <div class="mask"></div>
+        </script>
+    <!-- 请求/{{'39'|translate}}{{'40'|translate}}编辑弹窗 -->
+    <script type="text/ng-template" id="AMS_RequestParamEditModal">
+        <div class="ams-modal-request-param-edit eo-modal" style="{{info.background}}">
+            <div class="second-level-div">
+                <header class="eo-modal-header">{{data.input.status=='body'?'37'|translate:data.input.status=='restful'?'38'|translate:'39'|translate}}{{'40'|translate}}</header>
+                <article class="eo-modal-article po_re">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td class="param-name">{{'41'|translate}}</td>
+                                <td class="require-label">{{'42'|translate}}</td>
+                                <td class="param-desc">{{'43'|translate}}</td>
+                                <td class="type-label" ng-if="data.input.status!='url'">{{'44'|translate}}</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>
+                                    {{data.input.item.paramKey}}
+                                </th>
+                                <td>{{data.input.item.paramNotNull?'45'|translate:''}}</td>
+                                <td>{{data.input.item.paramName}}</td>
+                                <td ng-if="data.input.status!='url'">{{data.input.item.paramType==0?"[string]":data.input.item.paramType==1?"[file]":data.input.item.paramType==2?"[json]":data.input.item.paramType==3?"[int]":data.input.item.paramType==4?"[float]":data.input.item.paramType==5?"[double]":data.input.item.paramType==6?"[date]":data.input.item.paramType==7?"[datetime]":data.input.item.paramType==8?"[boolean]":data.input.item.paramType==9?"[byte]":data.input.item.paramType==10?"[short]":data.input.item.paramType==11?"[long]":data.input.item.paramType==12?"[array]":data.input.item.paramType==13?"[object]":"[number]"}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>{{'46'|translate}}</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="limit-td">
+                                    <auto-complete-ams-component model="data.input.item" key-name="paramLimit" array="data.input.constant" placeholder="{{'47'|translate}}"></auto-complete-ams-component>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="param-value-table">
+                        <thead>
+                            <tr>
+                                <td class="num-td">{{'48'|translate}}</td>
+                                <td class="param-name">{{'49'|translate}}</td>
+                                <td ng-if="data.input.status!='url'">{{'44'|translate}}</td>
+                                <td>{{'43'|translate}}</td>
+                                <td class="operate-td">{{'7'|translate}}</td>
+                            </tr>
+                        </thead>
+                    </table>
+                    <ul class="request-param-form-ul" sv-root sv-part="data.input.item.paramValueList" fun="data.fun.resetDefaultValue">
+                        <li style="background-color: #fff;" ng-repeat="item in data.input.item.paramValueList" ng-init="data.fun.initParam({item:item,$index:$index})" sv-element="data.input.sort.requestParamForm">
+                            <table ng-switch="$last">
+                                <tbody>
+                                    <td class="num-td">
+                                        <input autocomplete="off" class="hidden" type="radio" name="request-param-form-default-{{data.input.item.$index}}" id="request-param-form-default-{{data.input.item.$index}}-{{$index}}" ng-model="data.input.item.default" value="{{$index}}" ng-change="data.input.fun.paramAdd('param',{$last:$last,item:data.input.item})">
+                                        <label for="request-param-form-default-{{data.input.item.$index}}-{{$index}}" class="eo-checkbox iconfont" ng-class="{'icon-check':data.input.item.default==$index}">{{data.input.item.default==$index?'':'&nbsp;'}}</label>
+                                    </td>
+                                    <td class="param-name">
+                                        <input autocomplete="off" class="eo-input" type="text" ng-model="item.value" ng-change="data.input.fun.paramAdd('param',{$last:$last,item:data.input.item})" ng-class="{'eo-input-error':(!item.value&&item.valueDescription)}" placeholder="{{'49'|translate}}">
+                                    </td>
+                                    <td class="type-td" ng-if="data.input.status!='url'">
+                                        <select class="eo-input request-type-select" ng-options="type.value as type.name for type in data.input.typeSelect" ng-model="item.paramType" ng-change="data.input.fun.paramAdd('param',{$last:$last,item:data.input.item})">
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input autocomplete="off" class="eo-input" type="text" ng-model="item.valueDescription" maxlength="255" ng-change="data.input.fun.paramAdd('param',{$last:$last,item:data.input.item})" placeholder="{{'43'|translate}}">
+                                    </td>
+                                    <td class="operate-td">
+                                        <div ng-hide="$last">
+                                            <label class="eo-sv-handle iconfont icon-111zhuanhuan number-label" sv-handle></label>
+                                            <label>
+                                                <a class="iconfont icon-shanchu number-label" ng-click="data.input.fun.delete('param',{item:data.input.item,$index:$index})"></a>
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tbody>
+                            </table>
+                        </li>
+                    </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>{{'50'|translate}}</td>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="raw-div">
+                        <textarea class="back-result-content" ng-model="data.input.item.paramValue" maxlength="65530" placeholder="{{'51'|translate}}">
+                        </textarea>
+                    </div>
+                </article>
+                <footer class="eo-modal-footer">
+                    <button class="eo-button-success save-change-btn" ng-click="data.fun.ok()">{{'52'|translate}}</button>
+                    <input type="button" class="eo-button-default" value="{{'13'|translate}}" ng-click="data.fun.close()">
+                </footer>
+            </div>
+        </div>
+        <div class="mask"></div>
+    </script>
+    <!-- {{'53'|translate}}编辑弹窗 -->
+    <script type="text/ng-template" id="AMS_ResponseParamEditModal">
+        <div class="ams-modal-response-param-edit eo-modal" style="{{info.background}}">
+            <div class="second-level-div">
+                <header class="eo-modal-header">{{'53'|translate}}</header>
+                <article class="eo-modal-article">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td class="param-name">{{'41'|translate}}</td>
+                                <td class="param-desc">{{'43'|translate}}</td>
+                                <td class="require-label">{{'54'|translate}}</td>
+                                <td class="type-label">{{'44'|translate}}</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>
+                                    {{data.input.item.paramKey}}
+                                </th>
+                                <td>{{data.input.item.paramName}}</td>
+                                <td>{{data.input.item.paramNotNull?'45'|translate:''}}</td>
+                                <td>{{data.input.item.paramType==0?"[string]":data.input.item.paramType==1?"[file]":data.input.item.paramType==2?"[json]":data.input.item.paramType==3?"[int]":data.input.item.paramType==4?"[float]":data.input.item.paramType==5?"[double]":data.input.item.paramType==6?"[date]":data.input.item.paramType==7?"[datetime]":data.input.item.paramType==8?"[boolean]":data.input.item.paramType==9?"[byte]":data.input.item.paramType==10?"[short]":data.input.item.paramType==11?"[long]":data.input.item.paramType==12?"[array]":data.input.item.paramType==13?"[object]":"[number]"}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="param-value-table">
+                        <thead>
+                            <tr>
+                                <td class="param-name">{{'49'|translate}}</td>
+                                <td>{{'44'|translate}}</td>
+                                <td>{{'43'|translate}}</td>
+                                <td class="operate-td">{{'7'|translate}}</td>
+                            </tr>
+                        </thead>
+                    </table>
+                    <ul class="response-param-form-ul" sv-root sv-part="data.input.item.paramValueList">
+                        <li style="background-color: #fff;" ng-repeat="item in data.input.item.paramValueList" sv-element="data.input.sort.responseParamForm" ng-init="data.fun.initParam({item:item,$index:$index})">
+                            <table ng-switch="$last">
+                                <tbody>
+                                    <td class="param-name">
+                                        <input autocomplete="off" class="eo-input" type="text" ng-model="item.value" ng-change="data.input.fun.paramAdd('param',{$last:$last,item:data.input.item})" ng-class="{'eo-input-error':(!item.value&&item.valueDescription)}" placeholder="{{'55'|translate}}">
+                                    </td>
+                                    <td class="type-td">
+                                        <select class="eo-input request-type-select" ng-options="type.value as type.name for type in data.input.typeSelect" ng-model="item.paramType" ng-change="data.input.fun.paramAdd('param',{$last:$last,item:data.input.item})">
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input autocomplete="off" class="eo-input" type="text" ng-model="item.valueDescription" maxlength="255" ng-change="data.input.fun.paramAdd('param',{$last:$last,item:data.input.item})" placeholder="{{'43'|translate}}">
+                                    </td>
+                                    <td class="operate-td">
+                                        <div ng-hide="$last">
+                                            <label class="eo-sv-handle iconfont icon-111zhuanhuan number-label" sv-handle></label>
+                                            <label>
+                                                <a class="iconfont icon-shanchu number-label" ng-click="data.input.fun.delete('param',{item:data.input.item,$index:$index})"></a>
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tbody>
+                            </table>
+                        </li>
+                    </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>{{'50'|translate}}</td>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="raw-div">
+                        <textarea class="back-result-content" ng-model="data.input.item.paramValue" maxlength="65530" placeholder="{{'56'|translate}}">
+                        </textarea>
+                    </div>
+                </article>
+                <footer class="eo-modal-footer">
+                    <button class="eo-button-success save-change-btn" ng-click="data.fun.ok()">{{'52'|translate}}</button>
+                    <input type="button" class="eo-button-default" value="{{'13'|translate}}" ng-click="data.fun.close()">
+                </footer>
+            </div>
+        </div>
+        <div class="mask"></div>
+    </script>
+
+    <!-- 编辑接口状态弹窗 -->
+    <script type="text/ng-template" id="AMS_ChangeStatusModal">
+        <div class="ams-modal-change-status eo-modal">
+            <header class="eo-modal-header">{{'57'|translate}}</header>
+            <article class="eo-modal-article">
+                <table>
+                    <tr>
+                        <td>
+                            <button ng-click="fun.selectStatus(0)">
+                                <span class="iconfont icon-circle eo-status-success"></span>{{'58'|translate}}
+                            </button>
+                        </td>
+                        <td>
+                            <button ng-click="fun.selectStatus(4)">
+                                <span class="iconfont icon-circle eo-status-default"></span>{{'59'|translate}}
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button ng-click="fun.selectStatus(1)">
+                                <span class="iconfont icon-circle eo-status-warning"></span>{{'60'|translate}}
+                            </button>
+                        </td>
+                        <td>
+                            <button ng-click="fun.selectStatus(5)">
+                                <span class="iconfont icon-circle eo-status-default"></span>{{'61'|translate}}
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button ng-click="fun.selectStatus(2)">
+                                <span class="iconfont icon-circle eo-status-tips"></span>{{'62'|translate}}
+                            </button>
+                        </td>
+                        <td>
+                            <button ng-click="fun.selectStatus(6)">
+                                <span class="iconfont icon-circle eo-status-default"></span>{{'63'|translate}}
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button ng-click="fun.selectStatus(3)">
+                                <span class="iconfont icon-circle eo-status-yellow"></span>{{'64'|translate}}
+                            </button>
+                        </td>
+                        <td>
+                            <button ng-click="fun.selectStatus(7)">
+                                <span class="iconfont icon-circle eo-status-danger"></span>BUG
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button ng-click="fun.selectStatus(8)">
+                                <span class="iconfont icon-circle eo-status-purple"></span>{{'65'|translate}}
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </article>
+            <footer class="eo-modal-footer">
+                <input type="button" class="eo-button-default " ng-click="fun.cancel()" value="{{'13'|translate}}">
+            </footer>
+        </div>
+        <!-- version:3.8,圆圆：加入弹框{{'71'|translate}} -->
+        <div class="mask" ng-click="fun.cancel()"></div>
+    </script>
+
+    <!-- 新建编辑{{'68'|translate}}输入弹窗 -->
+    <script type="text/ng-template" id="AMS_CodeModal">
+        <div class="ams-modal-code eo-modal">
+            <form autocomplete="off" name="ConfirmForm">
+                <header class="eo-modal-header" ng-bind="::title"></header>
+                <article class="eo-modal-article">
+                    <ul>
+                        <li class="first-form-item-title-li">{{'66'|translate}}</li>
+                        <li class="code-group">
+                            <select-multistage-common-component output="component.selectMultistageCommonComponentObject" input="{query:query,key:'groupName',child:'childGroupList',value:'groupID',initialData:[info.groupID,info.childGroupID,info.grandSonGroupID]}"></select-multistage-common-component>
+                        </li>
+                    </ul>
+                    <p class="form-item-title-li">{{'67'|translate}}</p>
+                    <table ng-switch="info.isAdd">
+                        <thead><th>{{'68'|translate}}</th><th>{{'69'|translate}}</th><th ng-switch-when="true" class="w_100">{{'7'|translate}}</th></thead>
+                        <tbody ng-switch-when="true">
+                            <tr ng-repeat="item in data.interaction.request.statusCode">
+                                <td>
+                                    <input autocomplete="off" type="text" ng-model="item.code"  class="eo-input" ng-class="{ 'eo-input-error':(submited&&!item.code&&!$last)}" ng-pattern="/^.{1,32}$/" ng-change="data.fun.operate( 'last',{$last:$last})">
+                                </td>
+                                <td>
+                                    <input autocomplete="off" type="text" ng-model="item.codeDesc" class="eo-input" ng-class="{ 'eo-input-error':(submited&&!item.codeDesc&&!$last)}" maxlength="255" ng-pattern="/^.{1,255}$/" ng-change="data.fun.operate( 'last',{$last:$last})">
+                                </td>
+                                <td>
+                                    <a class="iconfont icon-shanchu" ng-click="data.fun.operate( 'delete',{$index:$index})" ng-if="!$last"></a>
+                                </td>
+                            </tr>
+                            </tr>
+                        </tbody>
+                        <tbody ng-switch-when="false">
+                                <tr>
+                                    <td>
+                                            <input autocomplete="off" type="text" name="name" ng-model="info.code"  class="eo-input" ng-class="{ 'eo-input-error':(submited&&ConfirmForm.name.$invalid)}" maxlength="32" ng-pattern="/^.{1,32}$/" required>
+                                    </td>
+                                    <td>
+                                            <input autocomplete="off" type="text" name="desc" ng-model="info.codeDesc" class="eo-input"  ng-class="{ 'eo-input-error':(submited&&ConfirmForm.desc.$invalid)}" maxlength="255" ng-pattern="/^.{1,255}$/" required>
+                                    </td>
+                                </tr>
+                                </tr>
+                        </tbody>
+                    </table>
+                </article>
+                <footer class="eo-modal-footer">
+                    <button class="eo-button-success" button-set-disable-directive="ok()">{{'52'|translate}}</button>
+                    <input type="button" class="eo-button-info" ng-if="info.isAdd" value="{{'70'|translate}}" button-set-disable-directive="keep()">
+                    <input type="button" class="eo-button-default" value="{{'13'|translate}}" ng-click="cancel()">
+                </footer>
+            </form>
+        </div>
+        <div class="mask"></div>
+    </script>
+    <!-- 导出弹窗 -->
+    <script type="text/ng-template" id="AMS_ExportModal">
+        <div class="unset-width-but-align-center-box">
+        <a id="dump-directive_js" class="hidden"></a>
+            <div class="ams-modal-export eo-modal unset-width-but-align-center-inner">
+                <form autocomplete="off" name="Form">
+                    <header class="eo-modal-header" ng-bind="::data.input.title"></header>
+                    <article class="eo-modal-article">
+                        <ul>
+                            <li ng-if="data.input.mark=='common'">
+                                <ul class="modal-btn-group-ul">
+                                    <li class="pull-left first-li">
+                                        <a class="eo-export" ng-click="data.info.exportType=0" ng-class="{'active-a':data.info.exportType==0}">
+                                            <p>eolinker</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li ng-if="data.input.mark=='exceptHtml'">
+                                <ul class="modal-btn-group-ul">
+                                    <li class="pull-left first-li">
+                                        <a class="eo-export" ng-click="data.info.exportType=0" ng-class="{'active-a':data.info.exportType==0}">
+                                            <p>eolinker</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li ng-if="data.input.mark=='full'">
+                                <ul class="modal-btn-group-ul">
+                                    <li class="pull-left first-li">
+                                        <a class="eo-export" ng-click="data.info.exportType=0" ng-class="{'active-a':data.info.exportType==0}">
+                                            <p>eolinker</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </article>
+                    <footer class="eo-modal-footer">
+                        <div class="eo-button-success btn-style-div" dump-directive='data.fun.dumpDirective(arg)' interaction='{request:{text:data.text,switch:data.info.exportType,broadcast:"export-by-one-key"}}'></div>
+                        <input type="button" class="eo-button-default" value="{{'71'|translate}}" ng-click="data.fun.cancel()">
+                    </footer>
+                </form>
+            </div>
+    </div>
+            <div class="mask" ng-click="cancel()"></div>
+        </script>
+    <!-- 导入弹窗 -->
+    <script type="text/ng-template" id="AMS_ImportModal">
+        <div class="unset-width-but-align-center-box">
+        <div class="ams-modal-import eo-modal unset-width-but-align-center-inner">
+            <header class="eo-modal-header" ng-bind="::data.input.title"></header>
+            <article class="eo-modal-article">
+                <form autocomplete="off" name="Form">
+                    <ul ng-switch="data.input.status">
+                        <li class="modal-import-info" ng-switch-when='1'>
+                            <ul class="modal-btn-group-ul">
+                                <li class="pull-left first-li">
+                                    <input autocomplete="off" id="eolinker-js" type="file" onchange="angular.element(this).scope().importFile({status:6,$file:this.files})" file-reset-directive button-function="change" required>
+                                    <a class="postman-1-a">
+                                        <p>eolinker</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="modal-import-info" ng-switch-default>
+                            <ul class="modal-btn-group-ul">
+                                <li class="pull-left first-li">
+                                    <input autocomplete="off" id="eolinker-js" type="file" onchange="angular.element(this).scope().importFile({status:0,$file:this.files})" file-reset-directive button-function="change" required>
+                                    <a class="postman-1-a">
+                                        <p>eolinker</p>
+                                    </a>
+                                </li>
+                                <li class="center-li">
+                                    <input autocomplete="off" id="postman-2-js" type="file" onchange="angular.element(this).scope().importFile({status:2,$file:this.files})" file-reset-directive button-function="change">
+                                    <a class="postman-2-a">
+                                        <p>postman v2</p>
+                                    </a>
+                                </li>
+                                <li class="last-li">
+                                    <input autocomplete="off" id="rap-js" type="file" onchange="angular.element(this).scope().importFile({status:5,$file:this.files})" file-reset-directive button-function="change">
+                                    <a class="rap-a">
+                                        <p>swagger</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </form>
+            </article>
+            <footer class="eo-modal-footer">
+                <input type="button" class="eo-button-default" value="{{'71'|translate}}" ng-click="cancel()">
+            </footer>
+            <loading-common-component fun="data.fun.import(arg)" interaction="{request:{delay:true}}"></loading-common-component>
+        </div>
+    </div>
+        <div class="mask" ng-click="cancel()"></div>
+    </script>
+
+
+
+    <!-- api search弹窗 -->
+    <script type="text/ng-template" id="AMS_ApiSearchModal">
+        <div class="ams-modal-search-api eo-modal">
+            <header class="eo-modal-header">{{'72'|translate}}</header>
+            <article class="eo-modal-article">
+                <form autocomplete="off" name="ConfirmForm">
+                    <div>
+                        <p class="first-form-item-title-li">{{'73'|translate}}</p>
+                        <p>
+                            <input autocomplete="off" type="text" name="keyword" ng-model="output.keyword" class="eo-input" ng-class="{'eo-input-error':(data.submitted&&ConfirmForm.keyword.$invalid)}" required>
+                        </p>
+                    </div>
+                    <div class="f_row">
+                        <div class="w_50percent mr10">
+                            <p class="form-item-title-li">{{'74'|translate}}</p>
+                            <p>
+                                <select ng-model="output.requestMethod" class="eo-select" ng-options="item.value as item.key for item in const.requestMethodQuery"></select>
+                            </p>
+                        </div>
+                        <div class="w_50percent">
+                            <p class="form-item-title-li">{{'75'|translate}}</p>
+                            <p>
+                                <select ng-model="output.apiStatus" class="eo-select" ng-options="item.value as item.key for item in const.apiStatusQuery"></select>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <button class="hidden" button-set-disable-directive="fun.confirm()"></button>
+                </form>
+                <div class="f_row">
+                    <div class="w_50percent mr10">
+                        <p class="form-item-title-li">{{'76'|translate}}</p>
+                        <p>
+                            <select ng-model="output.apiStarStatus" class="eo-select" ng-options="item.value as item.key for item in const.apiStarStatusQuery"></select>
+                        </p>
+                    </div>
+                    <div class="w_50percent">
+                        <p class="form-item-title-li">{{'77'|translate}}<span class="eo-modal-tip">{{'78'|translate}}</span></p>
+                        <p>
+                            <select-person-common-component output="component.selectPersonCommonComponentObject.creator" input="{query:data.memberQuery,loginCall:'userName',nickName:'userNickName',noteName:'partnerNickName',value:'connID',initialData:output.creator}"></select-person-common-component>
+                        </p>
+                    </div>
+                </div>
+                <div class="f_row">
+                    <div class="w_50percent mr10">
+                        <p class="form-item-title-li">{{'79'|translate}}<span class="eo-modal-tip">{{'78'|translate}}</span></p>
+                        <p>
+                            <select-person-common-component output="component.selectPersonCommonComponentObject.updater" input="{query:data.memberQuery,loginCall:'userName',nickName:'userNickName',noteName:'partnerNickName',value:'connID',initialData:output.updater}"></select-person-common-component>
+                        </p>
+                    </div>
+                    <div class="w_50percent"></div>
+                </div>
+                
+            </article>
+            <footer class="eo-modal-footer">
+                <button class="{{input.btnObject.class||'eo-button-success'}}" button-set-disable-directive="fun.confirm()">{{'80'|translate}}</button>
+                <input type="button" class="eo-button-default" value="{{'13'|translate}}" ng-click="fun.cancel()">
+            </footer>
+        </div>
+        <div class="mask"></div>
+    </script>
+
+</div>

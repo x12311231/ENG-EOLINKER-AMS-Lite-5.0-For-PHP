@@ -1,0 +1,58 @@
+<!--
+    @name 侧边栏组件
+    @author 广州银云信息科技有限公司
+-->
+<div class="eo-sidebar  {{$ctrl.mainObject.baseInfo.class}}">
+    <div class="static-sidebar">
+        <ul class="static-container-ul">
+            <li class="container-item-li static-top-li" ng-repeat='item in $ctrl.mainObject.baseInfo.staticQuery'>
+                <div class="item-li first-sidebar {{item.class}}" ng-click="$ctrl.fun.menu({item:item})">
+                    <span class="pull-left title-icon iconfont {{item.icon}}">
+                    </span>
+                    <span class=" pull-left name-span eo-status-tips">{{item.name}}</span>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+    <div class="common-sidebar" ng-show="!$ctrl.mainObject.baseInfo.sidebarHide" ng-class="{'hover-div':$ctrl.data.mouseenter||$ctrl.data.current.staticDisplay,'had-child-div':$ctrl.data.current.childList}"
+        ng-mouseenter="$ctrl.data.mouseenter=true" ng-mouseleave="$ctrl.data.mouseenter=false;$ctrl.data.isClick=false;"
+        ng-mouseover="$ctrl.data.mouseenter=false;$ctrl.data.isClick=false;">
+        <ul class="item-container-ul">
+            <li class="container-item-li" ng-repeat='item in $ctrl.mainObject.baseInfo.menu' ng-init="item.mark=='text'?'':$ctrl.fun.initMenu({item:item})"
+                ui-sref-active="elem-active" ng-class="{'divide-li':item.divide==1,'divide-dashed-top-li':item.divide==2&&(!item.unDividePower||(item.unDividePower&&!$ctrl.powerObject[item.unDividePower]['look'])),'divide-dashed-bottom-li':item.divide==3,'static-top-li':item.static}"
+                ng-mouseover="$ctrl.fun.mouseover($event,{item:item})">
+                <span class="border-right-span"></span>
+                <div class="item-li first-sidebar {{item.class}}" ng-class="{'disable-menu-li':(item.permissionKey=='disabled'&&$ctrl.permissionObject[item.permission].disabled==item.permissionValue)||item.mark=='text'}"
+                    ng-click="item.click?item.click({item:item}):'';$ctrl.fun.menu({item:item})" data-growing-container='true'>
+                    <span ui-sref="{{item.sref}}" ng-if="item.sref"></span>
+                    <span class="pull-left title-icon iconfont {{item.icon}}">
+                    </span>
+                    <span class=" pull-left name-span">{{item.name}}</span>
+                    <label class="{{item.tipClass}}" ng-if="item.tip&&$ctrl.permissionObject[item.permission].disabled==item.permissionValue">{{item.tip}}</label>
+                    <span class="link-span iconfont icon-daochu pull-right" ng-if="item.href"></span>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+    <div class="second-sidebar" ng-show="$ctrl.data.current.childList">
+        <ul>
+            <li class="back-li">
+                <span class="group-name" ng-switch="$ctrl.data.current.status">{{$ctrl.data.current.name}}</span>
+            </li>
+            <a ng-repeat='childItem in $ctrl.data.current.childList' ng-click="childItem.click?childItem.click({item:item}):'';$ctrl.fun.menu({item:childItem,parentItem:$ctrl.data.current},'child')"
+                ui-sref-active="active">
+                <li class="ui-sref-li {{childItem.class}}" ng-class="{'disable-menu-li':childItem.permissionKey=='disabled'&&$ctrl.permissionObject[childItem.permission].disabled==childItem.permissionValue}">
+                    <span ui-sref="{{childItem.sref}}" ng-if="childItem.sref"></span>
+                    <span class="title-icon iconfont {{childItem.icon}}"> </span>
+                    <span class="pull-left triangle-left"></span>
+                    <span class="group-name pull-left" ng-switch="childItem.status">{{childItem.name}}</span>
+                    <label class="{{childItem.tipClass}}" ng-if="childItem.tip&&$ctrl.permissionObject[childItem.permission].disabled==childItem.permissionValue">{{childItem.tip}}</label>
+                    <span style="margin-right: 20px;" class="link-span iconfont icon-daochu pull-right" ng-if="childItem.href"></span>
+
+                </li>
+            </a>
+        </ul>
+    </div>
+</div>

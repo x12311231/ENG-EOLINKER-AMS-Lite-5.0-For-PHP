@@ -1,0 +1,102 @@
+group-default-common-component {
+    .home-project-inside-group {
+        .account-span {
+            color: #999;
+        }
+        .sort-group-li {
+            .group-li {
+                cursor: move;
+                .group-name {
+                    cursor: move;
+                }
+            }
+        }
+        .divide-li {
+            border-bottom: 1px dashed #e5e5e5;
+        }
+        .sv-helper {
+            background-color: #eee;
+            * {
+                background-color: #eee;
+            }
+        }
+        .title-ul {
+            height: 32px;
+            >li .tab-last-btn {
+                margin-left: 0;
+                border-left: none;
+                border-radius: 0 3px 3px 0;
+            }
+            >li .tab-first-btn {
+                border-radius: 3px 0 0 3px;
+            }
+            >li .un-margin-left-btn {
+                margin-left: 0;
+            }
+        }
+        .child-group-div {
+            .api-list-li {
+                padding-right: 0;
+                >.group-li {
+                    padding-left: 2em;
+                }
+                .group-name {
+                    text-indent: 0;
+                    color: #333;
+                }
+                .group-function {
+                    margin-left: -67px;
+                }
+            }
+        }
+        .third-level-group-div{
+            .api-list-li >.group-li {
+                padding-left: 3em;
+            }
+    }
+    .group-ul .group-li .cancle-btn {
+        background-color: $buttonQSColor;
+        color: $buttonDangerBgColor;
+        border: 1px solid $buttonDangerBgColor;
+        border-radius: 3px;
+        display: inline-flex;
+        height: 20px;
+        line-height: 22px;
+        margin-top: 9px;
+        margin-right: 10px;
+        padding-left: 5px;
+        .iconfont {
+            font-size: 12px;
+            margin-left: 5px;
+            float: none;
+            line-height: inherit;
+            color: inherit;
+        }
+        span {
+            display: inline-flex;
+        }
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $buttonDangerFocusBgColor;
+            color: $buttonQSColor;
+            border: 1px solid $buttonDangerFocusBgColor;
+        }
+    }
+}
+
+.un-top-group-default-common-component {
+    .group-ul {
+        @include eo-height(100%, 41px);
+    }
+}
+
+}
+
+.shrink-div {
+    group-default-common-component {
+        .home-project-inside-group {
+            left: 71px;
+        }
+    }
+}

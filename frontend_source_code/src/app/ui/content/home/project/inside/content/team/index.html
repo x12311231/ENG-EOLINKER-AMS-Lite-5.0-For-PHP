@@ -1,0 +1,106 @@
+<!-- author：广州银云信息科技有限公司 -->
+<div class="home-project-inside-team ">
+    <article>
+        <ul>
+            <li class="search-input-li item-li" data-ng-mouseenter="$ctrl.data.info.search.leave=false;"
+                data-ng-mouseleave="$ctrl.data.info.search.leave=true;" ng-hide="!$ctrl.service.authority.permission.project.authorityManagement.edit">
+                <div class="form-div">
+                    <button type="button" class="eo-button-success search-btn pl15" for="search-user-js" data-ng-click="$ctrl.data.fun.add()">
+                      {{'194'|translate}}
+                    </button>
+                </div>
+            </li>
+            <li class="item-li admin-li">
+                <p class="title-p">{{'195'|translate}}</p>
+                <ul class="list-ul">
+                    <li class="item-child-li pull-left" ng-repeat="item in $ctrl.data.interaction.response.adminQuery">
+                        <ul class="people-ul">
+                            <li class="pull-left name-summary-li">
+                                {{!!item.userNickName?item.userNickName.substr(0, 2).toUpperCase():
+                                '196'|translate}}
+                            </li>
+                            <li class="pull-left people-li">
+                                <p>
+                                    <span>{{!!item.userNickName?item.userNickName:
+                                        '197'|translate}}</span>
+                                    <span class="iconfont " ng-class="{'icon-huangguan':item.userType==0}"></span>
+                                </p>
+                                <p class="userName-p" title="{{item.partnerNickName}}">
+                                    {{(!!item.partnerNickName)?item.partnerNickName:(item.inviteCall?item.inviteCall:
+                                    '195'|translate)}}
+                                </p>
+                            </li>
+                            <li class="pull-right list-li" ng-show="$ctrl.service.authority.permission.project.authorityManagement.editManager||item.isNow"
+                                data-ng-click="item.listIsClick=true;" data-ng-mouseleave="item.listIsClick=false">
+                                <span class="iconfont icon-caidan"></span>
+                                <div class="list-function-wrap" data-ng-show="item.listIsClick">
+                                    <ul class="list-function-ul">
+                                        <li class="list-function-detail">
+                                            <ul>
+                                                <li data-ng-click="$ctrl.data.fun.setNickName({item:item})">{{'198'|translate}} </li>
+                                                <li data-ng-click="$ctrl.data.fun.setType({item:item,userType:2,$index:$index})"
+                                                    ng-hide="item.isNow">{{'199'|translate}}</li>
+                                                <li data-ng-click="$ctrl.data.fun.setType({item:item,userType:3,$index:$index})"
+                                                    ng-hide="item.isNow">{{'200'|translate}}</li>
+                                                <li ng-hide="item.isNow&&item.userType==0" data-ng-click="$ctrl.data.fun.delete({item:item,$index:$index,isAdmin:true})">{{!item.isNow?('201'|translate):('202'|translate)}}</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="item-li partner-li" data-ng-hide="$ctrl.data.interaction.response.query.length==0">
+                <p class="title-p">{{'203'|translate}}</p>
+                <ul class="list-ul">
+                    <li class="item-child-li pull-left" ng-repeat="item in $ctrl.data.interaction.response.query">
+                        <ul class="people-ul">
+                            <li class="pull-left name-summary-li">
+                                {{!!item.userNickName?item.userNickName.substr(0, 2).toUpperCase():
+                                '196'|translate}}
+                            </li>
+                            <li class="pull-left people-li">
+                                <p>
+                                    <span>{{!!item.userNickName?item.userNickName:
+                                        '197'|translate}}</span>
+                                    <span class="iconfont " ng-class="{'icon-huangguan':item.userType==0}"></span>
+                                </p>
+                                <p class="userName-p" title="{{item.partnerNickName}}">
+                                    [{{item.userType=='2'?('204'|translate):('205'|translate)}}]{{(!!item.partnerNickName)?item.partnerNickName:(item.userName?item.userName:
+                                    '196'|translate)}}
+                                </p>
+                            </li>
+                            <li class="pull-right list-li" ng-show="$ctrl.service.authority.permission.project.authorityManagement.edit||item.isNow"
+                                data-ng-click="item.listIsClick=true;" data-ng-mouseleave="item.listIsClick=false">
+                                <span class="iconfont icon-caidan"></span>
+                                <div class="list-function-wrap" data-ng-show="item.listIsClick">
+                                    <ul class="list-function-ul">
+                                        <li class="list-function-detail">
+                                            <ul ng-show="item.isNow">
+                                                <li data-ng-click="$ctrl.data.fun.setNickName({item:item})">{{'198'|translate}} </li>
+                                                <li data-ng-click="$ctrl.data.fun.delete({item:item,$index:$index,isAdmin:false})">{{'202'|translate}}</li>
+                                            </ul>
+                                            <ul ng-show="!item.isNow">
+                                                <li data-ng-click="$ctrl.data.fun.setNickName({item:item})">{{'198'|translate}} </li>
+                                                <li data-ng-click="$ctrl.data.fun.setType({item:item,userType:1,$index:$index})"
+                                                    ng-hide="!$ctrl.service.authority.permission.project.authorityManagement.editManager">{{'206'|translate}} </li>
+                                                <li data-ng-click="$ctrl.data.fun.setType({item:item,userType:2,$index:$index})"
+                                                    ng-hide="item.userType==2">{{'199'|translate}}</li>
+                                                <li data-ng-click="$ctrl.data.fun.setType({item:item,userType:3,$index:$index})"
+                                                    ng-hide="item.userType==3">{{'200'|translate}}</li>
+                                                <li data-ng-click="$ctrl.data.fun.delete({item:item,$index:$index,isAdmin:false})">{{'201'|translate}}</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </article>
+</div>
+<loading-common-component fun="$ctrl.data.fun.init(arg)"></loading-common-component>

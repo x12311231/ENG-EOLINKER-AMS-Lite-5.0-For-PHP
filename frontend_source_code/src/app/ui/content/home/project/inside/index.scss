@@ -1,0 +1,93 @@
+home-project-inside {
+    group-quick-test-common-component {
+        .home-project-inside-group {
+            top: 102px;
+        }
+    }
+    .home-project-inside {
+        width: 100%;
+        .home-project-inside-content {
+            .env-li {
+                position: fixed;
+                right: $PLATE_PADDING - 5px;
+                @include eo-line(30px);
+                margin: 10px 0;
+                z-index: 6;
+            }
+            .home-project-inside-default {
+                menu-common-component {
+                    width: calc(100% - 19px)
+                }
+                .batch-test-btn {
+                    tip-directive {
+                        .iconfont {
+                            margin-right: -5px;
+                            color: rgba(255, 255, 255, .9);
+                        }
+                    }
+                    .tip-directive-none {
+                        .iconfont {
+                            color: #999;
+                        }
+                    }
+                }
+            }
+            .home-project-inside-div {
+                margin: 0 0 0 $PLATE_HOME_SIDEBAR_LEFT;
+            }
+            .markdown-body {
+                margin-bottom: 0;
+                border-radius: 3px;
+                ul {
+                    li {
+                        list-style-type: initial;
+                    }
+                }
+                ol {
+                    li {
+                        list-style-type: decimal;
+                    }
+                }
+            }
+            .ignore-notice-checkbox-btn {
+                color: $buttonInfoFocusBgColor;
+                text-align: center;
+                height: 32px;
+                line-height: 30px;
+                border: 1px solid #bcdffb;
+                padding: 0 5px;
+                background-color: #e3f7ff;
+                margin-right: 5px;
+                border-radius: 3px;
+                .eo-checkbox {
+                    margin: 6px 5px 0 0;
+                    height: 15px;
+                    line-height: 15px;
+                    width: 15px;
+                    border-color: $buttonInfoFocusBgColor;
+                }
+            }
+        }
+        home-project-inside-test-admin,
+        home-project-inside-test-timer {
+            .home-project-inside-group {
+                top: 115px;
+            }
+            group-default-common-component {
+                .un-top-group-default-common-component {
+                    height: calc(100% - 104px);
+                }
+            }
+            list-require-common-component {
+                .un-top-list-require-common-component {
+                    height: calc(100% - 145px);
+                }
+            }
+            tip-common-component {
+                .tips-ul {
+                    margin: 20px 20px 0 20px;
+                }
+            }
+        }
+    }
+}

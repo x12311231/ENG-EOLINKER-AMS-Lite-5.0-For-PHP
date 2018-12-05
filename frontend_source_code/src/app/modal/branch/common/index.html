@@ -1,0 +1,231 @@
+<div class="modal">
+        <!-- 人员编辑塞选弹窗 -->
+        <script type="text/ng-template" id="Common_SelectPersonModal">
+            <div class="common-modal-select-person eo-modal">
+                <header class="eo-modal-header" ng-bind="::data.input.title"></header>
+                <article class="eo-modal-article">
+                    <ul>
+                        <li>
+                            <ul class="group-ul">
+                                <li ng-bind="::data.input.secondTitle"></li>
+                                <li>
+                                    <form  autocomplete="off" name="ComfirmForm">
+                                        <input autocomplete="off" type="text" name="name" ng-model="interaction.request.userCall" placeholder="{{'81'|translate}}" class="eo-input ">
+                                        <a class="iconfont icon-sousuo fs16">
+                                        </a>
+                                    </form>
+    
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="table-li">
+                            <table class="custom-power-table thead-table">
+                                <thead>
+                                    <tr>
+                                        <td class="checkbox-td"><input autocomplete="off" class="hidden" type="checkbox" id="all_checkbox" data-ng-model="data.info.checkbox" ng-change="data.fun.allSet()"
+                                            ng-disabled="data.interaction.response.memberList.length<=0">
+                                        <label for="all_checkbox" class="eo-checkbox iconfont" data-ng-class="{'icon-check':data.info.checkbox}"></label></td>
+                                        <td class="model-td">{{'82'|translate}}</td>
+                                        <td class="operate-td">{{'83'|translate}}</td>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <loading-part-common-component ng-if="data.input.request" fun="data.fun.init()"></loading-part-common-component>
+                            <table class="custom-power-table tbody-table">
+                                <tbody>
+                                    <tr ng-repeat="(key,item) in data.input.query|filter:data.fun.filter" ng-click="data.fun.change({item:item})">
+                                        <td class="checkbox-td">
+                                            <input autocomplete="off" class="hidden" type="checkbox" ng-model="item.checkbox" ng-disabled="(!item.checkbox)&&data.info.currentSelectNumber>=data.input.maxNumber">
+                                            <label class="eo-checkbox iconfont" ng-class="{'icon-check':item.checkbox}"></label>
+                                        </td>
+                                        <td class="model-td">{{item.userNickName}}<span>（{{item.userName}}）</span></td>
+                                        <td class="operate-td">{{item.partnerNickName}}</td>
+                                    </tr>
+                                    <tr class="eo-none-tr" ng-hide="(data.input.query|filter:data.fun.filter).length>0"><td colspan=3>{{'84'|translate}}</td></tr>
+                                </tbody>
+                            </table>
+                        </li>
+                    </ul>
+                </article>
+                <footer class="eo-modal-footer">
+                    <button class="eo-button-success " ng-click="data.fun.confirm()">{{'52'|translate}}</button>
+                    <input type="button" class="eo-button-default " ng-click="data.fun.cancel()" value="{{'13'|translate}}">
+                </footer>
+            </div>
+            <div class="mask"></div>
+        </script>
+    <!-- 上传文件输入弹窗 -->
+    <script type="text/ng-template" id="Common_UploadFile">
+        <div class="common-modal common-modal-upload-file eo-modal">
+            <form autocomplete="off" name="editForm">
+                <header class="eo-modal-header" ng-bind="::data.input.title"></header>
+                <article class="eo-modal-article">
+                    <ul>
+                        <li class="container-li">
+                            <p class="first-form-item-title-li">{{'85'|translate}}</p>
+                            <select-multistage-common-component output="component.selectMultistageCommonComponentObject" input="{query:data.input.group.parent,key:'groupName',child:'childGroupList',value:'groupID',initialData:[data.output.groupID,data.output.childGroupID,data.output.grandSonGroupID]}"></select-multistage-common-component>
+                        </li>
+                        <li class="container-li">
+                            <ul class="group-inherit  group-ul">
+                                <li upload-file-directive="data.fun.import(arg)" input-id="import-input-js" file-type="{{data.input.fileType}}"></li>
+                                <li ng-if="data.input.secondTitle">{{data.input.secondTitle}}</li>
+                                <li>
+                                    <label for="import-input-js" class="eo-input" ng-class="{'eo-input-error':!data.output.file.name&&data.info.submitted}">{{data.output.file.name||'86'|translate}}</label>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </article>
+                <footer class="eo-modal-footer">
+                    <button class="eo-button-success" ng-click="data.fun.confirm()">{{'52'|translate}}</button>
+                    <input type="button" class="eo-button-default" value="{{'13'|translate}}" ng-click="data.fun.cancel()">
+                </footer>
+            </form>
+        </div>
+        <div class="mask"></div>
+    </script>
+    <!-- input/select/textarea混合输入弹窗 -->
+    <script type="text/ng-template" id="MixInputModal">
+        <div class="modal-project eo-modal" ng-click="data.showSearchList=false;">
+                <header class="eo-modal-header" ng-bind="::input.title"></header>
+                <article class="eo-modal-article">
+                    <form autocomplete="off" name="ConfirmForm">
+                        <div ng-repeat="item in input.textArray" ng-switch="item.type">
+                            <p ng-class="{'first-form-item-title-li':$first,'form-item-title-li':!$first}">{{item.title}}
+                                <span class="eo-modal-tip" ng-if="item.titleTip">{{item.titleTip}}</span>
+                            </p>
+                            <p ng-switch-when="input">
+                                <input autocomplete="off" type="text" name="{{item.key}}" ng-model="item.value" placeholder="{{item.placeholder}}" class="eo-input" ng-class="{'eo-input-error':(data.submitted&&ConfirmForm[item.key].$invalid)}" maxlength="{{item.maxlength}}" ng-pattern="item.pattern" ng-required="item.required">
+                            </p>
+                            <p ng-switch-when="select">
+                                <select ng-model="item.value" class="eo-select" ng-options="childItem.value as childItem.key for childItem in item.selectOptions"></select>
+                            </p>
+                            <p ng-switch-when="textarea">
+                                <textarea name="name" ng-model="item.value" placeholder="{{item.placeholder}}" class="eo-input" maxlength="{{item.maxlength}}"></textarea>
+                            </p>
+                            <p ng-switch-when="html" inner-html-common-directive="{{item.html}}">
+                            </p>
+                        </div>
+                        <button class="hidden" button-set-disable-directive="fun.confirm()"></button>
+                    </form>
+                </article>
+                <footer class="eo-modal-footer">
+                    <button class="{{input.btnObject.class||'eo-button-success'}}" button-set-disable-directive="fun.confirm()">{{input.btnObject.text||'52'|translate}}</button>
+                    <input type="button" class="eo-button-default" value="{{'13'|translate}}" ng-click="fun.cancel()">
+                </footer>
+            </div>
+            <div class="mask"></div>
+        </script>
+    <!-- Info弹窗 -->
+    <script type="text/ng-template" id="InfoModal">
+        <div class="modal-info" ng-class="{'error':type=='error','success':type=='success','info':type=='info'}">
+            <p>
+                <i class="iconfont" ng-class="{'icon-close':type=='error','icon-check':type=='success','icon-shanchu':type=='info'}"></i>
+                <span class="text-center modal-title" ng-bind="::info"></span>
+            </p>
+        </div>
+    </script>
+     <!-- 信息弹窗 -->
+     <script type="text/ng-template" id="MessageModal">
+        <div class="modal-message eo-modal" ng-class="{{input.class}}" ng-style='{top:{{input.style.top}}+"px"}'>
+            <header class="eo-modal-header" ng-bind="::title"></header>
+            <article class="eo-modal-article" ng-bind-html="::info"></article>
+            <footer class="eo-modal-footer">
+                <input type="button" ng-if="input.button.sure" class="eo-button-success" value="{{input.button.sure.content?input.button.sure.content:'87'|translate}}" ng-click="sure()">
+                <input type="button" class="eo-button-default" value="{{'71'|translate}}" ng-click="cancel()">
+            </footer>
+        </div>
+        <div class="mask" ng-click="close()"></div>
+    </script>
+
+    <!-- {{'87'|translate}}弹窗 -->
+    <script type="text/ng-template" id="EnsureModal">
+        <div class="modal-sure eo-modal">
+            <form autocomplete="off" name="sureForm">
+                <header class="eo-modal-header">{{title}}
+                    <tip-directive input="{{data.input.tips}}" ng-if="data.input.tips"></tip-directive>
+                </header>
+                <article class="eo-modal-article">
+                    <p inner-html-common-directive html="info.message" status="unbind-angular" class="{{data.input.class}}"></p>
+                    <p ng-if="necessity">
+                        <input autocomplete="off" type="text" name="sure" ng-model="sure" placeholder="{{'88'|translate}}" class="eo-input" ng-class="{'eo-input-error':(submited&&sureForm.sure.$invalid)}" ng-pattern="/^[y|Y][e|E][s|S]$/" autofocus="true" required>
+                    </p>
+                </article>
+                <footer class="eo-modal-footer" ng-switch="info.btnType">
+                    <button ng-switch-default ng-class="{'eo-button-danger':info.btnType==0,'eo-button-info':info.btnType==1,'eo-button-success':info.btnType==2}" ng-click="ok()">{{info.btnMessage}}</button>
+                    <button class="eo-button-success btn-confirm" ng-switch-when="3" ng-disabled="info.timer.value>0" ng-click="ok()">{{info.timer.value>0?(info.timer.value+"s"):"{{'52'|translate}}"}}</button>
+                    <input type="button" ng-repeat="item in info.btnGroup" ng-class="{'eo-button-danger':item.btnType==0,'eo-button-info':item.btnType==1,'eo-button-success':item.btnType==2}" ng-href="{{item.href}}" ng-click="fun.btnClick(item)" download="{{item.downloadMsg}}" value="{{item.btnMessage}}">
+                    <input type="button" class="eo-button-default" value="{{info.btnCancelMessage}}" ng-click="cancel()">
+                </footer>
+            </form>
+        </div>
+        <div class="mask"></div>
+    </script>
+
+    <!-- 可视化{{'85'|translate}}面选择{{'85'|translate}}弹窗 -->
+    <script type="text/ng-template" id="SelectVisualGroupModal">
+        <div class="modal-visual-group eo-modal">
+            <header class="eo-modal-header" ng-bind="::title"></header>
+            <article class="eo-modal-article" ng-switch="modalType">
+                <group-default-common-Component ng-switch-default fun-object="component.groupCommonObject.funObject" main-object="component.groupCommonObject.mainObject" list="list"></group-default-common-Component>
+                <select-multistage-common-component  ng-show="data.isEnd&&modalType=='no-level-limit'" output="selectMultistageCommonComponentObject" input="{query:data.apiGroup,key:'groupName',child:'childGroupList',value:'groupID',initialData:data.initialGroupData}"></select-multistage-common-component>
+                <loading-part-common-component ng-switch-when="no-level-limit"  fun="fun.initGroup()"></loading-part-common-component>
+            </article>
+            <footer class="eo-modal-footer">
+                <button class="eo-button-success" ng-click="fun.confirm()">{{'52'|translate}}</button>
+                <input type="button" class="eo-button-default" value="{{'13'|translate}}" ng-click="fun.cancel()">
+            </footer>
+        </div>
+        <div class="mask"></div>
+    </script>
+    <!-- 新建编辑{{'85'|translate}}弹窗 -->
+    <script type="text/ng-template" id="GroupModal">
+        <div class="modal-group eo-modal">
+            <form autocomplete="off" name="editGroupForm">
+                <header class="eo-modal-header" ng-bind="::title"></header>
+                <article class="eo-modal-article">
+                    <ul>
+                        <li>
+                            <ul class="group-inherit group-ul">
+                                <li class="first-form-item-title-li">{{secondTitle}}</li>
+                                <li>
+                                    <input autocomplete="off" type="text" name="name" ng-model="info.groupName" placeholder="{{placeholder}}" class="eo-input" ng-pattern="/^.{1,32}$/" maxlength="32" ng-required="{{!required}}">
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </article>
+                <footer class="eo-modal-footer">
+                    <button class="eo-button-{{data.btn.type}}" ng-click="ok()">{{data.btn.message}}</button>
+                    <input type="button" class="eo-button-default" value="{{'13'|translate}}" ng-click="cancel()">
+                </footer>
+            </form>
+        </div>
+        <div class="mask"></div>
+    </script>
+
+    <!-- 通用单输入（textarea）弹窗 -->
+    <script type="text/ng-template" id="CommonSingleInputModal">
+        <div class="modal-sure eo-modal">
+            <form autocomplete="off" name="sureForm">
+                <header class="eo-modal-header" ng-bind="::title"></header>
+                <article class="eo-modal-article">
+                    <ul>
+                        <li ng-bind="::data.input.content" ng-if="data.input.content" ng-style="data.input.contentStyle"></li>
+                        <li ng-bind="::info.message" ng-if="info.message"></li>
+                        <li class="textarea-li">
+                            <pre>{{info.desc}}</pre>
+                            <textarea type="text" name="description" ng-model="info.desc" placeholder="{{data.input.placeholder||'89'|translate}}" class="eo-input api-desc-textarea" ng-class="{'eo-input-error':(submited&&sureForm.description.$invalid)}" ng-required="data.input.required">
+                            </textarea>
+                        </li>
+                    </ul>
+                </article>
+                <footer class="eo-modal-footer">
+                    <button ng-class="{'eo-button-success':info.btnType==2,'eo-button-danger':info.btnType==1,'eo-button-info':info.btnType==0}" ng-click="ok()">{{info.btnMessage}}</button>
+                    <input type="button" class="eo-button-default" value="{{'13'|translate}}" ng-click="cancel()">
+                </footer>
+            </form>
+        </div>
+        <div class="mask"></div>
+    </script>
+</div>

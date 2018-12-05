@@ -1,0 +1,30 @@
+<input class="assist-input">
+<div class="conatiner-div" ng-click="$ctrl.fun.click($event)">
+    <p class="text-p" ng-click="$ctrl.fun.wantToSelect($event)" ng-class="{'disabled-text-p':$ctrl.disabled}">
+        <span class="logo-img pull-left" ng-show="$ctrl.output.value" style="background-image:url({{$ctrl.data.textObject.userImage?('https://data.eolinker.com/'+$ctrl.data.textObject.userImage):''}});">&nbsp;</span><span
+            ng-show="$ctrl.output.value">{{$ctrl.data.textObject[$ctrl.input.noteName]||$ctrl.data.textObject[$ctrl.input.nickName]}}</span><span
+            class="eo-status-tips" ng-show="$ctrl.output.value">（{{$ctrl.data.textObject[$ctrl.input.loginCall]}}）</span>
+        <span ng-if="!$ctrl.disabled" class="iconfont icon-xiangxia pull-right" ng-hide="$ctrl.output.value&&!$ctrl.required"></span>
+        <button class="iconfont icon-close pull-right fs16" ng-click="$ctrl.fun.clear($event)" ng-show="$ctrl.output.value&&!$ctrl.required"></button>
+    </p>
+    <div class="list-container-div" ng-show="$ctrl.data.isFocus&&($ctrl.data.query.length>0||$ctrl.data.q)">
+        <p class="search-p bbd f_row">
+            <span class="iconfont icon-sousuo"></span>
+            <input type="text" autocomplete="off" ng-model="$ctrl.data.q" placeholder="{{'80'|translate}}" ng-blur="$ctrl.fun.searchBlur($event)">
+            <input class="select-person-btn-clear-text eo-button-default pull-right " type="button" value="{{'104'|translate}}" ng-show="$ctrl.data.q" />
+        </p>
+        <div class="query-container-child-div">
+            <p class="select-person-btn-item common-class-item " ng-repeat="item in $ctrl.data.query | filter:$ctrl.fun.filter"
+                eo-attr-index="{{$index}}">
+                <span class="select-person-btn-item-span logo-img pull-left" style="background-image:url({{item.userImage?('https://data.eolinker.com/'+item.userImage):''}});">&nbsp;</span><span
+                    class="select-person-btn-item-span">{{item[$ctrl.input.noteName]||item[$ctrl.input.nickName]}}</span><span
+                    class="select-person-btn-item-span eo-status-tips">（{{item[$ctrl.input.loginCall]}}）</span>
+                <p class="un-search-response-p eo-status-tips" ng-if="($ctrl.data.query | filter:$ctrl.fun.filter).length==0&&$ctrl.data.q">{{'106'|translate}}</p>
+            </p>
+        </div>
+    </div>
+    <div class="list-container-div" ng-if="$ctrl.data.isFocus&&($ctrl.data.query | filter:$ctrl.fun.filter).length==0&&!$ctrl.data.q">
+        <p class="un-search-response-p eo-status-tips">{{'107'|translate}}</p>
+    </div>
+
+</div>

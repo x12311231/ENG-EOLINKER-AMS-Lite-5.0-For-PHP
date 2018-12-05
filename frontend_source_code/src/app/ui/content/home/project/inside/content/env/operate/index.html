@@ -1,0 +1,115 @@
+<!-- author：广州银云信息科技有限公司 -->
+<menu-common-component class="fix-menu-common-component" list="$ctrl.component.menuObject.list" authority-object="$ctrl.service.authority.permission.project.environment"></menu-common-component>
+<article class="ams-scss-env-edit">
+
+    <div class="content-div">
+        <form autocomplete="off" name="ConfirmForm" class="home-project-inside-env">
+            <div>
+                <p class="title-p">
+                    <b>{{'287'|translate}}</b>
+                </p>
+                <p class="name-form">
+                    <input autocomplete="off" name="envName" ng-model="$ctrl.data.info.current.envName" class="eo-input" type="text" placeholder="{{'287'|translate}}"
+                        ng-disabled="!$ctrl.service.authority.permission.project.environment.edit" maxlength="32" ng-class="{'eo-input-error':ConfirmForm.envName.$invalid&&ConfirmForm.envName.$dirty}" required>
+                </p>
+                <p class="title-p">
+                    <b>{{'288'|translate}}</b>
+                </p>
+                <p class="name-form">
+                    <input autocomplete="off" name="envDesc" ng-model="$ctrl.data.info.current.envDesc" class="eo-input" type="text" placeholder="{{'288'|translate}}"
+                        ng-disabled="!$ctrl.service.authority.permission.project.environment.edit">
+                </p>
+                <p class="title-p divide-p">
+                    <b>{{'26'|translate}}</b>
+                    <tip-directive input="<p>{{'289'|translate}}</p>"></tip-directive>
+                </p>
+                <p class="name-form">
+                    <input autocomplete="off" name="name" ng-model="$ctrl.data.info.current.frontURI" class="eo-input" type="text" placeholder="{{'26'|translate}}"
+                        ng-disabled="!$ctrl.service.authority.permission.project.environment.edit">
+                </p>
+                <p class="title-p">
+                    <b>{{'290'|translate}}</b>
+                    <tip-directive input="<p>{{'291'|translate}}</p>"></tip-directive>
+                </p>
+                <div class="auth-div">
+                    <auth-ams-component auth-object="$ctrl.data.info.current.envAuth"  disable-object="{isPreview:!$ctrl.service.authority.permission.project.environment.edit}"></auth-ams-component>
+                </div>
+                <p class="title-p">
+                    <b>{{'292'|translate}}</b>
+                    <tip-directive input="<p>{{'293'|translate}}</p>"></tip-directive>
+                </p>
+                <div class="item-div">
+                    <ul class="item-ul" ng-mouseover="item.mouseLeave=false" ng-mouseleave="item.mouseLeave=true" ng-repeat="item in $ctrl.data.info.current.headerList track by $index">
+                        <li style="height: 35px;" class="pull-left header-input-li" ng-if="$ctrl.service.authority.permission.project.environment.edit"
+                            ng-class="{'eo-had-input-error':!item.headerName&&item.headerValue}">
+                            <auto-complete-ams-component model="item" key-name='headerName' array="$ctrl.data.constant.headerArray" add-class="header-icon-input"
+                                placeholder="{{'265'|translate}}" input-change-fun="$ctrl.data.fun.change({$last:$last,switch:0})"></auto-complete-ams-component>
+                        </li>
+                        <li class="pull-left header-input-li">
+                            <input autocomplete="off" class="eo-input header-content-input" type="text" placeholder="{{'265'|translate}}" ng-model="item.headerName"
+                                disabled ng-if="!$ctrl.service.authority.permission.project.environment.edit">
+                        </li>
+                        <li class="header-content-li pull-left">
+                            <input autocomplete="off" class="eo-input header-content-input" type="text" placeholder="{{'266'|translate}}" ng-model="item.headerValue"
+                                ng-change="$ctrl.data.fun.change({$last:$last,switch:0})" ng-disabled="!$ctrl.service.authority.permission.project.environment.edit">
+                        </li>
+                        <li class="operate-li">
+                            <a class="iconfont icon-shanchu number-label" ng-click="$ctrl.data.fun.delete.headerList({$index:$index})" ng-hide="$last"
+                                ng-if="$ctrl.service.authority.permission.project.environment.edit"></a> &nbsp;
+                        </li>
+                    </ul>
+                </div>
+                <p class="title-p">
+                    <b>{{'28'|translate}}</b>
+                    <tip-directive input="<p>{{'294'|translate}}</p>"></tip-directive>
+                </p>
+                <div class="item-div">
+                    <ul class="item-ul" ng-repeat="item in $ctrl.data.info.current.additionalParamList">
+                        <li class="pull-left header-input-li">
+                            <input autocomplete="off" class="eo-input header-icon-input" type="text" placeholder="{{'295'|translate}}" ng-model="item.paramKey" ng-change="$ctrl.data.fun.change({$last:$last,switch:2})"
+                                ng-disabled="!$ctrl.service.authority.permission.project.environment.edit" ng-class="{'eo-input-error':!item.paramKey&&item.paramValue}">
+                        </li>
+                        <li class="header-content-li pull-left">
+                            <input autocomplete="off" class="eo-input header-content-input" type="text" placeholder="{{'296'|translate}}" ng-model="item.paramValue"
+                                ng-change="$ctrl.data.fun.change({$last:$last,switch:2})" ng-disabled="!$ctrl.service.authority.permission.project.environment.edit">
+                        </li>
+                        <li class="header-content-li pull-left">
+                            <input autocomplete="off" class="eo-input header-content-input" type="text" placeholder="{{'297'|translate}}" ng-model="item.paramName"
+                                ng-change="$ctrl.data.fun.change({$last:$last,switch:2})" ng-disabled="!$ctrl.service.authority.permission.project.environment.edit">
+                        </li>
+                        <li class="operate-li">
+                            <a class="iconfont icon-shanchu number-label" ng-click="$ctrl.data.fun.delete.additionalParamList({$index:$index})" ng-hide="$last"
+                                ng-if="$ctrl.service.authority.permission.project.environment.edit"></a>
+                            &nbsp;
+                        </li>
+                    </ul>
+                </div>
+                <p class="title-p">
+                    <b>{{'29'|translate}}</b>
+                    <tip-directive input="<p>{{'298'|translate}}{ {param_name} }{{'299'|translate}}</p>"></tip-directive>
+                </p>
+                <div class="item-div">
+                    <ul class="item-ul" ng-repeat="item in $ctrl.data.info.current.paramList">
+                        <li class="pull-left header-input-li">
+                            <input autocomplete="off" class="eo-input header-icon-input" type="text" placeholder="{{'295'|translate}}" ng-model="item.paramKey" ng-change="$ctrl.data.fun.change({$last:$last,switch:1})"
+                                ng-disabled="!$ctrl.service.authority.permission.project.environment.edit" ng-class="{'eo-input-error':!item.paramKey&&item.paramValue}">
+                        </li>
+                        <li class="header-content-li pull-left">
+                            <input autocomplete="off" class="eo-input header-content-input" type="text" placeholder="{{'296'|translate}}" ng-model="item.paramValue"
+                                ng-change="$ctrl.data.fun.change({$last:$last,switch:1})" ng-disabled="!$ctrl.service.authority.permission.project.environment.edit">
+                        </li>
+                        <li class="header-content-li pull-left">
+                            <input autocomplete="off" class="eo-input header-content-input" type="text" placeholder="{{'297'|translate}}" ng-model="item.paramName"
+                                ng-change="$ctrl.data.fun.change({$last:$last,switch:1})" ng-disabled="!$ctrl.service.authority.permission.project.environment.edit">
+                        </li>
+                        <li class="operate-li">
+                            <a class="iconfont icon-shanchu number-label" ng-click="$ctrl.data.fun.delete.paramList({$index:$index})" ng-hide="$last"
+                                ng-if="$ctrl.service.authority.permission.project.environment.edit"></a>
+                            &nbsp;
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </div>
+</article>

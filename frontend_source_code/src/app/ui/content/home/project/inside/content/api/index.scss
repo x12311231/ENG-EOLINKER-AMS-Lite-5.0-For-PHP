@@ -1,0 +1,46 @@
+home-project-inside-api {
+    .env-li {
+        position: fixed;
+        right: 5px;
+        @include eo-line(30px);
+        margin: 9px 0;
+        z-index: 6;
+    }
+}
+.content-type-select-div {
+    margin-left: 10px;
+    line-height: 29px;
+    .desc-p {
+        font-size: 12px;
+        color: #333;
+        .iconfont {
+            font-size: 12px;
+            color: #999;
+        }
+    }
+    .content-type-select-content-div {
+        position: absolute;
+        z-index: 10;
+        background-color: #fafafa;
+        font-size: 12px;
+        border-radius: 3px;
+        border: 1px solid #ddd;
+        display: none;
+        box-shadow: $PLATE_SHADOW;
+        p {
+            padding: 0 10px;
+            line-height: 2.75em;
+        }
+        p:hover {
+            background-color: #efefef;
+        }
+    }
+}
+.content-type-select-active-div {
+    .desc-p .iconfont {
+        color: #333;
+    }
+    .content-type-select-content-div {
+        display: block;
+    }
+}

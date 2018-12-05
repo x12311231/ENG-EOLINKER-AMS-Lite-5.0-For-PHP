@@ -1,0 +1,249 @@
+/**
+* @name 侧边栏
+* @author 广州银云信息科技有限公司
+*/
+
+%SHRINK-ITEM-LI {
+
+    .group-name,
+    .link-span,
+    .navbar-tip-item {
+        display: none;
+    }
+
+    &:hover {
+        .triangle-left {
+            width: 0;
+            height: 0;
+            border-top: 5px solid transparent;
+            border-right: 6px solid #000;
+            border-bottom: 5px solid transparent;
+            position: absolute;
+            left: 55px;
+            margin-top: 20px;
+            z-index: 3;
+        }
+
+        .group-name {
+            position: absolute;
+            left: 60px;
+            z-index: 3;
+            background-color: #000;
+            height: 30px;
+            line-height: 30px;
+            display: inline-block;
+            padding: 0 10px;
+            white-space: nowrap;
+            border-radius: 3px;
+            text-indent: 0;
+            color: #fff;
+            margin-top: 10px;
+
+            span,
+            p {
+                color: #fff;
+            }
+        }
+    }
+}
+
+sidebar-common-component {
+    .navbar-tip-item {
+        color: #fff;
+        background-color: #dc441e;
+        border-radius: 3px;
+        padding: 2px 5px;
+        font-size: 12px;
+    }
+
+    .second-sidebar {
+        //二级菜单样式
+        background-color: #efefef;
+        border-right: 1px solid #ddd;
+        position: fixed;
+        height: 100%;
+        left: 50px;
+        z-index: 1;
+        top: 51px;
+        box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.02);
+
+        .back-li,
+        .ui-sref-li {
+            @include eo-line(50px);
+            width: 187px;
+            text-indent: 20px;
+            font-size: 14px;
+            border-right: 3px solid transparent;
+        }
+
+        .back-li {
+            background-color: #fafafa;
+            font-weight: bold;
+
+            span {
+                color: #999;
+            }
+        }
+
+        .ui-sref-li {
+            &:hover {
+                background-color: #e8f5e9;
+            }
+        }
+
+        .active,
+        .extra-active {
+            .ui-sref-li {
+                color: $buttonSuccessFocusBgColor;
+                background-color: #ffffff;
+                border-right-color: $buttonSuccessBgColor;
+            }
+        }
+    }
+
+    .eo-sidebar {
+
+        height: 100%;
+
+        width: 50px;
+
+        .static-container-ul {
+            border-right: 1px solid #ddd;
+            width: 240px;
+        }
+
+        .container-item-li {
+            .second-sidebar {
+                display: none;
+            }
+        }
+
+        .common-sidebar {
+            height: 100%;
+            background-color: #fff;
+            width: 50px;
+            box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.02);
+            border-right: 1px solid #ddd;
+            z-index: 7;
+            position: fixed;
+            left: 0;
+            // z-index: 5;
+            top: 51px;
+            .item-container-ul {
+                transition: all .3s cubic-bezier(0, 0, .2, 1);
+                overflow: hidden;
+                border-right: 1px solid #ddd;
+                height: 100%;
+                background-color: #fff;
+                width: 50px;
+            }
+
+            .border-right-span {
+                position: absolute;
+                border: 1px solid transparent;
+                height: 50px;
+                left: 49px;
+                cursor: pointer;
+            }
+        }
+
+        .had-child-div {
+            box-shadow: none;
+        }
+
+        .item-li {
+            @include eo-line(50px);
+            overflow: hidden;
+            text-indent: 15px;
+            cursor: pointer;
+
+            .iconfont {
+                margin-right: 12px;
+                font-size: 20px;
+                width: 35px;
+            }
+
+            .un-read-span {
+                margin-left: 5px;
+            }
+
+            &:hover {
+                background-color: #e8f5e9;
+            }
+        }
+
+        .divide-li {
+            border-top: 1px solid #ddd;
+        }
+
+        .divide-dashed-bottom-li {
+            border-bottom: 1px dashed #e5e5e5;
+        }
+
+        .divide-dashed-top-li {
+            border-top: 1px dashed #e5e5e5;
+        }
+
+        .elem-active {
+            .second-sidebar {
+                display: inherit;
+            }
+
+            .item-li {
+                color: #fff;
+                background-color: $buttonSuccessBgColor;
+            }
+        }
+
+        .disable-menu-li {
+            background-color: #efefef;
+            cursor: default;
+
+            span {
+                color: #999;
+                cursor: default;
+            }
+
+            &:hover {
+                background-color: #efefef;
+            }
+        }
+
+        .static-top-li {
+            border-bottom: 1px solid #ddd;
+            color: #999;
+            background-color: #fff;
+
+            .title-icon {
+                background-color: #fafafa;
+                margin-right: 0;
+                padding-right: 15px;
+                border-right: 1px solid #ddd;
+            }
+
+            .item-li {
+                &:hover {
+                    background-color: #f2f2f2;
+                }
+            }
+        }
+
+        .hover-div {
+            .item-container-ul {
+                width: 240px;
+            }
+        }
+    }
+
+    .inside-sidebar {
+        top: 0;
+        z-index: 7;
+    }
+
+    .static-sidebar {
+        position: fixed;
+        z-index: 7;
+        top: 0;
+        left: 0;
+    }
+}
