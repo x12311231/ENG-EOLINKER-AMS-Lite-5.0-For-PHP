@@ -1,6 +1,6 @@
 # EOLINKER AMS Lite For PHP
 
-![](https://data.eolinker.com/course/tsty8IR3736f8289fbe1781802ed9ee772ba89a660c6dfb)
+![](https://data.eolinker.com/course/dUiGnus943534e04bfd59e3de7d87e0143dc66ca83835e4.png)
 
 EOLINKER is a platform for developers and technology companies to provide API management services. AMS is an API development management system under EOLINKER. You can implement complete API document management, API testing, API automated testing and development collaboration. The AMS Lite version is a streamlined version of AMS's official product, designed for individuals, small teams, and small businesses to help you solve problems in API management as quickly as possible.
 
@@ -20,7 +20,7 @@ If you want to experience the full features of EOLINKER AMS, you can visit **htt
 
 ## Product Highlight
 
-![](http://data.eolinker.com/course/eHi6Rw537586bd5b9c9bdbedaab9dd4dd1d71ddb5f44a5b)
+![](https://data.eolinker.com/course/eHi6Rw537586bd5b9c9bdbedaab9dd4dd1d71ddb5f44a5b)
 
 ![](https://data.eolinker.com/course/gfgswua324a1bcc5d258344c2aba65d5c08fe64f8fd5b2d)
 
