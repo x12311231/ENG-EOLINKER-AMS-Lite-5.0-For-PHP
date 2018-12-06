@@ -18,6 +18,17 @@ If you want to experience the full features of EOLINKER AMS, you can visit **htt
 
 5. Teamwork function, you can invite members or join the project and set access rights for developers. EOLINKER provides comprehensive operation log and rights management function.
 
+## Product Highlight
+
+![](http://data.eolinker.com/course/eHi6Rw537586bd5b9c9bdbedaab9dd4dd1d71ddb5f44a5b)
+
+![](https://data.eolinker.com/course/gfgswua324a1bcc5d258344c2aba65d5c08fe64f8fd5b2d)
+
+![](https://data.eolinker.com/course/YGKZ2Nd1978b315ab5537944299e4cc1aa97e288447c157)
+
+![](https://data.eolinker.com/course/yR8g5pac1cfb309d8ac83f99497865aa4540c7bdf363b83)
+
+
 ## Deployment Requirements
 
 * PHP 5.6+
@@ -54,14 +65,5 @@ To prevent data loss, back up your database properly before performing any criti
 
 ## Need more help?
 Homepage: https://global.eolinker.com
+
 Course: Coming soon
-
-## Product Highlight
-
-![](http://data.eolinker.com/course/eHi6Rw537586bd5b9c9bdbedaab9dd4dd1d71ddb5f44a5b)
-
-![](https://data.eolinker.com/course/gfgswua324a1bcc5d258344c2aba65d5c08fe64f8fd5b2d)
-
-![](https://data.eolinker.com/course/YGKZ2Nd1978b315ab5537944299e4cc1aa97e288447c157)
-
-![](https://data.eolinker.com/course/yR8g5pac1cfb309d8ac83f99497865aa4540c7bdf363b83)
