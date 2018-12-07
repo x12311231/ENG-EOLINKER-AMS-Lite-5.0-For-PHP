@@ -40,7 +40,7 @@ If you want to experience the full features of EOLINKER AMS, you can visit **htt
 [Installation Guide]
 
 First, In order to initialize the project, We need you to have the following steps ready:
-1. Make sure zip eolinker_os file under localhost server. Please confirm your URL：http://localhost/eolinker_os
+1. Make sure zip eolinker_os file under localhost server. Please confirm your URL:http://localhost/eolinker_os
 2. Prepare your database host address;
 3. You need to create a new database name, For Example'eolinker_os';
 4. Make sure your database username and database password matched and correct;
